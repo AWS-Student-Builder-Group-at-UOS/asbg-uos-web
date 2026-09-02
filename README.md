@@ -1,2 +1,3 @@
-# asbg-uos-1st-archive
-1기 활동 모음
+# ASBG UOS Cohort 01 Archive
+
+ASBG UOS 1기 세션 결과물 아카이브입니다.
