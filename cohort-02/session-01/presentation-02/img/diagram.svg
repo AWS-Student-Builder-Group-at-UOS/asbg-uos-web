@@ -6,44 +6,44 @@
       <path d="M0 0L10 5L0 10z" fill="#0284c7"/>
     </marker>
   </defs>
-  <rect width="1280" height="820" rx="24" fill="#f0f9ff"/>
+  <rect width="1280" height="820" fill="#f0f9ff"/>
   <g font-family="Arial, Helvetica, sans-serif">
     <text x="48" y="58" fill="#0284c7" font-size="14" font-weight="700" letter-spacing="2">ROUND 0 · IAM REVIEW MAP</text>
     <text x="48" y="105" fill="#082f49" font-size="34" font-weight="700">Who enters? What can they do?</text>
     <text x="48" y="139" fill="#475569" font-size="18">A review workflow for the workshop guide — not the full IAM evaluation algorithm.</text>
-    <rect x="48" y="187" width="325" height="220" rx="18" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+    <rect x="48" y="187" width="325" height="220" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
     <circle cx="81" cy="221" r="16" fill="#e0f2fe"/>
     <text x="77" y="227" fill="#0284c7" font-size="16" font-weight="700">1</text>
     <text x="109" y="228" fill="#0c4a6e" font-size="22" font-weight="700">Assigned caller</text>
     <text x="72" y="278" fill="#334155" font-size="18">Account and role assignment</text>
     <text x="72" y="309" fill="#334155" font-size="18">Sign-in and MFA checks</text>
-    <rect x="72" y="344" width="277" height="38" rx="10" fill="#e0f2fe"/>
+    <rect x="72" y="344" width="277" height="38" fill="#e0f2fe"/>
     <text x="87" y="369" fill="#075985" font-size="16">Trust: who may assume?</text>
     <path d="M382 298H456" stroke="#0284c7" stroke-width="3" marker-end="url(#arrow)"/>
     <text x="394" y="280" fill="#0284c7" font-size="12" font-weight="700">ASSUME</text>
-    <rect x="469" y="187" width="325" height="220" rx="18" fill="#ffffff" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="469" y="187" width="325" height="220" fill="#ffffff" stroke="#38bdf8" stroke-width="2"/>
     <circle cx="502" cy="221" r="16" fill="#e0f2fe"/>
     <text x="498" y="227" fill="#0284c7" font-size="16" font-weight="700">2</text>
     <text x="530" y="228" fill="#0c4a6e" font-size="22" font-weight="700">Role session</text>
     <text x="493" y="278" fill="#334155" font-size="18">Temporary credentials</text>
     <text x="493" y="309" fill="#334155" font-size="18">Keep valid credentials private</text>
-    <rect x="493" y="344" width="277" height="38" rx="10" fill="#e0f2fe"/>
+    <rect x="493" y="344" width="277" height="38" fill="#e0f2fe"/>
     <text x="508" y="369" fill="#075985" font-size="16">Check action + resource + context</text>
     <path d="M803 298H877" stroke="#0284c7" stroke-width="3" marker-end="url(#arrow)"/>
     <text x="807" y="280" fill="#0284c7" font-size="12" font-weight="700">REVIEW</text>
-    <rect x="890" y="187" width="342" height="220" rx="18" fill="#0c4a6e"/>
+    <rect x="890" y="187" width="342" height="220" fill="#0c4a6e"/>
     <circle cx="923" cy="221" r="16" fill="#075985"/>
     <text x="919" y="227" fill="#7dd3fc" font-size="16" font-weight="700">3</text>
     <text x="951" y="228" fill="#ffffff" font-size="22" font-weight="700">Agreed S3 scope</text>
     <text x="914" y="278" fill="#e0f2fe" font-family="Menlo, Consolas, monospace" font-size="18">workshop/round-0/*</text>
     <text x="914" y="309" fill="#bae6fd" font-size="18">List prefix · Read object</text>
-    <rect x="914" y="344" width="294" height="38" rx="10" fill="#075985"/>
+    <rect x="914" y="344" width="294" height="38" fill="#075985"/>
     <text x="929" y="369" fill="#e0f2fe" font-size="16">No write grant in this example</text>
-    <rect x="48" y="434" width="1184" height="122" rx="16" fill="#ffffff" stroke="#bae6fd" stroke-width="1.5"/>
+    <rect x="48" y="434" width="1184" height="122" fill="#ffffff" stroke="#bae6fd" stroke-width="1.5"/>
     <text x="72" y="469" fill="#0c4a6e" font-size="18" font-weight="700">Before deciding that access is allowed</text>
     <text x="72" y="499" fill="#475569" font-size="17">Review relevant identity and resource policies, boundaries, organization controls, and request conditions.</text>
     <text x="72" y="528" fill="#475569" font-size="17">Applicable explicit deny takes priority. A boundary or SCP does not itself grant permission.</text>
-    <rect x="48" y="590" width="1184" height="158" rx="18" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1.5" stroke-dasharray="7 6"/>
+    <rect x="48" y="590" width="1184" height="158" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1.5" stroke-dasharray="7 6"/>
     <text x="72" y="626" fill="#0369a1" font-size="14" font-weight="700" letter-spacing="1.4">SEPARATE COST REVIEW</text>
     <text x="72" y="663" fill="#0c4a6e" font-size="23" font-weight="700">Budget notification</text>
     <path d="M326 656H408" stroke="#0284c7" stroke-width="2.5" marker-end="url(#arrow)"/>

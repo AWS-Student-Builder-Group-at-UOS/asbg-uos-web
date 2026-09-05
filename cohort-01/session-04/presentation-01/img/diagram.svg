@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 535" role="img" aria-label="Protect the data, then prove recovery">
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="900" height="535" rx="18" fill="#F2FAFF"/>
-<rect x="1" y="1" width="898" height="533" rx="18" fill="none" stroke="#D9E7F0"/>
+<rect width="900" height="535" fill="#F2FAFF"/>
+<rect x="1" y="1" width="898" height="533" fill="none" stroke="#D9E7F0"/>
 <g font-family="Arial, sans-serif" fill="#123249"><text x="36" y="52" font-size="29" font-weight="700">Protect the data, then prove recovery</text>
-<rect x="36" y="94" width="396" height="173" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<rect x="36" y="94" width="396" height="173" fill="#FFFFFF" stroke="#79CDFF"/>
 <text x="56" y="132" font-size="25" fill="#123249" font-weight="700">S3 access</text>
 <text x="56" y="167" font-size="21" fill="#35526A" font-weight="400">Keep objects private</text>
 <text x="56" y="197" font-size="21" fill="#35526A" font-weight="400">Grant access to intended callers</text>
-<rect x="468" y="94" width="396" height="173" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<rect x="468" y="94" width="396" height="173" fill="#FFFFFF" stroke="#79CDFF"/>
 <text x="488" y="132" font-size="25" fill="#123249" font-weight="700">RDS connections</text>
 <text x="488" y="167" font-size="21" fill="#35526A" font-weight="400">Restrict network sources</text>
 <text x="488" y="197" font-size="21" fill="#35526A" font-weight="400">Use database authentication</text>
-<rect x="36" y="299" width="396" height="173" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<rect x="36" y="299" width="396" height="173" fill="#FFFFFF" stroke="#79CDFF"/>
 <text x="56" y="337" font-size="25" fill="#123249" font-weight="700">Backups and restore</text>
 <text x="56" y="372" font-size="21" fill="#35526A" font-weight="400">Choose a recovery point</text>
 <text x="56" y="402" font-size="21" fill="#35526A" font-weight="400">Test the recovery procedure</text>
-<rect x="468" y="299" width="396" height="173" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<rect x="468" y="299" width="396" height="173" fill="#FFFFFF" stroke="#79CDFF"/>
 <text x="488" y="337" font-size="25" fill="#123249" font-weight="700">Encryption and keys</text>
 <text x="488" y="372" font-size="21" fill="#35526A" font-weight="400">Review at-rest encryption</text>
 <text x="488" y="402" font-size="21" fill="#35526A" font-weight="400">Manage KMS access when used</text>

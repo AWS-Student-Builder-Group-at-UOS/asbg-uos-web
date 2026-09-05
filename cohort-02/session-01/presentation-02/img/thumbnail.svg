@@ -19,7 +19,7 @@
   <circle cx="1115" cy="58" r="270" fill="#0ea5e9" opacity=".08"/>
   <circle cx="1120" cy="640" r="185" fill="#38bdf8" opacity=".06"/>
   <g font-family="Arial, Helvetica, sans-serif" transform="translate(0 37.5)">
-    <rect x="64" y="56" width="204" height="36" rx="18" fill="#075985" stroke="#38bdf8" stroke-opacity=".45"/>
+    <rect x="64" y="56" width="204" height="36" fill="#075985" stroke="#38bdf8" stroke-opacity=".45"/>
     <text x="85" y="80" font-size="14" font-weight="700" letter-spacing="2" fill="#bae6fd">ROUND 0 / TALK 02</text>
     <text x="64" y="207" fill="#ffffff" font-size="69" font-weight="700" letter-spacing="-2">Just enough</text>
     <text x="64" y="284" fill="#7dd3fc" font-size="69" font-weight="700" letter-spacing="-2">access.</text>
@@ -29,8 +29,8 @@
     <text x="68" y="495" fill="#ffffff" font-size="21" font-weight="700">YENA LEE</text>
     <text x="68" y="532" fill="#94a3b8" font-size="18">09 MAR 2027  ·  19:25–20:40</text>
     <text x="68" y="614" fill="#7dd3fc" font-size="13" letter-spacing="2.2">ASBG AT UNIVERSITY OF SEOUL</text>
-    <rect x="685" y="147" width="433" height="355" rx="24" fill="url(#panel)"/>
-    <rect x="718" y="180" width="54" height="54" rx="15" fill="#0284c7"/>
+    <rect x="685" y="147" width="433" height="355" fill="url(#panel)"/>
+    <rect x="718" y="180" width="54" height="54" fill="#0284c7"/>
     <path d="M745 190l15 6v12c0 10-8 15-15 19-7-4-15-9-15-19v-12z" fill="none" stroke="white" stroke-width="2.5"/>
     <path d="M738 208l5 5 10-11" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <text x="789" y="201" font-size="12" font-weight="700" letter-spacing="1.5" fill="#0284c7">WORKSHOP ROLE</text>
@@ -38,15 +38,15 @@
     <path d="M718 259H1085" stroke="#bae6fd"/>
     <text x="719" y="293" font-size="13" fill="#64748b" font-weight="700" letter-spacing="1.4">AGREED SCOPE</text>
     <text x="719" y="323" font-family="Menlo, Consolas, monospace" font-size="18" fill="#0c4a6e">workshop/round-0/*</text>
-    <rect x="718" y="353" width="174" height="46" rx="12" fill="#dbeafe"/>
-    <rect x="907" y="353" width="178" height="46" rx="12" fill="#dbeafe"/>
+    <rect x="718" y="353" width="174" height="46" fill="#dbeafe"/>
+    <rect x="907" y="353" width="178" height="46" fill="#dbeafe"/>
     <path d="M734 376l5 5 10-12" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M923 376l5 5 10-12" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <text x="759" y="382" font-size="17" font-weight="700" fill="#075985">List prefix</text>
     <text x="948" y="382" font-size="17" font-weight="700" fill="#075985">Read guide</text>
     <circle cx="724" cy="444" r="4" fill="#0284c7"/>
     <text x="739" y="450" fill="#475569" font-size="16">Temporary session · narrow scope</text>
-    <rect x="764" y="524" width="276" height="49" rx="24.5" fill="#075985" stroke="#38bdf8" stroke-opacity=".4"/>
+    <rect x="764" y="524" width="276" height="49" fill="#075985" stroke="#38bdf8" stroke-opacity=".4"/>
     <text x="792" y="554" fill="#bae6fd" font-size="16">TRUST → ROLE → REQUEST</text>
   </g>
 </svg>
