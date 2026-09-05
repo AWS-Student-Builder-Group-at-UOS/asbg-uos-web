@@ -7,7 +7,6 @@ const localized = z.union([
 
 const keywords = z.array(z.string().min(1)).length(3);
 
-/** session-NN/index.md 의 frontmatter */
 export const sessionSchema = z.object({
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "YYYY-MM-DD"),
   status: z.enum(["done", "upcoming"]).default("done"),
@@ -18,7 +17,6 @@ export const sessionSchema = z.object({
   thumbnail: z.string().optional(),
 });
 
-/** members/core.yaml, members/general.yaml 의 항목 */
 export const memberSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/, "lowercase-kebab"),
   name: localized,

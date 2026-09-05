@@ -2,7 +2,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* 팔레트는 하늘·파랑·흰·검 네 가지만 쓰고, 나머지는 불투명도/혼합으로 만든다. */
 :root {
   --sky: #42b4ff;
   --blue: #1160d8;
@@ -93,7 +92,6 @@
   }
 }
 
-/* 공통 표면 — 카드·칩·아이라인 */
 @utility card {
   @apply rounded-lg border border-line bg-surface shadow-card;
 }
@@ -109,17 +107,14 @@
 @utility ring-hover {
   @apply transition-[border-color,box-shadow,transform] duration-300 ease-(--ease-soft) hover:border-line-strong hover:shadow-card;
 }
-/* 픽셀 격자 배경 — 히어로·도식 섹션 뒤에 깔린다 */
 @utility grid-bg {
   background-image: radial-gradient(color-mix(in srgb, var(--ink) 9%, transparent) 1px, transparent 1px);
   background-size: 24px 24px;
   background-position: 12px 12px;
 }
-/* 섹션 번호 — 왼쪽 위 작은 mono 라벨 */
 @utility index {
   @apply font-mono text-xs tabular-nums text-faint;
 }
-/* 카드 네 귀퉁이의 패드 마크 — 회로 기판 모티프 */
 @utility pads {
   @apply relative;
   &::before,
@@ -141,7 +136,6 @@
   }
 }
 
-/* 자동 재생 애니메이션 — 회로를 따라 흐르는 점선, 픽셀 점멸, 등장 */
 @keyframes trace {
   to {
     stroke-dashoffset: -32;
@@ -186,7 +180,6 @@
   }
 }
 
-/* 세션 본문(markdown) */
 .article {
   @apply text-[15.5px] leading-[1.8] text-ink sm:text-base;
   overflow-wrap: anywhere;

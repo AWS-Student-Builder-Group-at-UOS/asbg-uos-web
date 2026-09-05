@@ -1,10 +1,6 @@
 import { glyphPath, type IconName } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
-/*
- * 요청이 사용자에서 서버, 데이터까지 갔다 오는 길. 같은 노드·간선 정의로
- * 가로(데스크톱)와 세로(모바일) 두 배치를 그린다. 패킷은 메인 경로를 따라 계속 돈다.
- */
 type Key = "users" | "route53" | "cloudfront" | "alb" | "app1" | "app2" | "app3" | "rds" | "s3" | "iam" | "cloudwatch" | "budgets";
 type Pt = readonly [number, number];
 type Layout = {
@@ -82,7 +78,6 @@ const V: Layout = {
   rail: [40, 840, 440, 840],
 };
 
-// 간선: 노드 중심 사이를 직각으로 잇는다. 가로 배치는 가로→세로→가로, 세로 배치는 반대.
 function elbow(dir: "h" | "v", [x1, y1]: Pt, [x2, y2]: Pt) {
   if (dir === "h") {
     if (y1 === y2) return `M${x1} ${y1}H${x2}`;
@@ -94,7 +89,7 @@ function elbow(dir: "h" | "v", [x1, y1]: Pt, [x2, y2]: Pt) {
   return `M${x1} ${y1}V${my}H${x2}V${y2}`;
 }
 
-// 여러 간선을 한 경로로 잇는다(패킷이 따라갈 수 있게 두 번째부터는 M → L).
+// 패킷 경로가 끊기지 않도록 두 번째 간선부터 M을 L로 바꾼다.
 function route(l: Layout, keys: Key[]) {
   const parts = keys.slice(1).map((k, i) => elbow(l.dir, l.pos[keys[i]], l.pos[k]));
   return parts.map((p, i) => (i === 0 ? p : p.replace(/^M/, "L"))).join("");
@@ -120,16 +115,13 @@ function Diagram({ l, captions, className }: { l: Layout; captions: Architecture
 
   return (
     <svg viewBox={`0 0 ${l.w} ${l.h}`} className={cn("h-auto w-full", className)} role="img" aria-label="Users → Route 53 / CloudFront → ALB → EC2 (Auto Scaling) → RDS / S3">
-      {/* 계정 경계 */}
       <rect x={ax} y={ay} width={aw} height={ah} fill="var(--surface-2)" fillOpacity="0.5" stroke="var(--line-strong)" strokeWidth="1.5" strokeDasharray="6 6" />
       <text x={ax + 14} y={ay + 22} className="fill-faint font-mono text-[11px] uppercase tracking-[0.14em]">
         AWS Account
       </text>
 
-      {/* 운영 레일 */}
       <line x1={l.rail[0]} y1={l.rail[1]} x2={l.rail[2]} y2={l.rail[3]} stroke="var(--line-strong)" strokeWidth="1.5" strokeDasharray="2 6" />
 
-      {/* Auto Scaling 그룹 */}
       <rect x={gx} y={gy} width={gw} height={gh} fill="var(--accent-soft)" fillOpacity="0.6" stroke="var(--sky)" strokeWidth="1.5" strokeDasharray="8 5" />
       <text x={gx + 12} y={gy + 20} className="fill-accent font-mono text-[11px] font-medium">
         Auto Scaling
@@ -145,7 +137,6 @@ function Diagram({ l, captions, className }: { l: Layout; captions: Architecture
           </text>
         ))}
 
-      {/* 간선 */}
       {EDGES.map((e) => (
         <path
           key={`${e.from}-${e.to}`}
@@ -158,7 +149,6 @@ function Diagram({ l, captions, className }: { l: Layout; captions: Architecture
       ))}
       <path d={main} fill="none" stroke="var(--sky)" strokeWidth="2" className="trace" opacity="0.9" />
 
-      {/* 노드 */}
       {NODES.map((n) => {
         const [x, y] = l.pos[n.key];
         const caption = captions[n.caption];
@@ -182,7 +172,6 @@ function Diagram({ l, captions, className }: { l: Layout; captions: Architecture
         );
       })}
 
-      {/* 패킷 — 메인 경로, DNS 조회(왕복), 파일 저장 */}
       {[0, 1].map((i) => (
         <rect key={i} className="packet" x="-5" y="-5" width="10" height="10" fill="var(--sky)" opacity={i === 0 ? 1 : 0.55}>
           <animateMotion dur="9s" repeatCount="indefinite" begin={`${-i * 4.5}s`} path={main} />

@@ -5,7 +5,6 @@ import { getDict, type Locale } from "@/lib/i18n";
 
 const icons: IconName[] = ["book", "wrench", "speaker", "network"];
 
-/* 네 단어를 한 줄 버스로 잇는다. 히어로의 루프와 같은 트레이스 모티프지만 직선이다. */
 export function Keywords({ locale }: { locale: Locale }) {
   const d = getDict(locale).home.keywords;
 

@@ -49,7 +49,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     { label: d.nav.resources, href: routes.resources(locale), match: routes.resources(locale) },
   ];
 
-  // <html lang> 은 스크립트가 맞추므로, JS 없이도 본문 언어가 맞도록 래퍼에 lang 을 둔다.
+  // JavaScript 없이도 본문 언어가 지정되도록 한다.
   return (
     <div lang={locale} className="contents">
       <HtmlLang locale={locale} />

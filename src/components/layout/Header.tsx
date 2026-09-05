@@ -26,7 +26,7 @@ export function Header({
   const [open, setOpen] = useState(false);
 
   const isActive = (item: NavItem) => pathname === item.match || pathname.startsWith(`${item.match}/`);
-  // 이미 그 페이지에 있으면 라우터가 움직이지 않으므로 직접 맨 위로 올린다.
+  // 같은 경로에서는 라우터가 스크롤을 초기화하지 않는다.
   const go = (href: string) => () => {
     setOpen(false);
     if (pathname === href) window.scrollTo(0, 0);

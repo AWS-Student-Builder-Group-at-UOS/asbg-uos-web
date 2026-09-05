@@ -10,10 +10,6 @@ const linkIcons: { key: keyof Member["links"]; icon: IconName; label: string }[]
   { key: "website", icon: "globe", label: "Website" },
 ];
 
-/**
- * sm 이상: [사진+태그 | 이름·전공·링크·소개] 두 열. 사진은 4:5 타일, 태그는 그 아래에 쌓여 양쪽 열 높이가 비슷해진다.
- * 모바일: 두 열 껍데기를 `contents`로 풀어 사진·이름 / 태그 / 소개를 세 줄 그리드에 직접 놓는다.
- */
 export function MemberCard({ member, locale }: { member: Member; locale: Locale }) {
   const name = pick(member.name, locale);
   const { common } = getDict(locale);
