@@ -17,7 +17,7 @@ export function pageMetadata({ locale, path = "", title, description, image, typ
   const summary = description || d.meta.description;
   const url = (language: Locale) => new URL(`/${language}${path}`, site.url).href;
   const shareImage = {
-    url: new URL(image?.url || "/og/asbg-uos.png", site.url).href,
+    url: new URL(image?.url || "/og?v=2", site.url).href,
     width: 1200,
     height: 630,
     type: "image/png",
