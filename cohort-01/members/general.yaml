@@ -1,0 +1,120 @@
+- id: kang-eunjung
+  name: { ko: 강은중, en: Eunjung Kang }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/kang-eunjung.jpg
+  links:
+    github: https://github.com/7lyomi
+  keywords: [Networking, Economics, Cats]
+  description:
+    ko: "복학한 지 반년밖에 안 돼 경제학부 복수전공, 대외활동 등 여러 갈래로 고민하는 중입니다. 새로운 경험을 좋아해서, 여기서는 네트워킹 기초 지식을 왕창 챙겨 가려 합니다. 집에 고양이와 살고 있고, 편하게 말 걸어 주세요."
+    en: "I only came back to school six months ago, and I'm weighing a few paths at once, including a second major in economics and some outside activities. I like new experiences, and here I'm hoping to soak up as much networking fundamentals as I can. I live with a cat, and please feel free to say hi."
+
+- id: kim-gyutae
+  name: { ko: 김규태, en: Gyutae Kim }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/kim-gyutae.jpg
+  links:
+    github: https://github.com/kanggregorics03
+  keywords: [Backend, AWS, Keyboards]
+  description:
+    ko: "백엔드 개발자를 목표로 공부하고 있고, AWS와 클라우드도 제대로 배워 보려 합니다. 아직 배우는 단계라, 다른 분들이 어떻게 공부하고 개발하는지도 보고 배우고 싶습니다. 최근 기계식 키보드에 입문해 하나씩 모으는 중입니다."
+    en: "I'm working toward becoming a backend developer, and I want to properly learn AWS and the cloud along the way. I'm still early on, so I'd like to see how others study and build, and pick things up from them. I recently got into mechanical keyboards and have started collecting them one by one."
+
+- id: min-hyunjun
+  name: { ko: 민현준, en: Hyunjun Min }
+  major: { ko: 인공지능학과, en: Artificial Intelligence }
+  photo: img/min-hyunjun.jpg
+  links:
+    github: https://github.com/UOSAIMHJ
+  keywords: ["Machine Learning", "Deep Learning", "Team Project"]
+  description:
+    ko: "머신러닝과 딥러닝을 공부하고 있고, 이를 적극적으로 활용하는 팀 프로젝트 경험을 쌓고 싶습니다. 서로 부족한 부분을 채우며 끝까지 결과를 내는 팀을 좋아합니다. 처음엔 조용해 보여도 친해지면 말이 많아지는 편이라 먼저 다가가려 합니다."
+    en: "I'm studying machine learning and deep learning, and I'd like to gain team project experience where they actually get put to use. I like teams that cover for each other's gaps and see things through to a result. I may seem quiet at first, but I open up once we get to know each other, and I'll try to make the first move."
+
+- id: park-jonghyuk
+  name: { ko: 박종혁, en: Jonghyuk Park }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/park-jonghyuk.jpg
+  links:
+    github: https://github.com/jongparks
+  keywords: [Backend, Infra, Novels]
+  description:
+    ko: "백엔드를 공부하다 서버 운영이 궁금해져 AWS와 인프라를 들여다보고 있고, 직접 다뤄 보며 어떻게 구성되고 운영되는지 경험하고 싶습니다. 건실하게 살아보려 독서를 시작했는데, 물론 소설만 읽습니다. 좋은 책 추천은 환영입니다."
+    en: "Studying backend got me curious about running servers, so I've been looking into AWS and infrastructure, and I want to get hands-on and see how it's actually put together and operated. I took up reading to live a more wholesome life, novels only, of course. Book recommendations are welcome."
+
+- id: baek-jaemin
+  name: { ko: 백재민, en: Jaemin Baek }
+  major: { ko: 인공지능학과, en: Artificial Intelligence }
+  photo: img/baek-jaemin.jpg
+  links:
+    github: https://github.com/ashmin100
+  keywords: [LLM, "AI Agent", Cafes]
+  description:
+    ko: "컴퓨터 비전으로 시작해 요즘은 LLM, AI Agent, RAG 개발 인턴을 하고 있습니다. 서버, 네트워크, 클라우드는 아직 부족해서 이번 기회에 제대로 공부하려 합니다. 다이어트 중이지만 맛집과 분위기 좋은 카페는 여전히 좋아합니다."
+    en: "I got into AI through computer vision, and these days I'm interning on LLM, AI agent, and RAG development. Servers, networking, and cloud are still gaps for me, so I'm here to study them properly this time. I'm on a diet, but I still love a good restaurant and a cafe with the right atmosphere."
+
+- id: wi-jaebok
+  name: { ko: 위재복, en: Jaebok Wi }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/wi-jaebok.jpg
+  links:
+    github: https://github.com/jaebok1211
+  keywords: ["Data Analysis", Cloud, Bread]
+  description:
+    ko: "데이터 분석과 AI에 관심이 많고, 요즘은 AWS 같은 클라우드로도 관심을 넓히고 있습니다. 처음엔 낯을 가리지만 친해지면 편하게 이야기합니다. 대전까지 빵을 먹으러 갈 만큼 먹는 낙으로 살고 있어서, 맛집이나 카페를 추천해 주시면 꼭 가 봅니다."
+    en: "I'm into data analysis and AI, and lately I've been widening that to cloud tech like AWS. I can be a bit shy at first, but once we get to know each other I talk freely. Good food is what keeps me going, to the point of taking a trip to Daejeon for bread, so recommend me a restaurant or a cafe and I will actually go."
+
+- id: lee-jisu
+  name: { ko: 이지수, en: Jisu Lee }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/lee-jisu.jpg
+  links:
+    github: https://github.com/js1211-code
+  keywords: [Database, Cloud, Chiikawa]
+  description:
+    ko: "요즘 가장 관심 있는 건 DB와 클라우드인데, 생각보다 할 게 많아서 더 재밌습니다. 인프라 지식을 보완하고, 무엇보다 직접 환경을 구축해 보며 실전 감각을 익히고 싶습니다. 치이카와를 보고 있는데, 꽤 듬직하고 멋있는 랏코를 홍보합니다."
+    en: "Right now I'm most into databases and cloud. There's more to them than I expected, which makes them more fun. I want to fill in my infrastructure gaps and, above all, build and run real environments with my own hands. I've been watching Chiikawa, and I'd like to put in a word for Rakko, who is quite dependable and cool."
+
+- id: jeong-yongbeom
+  name: { ko: 정용범, en: Yongbeom Jeong }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/jeong-yongbeom.jpg
+  links:
+    github: https://github.com/yongbeom-jeong
+  keywords: [Backend, Deployment, Penguins]
+  description:
+    ko: "백엔드 기본기를 다지는 중입니다. 서버와 네트워크, 특히 실제 배포까지 이어지는 과정을 제대로 배우고 싶습니다. 아직 부족한 게 많은 만큼 열심히 해볼 생각이고, 참고로 펭귄은 의외로 다리가 길고 무릎도 있다고 합니다."
+    en: "I'm working on my backend fundamentals, and what I most want to learn here is servers and networking, especially the part where things actually get deployed. I know I have a lot to catch up on, so I plan to put in the work. Unrelated: penguins apparently have surprisingly long legs, knees included."
+
+- id: jeong-jiyun
+  name: { ko: 정지윤, en: Jiyun Jeong }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/jeong-jiyun.jpg
+  links:
+    github: https://github.com/jiyun5826
+  keywords: [Backend, Infra, Baking]
+  description:
+    ko: "백엔드를 공부하고 있고, 요즘은 AI와 인프라에도 관심이 생겨 조금씩 접해 보는 중입니다. AWS와 인프라를 제대로 배워서 실제로 어떻게 쓰이는지까지 알아가고 싶습니다. 맛집 다니는 걸 좋아하고, 디저트가 좋아서 베이킹도 조금씩 합니다."
+    en: "I've been studying backend, and lately I've started poking around AI and infrastructure too. This time I want to learn AWS and infra properly, all the way to how they're actually used in practice. I love hunting down good food, and since I have a thing for desserts I bake a little on the side."
+
+- id: jo-ayoung
+  name: { ko: 조아영, en: Ayoung Jo }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/jo-ayoung.jpg
+  links:
+    github: https://github.com/look516
+  keywords: [Streaming, Concurrency, "Crime Scene"]
+  description:
+    ko: "백엔드를 공부하고 있고, 특히 스트리밍과 동시성 문제가 궁금하지만 관심사는 넓은 편입니다. 실 운영 경험이 없어 AWS와 인프라, 통신을 폭넓게 배우고 싶습니다. 요즘은 최애 예능인 크라임씬을 다시 보는 중이고, 재밌는 콘텐츠 추천은 늘 환영입니다."
+    en: "I'm studying backend, drawn to streaming and concurrency problems in particular, though my interests run wide. I've never worked on a system in real operation, so I want to learn AWS, infrastructure, and networking as broadly as I can. Lately I've been rewatching Crime Scene, my favorite show, and recommendations for anything fun to watch are always welcome."
+
+- id: choi-jinyoung
+  name: { ko: 최진영, en: Jinyoung Choi }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/choi-jinyoung.jpg
+  links:
+    github: https://github.com/glebungle
+  keywords: [Frontend, Cloud, "Board Games"]
+  description:
+    ko: "프론트엔드를 주로 하다가 최근 백엔드를 시작했고, AWS 수업을 계기로 클라우드와 인프라도 차근차근 익히는 중입니다. 인프라 기초를 다지고 팀원들과도 친해지고 싶습니다. 보드게임을 좋아하고 할리갈리 42연승 기록이 있으니 1대1 승부는 환영입니다."
+    en: "I've mostly done frontend work and recently started on backend. An AWS course got me curious, so I'm slowly working my way into cloud and infrastructure too, and here I'd like to build a solid base in infra and get to know the team. I love board games and hold a 42-game winning streak in Halli Galli, so one-on-one challenges are welcome."

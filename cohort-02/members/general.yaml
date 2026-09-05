@@ -1,0 +1,43 @@
+- id: kang-eunjung
+  name: { ko: 강은중, en: Eunjung Kang }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/kang-eunjung.jpg
+  links:
+    github: https://github.com/7lyomi
+  keywords: [Networking, Economics, Cats]
+  description:
+    ko: "복학한 지 반년밖에 안 돼 경제학부 복수전공, 대외활동 등 여러 갈래로 고민하는 중입니다. 새로운 경험을 좋아해서, 여기서는 네트워킹 기초 지식을 왕창 챙겨 가려 합니다. 집에 고양이와 살고 있고, 편하게 말 걸어 주세요."
+    en: "I only came back to school six months ago, and I'm weighing a few paths at once, including a second major in economics and some outside activities. I like new experiences, and here I'm hoping to soak up as much networking fundamentals as I can. I live with a cat, and please feel free to say hi."
+
+- id: kim-gyutae
+  name: { ko: 김규태, en: Gyutae Kim }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/kim-gyutae.jpg
+  links:
+    github: https://github.com/kanggregorics03
+  keywords: [Backend, AWS, Keyboards]
+  description:
+    ko: "백엔드 개발자를 목표로 공부하고 있고, AWS와 클라우드도 제대로 배워 보려 합니다. 아직 배우는 단계라, 다른 분들이 어떻게 공부하고 개발하는지도 보고 배우고 싶습니다. 최근 기계식 키보드에 입문해 하나씩 모으는 중입니다."
+    en: "I'm working toward becoming a backend developer, and I want to properly learn AWS and the cloud along the way. I'm still early on, so I'd like to see how others study and build, and pick things up from them. I recently got into mechanical keyboards and have started collecting them one by one."
+
+- id: wi-jaebok
+  name: { ko: 위재복, en: Jaebok Wi }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/wi-jaebok.jpg
+  links:
+    github: https://github.com/jaebok1211
+  keywords: ["Data Analysis", Cloud, Bread]
+  description:
+    ko: "데이터 분석과 AI에 관심이 많고, 요즘은 AWS 같은 클라우드로도 관심을 넓히고 있습니다. 처음엔 낯을 가리지만 친해지면 편하게 이야기합니다. 대전까지 빵을 먹으러 갈 만큼 먹는 낙으로 살고 있어서, 맛집이나 카페를 추천해 주시면 꼭 가 봅니다."
+    en: "I'm into data analysis and AI, and lately I've been widening that to cloud tech like AWS. I can be a bit shy at first, but once we get to know each other I talk freely. Good food is what keeps me going, to the point of taking a trip to Daejeon for bread, so recommend me a restaurant or a cafe and I will actually go."
+
+- id: jeong-jiyun
+  name: { ko: 정지윤, en: Jiyun Jeong }
+  major: { ko: 컴퓨터과학부, en: Computer Science }
+  photo: img/jeong-jiyun.jpg
+  links:
+    github: https://github.com/jiyun5826
+  keywords: [Backend, Infra, Baking]
+  description:
+    ko: "백엔드를 공부하고 있고, 요즘은 AI와 인프라에도 관심이 생겨 조금씩 접해 보는 중입니다. AWS와 인프라를 제대로 배워서 실제로 어떻게 쓰이는지까지 알아가고 싶습니다. 맛집 다니는 걸 좋아하고, 디저트가 좋아서 베이킹도 조금씩 합니다."
+    en: "I've been studying backend, and lately I've started poking around AI and infrastructure too. This time I want to learn AWS and infra properly, all the way to how they're actually used in practice. I love hunting down good food, and since I have a thing for desserts I bake a little on the side."
