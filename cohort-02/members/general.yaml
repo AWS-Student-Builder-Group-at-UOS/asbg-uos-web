@@ -6,8 +6,8 @@
     github: https://github.com/7lyomi
   keywords: [Networking, Economics, Cats]
   description:
-    ko: "복학한 지 반년밖에 안 돼 경제학부 복수전공, 대외활동 등 여러 갈래로 고민하는 중입니다. 새로운 경험을 좋아해서, 여기서는 네트워킹 기초 지식을 왕창 챙겨 가려 합니다. 집에 고양이와 살고 있고, 편하게 말 걸어 주세요."
-    en: "I only came back to school six months ago, and I'm weighing a few paths at once, including a second major in economics and some outside activities. I like new experiences, and here I'm hoping to soak up as much networking fundamentals as I can. I live with a cat, and please feel free to say hi."
+    ko: "잠들기 전에 창문을 열고 별들에게 출석을 불러요. 대답이 없으면 먼저 잔 걸로, 구름에 가려지면 이불을 덮은 걸로 처리합니다. 지각한 작은 별에게 따뜻한 우유를 줬는데 컵을 돌려줄 생각이 없나 봐요. 밤하늘에서 우유 냄새가 나면 그 친구가 또 한 잔 마시고 있구나 해주세요 ㅎㅎ."
+    en: "Before bed, I open my window and take attendance for the stars. The quiet ones are asleep, and those behind clouds have pulled up their blankets. I gave a late little star some warm milk, but it seems to be keeping my cup. If the night sky smells of milk, that's probably my friend helping itself to another serving."
 
 - id: kim-gyutae
   name: { ko: 김규태, en: Gyutae Kim }
@@ -17,8 +17,8 @@
     github: https://github.com/kanggregorics03
   keywords: [Backend, AWS, Keyboards]
   description:
-    ko: "백엔드 개발자를 목표로 공부하고 있고, AWS와 클라우드도 제대로 배워 보려 합니다. 아직 배우는 단계라, 다른 분들이 어떻게 공부하고 개발하는지도 보고 배우고 싶습니다. 최근 기계식 키보드에 입문해 하나씩 모으는 중입니다."
-    en: "I'm working toward becoming a backend developer, and I want to properly learn AWS and the cloud along the way. I'm still early on, so I'd like to see how others study and build, and pick things up from them. I recently got into mechanical keyboards and have started collecting them one by one."
+    ko: "상추 지붕을 얹은 달팽이 전용 택시를 운영해요. 요금은 오이 한 조각인데 단골들은 자꾸 한 입 베어 먹은 걸 주고 갑니다. 비가 오면 손님들이 신나서 걸어가는 바람에 저는 빈 택시를 끌고 따라가요. 조금 늦어도 풀 한 포기까지 느긋하게 구경하며 골목 끝 민들레까지 함께 가실 분을 기다립니다."
+    en: "I run a snail taxi with a lettuce-leaf roof. The fare is one cucumber slice, though my regulars keep paying with nibbled ones. When it rains, the passengers happily walk instead, leaving me to pull the empty taxi behind them. Come along to the dandelion at the end of the lane, with plenty of time to admire every blade of grass."
 
 - id: wi-jaebok
   name: { ko: 위재복, en: Jaebok Wi }
@@ -28,8 +28,8 @@
     github: https://github.com/jaebok1211
   keywords: ["Data Analysis", Cloud, Bread]
   description:
-    ko: "데이터 분석과 AI에 관심이 많고, 요즘은 AWS 같은 클라우드로도 관심을 넓히고 있습니다. 처음엔 낯을 가리지만 친해지면 편하게 이야기합니다. 대전까지 빵을 먹으러 갈 만큼 먹는 낙으로 살고 있어서, 맛집이나 카페를 추천해 주시면 꼭 가 봅니다."
-    en: "I'm into data analysis and AI, and lately I've been widening that to cloud tech like AWS. I can be a bit shy at first, but once we get to know each other I talk freely. Good food is what keeps me going, to the point of taking a trip to Daejeon for bread, so recommend me a restaurant or a cafe and I will actually go."
+    ko: "양말 한 짝이 사라지면 세탁기 뒤 작은 나라로 모험을 떠났다고 생각해요. 남은 한 짝과 창가에서 구름을 보며 기다리는데, 아직 편지가 없는 걸 보니 먼지 토끼를 타고 솜사탕 산을 넘느라 바쁜가 봅니다. 기념품은 없어도 발뒤꿈치에 구멍만 안 나면 좋겠어요. 다음 여행에는 저도 꼭 데려가 달라고 부탁할 거예요."
+    en: "When a sock disappears, I imagine it's exploring a tiny kingdom behind the washing machine. Its partner and I watch clouds by the window, waiting for a letter while it rides a dust bunny over cotton-candy mountains. I don't need souvenirs, as long as it comes home without a hole in its heel. Next time, I'll ask it to take me along."
 
 - id: jeong-jiyun
   name: { ko: 정지윤, en: Jiyun Jeong }
@@ -39,5 +39,5 @@
     github: https://github.com/jiyun5826
   keywords: [Backend, Infra, Baking]
   description:
-    ko: "백엔드를 공부하고 있고, 요즘은 AI와 인프라에도 관심이 생겨 조금씩 접해 보는 중입니다. AWS와 인프라를 제대로 배워서 실제로 어떻게 쓰이는지까지 알아가고 싶습니다. 맛집 다니는 걸 좋아하고, 디저트가 좋아서 베이킹도 조금씩 합니다."
-    en: "I've been studying backend, and lately I've started poking around AI and infrastructure too. This time I want to learn AWS and infra properly, all the way to how they're actually used in practice. I love hunting down good food, and since I have a thing for desserts I bake a little on the side."
+    ko: "책갈피로 쓸 낙엽을 모으다 낙엽 전용 책장의 관리인이 됐어요. 노란 잎은 햇볕 드는 위층을 좋아하고, 빨간 잎들은 서로 예쁘다고 밤늦게까지 바스락거립니다. 바람이 불면 다 같이 산책을 나가 버려서 빈 책장에 대고 귀가 방송을 해요. 월세는 가을 냄새 한 줌이니 마음에 드는 낙엽을 만나면 소개해 주세요."
+    en: "I collected leaves for bookmarks and somehow became the caretaker of their bookshelf. Yellow leaves like the sunny top shelf, while red ones rustle late into the night, praising each other's colors. When the wind takes everyone out for a walk, I call for them to come home to the empty shelves. Rent is a handful of autumn air, so please introduce me to any lovely leaves you meet."

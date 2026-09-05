@@ -27,7 +27,7 @@ function Group({ title, members, locale }: { title: string; members: Member[]; l
   return (
     <section className="mt-12">
       <h2 className="eyebrow">{title}</h2>
-      <ul className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-5 grid gap-5 lg:grid-cols-2">
         {members.map((m) => (
           <MemberCard key={m.id} member={m} locale={locale} />
         ))}
