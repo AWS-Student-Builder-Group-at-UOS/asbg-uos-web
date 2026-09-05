@@ -35,7 +35,7 @@ export function Header({
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-canvas/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between">
-        <Logo href={`/${locale}`} onClick={go(`/${locale}`)} />
+        <Logo href={`/${locale}`} onClick={go(`/${locale}`)} variant="header" />
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
           {items.map((item) => (
