@@ -160,7 +160,7 @@ export const en: Dict = {
       moreGroups: { title: "More ASBG", body: "The full list of AWS Student Builder Groups worldwide. Worth a look to see what other schools are doing." },
     },
   },
-  common: { copy: "Copy", copied: "Copied", open: "Open" },
+  common: { copy: "Copy", copied: "Copied", open: "Open", more: "More", less: "Less" },
   footer: { tagline: "The official AWS student community at the University of Seoul", community: "Community", channels: "Channels" },
   notFound: { title: "Page not found", body: "The link may be old, or there's a typo in the address.", home: "Back home" },
 };

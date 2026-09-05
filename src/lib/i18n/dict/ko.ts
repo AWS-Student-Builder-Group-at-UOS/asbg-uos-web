@@ -159,7 +159,7 @@ export const ko = {
       moreGroups: { title: "More ASBG", body: "전 세계 AWS Student Builder Groups 목록으로, 다른 대학은 어떻게 하는지 볼 수 있습니다." },
     },
   },
-  common: { copy: "복사", copied: "복사됨", open: "열기" },
+  common: { copy: "복사", copied: "복사됨", open: "열기", more: "더 보기", less: "접기" },
   footer: { tagline: "서울시립대학교 AWS 공식 학생 커뮤니티", community: "Community", channels: "Channels" },
   notFound: { title: "페이지를 찾을 수 없습니다", body: "링크가 오래됐거나 주소를 잘못 친 것 같습니다.", home: "홈으로" },
 };

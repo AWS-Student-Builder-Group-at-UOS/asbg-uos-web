@@ -1,7 +1,8 @@
 import { Icon, type IconName } from "@/components/icons";
+import { MemberBio } from "@/components/members/MemberBio";
 import { ChipList } from "@/components/ui/Chip";
 import type { Member } from "@/lib/content";
-import { pick, type Locale } from "@/lib/i18n";
+import { getDict, pick, type Locale } from "@/lib/i18n";
 
 const linkIcons: { key: keyof Member["links"]; icon: IconName; label: string }[] = [
   { key: "github", icon: "github", label: "GitHub" },
@@ -9,50 +10,66 @@ const linkIcons: { key: keyof Member["links"]; icon: IconName; label: string }[]
   { key: "website", icon: "globe", label: "Website" },
 ];
 
+/**
+ * sm 이상: [사진+태그 | 이름·전공·링크·소개] 두 열. 사진은 4:5 타일, 태그는 그 아래에 쌓여 양쪽 열 높이가 비슷해진다.
+ * 모바일: 두 열 껍데기를 `contents`로 풀어 사진·이름 / 태그 / 소개를 세 줄 그리드에 직접 놓는다.
+ */
 export function MemberCard({ member, locale }: { member: Member; locale: Locale }) {
   const name = pick(member.name, locale);
+  const { common } = getDict(locale);
 
   return (
     <li
       id={member.id}
-      className="card ring-hover flex flex-col overflow-hidden scroll-mt-24 target:border-sky target:shadow-card"
+      className="card ring-hover grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 p-4 scroll-mt-24 target:border-sky target:shadow-card sm:flex sm:gap-5 sm:p-5"
     >
-      <div className="aspect-[4/5] overflow-hidden border-b border-line bg-surface-2">
-        {member.photoUrl ? (
-          <img src={member.photoUrl} alt={name} loading="lazy" className="h-full w-full object-cover" />
-        ) : (
-          <div className="flex h-full items-center justify-center font-mono text-4xl text-faint">{name.slice(0, 1)}</div>
-        )}
+      <div className="contents sm:block sm:w-44 sm:shrink-0">
+        <div className="relative size-20 self-center overflow-hidden rounded-md border border-line bg-surface-2 sm:aspect-[4/5] sm:size-auto sm:w-full">
+          {member.photoUrl ? (
+            <img src={member.photoUrl} alt={name} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center font-mono text-2xl text-faint sm:text-4xl">
+              {name.slice(0, 1)}
+            </div>
+          )}
+        </div>
+        <ChipList items={member.keywords} className="col-span-2 sm:mt-3" />
       </div>
 
-      <div className="flex flex-1 flex-col gap-3 p-5">
-        <div>
-          <div className="flex items-baseline justify-between gap-3">
+      <div className="contents sm:flex sm:min-w-0 sm:flex-1 sm:flex-col">
+        <div className="col-start-2 row-start-1 min-w-0 self-center sm:self-stretch">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-3">
             <h3 className="text-lg font-semibold">{name}</h3>
             {member.role && <span className="font-mono text-[11px] uppercase tracking-wider text-accent">{member.role}</span>}
           </div>
-          <p className="mt-0.5 text-sm text-muted">{pick(member.major, locale)}</p>
+          <div className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+            <p className="min-w-0 text-sm text-muted">{pick(member.major, locale)}</p>
+            <ul className="ml-auto flex shrink-0 gap-0.5">
+              {linkIcons.map(
+                (l) =>
+                  member.links[l.key] && (
+                    <li key={l.key}>
+                      <a
+                        href={member.links[l.key]}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${name} ${l.label}`}
+                        className="inline-flex size-7 items-center justify-center rounded-sm text-muted transition-colors duration-200 hover:bg-surface-2 hover:text-accent"
+                      >
+                        <Icon name={l.icon} size={14} />
+                      </a>
+                    </li>
+                  ),
+              )}
+            </ul>
+          </div>
         </div>
-        <ChipList items={member.keywords} />
-        <p className="text-sm leading-relaxed text-muted">{pick(member.description, locale)}</p>
-        <ul className="mt-auto flex gap-1 border-t border-line pt-3">
-          {linkIcons.map(
-            (l) =>
-              member.links[l.key] && (
-                <li key={l.key}>
-                  <a
-                    href={member.links[l.key]}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${name} ${l.label}`}
-                    className="inline-flex size-8 items-center justify-center rounded-sm text-muted transition-colors duration-200 hover:bg-surface-2 hover:text-accent"
-                  >
-                    <Icon name={l.icon} size={15} />
-                  </a>
-                </li>
-              ),
-          )}
-        </ul>
+        <MemberBio
+          text={pick(member.description, locale)}
+          more={common.more}
+          less={common.less}
+          className="col-span-2 sm:mt-3"
+        />
       </div>
     </li>
   );
