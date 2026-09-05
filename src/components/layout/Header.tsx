@@ -22,7 +22,8 @@ export function Header({
   items: NavItem[];
   a11y: { openMenu: string; closeMenu: string; theme: string; locale: string };
 }) {
-  const pathname = usePathname();
+  const currentPathname = usePathname();
+  const pathname = currentPathname === "/" ? `/${locale}` : currentPathname;
   const [open, setOpen] = useState(false);
 
   const isActive = (item: NavItem) => pathname === item.match || pathname.startsWith(`${item.match}/`);

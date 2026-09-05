@@ -6,7 +6,8 @@ import { localePattern, locales, type Locale } from "@/lib/i18n/locales";
 import { cn } from "@/lib/utils";
 
 export function LocaleSwitch({ locale, label }: { locale: Locale; label: string }) {
-  const pathname = usePathname();
+  const currentPathname = usePathname();
+  const pathname = currentPathname === "/" ? `/${locale}` : currentPathname;
   const swap = (target: Locale) => pathname.replace(new RegExp(localePattern), `/${target}`);
 
   return (
