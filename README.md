@@ -26,16 +26,18 @@ cohort-01/
 │   ├── general.yaml       # General Members
 │   └── img/               # 멤버 사진 (4:5 비율, 900px 내외로 미리 리사이즈). 없으면 GitHub 프로필 사진을 씀
 ├── session-01/
-│   ├── index.md           # frontmatter + 한국어 본문
-│   ├── index.en.md        # 영어 본문 (없으면 한국어 본문을 그대로 보여줌)
-│   ├── img/               # 썸네일과 본문에서 참조하는 이미지
-│   └── files/             # 발표 자료 등. 상세 페이지 하단 "자료"에 자동으로 나열됨
+│   ├── presentation-01/
+│   │   ├── index.md      # frontmatter + 한국어 본문
+│   │   ├── index.en.md   # 영어 본문 (없으면 한국어 본문을 그대로 보여줌)
+│   │   ├── img/          # 이 발표의 썸네일과 본문 이미지
+│   │   └── files/        # 이 발표의 자료. 상세 페이지 하단 "자료"에 자동으로 나열됨
+│   └── presentation-02/ …
 └── session-02/ …
 ```
 
-`cohort-NN/` 안의 이미지·PDF는 `/content/cohort-NN/...` 경로로 그대로 서빙됩니다. 마크다운에서는 세션 폴더 기준 상대 경로로 씁니다. (`![도식](img/diagram.svg)`, `[슬라이드](files/slides.pdf)`)
+`cohort-NN/` 안의 이미지·PDF는 `/content/cohort-NN/...` 경로로 그대로 서빙됩니다. 마크다운에서는 해당 글의 `index.md`가 있는 폴더 기준 상대 경로로 씁니다. (`![도식](img/diagram.svg)`, `[슬라이드](files/slides.pdf)`)
 
-### 세션 `index.md`
+### 발표 `index.md`
 
 ```yaml
 ---
@@ -53,6 +55,44 @@ thumbnail: img/thumbnail.svg
 ---
 본문(마크다운)…
 ```
+
+### 세션에 발표 올리기
+
+모든 글은 `session-NN/presentation-NN/index.md`에 작성합니다. 발표가 하나인 세션도 `presentation-01/`을 사용합니다. 기수·세션·발표 번호는 모두 두 자리로 씁니다.
+
+`session-NN/`은 발표를 묶는 폴더이며, 그 안에는 `presentation-NN/` 폴더만 둡니다. 세션 대표 글은 만들지 않습니다. 발표를 추가할 때에는 `presentation-02/`, `presentation-03/`처럼 폴더를 늘리면 됩니다.
+
+발표마다 별도 카드와 상세 페이지가 생기며, 같은 세션 안에서는 발표 번호순으로 표시됩니다. 각 발표의 `index.md`에 위 frontmatter와 본문을 작성하고 날짜·상태·제목·발표자 등을 개별적으로 지정합니다. 홈 통계는 완료된 발표를 각각 1건으로 집계하며, `upcoming` 발표는 제외합니다.
+
+`presentation-01/index.md` 예시:
+
+```markdown
+---
+date: 2026-09-08
+status: done
+title: ASBG UOS 소개
+keywords: [ASBG, Community, Kickoff]
+speakers: [son-subin]
+---
+동아리 소개와 이번 학기 운영 방식을 정리합니다.
+```
+
+`presentation-02/index.md` 예시:
+
+```markdown
+---
+date: 2026-09-08
+status: done
+title: 첫 AWS 계정 안전하게 시작하기
+keywords: [IAM, MFA, Budgets]
+speakers: [lee-yena]
+---
+AWS 계정 보안 설정과 예산 알림을 정리합니다.
+```
+
+발표별 `index.en.md`, `img/`, `files/`도 같은 발표 폴더에 둡니다. 영어 본문이 없으면 한국어 본문을 보여줍니다. 첫 번째 발표 주소는 `/ko/sessions/cohort-01/session-01/presentation-01`이며, 영어 페이지는 맨 앞의 `ko`를 `en`으로 바꾼 주소입니다.
+
+`cohort-02/session-01/presentation-01/`과 `presentation-02/`에는 화면 확인을 위한 가상의 발표 기록을 넣었습니다. 각 폴더에 한국어·영어 본문, 도식, PDF 체크리스트가 있으며, 실제 행사나 계정 작업의 기록은 아닙니다.
 
 ### 멤버 `core.yaml` / `general.yaml`
 

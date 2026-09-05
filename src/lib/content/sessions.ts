@@ -1,7 +1,7 @@
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { contentUrl } from "@/lib/routes";
-import { cohortDir, listDirs, listFiles, readText, sessionDir, SESSION_PATTERN } from "./paths";
+import { cohortDir, listDirs, listFiles, readText, sessionDir, SESSION_PATTERN, PRESENTATION_PATTERN } from "./paths";
 import { parseOrThrow, sessionSchema, type SessionMeta } from "./schema";
 
 export type SessionFile = { name: string; url: string };
@@ -37,7 +37,7 @@ function readSession(cohort: string, slug: string): Session {
     ...meta,
     cohort,
     slug,
-    number: Number(slug.match(SESSION_PATTERN)![1]),
+    number: Number(slug.split("/")[0].match(SESSION_PATTERN)![1]),
     thumbnailUrl: meta.thumbnail && contentUrl(cohort, slug, meta.thumbnail),
     body: { ko: body, en: en?.replace(FRONTMATTER, "$2").trim() || undefined },
     files: listFiles(path.join(dir, "files")).map((name) => ({
@@ -48,7 +48,11 @@ function readSession(cohort: string, slug: string): Session {
 }
 
 export function getSessions(cohort: string): Session[] {
-  return listDirs(cohortDir(cohort), SESSION_PATTERN).map((slug) => readSession(cohort, slug));
+  return listDirs(cohortDir(cohort), SESSION_PATTERN).flatMap((session) =>
+    listDirs(sessionDir(cohort, session), PRESENTATION_PATTERN).map((presentation) =>
+      readSession(cohort, `${session}/${presentation}`),
+    ),
+  );
 }
 
 export function getSession(cohort: string, slug: string): Session | undefined {

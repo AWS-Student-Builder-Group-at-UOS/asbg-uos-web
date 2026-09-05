@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900" role="img" aria-label="One store, two request paths">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="1000" height="900" rx="18" fill="#F2FAFF"/>
+<rect x="1" y="1" width="998" height="898" rx="18" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif" fill="#123249"><text x="36" y="52" font-size="29" font-weight="700">One store, two request paths</text>
+<rect x="40" y="96" width="240" height="104" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="60" y="134" font-size="25" fill="#123249" font-weight="700">Browser</text>
+<text x="60" y="169" font-size="21" fill="#35526A" font-weight="400">HTTPS requests</text>
+<rect x="350" y="96" width="280" height="104" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="370" y="134" font-size="25" fill="#123249" font-weight="700">CloudFront</text>
+<text x="370" y="169" font-size="21" fill="#35526A" font-weight="400">Path-based behaviors</text>
+<path d="M280 148H344" fill="none" stroke="#1160D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M490 200V240H170V290" fill="none" stroke="#1160D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M490 240H780V290" fill="none" stroke="#1160D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="54" y="274" font-size="22" fill="#1160D8" font-weight="700">/images/*</text>
+<text x="690" y="274" font-size="22" fill="#1160D8" font-weight="700">/api/*</text>
+<rect x="40" y="300" width="280" height="136" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="60" y="338" font-size="25" fill="#123249" font-weight="700">Private S3 origin</text>
+<text x="60" y="373" font-size="21" fill="#35526A" font-weight="400">Images and static files</text>
+<text x="60" y="403" font-size="21" fill="#35526A" font-weight="400">CloudFront via OAC</text>
+<rect x="640" y="300" width="280" height="104" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="660" y="338" font-size="25" fill="#123249" font-weight="700">ALB</text>
+<text x="660" y="373" font-size="21" fill="#35526A" font-weight="400">Route to healthy targets</text>
+<rect x="410" y="448" width="550" height="166" rx="14" fill="none" stroke="#42B4FF" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="40" y="515" font-size="25" fill="#1160D8" font-weight="700">Auto Scaling group</text>
+<text x="40" y="548" font-size="21" fill="#35526A" font-weight="400">Capacity + replacement</text>
+<path d="M304 530H405" fill="none" stroke="#42B4FF" stroke-width="2.5" stroke-dasharray="8 6"/>
+<rect x="430" y="494" width="235" height="100" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="450" y="532" font-size="25" fill="#123249" font-weight="700">EC2 · AZ A</text>
+<text x="450" y="567" font-size="21" fill="#35526A" font-weight="400">Application</text>
+<rect x="705" y="494" width="235" height="100" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="725" y="532" font-size="25" fill="#123249" font-weight="700">EC2 · AZ B</text>
+<text x="725" y="567" font-size="21" fill="#35526A" font-weight="400">Application</text>
+<path d="M780 404V426H546V489" fill="none" stroke="#1160D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M780 426H822V489" fill="none" stroke="#1160D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="40" y="664" font-size="23" fill="#123249" font-weight="700">Application-managed</text>
+<text x="40" y="697" font-size="23" fill="#123249" font-weight="700">data access</text>
+<path d="M546 594V635H822V594" fill="none" stroke="#1160D8" stroke-width="2.5"/>
+<path d="M684 635V688H546V706" fill="none" stroke="#1160D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M684 688H822V706" fill="none" stroke="#1160D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="430" y="712" width="235" height="102" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="450" y="750" font-size="25" fill="#123249" font-weight="700">RDS</text>
+<text x="450" y="785" font-size="21" fill="#35526A" font-weight="400">Source of truth</text>
+<rect x="705" y="712" width="235" height="102" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="725" y="750" font-size="25" fill="#123249" font-weight="700">ElastiCache</text>
+<text x="725" y="785" font-size="21" fill="#35526A" font-weight="400">Cached reads</text>
+<text x="40" y="854" font-size="21" fill="#35526A" font-weight="400">API: forward required authentication; avoid caching personalized responses.</text>
+<text x="40" y="881" font-size="21" fill="#35526A" font-weight="400">Cache-aside is handled by the application. ASG does not proxy requests.</text>
+</g></svg>

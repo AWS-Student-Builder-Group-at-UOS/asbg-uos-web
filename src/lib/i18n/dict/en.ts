@@ -18,7 +18,7 @@ export const en: Dict = {
       primary: "See sessions",
       secondary: "Meet the members",
     },
-    stats: { members: "Active members", sessions: "Sessions held", cohorts: "Cohorts" },
+    stats: { members: "Active members", presentations: "Talks given", cohorts: "Cohorts" },
     why: {
       eyebrow: "Why",
       title: "We start where the syllabus stops",
