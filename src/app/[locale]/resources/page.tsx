@@ -33,7 +33,7 @@ export default async function ResourcesPage({ params }: Props) {
     <>
       <PageHead title={d.resources.title} body={d.resources.body} />
       <Container className="py-10 sm:py-14">
-        <ul className="grid gap-4 sm:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {items.map((item) => {
             const t = d.resources.items[item.key];
             return (

@@ -189,6 +189,7 @@
 /* 세션 본문(markdown) */
 .article {
   @apply text-[15.5px] leading-[1.8] text-ink sm:text-base;
+  overflow-wrap: anywhere;
 }
 .article > * + * {
   margin-top: 1.1em;
@@ -235,6 +236,7 @@
 }
 .article pre {
   @apply overflow-x-auto rounded-md border border-line bg-surface-2 p-4 font-mono text-[13px] leading-relaxed;
+  overflow-wrap: normal;
 }
 .article pre code {
   @apply bg-transparent p-0 text-[inherit];
