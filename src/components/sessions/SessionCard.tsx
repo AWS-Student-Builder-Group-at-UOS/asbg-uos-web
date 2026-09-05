@@ -23,10 +23,12 @@ export function SessionCard({ session, locale }: { session: Session; locale: Loc
       </div>
 
       <div className="flex flex-1 flex-col gap-3 p-5">
-        <div className="flex items-center gap-2 font-mono text-xs text-muted">
-          <span>{d.session(session.number)}</span>
-          <span aria-hidden="true">·</span>
-          <time dateTime={session.date}>{session.date}</time>
+        <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-muted">
+          <div className="flex items-center gap-2 whitespace-nowrap">
+            <span>{d.session(session.number)}</span>
+            <span aria-hidden="true">·</span>
+            <time dateTime={session.date}>{session.date}</time>
+          </div>
           {upcoming && <span className="chip ml-auto border-sky/40 text-accent">{d.sessions.upcoming}</span>}
         </div>
         <ChipList items={session.keywords} />
