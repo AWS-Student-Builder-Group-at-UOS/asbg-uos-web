@@ -119,7 +119,8 @@ src/
 ├── app/
 │   ├── layout.tsx           # 루트 <html>·테마. lang 은 첫 로드는 인라인 스크립트, 언어 전환은 HtmlLang 이 맞춤
 │   ├── [locale]/            # ko · en. 헤더·푸터, 홈, sessions, members, resources
-│   └── content/[...path]/   # cohort-NN/ 안의 정적 파일을 빌드 시점에 그대로 내보내는 라우트
+│   ├── content/[...path]/   # cohort-NN/ 안의 정적 파일을 빌드 시점에 그대로 내보내는 라우트
+│   └── og/                 # 동아리 대표 이미지와 발표별 공유용 PNG
 ├── components/
 │   ├── icons.tsx            # 16×16 픽셀 아이콘 전부 (문자열 격자로 정의)
 │   ├── ui/                  # Container · Section · Chip · Button · CopyButton · CohortTabs · Trace
@@ -129,6 +130,7 @@ src/
 └── lib/
     ├── content/             # cohort 폴더 파싱 (schema.ts 가 콘텐츠 형식의 기준)
     ├── i18n/                # locales · dict/ko.ts · dict/en.ts
+    ├── metadata.ts          # 페이지별 제목·소개·공유 이미지·대표 URL
     ├── routes.ts · site.ts  # URL 규칙 · 채널 링크 상수
 ```
 
