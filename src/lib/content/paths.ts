@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 
-/** 기수 콘텐츠는 레포 루트의 cohort-NN/ 폴더에 둔다. */
 export const CONTENT_ROOT = process.cwd();
 export const COHORT_PATTERN = /^cohort-(\d{2})$/;
 export const SESSION_PATTERN = /^session-(\d{2})$/;

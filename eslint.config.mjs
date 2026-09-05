@@ -6,12 +6,10 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
-    // 콘텐츠 이미지는 cohort-NN/ 폴더의 정적 파일을 그대로 쓴다 (미리 리사이즈해 둠)
+    // 콘텐츠 이미지는 미리 리사이즈한 정적 파일을 사용한다.
     rules: { "@next/next/no-img-element": "off" },
   },
-  // Override default ignores of eslint-config-next.
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",

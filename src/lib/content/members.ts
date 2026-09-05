@@ -12,7 +12,6 @@ export type Member = MemberData & {
   photoUrl?: string;
 };
 
-/** photo 가 없으면 GitHub 프로필 사진을 쓴다. */
 function githubAvatar(url?: string) {
   const user = url?.match(/^https?:\/\/github\.com\/([^/?#]+)/)?.[1];
   return user && `https://avatars.githubusercontent.com/${user}?size=400`;

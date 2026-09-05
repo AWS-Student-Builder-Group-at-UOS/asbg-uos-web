@@ -2,7 +2,6 @@ import { Icon, type IconName } from "@/components/icons";
 import { Trace } from "@/components/ui/Trace";
 import { cn } from "@/lib/utils";
 
-/* 수업이 다루는 단계(만들기)와 우리가 채우는 단계(올리기·지키기)를 세 칸으로 잇는다. */
 type Tile = { label: string; body: string };
 
 const icons: IconName[] = ["terminal", "cloud", "key"];

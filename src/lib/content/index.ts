@@ -9,7 +9,6 @@ export * from "./cohorts";
 export * from "./members";
 export * from "./sessions";
 
-/** 세션의 speakers(id)를 같은 기수 멤버로 연결한다. 없는 id는 빌드에서 바로 실패시킨다. */
 export function getSpeakers(session: Session): Member[] {
   const { all } = getMembers(session.cohort);
   return session.speakers.map((id) => {
@@ -19,7 +18,6 @@ export function getSpeakers(session: Session): Member[] {
   });
 }
 
-/** 홈 수치 — 최신 기수 멤버 수, 진행한 세션 수, 기수 수 */
 export function getStats() {
   const cohorts = getCohorts();
   const latest = getLatestCohort();
@@ -33,7 +31,6 @@ export function getStats() {
 
 const TEXT_EXT = new Set([".md", ".yaml", ".yml"]);
 
-/** /content/... 로 서빙할 파일 목록(md·yaml 제외). 각 항목은 레포 루트 기준 경로 조각. */
 export function listContentAssets(): string[][] {
   const walk = (dir: string, rel: string[]): string[][] =>
     fs.readdirSync(dir, { withFileTypes: true }).flatMap((d) => {

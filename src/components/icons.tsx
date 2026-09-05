@@ -1,6 +1,5 @@
 import type { SVGProps } from "react";
 
-/* 16×16 픽셀 아이콘. '#'가 채워진 칸. 브랜드 아이콘도 같은 격자로 그려 통일한다. */
 const glyphs = {
   logo: [
     "...##..##..##...",
@@ -621,7 +620,6 @@ const paths = Object.fromEntries(
   Object.entries(glyphs).map(([name, rows]) => [name, toPath(rows)]),
 ) as Record<IconName, string>;
 
-/** 도식(SVG) 안에서 아이콘을 <path>로 직접 그릴 때 쓴다. 16×16 좌표계. */
 export const glyphPath = (name: IconName) => paths[name];
 
 type IconProps = Omit<SVGProps<SVGSVGElement>, "name"> & { name: IconName; size?: number };

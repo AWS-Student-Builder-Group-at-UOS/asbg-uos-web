@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Icon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
-/* 값 자체가 버튼이다. 누르면 복사되고, 아이콘 자리에 잠깐 "복사됨"이 뜬다. */
 export function CopyButton({
   value,
   label,

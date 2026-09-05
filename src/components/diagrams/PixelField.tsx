@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 
-/* 배경에 깔리는 픽셀 격자. 칸마다 주기가 달라 데이터가 흐르듯 점멸한다. */
 export function PixelField({ cols = 14, rows = 9, className }: { cols?: number; rows?: number; className?: string }) {
   const cells = Array.from({ length: cols * rows }, (_, i) => {
     const x = i % cols;

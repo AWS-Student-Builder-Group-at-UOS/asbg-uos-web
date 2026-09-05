@@ -2,7 +2,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { getDict } from "@/lib/i18n";
 
-/* not-found는 locale 파라미터를 받지 못하므로 두 언어를 함께 보여준다. */
+// locale 파라미터를 받을 수 없어 두 언어를 표시한다.
 export default function NotFound() {
   const ko = getDict("ko").notFound;
   const en = getDict("en").notFound;

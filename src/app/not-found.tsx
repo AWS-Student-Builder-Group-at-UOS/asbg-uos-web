@@ -3,7 +3,6 @@ import { site } from "@/lib/site";
 
 export const metadata = { title: `404 · ${site.shortName}` };
 
-/* [locale] 레이아웃 밖(잘못된 locale 등)에서 쓰이는 전역 404 */
 export default function RootNotFound() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center py-32 text-center">

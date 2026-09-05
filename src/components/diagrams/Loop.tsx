@@ -2,10 +2,6 @@ import type { ReactNode } from "react";
 import { glyphPath, type IconName } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
-/*
- * 히어로의 폐루프. 칩(로고)을 둘러싼 안쪽 트레이스와, 네 개의 노드를 도는 바깥 트레이스가
- * 모서리마다 45° 버스로 이어진다. 패킷은 바깥은 시계, 안쪽은 반시계로 돈다.
- */
 const SIZE = 520;
 const OUTER = "M260 40H420L480 100V420L420 480H100L40 420V100L100 40Z";
 const INNER = "M260 150H340L370 180V340L340 370H180L150 340V180L180 150Z";
@@ -18,7 +14,6 @@ const NODES = [
   { x: 40, y: 260, lx: 40, ly: 300, icon: "network" },
 ] as const satisfies readonly { x: number; y: number; lx: number; ly: number; icon: IconName }[];
 
-// 안쪽 모따기 중점 → 바깥 모따기 중점을 잇는 버스
 const BUSES = [
   [355, 165, 450, 70],
   [355, 355, 450, 450],
@@ -26,7 +21,6 @@ const BUSES = [
   [165, 165, 70, 70],
 ] as const;
 
-// 칩에서 안쪽 트레이스로 뻗는 핀 (변마다 3개)
 const PINS = [-30, 0, 30].flatMap((o) => [
   [CHIP.x + 60 + o, CHIP.y, CHIP.x + 60 + o, 150],
   [CHIP.x + 60 + o, CHIP.y + CHIP.w, CHIP.x + 60 + o, 370],
@@ -58,10 +52,8 @@ export function Loop({
           </pattern>
         </defs>
 
-        {/* 배경 격자 — 바깥 루프 안쪽에만 */}
         <path d={OUTER} fill={`url(#${grid})`} opacity="0.7" />
 
-        {/* 버스와 핀 */}
         {BUSES.map(([x1, y1, x2, y2], i) => (
           <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--line-strong)" strokeWidth="2" />
         ))}
@@ -69,15 +61,12 @@ export function Loop({
           <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--line-strong)" strokeWidth="2" />
         ))}
 
-        {/* 바깥 루프: 고정선 + 흐르는 점선 */}
         <path id={outer} d={OUTER} fill="none" stroke="var(--line-strong)" strokeWidth="2" />
         <path d={OUTER} fill="none" stroke="var(--sky)" strokeWidth="2" className="trace" opacity="0.9" />
 
-        {/* 안쪽 루프: 반대 방향으로 흐른다 */}
         <path id={inner} d={INNER} fill="var(--surface)" stroke="var(--line-strong)" strokeWidth="2" />
         <path d={INNER} fill="none" stroke="var(--sky)" strokeWidth="1.5" className="trace-rev" opacity="0.8" />
 
-        {/* 칩 패드 */}
         <rect x={CHIP.x} y={CHIP.y} width={CHIP.w} height={CHIP.w} fill="var(--surface-2)" stroke="var(--sky)" strokeWidth="2" />
         {[0, 1, 2, 3].map((i) => (
           <rect
@@ -91,12 +80,10 @@ export function Loop({
           />
         ))}
 
-        {/* 모따기의 비아 — 순서대로 점멸 */}
         {BUSES.map(([, , x, y], i) => (
           <rect key={i} x={x - 4} y={y - 4} width="8" height="8" fill="var(--sky)" data-blink style={{ animation: `blink 3.2s ${i * 0.8}s ease-in-out infinite` }} />
         ))}
 
-        {/* 패킷 */}
         {[0, 1, 2].map((i) => (
           <rect key={i} className="packet" x="-6" y="-6" width="12" height="12" fill="var(--sky)" opacity={i === 0 ? 1 : 0.5}>
             <animateMotion dur="12s" repeatCount="indefinite" begin={`${-i * 4}s`}>
@@ -112,7 +99,6 @@ export function Loop({
           </rect>
         ))}
 
-        {/* 노드 */}
         {NODES.map((n, i) => (
           <g key={i}>
             <rect x={n.x - 17} y={n.y - 17} width="34" height="34" fill="var(--sky)" opacity="0.25" className="pulse-ring" style={{ animationDelay: `${i * 0.6}s` }} />

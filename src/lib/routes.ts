@@ -9,5 +9,4 @@ export const routes = {
   resources: (l: Locale) => `/${l}/resources`,
 };
 
-/** 레포 루트 cohort-NN/ 안의 파일은 /content/... 로 그대로 서빙된다. */
 export const contentUrl = (...segments: string[]) => `/content/${segments.join("/")}`;

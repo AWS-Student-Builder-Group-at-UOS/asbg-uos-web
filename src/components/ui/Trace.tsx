@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 
-/* 회로 트레이스처럼 흐르는 점선 — 루프 도식과 같은 모티프. 가로가 기본, vertical 이면 세로. */
 export function Trace({ className, vertical = false }: { className?: string; vertical?: boolean }) {
   return (
     <svg
