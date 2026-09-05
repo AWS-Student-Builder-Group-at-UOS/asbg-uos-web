@@ -12,6 +12,12 @@ export type Member = MemberData & {
   photoUrl?: string;
 };
 
+/** photo 가 없으면 GitHub 프로필 사진을 쓴다. */
+function githubAvatar(url?: string) {
+  const user = url?.match(/^https?:\/\/github\.com\/([^/?#]+)/)?.[1];
+  return user && `https://avatars.githubusercontent.com/${user}?size=400`;
+}
+
 function readGroup(cohort: string, group: MemberGroup): Member[] {
   const file = path.join(membersDir(cohort), `${group}.yaml`);
   const raw = readText(file);
@@ -21,7 +27,7 @@ function readGroup(cohort: string, group: MemberGroup): Member[] {
     ...m,
     cohort,
     group,
-    photoUrl: m.photo && contentUrl(cohort, "members", m.photo),
+    photoUrl: m.photo ? contentUrl(cohort, "members", m.photo) : githubAvatar(m.links.github),
   }));
 }
 

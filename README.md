@@ -24,7 +24,7 @@ cohort-01/
 ├── members/
 │   ├── core.yaml          # Core Members
 │   ├── general.yaml       # General Members
-│   └── img/               # 멤버 사진 (4:5 비율, 900px 내외로 미리 리사이즈)
+│   └── img/               # 멤버 사진 (4:5 비율, 900px 내외로 미리 리사이즈). 없으면 GitHub 프로필 사진을 씀
 ├── session-01/
 │   ├── index.md           # frontmatter + 한국어 본문
 │   ├── index.en.md        # 영어 본문 (없으면 한국어 본문을 그대로 보여줌)
@@ -61,7 +61,7 @@ thumbnail: img/thumbnail.svg
   name: { ko: 황수진, en: Sujin Hwang }
   role: Tech Lead           # 선택 (코어팀)
   major: { ko: 컴퓨터과학부, en: Computer Science }
-  photo: img/hwang-sujin.jpg
+  photo: img/hwang-sujin.jpg  # 선택. 비우면 links.github 의 프로필 사진을 대신 보여줌
   links:                    # github · linkedin · website 중 1개 이상
     github: https://github.com/…
   keywords: [Linux, Networking, Container]   # 정확히 3개
@@ -77,13 +77,14 @@ thumbnail: img/thumbnail.svg
 ```
 src/
 ├── app/
-│   ├── [locale]/            # ko · en. 레이아웃(헤더·푸터·테마), 홈, sessions, members, resources
+│   ├── layout.tsx           # 루트 <html>·테마. lang 은 첫 로드는 인라인 스크립트, 언어 전환은 HtmlLang 이 맞춤
+│   ├── [locale]/            # ko · en. 헤더·푸터, 홈, sessions, members, resources
 │   └── content/[...path]/   # cohort-NN/ 안의 정적 파일을 빌드 시점에 그대로 내보내는 라우트
 ├── components/
 │   ├── icons.tsx            # 16×16 픽셀 아이콘 전부 (문자열 격자로 정의)
 │   ├── ui/                  # Container · Section · Chip · Button · CopyButton · CohortTabs · Trace
-│   ├── layout/              # Header · Footer · Logo · LocaleSwitch · ThemeToggle
-│   ├── diagrams/            # Loop(폐루프 도식) · PixelField
+│   ├── layout/              # Header · Footer · Logo · LocaleSwitch · ThemeToggle · ThemeProvider · HtmlLang
+│   ├── diagrams/            # Loop(히어로 폐루프) · Architecture(요청 경로) · Gap(수업↔동아리) · PixelField
 │   ├── home/ sessions/ members/
 └── lib/
     ├── content/             # cohort 폴더 파싱 (schema.ts 가 콘텐츠 형식의 기준)
