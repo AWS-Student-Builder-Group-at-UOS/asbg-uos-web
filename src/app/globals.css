@@ -235,7 +235,7 @@
   @apply bg-transparent p-0 text-[inherit];
 }
 .article img {
-  @apply mx-auto rounded-md border border-line;
+  @apply mx-auto rounded-md outline-1 -outline-offset-1 outline-line;
 }
 .article hr {
   @apply my-10 border-line;

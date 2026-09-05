@@ -92,7 +92,7 @@ export default async function SessionPage({ params }: Props) {
           </header>
 
           {session.thumbnailUrl && (
-            <img src={session.thumbnailUrl} alt="" className="mt-10 w-full rounded-lg border border-line" />
+            <img src={session.thumbnailUrl} alt="" className="mt-10 w-full rounded-lg outline-1 -outline-offset-1 outline-line" />
           )}
 
           <div className="mt-10">
