@@ -24,7 +24,7 @@ export function getStats() {
   const done = cohorts.flatMap((c) => getSessions(c.slug)).filter((s) => s.status === "done");
   return {
     members: getMembers(latest.slug).all.length,
-    sessions: done.length,
+    presentations: done.length,
     cohorts: cohorts.length,
   };
 }

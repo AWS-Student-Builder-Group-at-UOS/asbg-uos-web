@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 530" role="img" aria-label="Find the address, then send the request">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="530" rx="18" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="528" rx="18" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif" fill="#123249"><text x="36" y="52" font-size="29" font-weight="700">Find the address, then send the request</text>
+<rect x="36" y="96" width="330" height="113" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="56" y="134" font-size="25" fill="#123249" font-weight="700">DNS lookup</text>
+<text x="56" y="169" font-size="21" fill="#35526A" font-weight="400">Domain name → IP address</text>
+<rect x="406" y="96" width="518" height="113" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="426" y="134" font-size="25" fill="#123249" font-weight="700">Direct public-IP exercise</text>
+<text x="426" y="169" font-size="21" fill="#35526A" font-weight="400">No domain lookup is required</text>
+<text x="36" y="270" font-size="22" fill="#1160D8" font-weight="700">HTTP request</text>
+<rect x="36" y="300" width="230" height="105" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="56" y="338" font-size="25" fill="#123249" font-weight="700">Browser</text>
+<text x="56" y="373" font-size="21" fill="#35526A" font-weight="400">Public IPv4</text>
+<rect x="356" y="300" width="250" height="105" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="376" y="338" font-size="25" fill="#123249" font-weight="700">Internet gateway</text>
+<text x="376" y="373" font-size="21" fill="#35526A" font-weight="400">Attached to VPC</text>
+<rect x="696" y="300" width="228" height="105" rx="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="716" y="338" font-size="25" fill="#123249" font-weight="700">EC2 web server</text>
+<text x="716" y="373" font-size="21" fill="#35526A" font-weight="400">Listening on HTTP</text>
+<path d="M266 352H350" fill="none" stroke="#1160D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M606 352H690" fill="none" stroke="#1160D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="36" y="458" font-size="24" fill="#123249" font-weight="700">Reachability: public address + subnet route + allowed traffic</text>
+<text x="36" y="491" font-size="21" fill="#35526A" font-weight="400">Check the route table, security group, network ACL, and web service.</text>
+</g></svg>

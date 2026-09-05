@@ -17,7 +17,7 @@ export const ko = {
       primary: "세션 보기",
       secondary: "멤버 보기",
     },
-    stats: { members: "활동 멤버", sessions: "진행한 세션", cohorts: "기수" },
+    stats: { members: "활동 멤버", presentations: "진행한 발표", cohorts: "기수" },
     why: {
       eyebrow: "Why",
       title: "수업이 끝나는 곳에서 시작합니다",
@@ -136,8 +136,8 @@ export const ko = {
     speaker: "Speaker",
     files: "자료",
     back: "세션 목록",
-    prev: "이전 세션",
-    next: "다음 세션",
+    prev: "이전 글",
+    next: "다음 글",
     empty: "아직 올라온 세션이 없습니다. 다음 세션이 정해지면 여기와 Meetup에 올립니다.",
   },
   members: {

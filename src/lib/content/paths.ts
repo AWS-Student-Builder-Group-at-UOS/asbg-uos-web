@@ -4,6 +4,7 @@ import path from "node:path";
 export const CONTENT_ROOT = process.cwd();
 export const COHORT_PATTERN = /^cohort-(\d{2})$/;
 export const SESSION_PATTERN = /^session-(\d{2})$/;
+export const PRESENTATION_PATTERN = /^presentation-(\d{2})$/;
 
 export const cohortDir = (cohort: string) => path.join(/* turbopackIgnore: true */ CONTENT_ROOT, cohort);
 export const sessionDir = (cohort: string, session: string) => path.join(cohortDir(cohort), session);

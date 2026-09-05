@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Terminal and Git: a first workflow</title>
+  <desc id="desc">A terminal window and connected Git commits in blue and sky colors.</desc>
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#42B4FF" stroke-opacity=".08"/></pattern>
+    <linearGradient id="panel" x2="1" y2="1"><stop stop-color="#13243B"/><stop offset="1" stop-color="#0E1623"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="#0B0F17"/>
+  <rect width="1200" height="750" fill="url(#grid)"/>
+  <g font-family="Menlo, Consolas, monospace">
+    <rect x="64" y="65" width="10" height="10" fill="#42B4FF"/>
+    <text x="91" y="77" fill="#42B4FF" font-size="21" letter-spacing="2">ASBG UOS / ROUND 0</text>
+    <text x="64" y="176" fill="#FFFFFF" font-size="58" font-weight="700" letter-spacing="-2">TERMINAL</text>
+    <text x="64" y="244" fill="#FFFFFF" font-size="58" font-weight="700" letter-spacing="-2">&amp; GIT</text>
+    <text x="67" y="295" fill="#A7B5C9" font-size="21">A first workflow.</text>
+    <rect x="572" y="148" width="562" height="320" rx="16" fill="url(#panel)" stroke="#35506C" stroke-width="2"/>
+    <path d="M572 201H1134" stroke="#35506C" stroke-width="2"/>
+    <circle cx="600" cy="175" r="6" fill="#42B4FF"/>
+    <circle cx="622" cy="175" r="6" fill="#1160D8"/>
+    <circle cx="644" cy="175" r="6" fill="#A7B5C9"/>
+    <text x="681" y="182" fill="#A7B5C9" font-size="16">asbg-round0-git-practice</text>
+    <text x="608" y="249" fill="#42B4FF" font-size="23">$ git status --short</text>
+    <text x="608" y="289" fill="#FFFFFF" font-size="21">M notes/round-0.md</text>
+    <text x="608" y="349" fill="#42B4FF" font-size="23">$ git diff --staged</text>
+    <text x="608" y="392" fill="#B9DDF7" font-size="20">+ One useful observation.</text>
+    <rect x="608" y="419" width="13" height="20" fill="#42B4FF"/>
+    <path d="M88 547H1109" fill="none" stroke="#1160D8" stroke-width="5"/>
+    <path d="M400 547C440 547 458 504 504 504H870C916 504 934 547 974 547" fill="none" stroke="#42B4FF" stroke-width="4"/>
+    <g fill="#0B0F17" stroke="#42B4FF" stroke-width="5"><circle cx="110" cy="547" r="13"/><circle cx="400" cy="547" r="13"/><circle cx="725" cy="547" r="13"/><circle cx="1088" cy="547" r="13"/></g>
+    <circle cx="651" cy="504" r="8" fill="#42B4FF"/>
+    <text x="110" y="595" text-anchor="middle" fill="#FFFFFF" font-size="18">EDIT</text>
+    <text x="400" y="595" text-anchor="middle" fill="#FFFFFF" font-size="18">STAGE</text>
+    <text x="725" y="595" text-anchor="middle" fill="#FFFFFF" font-size="18">COMMIT</text>
+    <text x="1088" y="595" text-anchor="middle" fill="#FFFFFF" font-size="18">SHARE</text>
+    <path d="M64 648H1136" stroke="#26354A"/>
+    <text x="64" y="693" fill="#A7B5C9" font-size="18">COHORT 02 / SESSION 01</text>
+    <text x="1136" y="693" text-anchor="end" fill="#42B4FF" font-size="18">TALK 01</text>
+  </g>
+</svg>

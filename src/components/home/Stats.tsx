@@ -8,7 +8,7 @@ export function Stats({ locale }: { locale: Locale }) {
   const stats = getStats();
   const items = [
     { label: d.members, value: stats.members },
-    { label: d.sessions, value: stats.sessions },
+    { label: d.presentations, value: stats.presentations },
     { label: d.cohorts, value: stats.cohorts },
   ];
 
