@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { CopyButton } from "@/components/ui/CopyButton";
 import { PageHead } from "@/components/ui/Section";
 import { getDict, type Locale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -22,7 +23,12 @@ const display = (url: string) => url.replace(/^https?:\/\/(www\.)?/, "").replace
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const d = getDict(locale);
-  return { title: d.resources.title, description: d.resources.body };
+  return pageMetadata({
+    locale,
+    path: "/resources",
+    title: locale === "ko" ? "공식 채널과 자료" : d.resources.title,
+    description: d.resources.body,
+  });
 }
 
 export default async function ResourcesPage({ params }: Props) {

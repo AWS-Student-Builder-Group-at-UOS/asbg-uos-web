@@ -8,6 +8,7 @@ import { ChipList } from "@/components/ui/Chip";
 import { Container } from "@/components/ui/Container";
 import { getCohorts, getSession, getSessions, getSpeakers } from "@/lib/content";
 import { getDict, locales, pick, type Locale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
 
 type Props = { params: Promise<{ locale: Locale; cohort: string; session: string; presentation: string }> };
@@ -30,12 +31,18 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, cohort, session, presentation } = await params;
   const s = getSession(cohort, `${session}/${presentation}`);
-  if (!s) return {};
-  return {
-    title: pick(s.title, locale),
-    description: s.description && pick(s.description, locale),
-    openGraph: s.thumbnailUrl ? { images: [s.thumbnailUrl] } : undefined,
-  };
+  if (!s || s.status !== "done") return {};
+  const title = pick(s.title, locale);
+  return pageMetadata({
+    locale,
+    path: `/sessions/${cohort}/${s.slug}`,
+    title,
+    description: s.description ? pick(s.description, locale) : `${title} · ${s.keywords.join(" · ")}`,
+    type: "article",
+    image: s.thumbnailUrl
+      ? { url: `/og/${cohort}/${s.slug}`, alt: `${title} — ${locale === "ko" ? "발표 썸네일" : "presentation thumbnail"}` }
+      : undefined,
+  });
 }
 
 export default async function SessionPage({ params }: Props) {

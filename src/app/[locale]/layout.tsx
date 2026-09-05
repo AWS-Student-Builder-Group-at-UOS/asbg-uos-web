@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { HtmlLang } from "@/components/layout/HtmlLang";
 import { getLatestCohort } from "@/lib/content";
 import { getDict, isLocale, locales } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
 import { site } from "@/lib/site";
 
@@ -20,19 +21,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  const d = getDict(locale);
   return {
+    ...pageMetadata({ locale }),
     metadataBase: new URL(site.url),
     title: { default: site.shortName, template: `%s · ${site.shortName}` },
-    description: d.meta.description,
-    alternates: { canonical: `/${locale}`, languages: { ko: "/ko", en: "/en" } },
-    openGraph: {
-      type: "website",
-      siteName: site.shortName,
-      title: site.name,
-      description: d.meta.description,
-      locale: locale === "ko" ? "ko_KR" : "en_US",
-    },
   };
 }
 

@@ -2,7 +2,8 @@ import { pad2 } from "@/lib/utils";
 
 export const ko = {
   meta: {
-    description: "서울시립대학교의 첫 AWS Student Builder Group입니다. 만든 것을 인터넷에 올리고 계속 돌아가게 하는 법을 AWS 계정에서 직접 해 보면서 배웁니다.",
+    title: "ASBG UOS · 서울시립대 AWS 학생 커뮤니티",
+    description: "AWS로 직접 만들고, 배운 것을 나누며 함께 성장합니다. 서울시립대 AWS 학생 커뮤니티의 발표와 실습 기록을 만나보세요.",
   },
   nav: { home: "Home", sessions: "Sessions", members: "Members", resources: "Resources" },
   a11y: { openMenu: "메뉴 열기", closeMenu: "메뉴 닫기", theme: "다크 모드 전환", locale: "언어" },

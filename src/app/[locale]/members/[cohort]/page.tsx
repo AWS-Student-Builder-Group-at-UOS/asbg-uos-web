@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHead } from "@/components/ui/Section";
 import { getCohorts, getMembers, hasCohort, type Member } from "@/lib/content";
 import { getDict, locales, type Locale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
 
 type Props = { params: Promise<{ locale: Locale; cohort: string }> };
@@ -17,9 +18,16 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale, cohort } = await params;
+  const c = getCohorts().find((c) => c.slug === cohort);
+  if (!c) return {};
   const d = getDict(locale);
-  return { title: d.members.title, description: d.members.body };
+  return pageMetadata({
+    locale,
+    path: `/members/${cohort}`,
+    title: `${d.cohort(c.number)} · ${locale === "ko" ? "멤버 소개" : "Members"}`,
+    description: d.members.body,
+  });
 }
 
 function Group({ title, members, locale }: { title: string; members: Member[]; locale: Locale }) {

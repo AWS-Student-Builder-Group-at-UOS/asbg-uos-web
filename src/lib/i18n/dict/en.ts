@@ -3,7 +3,8 @@ import type { Dict } from "./ko";
 
 export const en: Dict = {
   meta: {
-    description: "The first AWS Student Builder Group at the University of Seoul. We learn how to get what we build onto the internet and keep it running by doing it in real AWS accounts.",
+    title: "ASBG UOS · AWS at University of Seoul",
+    description: "Build with AWS, share what you learn, and grow together. Explore talks and hands-on projects from the University of Seoul's AWS student community.",
   },
   nav: { home: "Home", sessions: "Sessions", members: "Members", resources: "Resources" },
   a11y: { openMenu: "Open menu", closeMenu: "Close menu", theme: "Toggle dark mode", locale: "Language" },

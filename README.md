@@ -94,6 +94,14 @@ AWS 계정 보안 설정과 예산 알림을 정리합니다.
 
 `cohort-02/session-01/presentation-01/`과 `presentation-02/`에는 화면 확인을 위한 가상의 발표 기록을 넣었습니다. 각 폴더에 한국어·영어 본문, 도식, PDF 체크리스트가 있으며, 실제 행사나 계정 작업의 기록은 아닙니다.
 
+### 링크 미리보기
+
+홈·목록 페이지에는 동아리 대표 이미지가, 발표 링크에는 해당 글의 `title`·`description`·`thumbnail`이 표시됩니다. 한국어·영어 주소에 맞는 Open Graph와 Twitter 카드 정보를 제공합니다.
+
+완료된 발표의 썸네일은 빌드할 때 `/og/cohort-NN/session-NN/presentation-NN`에 1200×630 PNG로 자동 생성됩니다. 원본 비율과 전체 내용을 유지하며, 썸네일이 없는 글은 대표 이미지를 사용합니다. 원본 파일을 바꾸고 다시 배포하면 공유 이미지도 함께 갱신됩니다. 공유 서비스에 이미 저장된 미리보기는 해당 서비스의 캐시 갱신이 필요할 수 있습니다.
+
+공유 이미지의 SVG 텍스트는 시스템 폰트에 의존하지 않도록 `src/assets/fonts/`의 Geist·Geist Mono를 사용합니다. [Geist v1.7.2](https://github.com/vercel/geist-font/tree/v1.7.2)의 `fonts/Geist/variable/Geist[wght].ttf`와 `fonts/GeistMono/variable/GeistMono[wght].ttf`를 수정 없이 포함했으며, 라이선스는 같은 폴더의 `OFL.txt`에 있습니다.
+
 ### 멤버 `core.yaml` / `general.yaml`
 
 ```yaml
@@ -119,7 +127,8 @@ src/
 ├── app/
 │   ├── layout.tsx           # 루트 <html>·테마. lang 은 첫 로드는 인라인 스크립트, 언어 전환은 HtmlLang 이 맞춤
 │   ├── [locale]/            # ko · en. 헤더·푸터, 홈, sessions, members, resources
-│   └── content/[...path]/   # cohort-NN/ 안의 정적 파일을 빌드 시점에 그대로 내보내는 라우트
+│   ├── content/[...path]/   # cohort-NN/ 안의 정적 파일을 빌드 시점에 그대로 내보내는 라우트
+│   └── og/                 # 동아리 대표 이미지와 발표별 공유용 PNG
 ├── components/
 │   ├── icons.tsx            # 16×16 픽셀 아이콘 전부 (문자열 격자로 정의)
 │   ├── ui/                  # Container · Section · Chip · Button · CopyButton · CohortTabs · Trace
@@ -129,6 +138,7 @@ src/
 └── lib/
     ├── content/             # cohort 폴더 파싱 (schema.ts 가 콘텐츠 형식의 기준)
     ├── i18n/                # locales · dict/ko.ts · dict/en.ts
+    ├── metadata.ts          # 페이지별 제목·소개·공유 이미지·대표 URL
     ├── routes.ts · site.ts  # URL 규칙 · 채널 링크 상수
 ```
 
