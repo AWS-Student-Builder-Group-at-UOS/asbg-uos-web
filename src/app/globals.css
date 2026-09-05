@@ -70,7 +70,6 @@
 @layer base {
   html {
     color-scheme: light;
-    scroll-behavior: smooth;
     scroll-padding-top: 5rem;
   }
   html.dark {
@@ -80,6 +79,7 @@
     @apply bg-canvas text-ink font-sans antialiased;
     font-feature-settings: "ss05", "cv01";
     letter-spacing: -0.01em;
+    word-break: keep-all;
   }
   ::selection {
     background: color-mix(in srgb, var(--sky) 35%, transparent);
@@ -109,6 +109,37 @@
 @utility ring-hover {
   @apply transition-[border-color,box-shadow,transform] duration-300 ease-(--ease-soft) hover:border-line-strong hover:shadow-card;
 }
+/* 픽셀 격자 배경 — 히어로·도식 섹션 뒤에 깔린다 */
+@utility grid-bg {
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 9%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 12px 12px;
+}
+/* 섹션 번호 — 왼쪽 위 작은 mono 라벨 */
+@utility index {
+  @apply font-mono text-xs tabular-nums text-faint;
+}
+/* 카드 네 귀퉁이의 패드 마크 — 회로 기판 모티프 */
+@utility pads {
+  @apply relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--sky);
+    opacity: 0.85;
+  }
+  &::before {
+    top: -1px;
+    left: -1px;
+  }
+  &::after {
+    right: -1px;
+    bottom: -1px;
+  }
+}
 
 /* 자동 재생 애니메이션 — 회로를 따라 흐르는 점선, 픽셀 점멸, 등장 */
 @keyframes trace {
@@ -124,6 +155,10 @@
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.7; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
 
 .trace {
   stroke-dasharray: 6 10;
@@ -132,9 +167,18 @@
 .rise {
   animation: rise 0.7s var(--ease-soft) both;
 }
+.trace-rev {
+  stroke-dasharray: 6 10;
+  animation: trace 3s linear infinite reverse;
+}
+.pulse-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse-ring 2.4s var(--ease-soft) infinite;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .trace, .rise, [data-blink] {
+  .trace, .trace-rev, .rise, .pulse-ring, [data-blink] {
     animation: none !important;
   }
   .packet {

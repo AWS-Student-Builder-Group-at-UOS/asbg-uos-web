@@ -26,17 +26,23 @@ export function Header({
   const [open, setOpen] = useState(false);
 
   const isActive = (item: NavItem) => pathname === item.match || pathname.startsWith(`${item.match}/`);
+  // 이미 그 페이지에 있으면 라우터가 움직이지 않으므로 직접 맨 위로 올린다.
+  const go = (href: string) => () => {
+    setOpen(false);
+    if (pathname === href) window.scrollTo(0, 0);
+  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-canvas/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between">
-        <Logo href={`/${locale}`} />
+        <Logo href={`/${locale}`} onClick={go(`/${locale}`)} />
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
+              onClick={go(item.href)}
               aria-current={isActive(item) ? "page" : undefined}
               className={cn(
                 "rounded-sm px-3 py-2 text-sm transition-colors duration-200",
@@ -70,7 +76,7 @@ export function Header({
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => setOpen(false)}
+              onClick={go(item.href)}
               aria-current={isActive(item) ? "page" : undefined}
               className={cn(
                 "flex items-center justify-between py-3 text-base",

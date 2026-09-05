@@ -1,6 +1,6 @@
 import { Icon, type IconName } from "@/components/icons";
 import { CopyButton } from "@/components/ui/CopyButton";
-import { Section } from "@/components/ui/Section";
+import { Section, SectionHead } from "@/components/ui/Section";
 import { getDict, type Locale } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
@@ -16,17 +16,13 @@ export function Contact({ locale }: { locale: Locale }) {
   const c = d.home.contact;
 
   return (
-    <Section id="contact" className="pt-0">
+    <Section id="contact">
       <div className="card grid gap-8 p-8 sm:p-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-        <div>
-          <p className="eyebrow">{c.eyebrow}</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">{c.title}</h2>
-          <p className="mt-4 max-w-xl leading-relaxed text-muted sm:text-lg">{c.body}</p>
-        </div>
-        <div className="flex flex-col items-start gap-4 lg:items-end">
-          <p className="font-mono text-lg sm:text-xl">{site.email}</p>
-          <CopyButton value={site.email} label={d.common.copy} copiedLabel={d.common.copied} variant="primary" />
-          <ul className="flex gap-1 pt-2">
+        <SectionHead index="05" eyebrow={c.eyebrow} title={c.title} body={c.body} />
+        <div className="flex flex-col items-start gap-2 lg:items-end">
+          <CopyButton value={site.email} label={d.common.copy} copiedLabel={d.common.copied} className="text-lg sm:text-xl" />
+          <p className="text-xs text-muted">{c.hint}</p>
+          <ul className="mt-4 flex gap-1">
             {channels.map((ch) => (
               <li key={ch.key}>
                 <a

@@ -10,30 +10,15 @@ const variants = {
   ghost: "border border-line-strong text-ink hover:border-accent hover:text-accent",
 };
 
-type Variant = keyof typeof variants;
-
 export function ButtonLink({
   variant = "primary",
   className,
   children,
   ...rest
-}: ComponentProps<typeof Link> & { variant?: Variant; children: ReactNode }) {
+}: ComponentProps<typeof Link> & { variant?: keyof typeof variants; children: ReactNode }) {
   return (
     <Link className={cn(base, variants[variant], className)} {...rest}>
       {children}
     </Link>
-  );
-}
-
-export function Button({
-  variant = "ghost",
-  className,
-  children,
-  ...rest
-}: ComponentProps<"button"> & { variant?: Variant; children: ReactNode }) {
-  return (
-    <button type="button" className={cn(base, variants[variant], className)} {...rest}>
-      {children}
-    </button>
   );
 }

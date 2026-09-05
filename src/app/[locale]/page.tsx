@@ -1,6 +1,7 @@
+import { Cloud } from "@/components/home/Cloud";
 import { Contact } from "@/components/home/Contact";
-import { Flow } from "@/components/home/Flow";
 import { Hero } from "@/components/home/Hero";
+import { Keywords } from "@/components/home/Keywords";
 import { Stats } from "@/components/home/Stats";
 import { WhatWeDo } from "@/components/home/WhatWeDo";
 import { Why } from "@/components/home/Why";
@@ -17,7 +18,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       <Stats locale={locale} />
       <Why locale={locale} />
       <WhatWeDo locale={locale} />
-      <Flow locale={locale} />
+      <Cloud locale={locale} />
+      <Keywords locale={locale} />
       <Contact locale={locale} />
     </>
   );

@@ -19,11 +19,13 @@ export function Section({
 }
 
 export function SectionHead({
+  index,
   eyebrow,
   title,
   body,
   className,
 }: {
+  index?: string;
   eyebrow?: string;
   title: string;
   body?: string;
@@ -31,7 +33,12 @@ export function SectionHead({
 }) {
   return (
     <div className={cn("max-w-2xl", className)}>
-      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+      {(index || eyebrow) && (
+        <p className="flex items-center gap-3">
+          {index && <span className="index">{index}</span>}
+          {eyebrow && <span className="eyebrow">{eyebrow}</span>}
+        </p>
+      )}
       <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
       {body && <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">{body}</p>}
     </div>

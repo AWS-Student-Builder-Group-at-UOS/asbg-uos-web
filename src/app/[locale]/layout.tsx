@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { ThemeProvider } from "@/components/layout/ThemeProvider";
+import { HtmlLang } from "@/components/layout/HtmlLang";
 import { getLatestCohort } from "@/lib/content";
 import { getDict, isLocale, locales } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
 import { site } from "@/lib/site";
-import "@/app/globals.css";
-
-const geistMono = Geist_Mono({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-geist-mono" });
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
 
@@ -53,21 +49,13 @@ export default async function LocaleLayout({ children, params }: Props) {
     { label: d.nav.resources, href: routes.resources(locale), match: routes.resources(locale) },
   ];
 
+  // <html lang> 은 스크립트가 맞추므로, JS 없이도 본문 언어가 맞도록 래퍼에 lang 을 둔다.
   return (
-    <html lang={locale} className={geistMono.variable} suppressHydrationWarning>
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
-        />
-      </head>
-      <body className="flex min-h-dvh flex-col">
-        <ThemeProvider>
-          <Header locale={locale} items={nav} a11y={d.a11y} />
-          <main className="flex-1">{children}</main>
-          <Footer locale={locale} latestCohort={latest} />
-        </ThemeProvider>
-      </body>
-    </html>
+    <div lang={locale} className="contents">
+      <HtmlLang locale={locale} />
+      <Header locale={locale} items={nav} a11y={d.a11y} />
+      <main className="flex-1">{children}</main>
+      <Footer locale={locale} latestCohort={latest} />
+    </div>
   );
 }

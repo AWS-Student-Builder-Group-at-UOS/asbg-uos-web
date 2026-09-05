@@ -1,7 +1,12 @@
 import { cn } from "@/lib/utils";
 
-export function Chip({ children, className }: { children: string; className?: string }) {
-  return <span className={cn("chip", className)}>#{children}</span>;
+export function Chip({ children, hash = true, className }: { children: string; hash?: boolean; className?: string }) {
+  return (
+    <span className={cn("chip", className)}>
+      {hash && "#"}
+      {children}
+    </span>
+  );
 }
 
 export function ChipList({ items, className }: { items: readonly string[]; className?: string }) {

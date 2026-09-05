@@ -52,10 +52,7 @@ export default async function ResourcesPage({ params }: Props) {
                       {display(item.href)}
                     </a>
                   ) : (
-                    <div className="mt-4 flex flex-wrap items-center gap-3">
-                      <span className="font-mono text-xs text-faint">{site.email}</span>
-                      <CopyButton value={site.email} label={d.common.copy} copiedLabel={d.common.copied} />
-                    </div>
+                    <CopyButton value={site.email} label={d.common.copy} copiedLabel={d.common.copied} className="mt-4 text-xs" />
                   )}
                 </div>
               </li>
