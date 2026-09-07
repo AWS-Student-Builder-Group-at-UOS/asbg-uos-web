@@ -6,7 +6,7 @@ title:
 description:
   ko: "_blank"
   en: "_blank"
-keywords: [_blank]
+keywords: [_blank-01, _blank-02, _blank-03]
 speakers: [lee-yena]
 thumbnail: img/thumbnail.svg
 ---
