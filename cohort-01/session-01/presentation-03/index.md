@@ -7,7 +7,7 @@ description:
   ko: "_blank"
   en: "_blank"
 keywords: [_blank]
-speakers: [son-subin]
+speakers: [hwang-sujin]
 thumbnail: img/thumbnail.svg
 ---
 
