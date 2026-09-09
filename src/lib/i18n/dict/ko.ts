@@ -109,6 +109,7 @@ export const ko = {
         { group: "Data", items: ["RDS", "DynamoDB", "S3"] },
         { group: "Ops", items: ["IAM", "CloudWatch", "Budgets", "Terraform"] },
       ],
+      noteLabel: "Goal",
       note: "순서는 기수마다 다르지만, 한 학기가 끝나면 이 그림을 직접 그려서 설명할 수 있게 되는 것이 목표입니다.",
     },
     keywords: {

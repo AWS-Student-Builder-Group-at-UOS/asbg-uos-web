@@ -15,7 +15,15 @@ export function Cloud({ locale }: { locale: Locale }) {
         <Architecture captions={d.nodes} />
       </div>
 
-      <ol className="mt-10 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-8 max-w-3xl sm:mt-10">
+        <p className="flex items-center gap-2.5">
+          <span className="block size-2 bg-sky" />
+          <span className="eyebrow">{d.noteLabel}</span>
+        </p>
+        <p className="mt-3 text-xl font-medium leading-[1.45] tracking-tight text-balance sm:text-2xl">{d.note}</p>
+      </div>
+
+      <ol className="mt-12 grid gap-x-6 gap-y-8 sm:mt-14 sm:grid-cols-2 lg:grid-cols-5">
         {d.steps.map((s, i) => (
           <li key={s.label} className="border-t border-line pt-4">
             <p className="flex items-center gap-2 font-mono text-sm text-accent">
@@ -42,7 +50,6 @@ export function Cloud({ locale }: { locale: Locale }) {
           </div>
         ))}
       </div>
-      <p className="mt-8 text-sm text-muted">{d.note}</p>
     </Section>
   );
 }

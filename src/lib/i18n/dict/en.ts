@@ -110,6 +110,7 @@ export const en: Dict = {
         { group: "Data", items: ["RDS", "DynamoDB", "S3"] },
         { group: "Ops", items: ["IAM", "CloudWatch", "Budgets", "Terraform"] },
       ],
+      noteLabel: "Goal",
       note: "The order changes from cohort to cohort. The goal is that by the end of a semester you can draw this picture yourself and explain it.",
     },
     keywords: {
