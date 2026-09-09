@@ -111,7 +111,7 @@ export const en: Dict = {
         { group: "Ops", items: ["IAM", "CloudWatch", "Budgets", "Terraform"] },
       ],
       noteLabel: "Goal",
-      note: "The order changes from cohort to cohort. The goal is that by the end of a semester you can draw this picture yourself and explain it.",
+      note: "The order we cover them in changes from cohort to cohort. The goal is that by the time your cohort wraps up, you can draw this picture yourself and explain it.",
     },
     keywords: {
       eyebrow: "Four words",
