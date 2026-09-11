@@ -1,15 +1,17 @@
 ---
 date: 2026-11-03
+status: upcoming
 title:
-  ko: 선착순 이벤트, 서버가 버틸까
-  en: Flash Sale · Will One Server Hold?
+  ko: 서버리스 이벤트 기반 서비스
+  en: Serverless Event-Driven Services
 description:
-  ko: "선착순 이벤트의 병목을 나눠 보고 ALB의 요청 분산, Auto Scaling의 용량 관리, 캐시의 반복 작업 절감을 구분합니다. 헬스체크와 인스턴스 교체, 재고의 정확성, 기능별 검증 기준을 구체적으로 설명합니다."
-  en: "Separate flash-sale bottlenecks into request distribution, capacity management, and repeated work. Explore ALB routing, Auto Scaling health and replacement, cache consistency, and practical checks for each function."
-keywords: [ALB, Auto Scaling, Caching]
+  ko: "API Gateway·Lambda·DynamoDB·SQS·EventBridge로 요청과 후속 작업을 분리하고, 중복 처리 방지와 실패·재시도를 설계합니다."
+  en: "Separate requests from follow-up work with API Gateway, Lambda, DynamoDB, SQS, and EventBridge, and design for idempotency, failures, and retries."
+keywords: [Lambda, SQS, EventBridge]
 speakers: [lee-yena]
-thumbnail: img/thumbnail.svg
 ---
+
+> 이번 회차의 주제는 **서버리스 이벤트 기반 서비스**입니다. 아래는 이전 기획의 참고 초안이며, 실제 발표 자료는 세션 후 갱신합니다.
 
 ## 선착순 이벤트에는 서로 다른 병목이 생깁니다
 

@@ -1,3 +1,5 @@
+> This session covers **Serverless Event-Driven Services**. The content below is a reference draft from an earlier plan; the actual presentation materials will be updated after the session.
+
 ## A flash sale creates several different bottlenecks
 
 Imagine visitors who normally browse slowly all refreshing the shop at one o'clock. Image downloads, product reads, stock checks, and order creation rise together. The instance's CPU may saturate, or requests may wait for database connections while CPU remains low. Adding instances without separating these cases can increase cost without improving response time.

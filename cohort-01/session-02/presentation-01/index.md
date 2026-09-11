@@ -1,15 +1,18 @@
 ---
 date: 2026-09-29
+status: upcoming
 title:
-  ko: 온라인 쇼핑몰, 첫 서버를 열다
-  en: An Online Store Opens Its First Server
+  ko: 3-Tier 웹 서비스 구축
+  en: Building a 3-Tier Web Service
 description:
-  ko: "VPC·서브넷·인터넷 게이트웨이·보안 그룹이 EC2 웹 서버의 연결 조건을 어떻게 만드는지 설명합니다. DNS 조회와 HTTP 통신을 구분하고, 서버 안팎의 응답 확인부터 오류 진단과 비용 정리까지 따라갑니다."
-  en: "How VPCs, subnets, internet gateways, and security groups make an EC2 web server reachable. Separate DNS lookup from HTTP traffic, verify responses inside and outside the instance, and diagnose connectivity and cleanup issues."
-keywords: [VPC, EC2, Security Group]
+  ko: "VPC·EC2·Auto Scaling·ALB·RDS로 웹·앱·DB 계층을 나누고, 트래픽 증가와 AZ 장애에 대응하는 구조를 설계합니다."
+  en: "Separate web, application, and database tiers with VPC, EC2, Auto Scaling, ALB, and RDS, and design for traffic growth and AZ failures."
+keywords: [VPC, EC2, RDS]
 speakers: [hwang-sujin]
 thumbnail: img/thumbnail.svg
 ---
+
+> 이번 회차의 주제는 **3-Tier 웹 서비스 구축**입니다. 아래는 이전 기획의 참고 초안이며, 실제 발표 자료는 세션 후 갱신합니다.
 
 ## 첫 서버의 목표는 응답 한 장입니다
 

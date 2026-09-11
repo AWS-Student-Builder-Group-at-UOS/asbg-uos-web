@@ -14,7 +14,7 @@ ASBG UOS launched with approval from Professor Minho Kim, head of the SW-centere
 
 ## Five sessions, one continuous thread
 
-This semester has five regular sessions, held every Tuesday from 20:00–21:30 at Centennial Memorial Hall, Building B, Room 602.
+This semester has five regular sessions, held on the Tuesdays listed below from 20:00–21:30 at Centennial Memorial Hall, Building B, Room 602.
 
 | Date | Topic |
 |---|---|
@@ -40,7 +40,9 @@ Using AWS directly can incur costs, so ASBG UOS — selected as a NABIST project
 
 ## Assignments are optional, but the record stays
 
-Assignments follow each session but participation is optional. Submissions use a fixed four-part template — What I Built, Design Decisions, Troubleshooting, Screenshots — written in Markdown and pushed to GitHub. Troubleshooting matters most here: "I built an EC2 instance and it works" is a far weaker record than "this failed, here's what I suspected, here's how I checked, and here's how I fixed it." The core team leaves feedback comments on submissions, and two standout assignments are recognized at the next session — a 10,000 KRW Starbucks card for first place, 5,000 KRW (or another gift card on request) for second.
+Assignment participation is optional. Use the fixed four-part Markdown template — What I Built, Design Decisions, Troubleshooting, Screenshots — in the [Cohort 1 assignment repository](https://github.com/AWS-Student-Builder-Group-at-UOS/cohort-01-assignments), and submit **one PR per person per session**. The core team leaves feedback in PR comments, and you reply or revise within the same PR. Once the review is complete, the core team merges the submission to preserve the learning record.
+
+Assessment covers completion requirements, reasons for design and configuration choices, and verification and troubleshooting. If no problems occurred, write `None` under Troubleshooting and record how you verified normal operation under Screenshots. Having a problem or avoiding one does not change the score. Standout assignments are selected using the published criteria: first place receives a 10,000 KRW Starbucks card, and second place receives a 5,000 KRW card. Submission steps, deadlines, and assessment details are available in the assignment repository.
 
 ## Completion requirements and benefits
 

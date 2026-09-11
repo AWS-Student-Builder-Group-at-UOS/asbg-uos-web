@@ -1,3 +1,5 @@
+> This session covers **Redrawing the Service We Built — A Final Check Before Launch**. The content below is a reference draft from an earlier plan; the actual presentation materials will be updated after the session.
+
 ## Start with requirements, not service names
 
 An online store diagram can contain plenty of AWS icons without explaining how an order is actually saved. This talk uses a small store, where customers browse products, add items to a cart, and place orders, to connect each component to a concrete requirement.

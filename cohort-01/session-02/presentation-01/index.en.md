@@ -1,3 +1,5 @@
+> This session covers **Building a 3-Tier Web Service**. The content below is a reference draft from an earlier plan; the actual presentation materials will be updated after the session.
+
 ## Start with one page that responds
 
 Imagine a small shop showing three products and their prices. The HTML already exists, but it opens only on your laptop. To let someone else enter an address and receive the page, you need a server that produces the response and a network path that reaches it. Our starting design puts a static page containing no personal information on one EC2 instance.

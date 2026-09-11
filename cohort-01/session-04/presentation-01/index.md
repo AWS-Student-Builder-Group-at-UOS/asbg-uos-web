@@ -1,15 +1,17 @@
 ---
 date: 2026-11-24
+status: upcoming
 title:
-  ko: 고객 데이터, 안전하게 지키기
-  en: Keeping Customer Data Safe
+  ko: 컨테이너 기반 마이크로서비스 전환
+  en: Moving to Container-Based Microservices
 description:
-  ko: "상품 파일과 주문 데이터를 S3·RDS에 나누고, 접근 제어와 암호화·Multi-AZ·백업을 서로 다른 보호 장치로 설계합니다. 복구 목표를 정하고 실제 복원 결과를 확인하는 방법까지 살펴봅니다."
-  en: "Separate product files from order records with S3 and RDS, then design access control, encryption, Multi-AZ availability, and backups for their different purposes. Define recovery goals and verify that a restored system actually works."
-keywords: [S3, RDS, KMS]
+  ko: "ECS(Fargate)·ECR·IAM·Secrets Manager·CodePipeline으로 기능별 배포·확장, 권한과 자격 증명 관리, 배포 실패 시 롤백을 설계합니다."
+  en: "Design independent deployment and scaling, permissions, credentials, and rollback with ECS (Fargate), ECR, IAM, Secrets Manager, and CodePipeline."
+keywords: [ECS, ECR, CodePipeline]
 speakers: [jang-jiwon]
-thumbnail: img/thumbnail.svg
 ---
+
+> 이번 회차의 주제는 **컨테이너 기반 마이크로서비스 전환**입니다. 아래는 이전 기획의 참고 초안이며, 실제 발표 자료는 세션 후 갱신합니다.
 
 ## 데이터의 생김새보다 사용 방식으로 저장소 고르기
 

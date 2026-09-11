@@ -1,3 +1,5 @@
+> This session covers **Moving to Container-Based Microservices**. The content below is a reference draft from an earlier plan; the actual presentation materials will be updated after the session.
+
 ## Choose storage by how the data is used
 
 Product photographs and order records are both data, but the operations they need differ. A photograph is uploaded as a file and retrieved by a key. An order needs relationships with customers and products, and consistent changes to orders and inventory. In this design, S3 holds images and downloadable documents, while RDS holds relational tables for customers, orders, and stock.

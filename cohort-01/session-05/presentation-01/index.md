@@ -1,15 +1,18 @@
 ---
 date: 2026-12-29
+status: upcoming
 title:
-  ko: 우리가 만든 서비스, 다시 그려보기
-  en: Redrawing the Service We Built
+  ko: 우리가 만든 서비스, 다시 그려보기 — 오픈 전 마지막 점검
+  en: Redrawing the Service We Built — A Final Check Before Launch
 description:
-  ko: "상품 조회부터 주문 저장까지 요청을 따라가며 쇼핑몰 아키텍처를 연결합니다. 정적 자산 분리, 캐시 일관성, 장애 복구와 비용의 균형을 구체적인 설계 기준으로 살펴봅니다."
-  en: "Connect an online store's architecture by following a request from product browsing to order storage. Review static asset delivery, cache consistency, recovery, and the trade-offs between reliability and cost."
+  ko: "Session 02~04의 3-Tier·서버리스·컨테이너 구성을 종합하고, SAA-C03 응용 문제로 성능·가용성·보안·비용의 선택 근거를 점검합니다. 새 서비스 학습은 추가하지 않습니다."
+  en: "Combine the 3-tier, serverless, and container designs from Sessions 02–04, and use SAA-C03 practice questions to review performance, availability, security, and cost choices. No new services are introduced."
 keywords: [Architecture, SAA-C03, Trade-offs]
 speakers: [son-subin, lee-chaewoo]
 thumbnail: img/thumbnail.svg
 ---
+
+> 이번 회차의 주제는 **우리가 만든 서비스, 다시 그려보기 — 오픈 전 마지막 점검**입니다. 아래는 이전 기획의 참고 초안이며, 실제 발표 자료는 세션 후 갱신합니다.
 
 ## 서비스 이름보다 요구사항부터
 
