@@ -53,7 +53,7 @@ AWS를 직접 사용하면 비용이 발생할 수 있는데, ASBG UOS는 나비
 
 ## 과제는 자율, 기록은 남게
 
-과제 참여는 자율입니다. [1기 과제 저장소](https://github.com/AWS-Student-Builder-Group-at-UOS/cohort-01-assignments)의 고정 템플릿 네 항목 — What I Built, Design Decisions, Troubleshooting, Screenshots — 을 Markdown으로 작성해 **1인·1회차·1PR**로 제출합니다. 리뷰는 코어팀을 중심으로 진행하며 일반 멤버도 참여할 수 있습니다. 제출자는 같은 PR에서 답변하거나 수정하고, 손수빈(`ssub17`)의 최종 승인 후 코어팀이 머지해 학습 기록으로 남깁니다.
+과제 참여는 자율입니다. [1기 과제 저장소](https://github.com/AWS-Student-Builder-Group-at-UOS/cohort-01-assignments)의 고정 템플릿 네 항목 — What I Built, Design Decisions, Troubleshooting, Screenshots — 을 Markdown으로 작성해 **1인·1회차·1PR**로 제출합니다. `images/`에는 아키텍처 다이어그램과 실제 결과 화면을 각각 1개 이상 넣고, 추가 이미지를 포함해 모두 제출 README에 첨부합니다. 리뷰는 코어팀을 중심으로 진행하며 일반 멤버도 참여할 수 있습니다. 제출자는 같은 PR에서 답변하거나 수정하고, 손수빈(`ssub17`)의 최종 승인 후 코어팀이 머지해 학습 기록으로 남깁니다.
 
 평가는 완료 조건 충족, 구성·설정의 선택 근거, 검증·문제 해결 과정을 기준으로 합니다. 문제가 없었다면 Troubleshooting에는 `없음`을 적고 Screenshots에 정상 동작을 확인한 방법과 결과를 남기면 됩니다. 문제 발생 여부는 가감점 사유가 아닙니다. 우수 과제는 공지된 기준에 따라 선정하며, 1등은 스타벅스 1만 원권, 2등은 5천 원권을 받습니다. 제출 방법과 마감·평가 안내는 과제 저장소에서 확인할 수 있습니다.
 
