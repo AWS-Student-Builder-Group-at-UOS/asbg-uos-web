@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-label="서버 한 대에서 시작해 두 대, 로드밸런서, 공유 세션 저장소까지 구조가 커지는 과정">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="380" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="378" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">서버 한 대가 멈춰도 서비스가 계속되려면</text>
+<text x="36" y="74" font-size="15" fill="#35526A">요청 하나를 따라가며 던진 질문들</text>
+<text x="36" y="108" font-size="12" font-weight="700" fill="#1160D8">01</text>
+<text x="60" y="108" font-size="13" font-weight="700" fill="#123249">서버 한 대</text>
+<rect x="102" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="132" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
+<rect x="52" y="156" width="160" height="100" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="58" y="168" font-size="9" fill="#35526A">VPC</text>
+<rect x="97" y="196" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="132" y="215" font-size="11" text-anchor="middle" fill="#123249">서버 A</text>
+<line x1="132" y1="142" x2="132" y2="192" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="132" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">이 서버가 멈추면?</text>
+<text x="132" y="348" font-size="11" text-anchor="middle" fill="#35526A">서비스도 같이 멈춘다</text>
+<line x1="234" y1="210" x2="262" y2="210" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="268" y="108" font-size="12" font-weight="700" fill="#1160D8">02</text>
+<text x="292" y="108" font-size="13" font-weight="700" fill="#123249">두 대로 늘리면?</text>
+<rect x="334" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="364" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
+<rect x="276" y="156" width="176" height="100" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="282" y="168" font-size="9" fill="#35526A">VPC</text>
+<rect x="286" y="196" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="321" y="215" font-size="11" text-anchor="middle" fill="#123249">서버 A</text>
+<rect x="372" y="196" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="407" y="215" font-size="11" text-anchor="middle" fill="#123249">서버 B</text>
+<line x1="364" y1="142" x2="321" y2="192" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="364" y1="142" x2="407" y2="192" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="364" y="180" font-size="16" font-weight="700" text-anchor="middle" fill="#1160D8">?</text>
+<text x="364" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">두 대로 늘리면 끝일까?</text>
+<text x="364" y="348" font-size="11" text-anchor="middle" fill="#35526A">요청을 어디로 보낼지가 없다</text>
+<line x1="466" y1="210" x2="494" y2="210" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="500" y="108" font-size="12" font-weight="700" fill="#1160D8">03</text>
+<text x="524" y="108" font-size="13" font-weight="700" fill="#123249">로드밸런서</text>
+<rect x="566" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="596" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
+<rect x="508" y="150" width="176" height="122" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="514" y="162" font-size="9" fill="#35526A">VPC</text>
+<rect x="554" y="160" width="84" height="24" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="596" y="176" font-size="11" text-anchor="middle" fill="#123249">로드밸런서</text>
+<rect x="518" y="216" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="553" y="235" font-size="11" text-anchor="middle" fill="#123249">서버 A</text>
+<rect x="604" y="216" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="639" y="235" font-size="11" text-anchor="middle" fill="#123249">서버 B</text>
+<line x1="596" y1="142" x2="596" y2="158" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="576" y1="184" x2="553" y2="212" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="616" y1="184" x2="639" y2="212" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="596" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">요청은 어떻게 나눠 보낼까?</text>
+<text x="596" y="348" font-size="11" text-anchor="middle" fill="#35526A">로드밸런서가 요청을 분산한다</text>
+<line x1="698" y1="210" x2="726" y2="210" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="732" y="108" font-size="12" font-weight="700" fill="#1160D8">04</text>
+<text x="756" y="108" font-size="13" font-weight="700" fill="#123249">공유 세션 저장소</text>
+<rect x="798" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="828" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
+<rect x="740" y="150" width="176" height="152" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="746" y="162" font-size="9" fill="#35526A">VPC</text>
+<rect x="786" y="158" width="84" height="22" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="828" y="173" font-size="11" text-anchor="middle" fill="#123249">로드밸런서</text>
+<rect x="750" y="204" width="70" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="785" y="222" font-size="11" text-anchor="middle" fill="#123249">서버 A</text>
+<rect x="836" y="204" width="70" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="871" y="222" font-size="11" text-anchor="middle" fill="#123249">서버 B</text>
+<rect x="786" y="262" width="84" height="24" fill="#FFFFFF" stroke="#1160D8"/>
+<text x="828" y="278" font-size="11" text-anchor="middle" fill="#123249">캐시 서버</text>
+<line x1="828" y1="142" x2="828" y2="156" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="808" y1="180" x2="785" y2="200" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="848" y1="180" x2="871" y2="200" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="785" y1="232" x2="812" y2="260" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="871" y1="232" x2="844" y2="260" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="828" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">서버가 바뀌어도 로그인은?</text>
+<text x="828" y="348" font-size="11" text-anchor="middle" fill="#35526A">공유 세션 저장소를 같이 쓴다</text>
+</g>
+</svg>

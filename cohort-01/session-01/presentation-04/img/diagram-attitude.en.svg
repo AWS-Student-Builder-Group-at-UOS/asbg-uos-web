@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-label="Start with AI, finish it myself: a person writes the spec and tests, AI implements, automated tests feed back failures, and a person verifies and owns the result">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="360" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="358" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">Start with AI, finish it myself</text>
+<text x="36" y="74" font-size="15" fill="#35526A">The human's job = design the loop + place the checkpoints</text>
+
+<rect x="50" y="110" width="230" height="60" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="165" y="131" text-anchor="middle" font-size="11" fill="#35526A">Human</text>
+<text x="165" y="153" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Spec · Tests</text>
+
+<rect x="330" y="110" width="230" height="60" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="445" y="131" text-anchor="middle" font-size="11" fill="#35526A">AI</text>
+<text x="445" y="153" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Implement</text>
+
+<rect x="330" y="250" width="230" height="60" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="445" y="271" text-anchor="middle" font-size="11" fill="#35526A">Automated</text>
+<text x="445" y="293" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Test failures · Feedback</text>
+
+<rect x="50" y="250" width="230" height="60" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="165" y="271" text-anchor="middle" font-size="11" fill="#35526A">Human</text>
+<text x="165" y="293" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Verify · Own it</text>
+
+<line x1="286" y1="140" x2="324" y2="140" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="460" y1="176" x2="460" y2="244" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="430" y1="244" x2="430" y2="176" stroke="#79CDFF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<text x="472" y="214" font-size="11" fill="#35526A">repeats while I sleep</text>
+<line x1="324" y1="280" x2="286" y2="280" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="165" y1="244" x2="165" y2="176" stroke="#1160D8" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="177" y="214" font-size="12" fill="#1160D8">next spec</text>
+
+<rect x="600" y="146" width="14" height="14" fill="#79CDFF"/>
+<text x="624" y="158" font-size="14" font-weight="700" fill="#123249">Left open</text>
+<text x="624" y="178" font-size="12" fill="#35526A">iteration · drafts · tests · docs</text>
+<rect x="600" y="226" width="14" height="14" fill="#123249"/>
+<text x="624" y="238" font-size="14" font-weight="700" fill="#123249">Locked</text>
+<text x="624" y="258" font-size="12" fill="#35526A">user data · payments · deployment</text>
+<text x="624" y="276" font-size="12" fill="#35526A">security · big structural changes</text>
+
+<text x="50" y="338" font-size="13" fill="#35526A">AI iterates where it is open; a person approves where it is locked</text>
+</g>
+</svg>

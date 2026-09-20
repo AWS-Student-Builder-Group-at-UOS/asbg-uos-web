@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" role="img" aria-label="The five stages a cloud engineer needs: fundamentals, build, operate, automate, containers">
+<rect width="960" height="340" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="338" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">What you need to know</text>
+<text x="36" y="74" font-size="15" fill="#35526A">Five stages, in order</text>
+<rect x="36" y="210" width="170" height="100" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="48" y="236" font-size="11" font-weight="700" fill="#1160D8">01</text>
+<text x="70" y="236" font-size="14" font-weight="700" fill="#123249">Fundamentals</text>
+<text x="48" y="256" font-size="10.5" fill="#35526A">How servers and</text>
+<text x="48" y="270" font-size="10.5" fill="#35526A">networks work</text>
+<text x="48" y="290" font-size="11" fill="#1160D8">Linux · TCP/IP</text>
+<text x="48" y="304" font-size="11" fill="#1160D8">DNS · HTTP</text>
+<rect x="218" y="184" width="170" height="100" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="230" y="210" font-size="11" font-weight="700" fill="#1160D8">02</text>
+<text x="252" y="210" font-size="14" font-weight="700" fill="#123249">Build</text>
+<text x="230" y="230" font-size="10.5" fill="#35526A">Build a service env</text>
+<text x="230" y="244" font-size="10.5" fill="#35526A">on one CSP</text>
+<text x="230" y="264" font-size="11" fill="#1160D8">AWS</text>
+<rect x="400" y="158" width="170" height="100" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="412" y="184" font-size="11" font-weight="700" fill="#1160D8">03</text>
+<text x="434" y="184" font-size="14" font-weight="700" fill="#123249">Operate</text>
+<text x="412" y="204" font-size="10.5" fill="#35526A">Narrow down problems</text>
+<text x="412" y="218" font-size="10.5" fill="#35526A">with metrics and logs</text>
+<text x="412" y="238" font-size="11" fill="#1160D8">CloudWatch · Prometheus</text>
+<rect x="582" y="132" width="170" height="100" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="594" y="158" font-size="11" font-weight="700" fill="#1160D8">04</text>
+<text x="616" y="158" font-size="14" font-weight="700" fill="#123249">Automate</text>
+<text x="594" y="178" font-size="10.5" fill="#35526A">Make repeated work</text>
+<text x="594" y="192" font-size="10.5" fill="#35526A">reproducible</text>
+<text x="594" y="212" font-size="11" fill="#1160D8">Git · scripts</text>
+<text x="594" y="226" font-size="11" fill="#1160D8">Terraform</text>
+<rect x="764" y="106" width="170" height="100" fill="#FFFFFF" stroke="#1160D8"/>
+<text x="776" y="132" font-size="11" font-weight="700" fill="#1160D8">05</text>
+<text x="798" y="132" font-size="14" font-weight="700" fill="#123249">Containers</text>
+<text x="776" y="152" font-size="10.5" fill="#35526A">Understand runtime and</text>
+<text x="776" y="166" font-size="10.5" fill="#35526A">deployment environments</text>
+<text x="776" y="186" font-size="11" fill="#1160D8">Docker · Kubernetes</text>
+</g>
+</svg>
