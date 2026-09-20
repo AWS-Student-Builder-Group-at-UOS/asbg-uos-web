@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1125" viewBox="0 0 900 1125" role="img" aria-label="Generic profile silhouette">
+  <rect width="900" height="1125" fill="#EDF3F5"/>
+  <circle cx="450" cy="365" r="150" fill="#8EA5AE"/>
+  <path d="M135 1125V925c0-180 125-300 315-300s315 120 315 300v200Z" fill="#8EA5AE"/>
+</svg>
