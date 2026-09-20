@@ -92,8 +92,6 @@ AWS 계정 보안 설정과 예산 알림을 정리합니다.
 
 발표별 `index.en.md`, `img/`, `files/`도 같은 발표 폴더에 둡니다. 영어 본문이 없으면 한국어 본문을 보여줍니다. 첫 번째 발표 주소는 `/ko/sessions/cohort-01/session-01/presentation-01`이며, 영어 페이지는 맨 앞의 `ko`를 `en`으로 바꾼 주소입니다.
 
-`cohort-02/session-01/presentation-01/`과 `presentation-02/`에는 화면 확인을 위한 가상의 발표 기록을 넣었습니다. 각 폴더에 한국어·영어 본문, 도식, PDF 체크리스트가 있으며, 실제 행사나 계정 작업의 기록은 아닙니다.
-
 ### 멤버 `core.yaml` / `general.yaml`
 
 ```yaml

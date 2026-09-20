@@ -6,10 +6,8 @@
   links:
     github: https://github.com/ssub17
     linkedin: https://www.linkedin.com/in/soobeenson/
-  keywords: [Kubernetes, Networking, "Animal Crossing"]
-  description:
-    ko: "교내에 클라우드 진로 관련 활동이 너무 없었던 거 같아서 이렇게 개설하게 되었고, 여러분들과 함께 시작하게 되어 기쁩니다. 요새는 쿠버네티스에 관심 많습니다! 서버리스에도 흥미는 있지만 잘 쓰지 않아 공부도 자연스럽게 미루는 중... 교내뿐 아니라 타대학, 현직자분들과의 네트워킹과 네트워크 기초 지식을 얻어가고 싶어요. 요새 최애 동물의 숲 캐릭터는 삐로코인데, 귀여운지 객관적인 판단 부탁드립니다. TEAM ASBG 파이팅~~~"
-    en: "There didn't seem to be anything on campus for people thinking about a career in cloud, so I started this group, and I'm glad to be starting it with all of you. These days I'm really into Kubernetes! I'm curious about serverless too, but I rarely use it, so studying it keeps getting put off... I'm hoping to get to know people beyond campus, from other universities and from the industry, and to pick up networking fundamentals. My favorite Animal Crossing villager these days is Roswell. Please give me an objective verdict on whether he's cute. Go TEAM ASBG~~~"
+  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 - id: hwang-sujin
   name: { ko: 황수진, en: Sujin Hwang }
@@ -19,10 +17,8 @@
   links:
     github: https://github.com/abroniasj416
     linkedin: https://www.linkedin.com/in/soojin-hwang-b69126303/
-  keywords: [Linux, Container, Lizards]
-  description:
-    ko: "컴과에서 만난 것 중 클라우드가 가장 재미있는 것 같아서 클라우드와 인프라 공부 열심히 하고 있는 상태입니다! 요즘은 리눅스, 네트워크, 컨테이너에 관심 있습니다~ 클라우드 대장 AWS 지식!!! 그리고 인프라에 관심 있는 사람들과의 네트워킹을 얻어가고 싶어요. 헬스, 러닝 좋아해서 매일 하고 있습니다. 도마뱀 관심 있으시면 연락주세요. 도마뱀 박사입니다."
-    en: "Of everything I've run into in CS, cloud seems like the most fun, so I've been studying cloud and infrastructure hard! Lately I'm into Linux, networking, and containers~ What I want to take away is AWS knowledge, the big boss of cloud!!! And getting to know other people who are into infrastructure. I like lifting and running and do them every day. If you're into lizards, get in touch. I'm a lizard expert."
+  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 - id: lee-yena
   name: { ko: 이예나, en: Yena Lee }
@@ -33,10 +29,8 @@
     github: https://github.com/i2na
     linkedin: https://www.linkedin.com/in/i2na/
     website: http://yena.io.kr/
-  keywords: [Network, Infra, Cats]
-  description:
-    ko: "서버리스, 컨테이너, DB, 네트워크 등 정말 많은 기술을 어떤 상황에 어떻게 조합해서 쓰는지 이리저리 뜯어보며 파보는걸 좋아합니다 ㅎㅎ 너무나 철부지 병아리 신입 새싹 개발자이지만, 회사에서 AI가 이제 확실한 동료로 자리 잡은 만큼 한 사람이 여러 분야의 전문가가 되어 전보다 더 많은 것을 이뤄낼 수 있는 좋은 시기라고 느껴집니다! 그중 인프라는 빼놓을 수 없는 분야라 열심히 공부해서 공유하려고 합니다 ㅎㅎ 같이 열심히 해보아요! 고양이 토크도 좋아합니다 먀..~"
-    en: "I love pulling apart how all the different technologies, serverless, containers, databases, networking and so on, get combined and used in different situations, haha. I'm still a total baby-chick newbie of a developer, but now that AI has become a real colleague at work, it feels like a great time when one person can become an expert in several fields and get more done than ever! Infrastructure is one field you can't leave out, so I'm going to study hard and share what I learn. Let's go for it together! Cat talk is always welcome too, meow~"
+  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 - id: lee-chaewoo
   name: { ko: 이채우, en: Chaewoo Lee }
@@ -46,10 +40,8 @@
   links:
     github: https://github.com/2fill
     linkedin: https://www.linkedin.com/in/chaewoo-lee-01565241b/
-  keywords: [Frontend, "Medical AI", Dance]
-  description:
-    ko: "PM, 창업, 빅데이터, AI 모두 관심있지만, 학교 생활 내내 프론트를 해왔기에 첫 취업은 프론트로 하자! 고 결론을 내렸습니다ㅎ 의료 인공지능 연구실에서 JMIR Medical Informatics에 논문을 게재했고, 시대생 앱 프론트를 하고 있습니당. 그저 새로운 거 공부하는 걸 좋아해서, 인프라 아는 개발자 되려고 믿고 맡기는 리더님 따라 들어왔습니다! 운동 토크 좋아해요. 러닝, 배드민턴, 헬스, 클라이밍, 스케이트 다 불러주세요! 춤 같이 출 사람은 없겠죠... 이상입니다."
-    en: "I'm interested in PM, startups, big data, and AI too, but I've done frontend all through school, so I've concluded my first job is going to be frontend, haha. I published a paper in JMIR Medical Informatics at a medical AI lab, and I work on the frontend of the UOS campus app. I just like studying new things, so I followed our trusty leader in here to become a developer who knows infrastructure! I love talking about sports. Running, badminton, lifting, climbing, skating, call me for any of them! I'm guessing nobody wants to dance with me, though... That's all."
+  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 - id: jang-jiwon
   name: { ko: 장지원, en: Jiwon Jang }
@@ -59,7 +51,5 @@
   links:
     github: https://github.com/uukdo
     linkedin: https://www.linkedin.com/in/uukdo/
-  keywords: [DevOps, Startup, Doraemon]
-  description:
-    ko: "창업 쪽 생각이 커지는 요즘이라 이 분야 저 분야 탐험해보고 싶은 욕구가 커서, FE/BE 경험을 넘어 클라우드와 DevOps까지 경험해보며 실제 서비스 운영 역량을 키우고 싶습니다! 실제 시스템 설계에는 SAA 자격증 공부가 도움이 된다고 알고 있어 SAA 공부도 함께 진행해보고 싶어요. 코어팀으로 활동할 수 있게 되어 너무 영광이고, 맡은 건 끝까지 책임지고 해내겠습니다. 저는 그냥 도라에몽 주머니예요. 뭐든 이야기하시면 바로 다가가버릴 준비 돼있습니다!!!"
-    en: "Lately I've been thinking more and more about starting something of my own, so I want to explore all sorts of areas. Beyond my frontend and backend experience, I'd like to try cloud and DevOps and build the skills to actually run a service! I hear studying for the SAA helps with real system design, so I want to work on that alongside. It's an honor to be on the core team, and whatever I take on, I'll see it through to the end. I'm basically Doraemon's pocket. Whatever you need, just say the word and I'm there!!!"
+  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
