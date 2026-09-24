@@ -1,5 +1,7 @@
 # ASBG UOS Web
 
+[English](README.en.md)
+
 AWS Student Builder Groups at University of Seoul, 줄여서 ASBG UOS의 공식 웹사이트입니다. ASBG는 AWS가 대학 단위로 운영하는 공식 학생 커뮤니티이고, ASBG UOS는 그 서울시립대 그룹입니다. 이 사이트는 동아리가 무엇을 하는지 소개하고, 기수별 발표 기록과 멤버, 공식 채널을 한곳에 모아 보여 줍니다.
 
 사이트: https://asbg.uos.ac.kr
