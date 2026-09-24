@@ -6,7 +6,6 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
-    // 콘텐츠 이미지는 미리 리사이즈한 정적 파일을 사용한다.
     rules: { "@next/next/no-img-element": "off" },
   },
   globalIgnores([

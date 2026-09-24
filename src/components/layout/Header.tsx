@@ -27,7 +27,6 @@ export function Header({
   const [open, setOpen] = useState(false);
 
   const isActive = (item: NavItem) => pathname === item.match || pathname.startsWith(`${item.match}/`);
-  // 같은 경로에서는 라우터가 스크롤을 초기화하지 않는다.
   const go = (href: string) => () => {
     setOpen(false);
     if (pathname === href) window.scrollTo(0, 0);

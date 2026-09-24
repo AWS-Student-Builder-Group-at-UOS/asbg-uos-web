@@ -29,7 +29,6 @@ export function MemberBio({ text, more, less, className }: { text: string; more:
       if (desktop) {
         const topInset = px(cardStyle.paddingTop) + px(cardStyle.borderTopWidth);
         const bottomInset = px(cardStyle.paddingBottom) + px(cardStyle.borderBottomWidth);
-        // 펼친 카드 높이가 아닌, 기본 높이와 사진·키워드의 실제 높이를 기준으로 삼는다.
         const collapsedHeight = Math.max(
           px(cardStyle.minHeight),
           media.getBoundingClientRect().height + topInset + bottomInset,
@@ -37,7 +36,6 @@ export function MemberBio({ text, more, less, className }: { text: string; more:
         available = collapsedHeight - bottomInset - (el.getBoundingClientRect().top - card.getBoundingClientRect().top);
       }
 
-      // 버튼 없이 전체 소개가 들어가면 접지 않는다.
       const clamped = el.scrollHeight > available + 1;
       const buttonStyle = getComputedStyle(button);
       const buttonSpace = px(buttonStyle.lineHeight) + px(buttonStyle.paddingTop) + px(buttonStyle.paddingBottom)
@@ -53,7 +51,6 @@ export function MemberBio({ text, more, less, className }: { text: string; more:
     observer.observe(card);
     observer.observe(media);
     observer.observe(header);
-    // 접힌 높이가 같아도 폰트가 바뀌면 줄 수를 다시 잰다.
     document.fonts.ready.then(measure);
     document.fonts.addEventListener("loadingdone", measure);
     return () => {

@@ -519,12 +519,10 @@
     return fig;
   };
 
-  // 01 기준 이미지
   const P01 = { cohort: "01", session: "01", presentation: "01", keywords: ["Community", "Hands-on", "Curriculum"], icon: "people" };
   const reference = build(P01);
   document.getElementById("fig-reference").innerHTML = reference;
 
-  // 02 치수
   const dim = document.getElementById("fig-dimensions");
   dim.innerHTML = reference;
   const S = "#FF3B7A";
@@ -546,7 +544,6 @@
     ${label(92, 726, "x 84")}
   </svg>`);
 
-  // 5.2 격자 좌표
   const g = 22, off = 34;
   let grid = `<svg viewBox="0 0 ${off + 16 * g + 8} ${off + 16 * g + 8}" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;display:block" shape-rendering="crispEdges">`;
   grid += `<rect x="${off}" y="${off}" width="${16 * g}" height="${16 * g}" fill="#0B0F17"/>`;
@@ -562,7 +559,6 @@
   grid += `</g></svg>`;
   document.getElementById("fig-grid").innerHTML = grid;
 
-  // 06 예시 아이콘
   const list = document.getElementById("icon-list");
   const view = document.getElementById("glyph-view");
   const preview = (rows) => {
@@ -584,7 +580,6 @@
   });
   select("people");
 
-  // 06 적용 예
   const examples = document.getElementById("fig-examples");
   [
     [P01, "ASBG UOS 1기, 왜 함께 AWS를 배우는가"],
@@ -593,7 +588,6 @@
     [{ cohort: "01", session: "01", presentation: "04", keywords: ["AI Delegation", "Verification", "Domain Knowledge"], icon: "chip" }, "1년차 개발자가 AI 시대에서 정한 전략"],
   ].forEach(([p, title]) => examples.appendChild(thumb(build(p), `세션 ${p.session} · 발표 ${p.presentation} · ${p.icon} — ${title}`)));
 
-  // 08 템플릿
   document.getElementById("template-view").textContent = template;
   document.getElementById("keywords-view").textContent = `<g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#FFFFFF">\n${keywordLines(P01.keywords)}\n</g>`;
   const rects = iconRects(glyphs.people).split("\n");

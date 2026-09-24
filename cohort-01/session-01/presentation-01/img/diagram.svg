@@ -6,7 +6,6 @@
 <text x="36" y="48" font-size="26" font-weight="700" fill="#123249">한 학기, 서비스 하나</text>
 <text x="36" y="78" font-size="16" fill="#35526A">서버 한 대를 잘 운영하는 문제에서, 기능 단위로 나누고 자동으로 배포하는 문제로</text>
 
-<!-- 1 -->
 <rect x="36" y="118" width="195" height="120" fill="#FFFFFF" stroke="#79CDFF"/>
 <text x="54" y="146" font-size="12" font-weight="700" fill="#1160D8">01</text>
 <text x="54" y="176" font-size="18" font-weight="700" fill="#123249">서버 구성</text>
@@ -14,7 +13,6 @@
 <text x="54" y="222" font-size="12" fill="#35526A">3-Tier 구조</text>
 <line x1="237" y1="178" x2="261" y2="178" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
 
-<!-- 2 -->
 <rect x="267" y="118" width="195" height="120" fill="#FFFFFF" stroke="#79CDFF"/>
 <text x="285" y="146" font-size="12" font-weight="700" fill="#1160D8">02</text>
 <text x="285" y="176" font-size="18" font-weight="700" fill="#123249">서버리스 분리</text>
@@ -22,7 +20,6 @@
 <text x="285" y="222" font-size="12" fill="#35526A">이벤트 기반</text>
 <line x1="468" y1="178" x2="492" y2="178" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
 
-<!-- 3 -->
 <rect x="498" y="118" width="195" height="120" fill="#FFFFFF" stroke="#79CDFF"/>
 <text x="516" y="146" font-size="12" font-weight="700" fill="#1160D8">03</text>
 <text x="516" y="176" font-size="18" font-weight="700" fill="#123249">배포 자동화</text>
@@ -30,7 +27,6 @@
 <text x="516" y="222" font-size="12" fill="#35526A">컨테이너 · CI/CD</text>
 <line x1="699" y1="178" x2="723" y2="178" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
 
-<!-- 4 -->
 <rect x="729" y="118" width="195" height="120" fill="#FFFFFF" stroke="#79CDFF"/>
 <text x="747" y="146" font-size="12" font-weight="700" fill="#1160D8">04</text>
 <text x="747" y="176" font-size="18" font-weight="700" fill="#123249">종합 점검</text>

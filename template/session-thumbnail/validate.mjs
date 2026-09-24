@@ -1,5 +1,3 @@
-// 세션 썸네일 검증. design-guide.html의 템플릿과 대조하고 번호 · 키워드 · 아이콘 격자를 확인한다.
-// 사용: node template/session-thumbnail/validate.mjs <thumbnail.svg>
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
@@ -22,7 +20,6 @@ const svg = fs.readFileSync(file, "utf8").trim();
 const errors = [];
 const unescape = (s) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 
-// 1. 템플릿과 대조한다. 공백 차이만 허용하고, 자리표시자는 나온 순서대로 캡처한다.
 const names = [];
 const pattern = template
   .replace(/\{\{(COHORT|SESSION|PRESENTATION|KEYWORDS|ICON)\}\}/g, (_, key) => {
@@ -46,7 +43,6 @@ if (match) {
   errors.push(`템플릿과 다르다${missing ? `: "${missing.slice(0, 70)}…" 부분이 없다` : ""}`);
 }
 
-// 2. 키워드 3줄을 확인한다.
 const lines = [];
 if (found.KEYWORDS !== undefined) {
   const linePattern = /<text x="84" y="(\d+)" font-size="(\d+)">([^<]+)<\/text>/g;
@@ -69,7 +65,6 @@ if (found.KEYWORDS !== undefined) {
   }
 }
 
-// 3. 발표 폴더 안에 있으면 번호와 키워드를 폴더 이름 · index.md와 대조한다.
 const abs = path.resolve(file);
 const location = abs.match(/cohort-(\d{2})[\\/]session-(\d{2})[\\/]presentation-(\d{2})[\\/]img[\\/][^\\/]+$/);
 if (location) {
@@ -90,7 +85,6 @@ if (location) {
   }
 }
 
-// 4. 아이콘 rect를 확인한다.
 const grid = Array.from({ length: 16 }, () => Array(16).fill("."));
 let filled = 0;
 if (found.ICON !== undefined) {
@@ -114,7 +108,6 @@ if (found.ICON !== undefined) {
   else if (rows < 8 || cols < 8) errors.push(`아이콘이 너무 작다: ${rows}행 × ${cols}열 (8 × 8 이상)`);
 }
 
-// 5. 파일 크기를 확인한다.
 const bytes = Buffer.byteLength(svg);
 if (bytes > 30_000) errors.push(`파일이 30 KB를 넘는다: ${bytes} bytes`);
 

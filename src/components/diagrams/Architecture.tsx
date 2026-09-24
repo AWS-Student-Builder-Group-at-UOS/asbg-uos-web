@@ -89,7 +89,6 @@ function elbow(dir: "h" | "v", [x1, y1]: Pt, [x2, y2]: Pt) {
   return `M${x1} ${y1}V${my}H${x2}V${y2}`;
 }
 
-// 패킷 경로가 끊기지 않도록 두 번째 간선부터 M을 L로 바꾼다.
 function route(l: Layout, keys: Key[]) {
   const parts = keys.slice(1).map((k, i) => elbow(l.dir, l.pos[keys[i]], l.pos[k]));
   return parts.map((p, i) => (i === 0 ? p : p.replace(/^M/, "L"))).join("");
