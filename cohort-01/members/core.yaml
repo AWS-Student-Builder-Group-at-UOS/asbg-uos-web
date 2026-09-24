@@ -1,55 +1,96 @@
 - id: son-subin
-  name: { ko: 손수빈, en: Subin Son }
+  name:
+    ko: 손수빈
+    en: Subin Son
   role: Leader
-  major: { ko: 컴퓨터과학부, en: Computer Science }
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
   photo: img/son-subin.jpg
   links:
     github: https://github.com/ssub17
-    linkedin: https://www.linkedin.com/in/soobeenson/
-  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
+    linkedin: https://www.linkedin.com/in/soobeenson
+    website: https://velog.io/@ssub17
+  keywords:
+    - Kubernetes
+    - Terraform
+    - Serverless
+  description:
+    ko: "안녕하세요! 클라우드와 인프라 기술에 대한 폭넓은 지식을 나누고 함께 성장하고 싶어 ASBG UOS를 만들었습니다. 많은 분이 함께 배우고 성장하시면 좋겠습니다. 이번 1기는 어벤져스 같은 팀이니 믿고 함께해 주세요! 😎 요즘은 쿠버네티스에 관심이 많습니다. 어렵지만 직접 실습하고 공식 문서를 읽으며 공부하려고 합니다. 혼자 공부하기 쉽지 않으니 우리 함께 공부해요! 클라우드는 파고들수록 재미있으면서도 어려운 것 같습니다. 트러블슈팅 경험과 실습 방법도 공유할 예정이니 많은 관심 부탁드립니다. 🙌🙌"
+    en: "Hi! I started ASBG UOS to share knowledge across cloud and infrastructure technologies and grow together. I hope lots of people will join us to learn. Our first cohort is like a team of Avengers, so you're in good hands! 😎 Lately, I've been especially interested in Kubernetes. It's challenging, but I plan to tackle it through hands-on practice and the official documentation. Studying alone isn't always easy, so let's learn together! The deeper I dive into cloud computing, the more fascinating and challenging it gets. I'll also be sharing troubleshooting experiences and ways to practice, so stay tuned! 🙌🙌"
 - id: hwang-sujin
-  name: { ko: 황수진, en: Sujin Hwang }
+  name:
+    ko: 황수진
+    en: Sujin Hwang
   role: Tech Lead
-  major: { ko: 컴퓨터과학부, en: Computer Science }
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
   photo: img/hwang-sujin.jpg
   links:
     github: https://github.com/abroniasj416
-    linkedin: https://www.linkedin.com/in/soojin-hwang-b69126303/
-  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
+    website: https://hwangsoojin.tistory.com
+  keywords:
+    - Linux
+    - Containers
+    - Kubernetes
+  description:
+    ko: "클라우드와 네트워크에 관심이 많고, 새로운 기술을 접하면 사용법뿐 아니라 어떤 원리로 동작하는지 알아가는 것을 좋아합니다. 실습이 잘되었을 때도 “왜 이렇게 구성해야 할까?”, “다른 방법은 없을까?”를 생각하며, 제 선택의 이유를 설명할 수 있는 엔지니어가 되고 싶습니다. 혼자 고민하던 문제를 다른 사람과 이야기하면서 이해하게 되는 순간을 좋아합니다. 같은 주제를 공부해도 각자 궁금해하는 부분과 접근하는 방법이 달라, 서로의 생각을 나누는 과정에서 많이 배운다고 느낍니다. ASBG UOS에서는 함께 AWS를 실습하고, 막혔던 부분과 해결 과정을 편하게 나누고 싶습니다. 모르는 것은 솔직하게 질문하고, 제가 아는 것은 이해하기 쉽게 설명하며 함께 성장하고 싶습니다!"
+    en: "I'm interested in cloud computing and networking. When I come across a new technology, I enjoy learning how it works, beyond just how to use it. Even when a hands-on exercise goes well, I ask myself, \"Why is it set up this way?\" and \"Could we do it differently?\" I want to become an engineer who can explain the reasoning behind my choices. I love the moment when talking through a problem with someone helps me understand something I'd been stuck on alone. Even when we study the same topic, we each have different questions and approaches, and I learn a lot from sharing those perspectives. At ASBG UOS, I'd like to get hands-on with AWS together and openly share the challenges we face and how we solve them. I hope we can grow together by asking honest questions about what we don't know and explaining what we do know in ways that are easy to understand!"
 - id: lee-yena
-  name: { ko: 이예나, en: Yena Lee }
+  name:
+    ko: 이예나
+    en: Yena Lee
   role: Tech Lead
-  major: { ko: 전자전기컴퓨터공학부, en: Electrical and Computer Engineering }
+  major:
+    ko: 전자전기컴퓨터공학부
+    en: Electrical and Computer Engineering
   photo: img/lee-yena.jpg
   links:
     github: https://github.com/i2na
     linkedin: https://www.linkedin.com/in/i2na/
-    website: http://yena.io.kr/
-  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
+    website: https://yena.io.kr/
+  keywords:
+    - VPC
+    - Containers
+    - IaC
+  description:
+    ko: "평소 서비스를 보면 데이터가 어디로 오가고 서버들이 어떻게 연결되어 있을지 머릿속으로 그려 보는 것을 좋아합니다. 요즘은 VPC로 네트워크를 구성하는 방법과 컨테이너 배포, IaC를 관심 있게 공부하고 있습니다. ASBG에서 이런 이야기를 함께 나눌 분들을 만나게 되어 반갑습니다! 😊 각자 공부한 내용부터 혼자 끙끙 앓았던 문제까지 편하게 이야기하면서, 혼자 공부하며 놓쳤던 부분도 함께 채워 가고 싶습니다. 클라우드를 중심으로 함께 성장하는 커뮤니티가 되도록 힘을 보태겠습니다. 잘 부탁드립니다!"
+    en: "When I use a service, I like to picture where its data travels and how its servers are connected. Lately, I've been exploring how to build networks with VPCs, deploy containers, and use infrastructure as code (IaC). I'm happy to meet people at ASBG who enjoy talking about these things too! 😊 I'd love for us to share everything from what we've been learning to the problems we've been wrestling with on our own, and help each other fill in the gaps. I look forward to helping build a community where we grow together through cloud computing. It's great to be here!"
 - id: lee-chaewoo
-  name: { ko: 이채우, en: Chaewoo Lee }
+  name:
+    ko: 이채우
+    en: Chaewoo Lee
   role: Director of Events
-  major: { ko: 컴퓨터과학부, en: Computer Science }
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
   photo: img/lee-chaewoo.jpg
   links:
     github: https://github.com/2fill
-    linkedin: https://www.linkedin.com/in/chaewoo-lee-01565241b/
-  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
+  keywords:
+    - PM
+    - Frontend
+    - Serverless
+  description:
+    ko: "프론트엔드 개발을 공부하고 취업을 준비하면서, 프론트엔드만 알아서는 부족하겠다는 생각이 들었습니다. 대학 생활 동안 꾸준히 해 온 분야가 프론트엔드라 첫 커리어는 프론트엔드 개발자로 시작하려고 합니다! 다만 관심 있는 분야가 워낙 다양해서, 이후 어떤 분야로 이직할지는 저도 모르겠습니다. 운동을 좋아하시는 분이 있다면 같이 운동하러 가요! 춤이 취미이신 분도 환영합니다. 책도 좋아해서 종종 소규모 북클럽을 하는데, 관심 있으시면 미리 귀띔해 주세요!"
+    en: "While working on frontend development and preparing for my job search, I realized that knowing only frontend development wouldn't be enough. Since it's the area I've consistently worked on throughout university, I plan to start my career as a frontend developer! That said, I'm interested in so many different fields that even I can't predict where my career might take me next. If you enjoy working out, let's go together! I'd also love to meet anyone who dances as a hobby. I enjoy reading too and occasionally get together for small book club discussions, so let me know in advance if you're interested!"
 - id: jang-jiwon
-  name: { ko: 장지원, en: Jiwon Jang }
+  name:
+    ko: 장지원
+    en: Jiwon Jang
   role: Director of Marketing
-  major: { ko: 컴퓨터과학부, en: Computer Science }
-  photo: img/jang-jiwon.jpg
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  photo: img/jang-jiwon.jpeg
   links:
     github: https://github.com/uukdo
     linkedin: https://www.linkedin.com/in/uukdo/
-  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  keywords:
+    - DevOps
+    - Cloud
+    - End-to-End Development
+  description:
+    ko: "ASBG에서 다양한 관심사와 기술 분야를 가진 부원들과 교류하며 새로운 인사이트를 얻고 싶습니다. 프론트엔드, 백엔드, 데이터베이스부터 클라우드 인프라까지 서비스가 만들어지고 운영되는 전체 과정을 경험하며, 특정 기술에만 머무르지 않고 개발 구조 전반을 이해하고 기술적 역량을 넓혀 가고자 합니다. 나아가 평소 관심을 가져 온 창업과 서비스 아이디어를 기술적으로 구체화하고 직접 구현할 수 있는 개발 역량과 실행력도 함께 갖추는 것이 목표입니다."
+    en: "Through ASBG, I hope to connect with members who have a wide range of interests and technical backgrounds and gain new perspectives. I want to experience the full process of building and running a service, from frontend, backend, and databases to cloud infrastructure. By exploring development from end to end, I hope to understand how all the pieces fit together and broaden my skills beyond any single technology. I've also long been interested in entrepreneurship and developing service ideas. My goal is to build both the technical skills and the ability to follow through needed to turn those ideas into concrete plans and working products."

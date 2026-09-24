@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" role="img" aria-label="One service grown over the semester: set up the server, split into serverless, automate deployment, final review">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="320" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="318" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="48" font-size="26" font-weight="700" fill="#123249">One semester, one service</text>
+<text x="36" y="78" font-size="16" fill="#35526A">From running one server well to splitting it into pieces and deploying them automatically</text>
+
+<rect x="36" y="118" width="195" height="120" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="54" y="146" font-size="12" font-weight="700" fill="#1160D8">01</text>
+<text x="54" y="176" font-size="18" font-weight="700" fill="#123249">Set up the server</text>
+<text x="54" y="200" font-size="13" fill="#123249">VPC · EC2 · ALB · RDS</text>
+<text x="54" y="222" font-size="12" fill="#35526A">3-tier setup</text>
+<line x1="237" y1="178" x2="261" y2="178" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="267" y="118" width="195" height="120" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="285" y="146" font-size="12" font-weight="700" fill="#1160D8">02</text>
+<text x="285" y="176" font-size="18" font-weight="700" fill="#123249">Split into serverless</text>
+<text x="285" y="200" font-size="13" fill="#123249">Lambda · DynamoDB · SQS</text>
+<text x="285" y="222" font-size="12" fill="#35526A">event-driven</text>
+<line x1="468" y1="178" x2="492" y2="178" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="498" y="118" width="195" height="120" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="516" y="146" font-size="12" font-weight="700" fill="#1160D8">03</text>
+<text x="516" y="176" font-size="18" font-weight="700" fill="#123249">Automate deploys</text>
+<text x="516" y="200" font-size="13" fill="#123249">ECS · ECR · CodePipeline</text>
+<text x="516" y="222" font-size="12" fill="#35526A">containers · CI/CD</text>
+<line x1="699" y1="178" x2="723" y2="178" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="729" y="118" width="195" height="120" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="747" y="146" font-size="12" font-weight="700" fill="#1160D8">04</text>
+<text x="747" y="176" font-size="18" font-weight="700" fill="#123249">Final review</text>
+<text x="747" y="200" font-size="13" fill="#123249">Based on SAA questions</text>
+<text x="747" y="222" font-size="12" fill="#35526A">end of semester</text>
+
+<text x="36" y="286" font-size="14" fill="#35526A">Each session adds a new piece to the service built in the one before</text>
+</g>
+</svg>

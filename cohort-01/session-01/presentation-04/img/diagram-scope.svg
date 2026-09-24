@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-label="맡기는 단위가 커질수록 검증 대상도 커진다. 맡기는 범위와 검증할 수 있는 범위의 간격이 다음에 배울 것">
+<rect width="960" height="360" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="358" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">맡기는 단위가 커질수록, 검증 대상도 커진다</text>
+
+<text x="40" y="98" font-size="12" fill="#35526A">맡기는 단위 ↑ · 검증 대상 ↑</text>
+<rect x="40" y="110" width="120" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="54" y="136" font-size="14" fill="#123249">한 줄</text>
+<rect x="40" y="160" width="200" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="54" y="186" font-size="14" fill="#123249">함수 · 파일</text>
+<rect x="40" y="210" width="290" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="54" y="236" font-size="14" fill="#123249">기능</text>
+<rect x="40" y="260" width="400" height="40" fill="#FFFFFF" stroke="#1160D8"/>
+<text x="54" y="286" font-size="14" font-weight="700" fill="#123249">레이어를 감싼 시스템</text>
+<text x="40" y="334" font-size="14" font-weight="700" fill="#1160D8">맡길 수 있는 상한 = 검증할 수 있는 범위</text>
+
+<text x="520" y="98" font-size="13" fill="#123249">나는 AI에게 어디까지 맡기고,</text>
+<text x="520" y="118" font-size="13" fill="#123249">그 결과를 어디까지 스스로 검증할 수 있는가.</text>
+<text x="520" y="170" font-size="12" fill="#35526A">맡기는 범위</text>
+<rect x="520" y="180" width="400" height="26" fill="#1160D8"/>
+<text x="520" y="238" font-size="12" fill="#35526A">검증할 수 있는 범위</text>
+<rect x="520" y="248" width="260" height="26" fill="#79CDFF"/>
+<rect x="780" y="248" width="140" height="26" fill="none" stroke="#1160D8" stroke-dasharray="4 3"/>
+<text x="850" y="300" text-anchor="middle" font-size="12" fill="#1160D8">↑ 그 간격 = 다음에 배울 것</text>
+</g>
+</svg>

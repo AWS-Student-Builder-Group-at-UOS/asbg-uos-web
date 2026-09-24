@@ -17,9 +17,10 @@ export function MemberCard({ member, locale }: { member: Member; locale: Locale 
   return (
     <li
       id={member.id}
-      className="card ring-hover grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 p-4 scroll-mt-24 target:border-sky target:shadow-card sm:flex sm:gap-5 sm:p-5"
+      data-member-card
+      className="card ring-hover grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 p-4 scroll-mt-24 target:border-sky target:shadow-card sm:flex sm:min-h-92 sm:gap-5 sm:p-5"
     >
-      <div className="contents sm:block sm:w-44 sm:shrink-0">
+      <div data-member-media className="contents sm:block sm:w-44 sm:shrink-0 sm:self-start">
         <div className="relative size-20 self-center overflow-hidden rounded-md border border-line bg-surface-2 sm:aspect-[4/5] sm:size-auto sm:w-full">
           {member.photoUrl ? (
             <img src={member.photoUrl} alt={name} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />

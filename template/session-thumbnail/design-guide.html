@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASBG UOS 세션 썸네일 디자인 가이드</title>
+<style>
+  :root {
+    --ink: #0b0f17;
+    --body: #2b323b;
+    --muted: #5b6470;
+    --faint: #8a94a0;
+    --line: #e3e7ec;
+    --surface: #f5f7fa;
+    --accent: #1160d8;
+    --sky: #42b4ff;
+    --black: #0b0f17;
+    --spec: #ff3b7a;
+    --mono: ui-monospace, SFMono-Regular, Menlo, "Geist Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; scroll-padding-top: 24px; }
+  body {
+    margin: 0; background: #fff; color: var(--ink);
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", system-ui, sans-serif;
+    font-size: 15px; line-height: 1.7; letter-spacing: -0.01em; word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 1040px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.doc { border-bottom: 1px solid var(--ink); padding-bottom: 28px; }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 22px; font-weight: 700; }
+  dl.meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0; }
+  dl.meta dt { color: var(--faint); font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  dl.meta dd { margin: 4px 0 0; font-family: var(--mono); font-size: 13px; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 16px 0; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 12px; }
+  nav.toc a { color: var(--muted); text-decoration: none; }
+  nav.toc a:hover { color: var(--accent); }
+  section { padding-top: 56px; }
+  h2 { font-size: 22px; letter-spacing: -0.01em; margin: 0 0 18px; display: flex; align-items: baseline; gap: 14px; }
+  h2 .n { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.08em; }
+  h3 { font-size: 15.5px; margin: 34px 0 10px; }
+  p { margin: 0 0 12px; color: var(--body); }
+  ul, ol { margin: 0 0 12px; padding-left: 20px; color: var(--body); }
+  li { margin: 5px 0; }
+  li::marker { color: var(--faint); }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 12px 0 20px; }
+  th, td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--surface); font-weight: 600; font-size: 12.5px; }
+  td.mono, .mono { font-family: var(--mono); font-size: 12.5px; }
+  pre { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; font-family: var(--mono); font-size: 12.5px; line-height: 1.55; overflow: auto; margin: 12px 0 20px; }
+  code { font-family: var(--mono); background: var(--surface); padding: 1px 5px; border-radius: 4px; font-size: 0.92em; }
+  pre code { background: none; padding: 0; font-size: inherit; }
+  figure { margin: 16px 0 24px; }
+  figcaption { font-size: 12.5px; color: var(--muted); margin-top: 8px; font-family: var(--mono); }
+  .thumb { position: relative; }
+  .thumb svg { display: block; width: 100%; height: auto; border-radius: 6px; }
+  .thumb svg.overlay { position: absolute; inset: 0; pointer-events: none; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; margin: 12px 0 14px; }
+  .icon { border: 1px solid var(--line); border-radius: 6px; padding: 12px 8px 10px; text-align: center; cursor: pointer; background: #fff; }
+  .icon:hover { border-color: var(--faint); }
+  .icon.sel { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .icon svg { width: 72px; height: 72px; display: block; margin: 0 auto 8px; background: var(--black); border-radius: 4px; }
+  .icon .name { font-family: var(--mono); font-size: 12px; }
+  .note { border-left: 2px solid var(--sky); padding: 2px 0 2px 14px; color: var(--muted); font-size: 13.5px; margin: 12px 0 20px; }
+  .check { padding-left: 0; }
+  .check li { list-style: none; position: relative; padding-left: 26px; margin: 7px 0; }
+  .check li::before { content: ""; position: absolute; left: 0; top: 8px; width: 12px; height: 12px; border: 1.5px solid var(--faint); border-radius: 2px; }
+  .cap { display: flex; justify-content: space-between; gap: 12px; }
+  @media (max-width: 720px) {
+    dl.meta, .grid2 { grid-template-columns: 1fr; }
+    h1 { font-size: 28px; }
+    .page { padding: 40px 16px 72px; }
+  }
+  @media print {
+    nav.toc { display: none; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="doc">
+  <p class="eyebrow">ASBG UOS · Session Thumbnail</p>
+  <h1>세션 썸네일 디자인 가이드</h1>
+  <dl class="meta">
+    <div><dt>문서</dt><dd>v1.1 · 2026-09-24</dd></div>
+    <div><dt>적용 대상</dt><dd>cohort-NN/session-NN/presentation-NN/img/thumbnail.svg</dd></div>
+    <div><dt>산출물</dt><dd>SVG · 1200 × 750</dd></div>
+  </dl>
+</header>
+
+<nav class="toc">
+  <a href="#s1">01 개요</a>
+  <a href="#s2">02 캔버스</a>
+  <a href="#s3">03 색</a>
+  <a href="#s4">04 문자</a>
+  <a href="#s5">05 아이콘</a>
+  <a href="#s6">06 예시</a>
+  <a href="#s7">07 검증</a>
+  <a href="#s8">08 템플릿</a>
+</nav>
+
+<section id="s1">
+  <h2><span class="n">01</span>개요</h2>
+  <p>세션 발표 썸네일은 한 가지 틀로 만든다. 배경 · 프레임 · 문자 배치는 고정하고, 발표마다 번호, 키워드 세 줄, 아이콘만 바꾼다. 아이콘은 정해진 목록에서 고르지 않고 발표 내용에 맞춰 그때그때 새로 그린다.</p>
+  <p>세션 목록 카드(16:10, 폭 약 360px), 발표 상세 페이지 상단, 링크 공유 이미지(1200 × 630 PNG로 변환, 좌우 여백은 배경색)에 쓰인다. 제목 · 발표자 · 키워드 칩은 페이지가 따로 보여준다.</p>
+  <figure>
+    <div class="thumb" id="fig-reference"></div>
+    <figcaption class="cap"><span>기준 이미지 · 1기 세션 01 발표 01</span><span>1200 × 750</span></figcaption>
+  </figure>
+</section>
+
+<section id="s2">
+  <h2><span class="n">02</span>캔버스</h2>
+  <table>
+    <thead><tr><th style="width:26%">항목</th><th>값</th></tr></thead>
+    <tbody>
+      <tr><td>크기</td><td>1200 × 750 (16:10). <code>viewBox="0 0 1200 750"</code>. width · height 속성은 쓰지 않는다.</td></tr>
+      <tr><td>렌더링</td><td>루트에 <code>shape-rendering="crispEdges"</code>. 프레임 path만 <code>geometricPrecision</code>.</td></tr>
+      <tr><td>바깥 여백</td><td>48. 격자 영역은 (48, 48)에서 1104 × 654.</td></tr>
+      <tr><td>문자 영역</td><td>왼쪽. x 84부터. 기준선 y 132(상단 표기) · 318 / 392 / 466(키워드) · 666(레이블).</td></tr>
+      <tr><td>아이콘 프레임</td><td>오른쪽. x 736 ~ 1120, y 214 ~ 556 (384 × 342).</td></tr>
+      <tr><td>아이콘 격자</td><td>x 800 ~ 1056, y 257 ~ 513 (256 × 256). 프레임 안쪽 여백 좌우 64, 상하 43.</td></tr>
+    </tbody>
+  </table>
+  <figure>
+    <div class="thumb" id="fig-dimensions"></div>
+    <figcaption>치수. 분홍선은 설명용이며 산출물에 넣지 않는다.</figcaption>
+  </figure>
+</section>
+
+<section id="s3">
+  <h2><span class="n">03</span>색</h2>
+  <table>
+    <thead><tr><th style="width:26%">요소</th><th style="width:30%">색</th><th>불투명도</th></tr></thead>
+    <tbody>
+      <tr><td>배경</td><td class="mono">#0B0F17</td><td>1</td></tr>
+      <tr><td>격자 점</td><td class="mono">#42B4FF</td><td>0.09</td></tr>
+      <tr><td>강조 점</td><td class="mono">#42B4FF</td><td>0.5</td></tr>
+      <tr><td>프레임</td><td class="mono">#42B4FF</td><td>0.7</td></tr>
+      <tr><td>아이콘</td><td class="mono">#42B4FF</td><td>1</td></tr>
+      <tr><td>상단 표기</td><td class="mono">#42B4FF</td><td>1</td></tr>
+      <tr><td>키워드</td><td class="mono">#FFFFFF</td><td>1</td></tr>
+      <tr><td>SESSION 레이블</td><td class="mono">#FFFFFF</td><td>0.6</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>이 세 색만 쓴다. 그라디언트 · 필터 · 그림자 · 이미지를 쓰지 않는다. 웹사이트 토큰 <code>--black</code> <code>--sky</code> <code>--white</code>와 같은 값이다.</li>
+    <li>배경(24px 간격 격자 점, 강조 점 46개)과 프레임은 템플릿을 그대로 복사한다. 위치 · 개수 · 불투명도를 바꾸지 않는다.</li>
+  </ul>
+</section>
+
+<section id="s4">
+  <h2><span class="n">04</span>문자</h2>
+  <table>
+    <thead><tr><th>요소</th><th>내용</th><th>x, y (기준선)</th><th>크기</th><th>굵기</th><th>색 / 불투명도</th><th>자간</th></tr></thead>
+    <tbody>
+      <tr><td>상단 표기</td><td class="mono">ASBG UOS · COHORT {기수}</td><td class="mono">84, 132</td><td>30</td><td>400</td><td class="mono">#42B4FF / 1</td><td>4</td></tr>
+      <tr><td>키워드</td><td class="mono">{키워드 1} / {키워드 2} / {키워드 3}</td><td class="mono">84, 318 · 392 · 466</td><td>56</td><td>700</td><td class="mono">#FFFFFF / 1</td><td>0</td></tr>
+      <tr><td>레이블</td><td class="mono">SESSION {세션} · PRESENTATION {발표}</td><td class="mono">84, 666</td><td>26</td><td>400</td><td class="mono">#FFFFFF / 0.6</td><td>3</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>번호는 폴더 이름에서 가져온다. <code>cohort-01/session-02/presentation-03</code>이면 기수 01, 세션 02, 발표 03. 항상 두 자리다.</li>
+    <li>키워드는 발표 <code>index.md</code>의 <code>keywords</code> 세 개를 순서대로, 대문자로 쓴다. 한 줄에 하나씩이며 바꾸거나 줄이지 않는다. <code>&amp;</code> <code>&lt;</code> <code>&gt;</code>는 SVG 엔티티로 쓴다.</li>
+    <li>키워드 크기는 가장 긴 키워드의 글자 수로 정한다. 세 줄은 같은 크기이고 가운데 줄의 기준선은 항상 392다. 29자 이상이면 썸네일이 아니라 <code>index.md</code>의 키워드를 줄인다.</li>
+  </ul>
+  <table>
+    <thead><tr><th style="width:26%">가장 긴 키워드</th><th style="width:30%">크기</th><th>기준선 y</th></tr></thead>
+    <tbody>
+      <tr><td>18자 이하</td><td>56</td><td class="mono">318 · 392 · 466</td></tr>
+      <tr><td>19 ~ 23자</td><td>44</td><td class="mono">332 · 392 · 452</td></tr>
+      <tr><td>24 ~ 28자</td><td>36</td><td class="mono">342 · 392 · 442</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>글꼴은 <code>font-family="Menlo, ui-monospace, monospace"</code>로 고정한다. 글꼴 파일을 넣거나 외부에서 불러오지 않고, 문자를 path로 바꾸지 않는다. 공유 이미지 변환 서버에는 Geist Mono만 있어 monospace로 대체된다.</li>
+    <li>발표 제목 · 발표자는 넣지 않는다. 한글도 쓰지 않는다. 변환 서버에 한글 글꼴이 없다.</li>
+  </ul>
+</section>
+
+<section id="s5">
+  <h2><span class="n">05</span>아이콘</h2>
+
+  <h3>5.1 프레임</h3>
+  <p>오른쪽 위와 왼쪽 아래 모서리를 40px 사선으로 자른 점선 사각형이다. 고정이며 아이콘에 맞춰 바꾸지 않는다.</p>
+  <pre><code>&lt;path d="M736 214H1080L1120 254V516L1080 556H776L736 516Z" fill="none" stroke="#42B4FF" stroke-width="3" stroke-dasharray="10 14" opacity="0.7" shape-rendering="geometricPrecision"/&gt;</code></pre>
+
+  <h3>5.2 격자</h3>
+  <ul>
+    <li>16행 × 16열, 한 칸 16px, 원점 (800, 257). 전체 256 × 256.</li>
+    <li>칸 (열 c, 행 r)은 <code>&lt;rect x="800 + 16c" y="257 + 16r" width="16" height="16"/&gt;</code>. 채워진 칸마다 rect 하나를 쓴다. 예: 0행 5열 → <code>&lt;rect x="880" y="257" width="16" height="16"/&gt;</code></li>
+    <li>rect는 <code>&lt;g id="icon" fill="#42B4FF"&gt;</code> 안에 둔다. 개별 rect에 fill · opacity를 쓰지 않는다.</li>
+  </ul>
+  <figure>
+    <div id="fig-grid"></div>
+    <figcaption>격자 좌표. 예시 아이콘 lock이며, 행 · 열 번호는 설명용이다.</figcaption>
+  </figure>
+
+  <h3>5.3 그리기</h3>
+  <p>발표마다 아이콘을 새로 그린다. 순서는 다음과 같다.</p>
+  <ol>
+    <li>발표 자료를 읽고 발표를 대표하는 사물 하나를 정한다. 다루는 서비스나 사물이 있으면 그것을(서버 · 데이터베이스 · 버킷 · 컨테이너 …), 개념이면 관용적인 상징으로 바꾼다(검증 → 체크 표시, 커리어 → 나침반, AI → 칩, 커뮤니티 → 사람들).</li>
+    <li>같은 세션의 다른 발표와 겹치지 않는 사물을 고른다.</li>
+    <li>16 × 16 격자 문자열로 그린다. 16행, 각 행 16글자, <code>#</code> 채움, <code>.</code> 비움.</li>
+    <li>바깥 한 줄(0행 · 15행 · 0열 · 15열)은 비운다. 정사각형이거나 축 대칭이 필요한 형태만 예외로 한다.</li>
+    <li>형태는 8행 × 8열 이상을 차지한다. 선은 1칸 이상, 주요 윤곽은 2칸 또는 면 채움으로 한다. 1칸 폭의 빈틈을 길게 두지 않는다.</li>
+    <li>수평 · 수직 · 45° 대각선만 쓴다.</li>
+    <li>사물 하나만 그린다. 글자 · 숫자 · 화살표 장식 · 타사 로고(AWS 로고 포함)를 넣지 않는다.</li>
+    <li>실루엣만으로 알아볼 수 있어야 한다. 카드에서는 약 80px 폭으로 보인다.</li>
+    <li>격자를 5.2 규칙대로 rect로 바꾼다. 보고할 때 사물 이름과 격자 문자열을 함께 남긴다.</li>
+  </ol>
+</section>
+
+<section id="s6">
+  <h2><span class="n">06</span>예시</h2>
+  <p>스타일 참고용 아이콘이다. 아이콘은 발표마다 새로 그린다. 누르면 격자 문자열이 아래에 표시되며, 전체 데이터는 이 문서의 <code>&lt;script id="glyphs"&gt;</code>에 있다.</p>
+  <div class="icons" id="icon-list"></div>
+  <pre id="glyph-view"></pre>
+  <p>1기 세션 01의 발표 네 건에 적용한 예다. 키워드는 각 발표 <code>index.md</code>의 값 그대로다.</p>
+  <div class="grid2" id="fig-examples"></div>
+</section>
+
+<section id="s7">
+  <h2><span class="n">07</span>검증</h2>
+  <ul class="check">
+    <li>루트 <code>&lt;svg&gt;</code>에 <code>viewBox="0 0 1200 750"</code>, <code>shape-rendering="crispEdges"</code>가 있고 width · height 속성이 없다.</li>
+    <li>색은 #0B0F17 · #42B4FF · #FFFFFF 뿐이다. 그라디언트 · 필터 · 이미지 · 외부 참조가 없다.</li>
+    <li>배경 · 프레임 · 글꼴 스택이 템플릿과 같다.</li>
+    <li><code>&lt;text&gt;</code>는 5개다. <code>ASBG UOS · COHORT NN</code>, 키워드 3줄, <code>SESSION NN · PRESENTATION NN</code>.</li>
+    <li>번호 세 개가 폴더 이름과 같다.</li>
+    <li>키워드 3줄이 <code>index.md</code>의 <code>keywords</code>와 순서대로 같고(대문자), 크기와 기준선이 04절 표와 맞는다.</li>
+    <li>아이콘은 <code>&lt;g id="icon"&gt;</code> 안의 16 × 16 rect뿐이다. x − 800, y − 257이 16의 배수이고 0 ~ 240 범위이며 중복이 없다.</li>
+    <li>아이콘이 8행 · 8열 이상을 차지한다.</li>
+    <li>파일에는 SVG 코드만 있고 30 KB 이하다.</li>
+    <li>해당 발표의 <code>index.md</code> frontmatter에 <code>thumbnail: img/thumbnail.svg</code>가 있다.</li>
+  </ul>
+  <p>자동 검증. 파일이 발표 폴더 안에 있으면 번호와 키워드도 폴더 이름 · <code>index.md</code>와 대조한다. 통과하면 아이콘 격자를 출력한다.</p>
+  <pre><code>node template/session-thumbnail/validate.mjs cohort-01/session-01/presentation-01/img/thumbnail.svg</code></pre>
+</section>
+
+<section id="s8">
+  <h2><span class="n">08</span>템플릿</h2>
+  <p>아래 코드를 그대로 복사해 다섯 자리만 채운다. 원문은 이 문서의 <code>&lt;script id="template"&gt;</code>에 있다.</p>
+  <table>
+    <thead><tr><th style="width:26%">자리</th><th>값</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">{{COHORT}}</td><td>기수 번호 두 자리</td></tr>
+      <tr><td class="mono">{{SESSION}}</td><td>세션 번호 두 자리</td></tr>
+      <tr><td class="mono">{{PRESENTATION}}</td><td>발표 번호 두 자리</td></tr>
+      <tr><td class="mono">{{KEYWORDS}}</td><td>키워드 text 3줄. 04절 규칙으로 만든다.</td></tr>
+      <tr><td class="mono">{{ICON}}</td><td>아이콘 rect 목록. 5.2 규칙으로 만든다.</td></tr>
+    </tbody>
+  </table>
+  <pre id="template-view"></pre>
+  <p>키워드 줄 예. 발표 01의 것이다.</p>
+  <pre id="keywords-view"></pre>
+  <p>아이콘 rect 예. people의 앞부분이다.</p>
+  <pre id="rects-view"></pre>
+</section>
+
+</div>
+
+<script type="text/plain" id="template">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" shape-rendering="crispEdges">
+<defs>
+<pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#42B4FF" opacity="0.09"/></pattern>
+</defs>
+<rect width="1200" height="750" fill="#0B0F17"/>
+<g transform="translate(48 48)">
+<rect width="1104" height="654" fill="url(#g)"/>
+<rect x="0" y="0" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="1080" y="192" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="1056" y="384" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="1032" y="576" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="1008" y="120" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="984" y="312" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="960" y="504" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="936" y="48" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="912" y="240" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="888" y="432" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="864" y="624" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="840" y="168" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="816" y="360" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="792" y="552" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="768" y="96" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="744" y="288" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="720" y="480" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="696" y="24" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="672" y="216" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="648" y="408" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="624" y="600" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="600" y="144" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="576" y="336" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="552" y="528" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="528" y="72" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="504" y="264" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="480" y="456" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="456" y="0" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="432" y="192" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="408" y="384" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="384" y="576" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="360" y="120" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="336" y="312" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="312" y="504" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="288" y="48" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="264" y="240" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="240" y="432" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="216" y="624" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="192" y="168" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="168" y="360" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="144" y="552" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="120" y="96" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="96" y="288" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="72" y="480" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="48" y="24" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+<rect x="24" y="216" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
+</g>
+<path d="M736 214H1080L1120 254V516L1080 556H776L736 516Z" fill="none" stroke="#42B4FF" stroke-width="3" stroke-dasharray="10 14" opacity="0.7" shape-rendering="geometricPrecision"/>
+<g id="icon" fill="#42B4FF">
+{{ICON}}
+</g>
+<text x="84" y="132" font-family="Menlo, ui-monospace, monospace" font-size="30" fill="#42B4FF" letter-spacing="4">ASBG UOS · COHORT {{COHORT}}</text>
+<g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#FFFFFF">
+{{KEYWORDS}}
+</g>
+<text x="84" y="666" font-family="Menlo, ui-monospace, monospace" font-size="26" fill="#FFFFFF" opacity="0.6" letter-spacing="3">SESSION {{SESSION}} · PRESENTATION {{PRESENTATION}}</text>
+</svg>
+</script>
+
+<script type="application/json" id="glyphs">
+{
+  "people": [
+    "................",
+    "..####...####...",
+    "..####...####...",
+    "..####...####...",
+    "..####...####...",
+    "................",
+    "..####...####...",
+    ".######.######..",
+    ".######.######..",
+    ".######.######..",
+    ".######.######..",
+    ".######.######..",
+    ".######.######..",
+    ".######.######..",
+    "................",
+    "................"
+  ],
+  "cloud": [
+    "................",
+    "................",
+    "................",
+    "......#####.....",
+    ".....#.....#....",
+    "....#.......##..",
+    "..##..........#.",
+    ".#............#.",
+    ".#.............#",
+    ".#.............#",
+    ".#.............#",
+    "..#...........#.",
+    "...###########..",
+    "................",
+    "................",
+    "................"
+  ],
+  "compass": [
+    "................",
+    ".....######.....",
+    "...##......##...",
+    "..#....##....#..",
+    "..#....##....#..",
+    ".#....####....#.",
+    ".#...######...#.",
+    ".#.##########.#.",
+    ".#.##########.#.",
+    ".#...######...#.",
+    ".#....####....#.",
+    "..#....##....#..",
+    "..#....##....#..",
+    "...##......##...",
+    ".....######.....",
+    "................"
+  ],
+  "chip": [
+    "................",
+    ".....##..##.....",
+    ".....##..##.....",
+    "...##########...",
+    "...#........#...",
+    ".###........###.",
+    ".###..####..###.",
+    "...#..####..#...",
+    "...#..####..#...",
+    ".###..####..###.",
+    ".###........###.",
+    "...#........#...",
+    "...##########...",
+    ".....##..##.....",
+    ".....##..##.....",
+    "................"
+  ],
+  "lock": [
+    "................",
+    ".....######.....",
+    "....##....##....",
+    "....##....##....",
+    "....##....##....",
+    "....##....##....",
+    "..############..",
+    "..############..",
+    "..#####..#####..",
+    "..#####..#####..",
+    "..#####..#####..",
+    "..############..",
+    "..############..",
+    "..############..",
+    "................",
+    "................"
+  ],
+  "server": [
+    "................",
+    ".##############.",
+    ".#............#.",
+    ".#.##......#..#.",
+    ".#............#.",
+    ".##############.",
+    ".#............#.",
+    ".#.##......#..#.",
+    ".#............#.",
+    ".##############.",
+    ".#............#.",
+    ".#.##......#..#.",
+    ".#............#.",
+    ".##############.",
+    "................",
+    "................"
+  ],
+  "bolt": [
+    "................",
+    ".........###....",
+    "........####....",
+    ".......####.....",
+    "......####......",
+    ".....####.......",
+    "....#########...",
+    "....#########...",
+    "........####....",
+    ".......####.....",
+    "......####......",
+    ".....####.......",
+    "....####........",
+    "...###..........",
+    "..##............",
+    "................"
+  ],
+  "container": [
+    "................",
+    ".......##.......",
+    ".....##..##.....",
+    "...##......##...",
+    ".##..........##.",
+    ".#.##......##.#.",
+    ".#...##..##...#.",
+    ".#.....##.....#.",
+    ".#.....##.....#.",
+    ".#.....##.....#.",
+    ".#.....##.....#.",
+    ".##....##....##.",
+    "...##..##..##...",
+    ".....######.....",
+    ".......##.......",
+    "................"
+  ]
+}
+</script>
+
+<script>
+(() => {
+  const glyphs = JSON.parse(document.getElementById("glyphs").textContent);
+  const template = document.getElementById("template").textContent.trim() + "\n";
+  const ORIGIN = { x: 800, y: 257 };
+  const CELL = 16;
+  const TIERS = [
+    { max: 18, size: 56, ys: [318, 392, 466] },
+    { max: 23, size: 44, ys: [332, 392, 452] },
+    { max: 28, size: 36, ys: [342, 392, 442] },
+  ];
+
+  const iconRects = (rows) => {
+    const out = [];
+    rows.forEach((row, r) => {
+      [...row].forEach((ch, c) => {
+        if (ch === "#") out.push(`<rect x="${ORIGIN.x + c * CELL}" y="${ORIGIN.y + r * CELL}" width="16" height="16"/>`);
+      });
+    });
+    return out.join("\n");
+  };
+  const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const keywordLines = (keywords) => {
+    const upper = keywords.map((k) => k.toUpperCase());
+    const tier = TIERS.find((t) => Math.max(...upper.map((k) => k.length)) <= t.max);
+    return upper.map((k, i) => `<text x="84" y="${tier.ys[i]}" font-size="${tier.size}">${esc(k)}</text>`).join("\n");
+  };
+  const build = ({ cohort, session, presentation, keywords, icon }) =>
+    template
+      .replace("{{ICON}}", iconRects(glyphs[icon]))
+      .replace("{{KEYWORDS}}", keywordLines(keywords))
+      .replace("{{COHORT}}", cohort)
+      .replace("{{SESSION}}", session)
+      .replace("{{PRESENTATION}}", presentation);
+  const thumb = (svg, caption) => {
+    const fig = document.createElement("figure");
+    fig.innerHTML = `<div class="thumb">${svg}</div>${caption ? `<figcaption>${caption}</figcaption>` : ""}`;
+    return fig;
+  };
+
+  const P01 = { cohort: "01", session: "01", presentation: "01", keywords: ["Community", "Hands-on", "Curriculum"], icon: "people" };
+  const reference = build(P01);
+  document.getElementById("fig-reference").innerHTML = reference;
+
+  const dim = document.getElementById("fig-dimensions");
+  dim.innerHTML = reference;
+  const S = "#FF3B7A";
+  const label = (x, y, t, anchor = "start") =>
+    `<text x="${x}" y="${y}" font-family="Menlo, ui-monospace, monospace" font-size="21" fill="${S}" text-anchor="${anchor}">${t}</text>`;
+  dim.insertAdjacentHTML("beforeend", `<svg class="overlay" viewBox="0 0 1200 750" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="${S}" stroke-width="2">
+    <rect width="1200" height="750" fill="#0B0F17" opacity="0.55" stroke="none"/>
+    <rect x="48" y="48" width="1104" height="654" stroke-dasharray="6 6"/>
+    ${label(56, 38, "여백 48 · 격자 영역 1104 × 654")}
+    <rect x="736" y="214" width="384" height="342"/>
+    ${label(1120, 202, "프레임 736, 214 · 384 × 342", "end")}
+    <rect x="800" y="257" width="256" height="256" stroke-dasharray="4 4"/>
+    ${label(1120, 586, "아이콘 800, 257 · 256 × 256 · 16 × 16칸", "end")}
+    <path d="M84 132H600M84 318H600M84 392H600M84 466H600M84 666H600" stroke-dasharray="2 4"/>
+    ${label(612, 139, "y 132 · 30px")}
+    ${label(84, 500, "y 318 · 392 · 466 · 56px")}
+    ${label(640, 673, "y 666 · 26px")}
+    <path d="M84 96V700" stroke-dasharray="2 4"/>
+    ${label(92, 726, "x 84")}
+  </svg>`);
+
+  const g = 22, off = 34;
+  let grid = `<svg viewBox="0 0 ${off + 16 * g + 8} ${off + 16 * g + 8}" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;display:block" shape-rendering="crispEdges">`;
+  grid += `<rect x="${off}" y="${off}" width="${16 * g}" height="${16 * g}" fill="#0B0F17"/>`;
+  for (let i = 0; i <= 16; i++) {
+    grid += `<path d="M${off + i * g} ${off}V${off + 16 * g}M${off} ${off + i * g}H${off + 16 * g}" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1"/>`;
+    if (i < 16) {
+      grid += `<text x="${off + i * g + g / 2}" y="${off - 10}" font-family="Menlo, ui-monospace, monospace" font-size="10" fill="#5B6470" text-anchor="middle">${i}</text>`;
+      grid += `<text x="${off - 8}" y="${off + i * g + g / 2 + 4}" font-family="Menlo, ui-monospace, monospace" font-size="10" fill="#5B6470" text-anchor="end">${i}</text>`;
+    }
+  }
+  grid += `<g fill="#42B4FF">`;
+  glyphs.lock.forEach((row, r) => [...row].forEach((ch, c) => { if (ch === "#") grid += `<rect x="${off + c * g}" y="${off + r * g}" width="${g}" height="${g}"/>`; }));
+  grid += `</g></svg>`;
+  document.getElementById("fig-grid").innerHTML = grid;
+
+  const list = document.getElementById("icon-list");
+  const view = document.getElementById("glyph-view");
+  const preview = (rows) => {
+    let s = `<svg viewBox="-2 -2 20 20" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" fill="#42B4FF">`;
+    rows.forEach((row, r) => [...row].forEach((ch, c) => { if (ch === "#") s += `<rect x="${c}" y="${r}" width="1" height="1"/>`; }));
+    return s + "</svg>";
+  };
+  const select = (name) => {
+    [...list.children].forEach((el) => el.classList.toggle("sel", el.dataset.name === name));
+    view.textContent = `${name}\n${glyphs[name].map((row) => `"${row}",`).join("\n")}`;
+  };
+  Object.keys(glyphs).forEach((name) => {
+    const el = document.createElement("div");
+    el.className = "icon";
+    el.dataset.name = name;
+    el.innerHTML = `${preview(glyphs[name])}<div class="name">${name}</div>`;
+    el.addEventListener("click", () => select(name));
+    list.appendChild(el);
+  });
+  select("people");
+
+  const examples = document.getElementById("fig-examples");
+  [
+    [P01, "ASBG UOS 1기, 왜 함께 AWS를 배우는가"],
+    [{ cohort: "01", session: "01", presentation: "02", keywords: ["Operations", "Startup", "Iteration"], icon: "cloud" }, "코드를 넘어 서비스로"],
+    [{ cohort: "01", session: "01", presentation: "03", keywords: ["Career", "High Availability", "Learning Path"], icon: "compass" }, "클라우드를 배우면 어떤 일을 할까?"],
+    [{ cohort: "01", session: "01", presentation: "04", keywords: ["AI Delegation", "Verification", "Domain Knowledge"], icon: "chip" }, "1년차 개발자가 AI 시대에서 정한 전략"],
+  ].forEach(([p, title]) => examples.appendChild(thumb(build(p), `세션 ${p.session} · 발표 ${p.presentation} · ${p.icon} — ${title}`)));
+
+  document.getElementById("template-view").textContent = template;
+  document.getElementById("keywords-view").textContent = `<g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#FFFFFF">\n${keywordLines(P01.keywords)}\n</g>`;
+  const rects = iconRects(glyphs.people).split("\n");
+  document.getElementById("rects-view").textContent = `<g id="icon" fill="#42B4FF">\n${rects.slice(0, 4).join("\n")}\n…\n</g>`;
+})();
+</script>
+</body>
+</html>

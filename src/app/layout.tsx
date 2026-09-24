@@ -6,7 +6,6 @@ import "@/app/globals.css";
 
 const geistMono = Geist_Mono({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-geist-mono" });
 
-// 첫 렌더 전에 URL에 맞춰 문서 언어를 설정한다.
 const langScript = `(function(){var m=location.pathname.match(new RegExp(${JSON.stringify(localePattern)}));if(m)document.documentElement.lang=m[1]})()`;
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -3,8 +3,8 @@ import { ChipList } from "@/components/ui/Chip";
 import { getSpeakers, type Session } from "@/lib/content";
 import { getDict, pick, type Locale } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
-import { pad2 } from "@/lib/utils";
 import { SpeakerMention } from "./SpeakerMention";
+import { ThumbnailFallback } from "./ThumbnailFallback";
 
 export function SessionCard({ session, locale }: { session: Session; locale: Locale }) {
   const d = getDict(locale);
@@ -18,7 +18,7 @@ export function SessionCard({ session, locale }: { session: Session; locale: Loc
         {session.thumbnailUrl ? (
           <img src={session.thumbnailUrl} alt="" loading="lazy" className="h-full w-full object-cover" />
         ) : (
-          <div className="flex h-full items-center justify-center font-mono text-4xl text-faint">{pad2(session.number)}</div>
+          <ThumbnailFallback session={session} />
         )}
       </div>
 

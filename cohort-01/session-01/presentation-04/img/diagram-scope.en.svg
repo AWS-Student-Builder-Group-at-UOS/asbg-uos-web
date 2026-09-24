@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-label="The bigger the unit handed off, the bigger what must be verified. The gap between the range handed off and the range you can verify is what to learn next">
+<rect width="960" height="360" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="358" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="22" font-weight="700" fill="#123249">The bigger the unit you hand off, the bigger what you verify</text>
+
+<text x="40" y="98" font-size="12" fill="#35526A">Unit handed off ↑ · What to verify ↑</text>
+<rect x="40" y="110" width="120" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="54" y="136" font-size="14" fill="#123249">One line</text>
+<rect x="40" y="160" width="200" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="54" y="186" font-size="14" fill="#123249">Function · File</text>
+<rect x="40" y="210" width="290" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="54" y="236" font-size="14" fill="#123249">Feature</text>
+<rect x="40" y="260" width="400" height="40" fill="#FFFFFF" stroke="#1160D8"/>
+<text x="54" y="286" font-size="14" font-weight="700" fill="#123249">A system wrapping several layers</text>
+<text x="40" y="334" font-size="14" font-weight="700" fill="#1160D8">Upper limit of delegation = the range you can verify</text>
+
+<text x="520" y="98" font-size="13" fill="#123249">How far do I hand off to AI,</text>
+<text x="520" y="118" font-size="13" fill="#123249">and how far can I verify the result myself?</text>
+<text x="520" y="170" font-size="12" fill="#35526A">Range handed off</text>
+<rect x="520" y="180" width="400" height="26" fill="#1160D8"/>
+<text x="520" y="238" font-size="12" fill="#35526A">Range I can verify</text>
+<rect x="520" y="248" width="260" height="26" fill="#79CDFF"/>
+<rect x="780" y="248" width="140" height="26" fill="none" stroke="#1160D8" stroke-dasharray="4 3"/>
+<text x="850" y="300" text-anchor="middle" font-size="12" fill="#1160D8">↑ that gap = what to learn next</text>
+</g>
+</svg>
