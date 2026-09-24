@@ -1,7 +1,7 @@
 export const site = {
   name: "AWS Student Builder Groups at UOS",
   shortName: "ASBG UOS",
-  url: "https://asbg-uos.vercel.app",
+  url: "https://asbg.uos.ac.kr",
   email: "asbg.uos@gmail.com",
   links: {
     linkedin: "https://www.linkedin.com/company/aws-student-builder-group-uos/",
