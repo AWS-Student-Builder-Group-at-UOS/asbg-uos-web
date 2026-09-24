@@ -1,38 +1,183 @@
-# 화면 구성을 확인하기 위한 더미 프로필입니다. 실제 멤버 정보가 아닙니다.
-# 샘플 이미지는 이 저장소를 위해 직접 작성한 SVG 인물 실루엣입니다.
-
-- id: sample-member-01
-  name: { ko: 홍길동, en: Gildong Hong }
-  major: { ko: 학과명, en: Department Name }
-  photo: img/sample-member-01.svg
+- id: wi-jaebok
+  name:
+    ko: 위재복
+    en: Jaebok Wi
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  photo: img/wi-jaebok.jpg
   links:
-    website: https://example.com/
-  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-- id: sample-member-02
-  name: { ko: 김철수, en: Cheolsu Kim }
-  major: { ko: 학과명, en: Department Name }
-  photo: img/sample-member-02.svg
+    github: https://github.com/jaebok1211
+  keywords:
+    - Databases
+    - Cloud
+    - React
+  description:
+    ko: 여러 프로젝트와 공모전에 참여하면서 아이디어를 실제 서비스로 구현해 보고 싶어 최근 프론트엔드 개발 공부를 시작했습니다. 아직 배우는 단계이지만, 화면을 만드는 것뿐 아니라 데이터베이스와 서버가 어떻게 연결되고 AWS를 통해 서비스가 어떻게 배포되는지에도 관심이 있습니다. ASBG UOS에서 프로젝트를 직접 진행하며 프론트엔드 실력을 쌓고, 서비스 전체 구조에 대한 이해도 함께 넓혀 가고 싶습니다.
+    en: "After taking part in various projects and competitions, I wanted to turn my ideas into real services, so I recently started learning frontend development. I'm still learning, but my interests go beyond building interfaces: I'm also curious about how databases connect to servers and how services are deployed on AWS. Through hands-on projects at ASBG UOS, I hope to build my frontend skills while gaining a broader understanding of how a service works as a whole."
+- id: baik-hyungwoo
+  name:
+    ko: 백형우
+    en: Hyungwoo Baik
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  photo: img/baik-hyungwoo.jpg
   links:
-    website: https://example.com/
-  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-- id: sample-member-03
-  name: { ko: 이영희, en: Younghee Lee }
-  major: { ko: 학과명, en: Department Name }
-  photo: img/sample-member-03.svg
+    github: https://github.com/ryanbaik0703
+    linkedin: https://www.linkedin.com/in/hyungwoo-baik-777174335/
+  keywords:
+    - Data Analysis
+    - PM
+    - Cloud Infrastructure
+  description:
+    ko: "데이터 분석과 AI에 관심을 가지고 공부하면서, 요즘은 기능을 만드는 것뿐 아니라 서비스가 보이지 않는 곳에서 어떻게 구현되고 운영되는지도 궁금해지고 있습니다. ASBG UOS 1기 활동을 통해 AWS를 기반으로 서버, 네트워크, 스토리지 등 클라우드 인프라가 어떻게 구성되고 연결되는지 배우고 싶습니다. 특히 서비스의 목적에 맞게 아키텍처를 설계하고 안정성과 확장성을 고려하는 방법에 관심이 있습니다. 데이터와 AI에 대한 관심을 클라우드까지 넓히며, 실제 서비스가 만들어지는 전체 과정을 이해하고 싶습니다!"
+    en: "As I study data analysis and AI, I've become curious about more than building features. I also want to understand how the services behind them are implemented and operated. As part of ASBG UOS's first cohort, I'd like to learn how cloud infrastructure—including servers, networks, and storage—is set up and connected on AWS. I'm especially interested in designing architectures around a service's purpose while accounting for reliability and scalability. By extending my interests in data and AI to the cloud, I hope to understand the full process of bringing a real service to life!"
+- id: kang-eunjung
+  name:
+    ko: 강은중
+    en: Eunjung Kang
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
   links:
-    website: https://example.com/
-  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-- id: sample-member-04
-  name: { ko: 김민수, en: Minsu Kim }
-  major: { ko: 학과명, en: Department Name }
-  photo: img/sample-member-04.svg
+    github: https://github.com/7lyomi
+  keywords:
+    - Cloud
+    - Data Analysis
+    - IT Planning
+  description:
+    ko: "일상에서 불편한 점을 발견하면 “이걸 기술로 조금 더 편하게 만들 수 없을까?”라는 생각을 자주 합니다. 학원 알림톡 자동화 도구를 직접 만들어 실제 업무에 적용하고, 공공데이터를 분석해 문제를 정의하고 해결책을 제안하는 프로젝트에도 참여하며 아이디어를 실제 결과물로 만들어 가는 경험을 쌓고 있습니다. 이런 과정에서 단순히 코드를 잘 작성하는 것보다 어떤 문제를 해결할지 고민하고, 직접 만들어 본 뒤 다시 개선하는 과정에 더 큰 재미를 느꼈습니다. 아직 개발, 데이터, 서비스 기획 등 여러 분야를 경험하며 제 방향을 찾아가는 중이지만, 새로운 기술을 배우고 직접 적용해 보는 것을 좋아합니다. ASBG UOS에서도 서로 만든 것을 공유하고 편하게 질문하며 함께 성장할 수 있는 동료가 되고 싶습니다. 감사합니다!"
+    en: "When I notice an inconvenience in everyday life, I often wonder, “Could technology make this a little easier?” I've been gaining experience turning ideas into working solutions, from building an automated KakaoTalk notification tool for a private academy and putting it to use in its day-to-day work, to joining projects that use public data to define problems and propose solutions. Through these experiences, I've found that I enjoy deciding which problems to solve, building something, and improving it even more than simply writing good code. I'm still finding my direction as I explore development, data, and service planning, but I love learning new technologies and putting them into practice. At ASBG UOS, I hope we can share what we've built, feel comfortable asking each other questions, and grow together as teammates. Thank you!"
+- id: nam-junhyeok
+  name:
+    ko: 남준혁
+    en: Junhyeok Nam
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
   links:
-    website: https://example.com/
-  keywords: ["Keyword 1", "Keyword 2", "Keyword 3"]
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    github: https://github.com/malagus-cloud
+    website: https://canary-tilapia-e04.notion.site/Developer-Portfolio-3c51e6a8a41c818b9e7fc5f63bc4de01
+  keywords:
+    - Databases
+    - Backend
+    - Cloud
+  description:
+    ko: "서울시립대학교 컴퓨터과학부에서 공부하며 백엔드 개발과 데이터 분석을 중심으로 경험을 쌓고 있습니다. Spring Boot와 MySQL을 활용한 금융 서비스 프로젝트, Python 데이터 분석, AIM Challenge를 통한 AI·GPU 서버 프로젝트 등을 진행하며 다양한 분야를 직접 접해 봤습니다. 아직 배우는 과정이지만, 단순히 기술을 공부하는 데 그치지 않고 직접 만들어 보고 오류를 해결하는 과정에서 많이 성장하고 있습니다. 앞으로는 AWS 같은 클라우드 환경까지 경험을 넓혀, 안정적인 서비스를 개발하고 운영할 수 있는 개발자가 되는 것이 목표입니다."
+    en: "I'm studying Computer Science at the University of Seoul and building experience in backend development and data analysis. I've explored a range of areas through projects, including a financial service built with Spring Boot and MySQL, data analysis with Python, and an AI and GPU server project through the AIM Challenge. I'm still learning, but I've grown a lot by going beyond studying technologies to actually building things and troubleshooting errors. My goal is to expand my experience to cloud environments such as AWS and become a developer who can build and operate reliable services."
+- id: jeong-yongbeom
+  name:
+    ko: 정용범
+    en: Yongbeom Jeong
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  links:
+    github: https://github.com/yongbeom-jeong
+  keywords:
+    - Backend
+    - Cloud
+    - Databases
+  description:
+    ko: 백엔드 개발에 관심을 가지고 공부하고 있지만, 아직 실제 서비스를 개발하고 운영하는 과정에 대해서는 모르는 것이 많습니다. 특히 개발한 프로그램이 실제 서버에서 어떻게 실행되고 사용자에게 전달되는지 궁금해 AWS와 클라우드에 관심을 갖게 되었습니다. ASBG UOS에서 다양한 기술을 배우며 클라우드에 대한 이해를 넓히고 싶습니다. 함께 공부하고 고민을 나눌 수 있는 좋은 동료가 되고 싶습니다.
+    en: I'm interested in backend development and have been studying it, but I still have a lot to learn about building and operating real services. My curiosity about how the programs I write run on actual servers and reach users is what drew me to AWS and the cloud. At ASBG UOS, I hope to explore different technologies and deepen my understanding of the cloud. I'd also like to be a supportive teammate who learns with others and works through challenges together.
+- id: park-jonghyeok
+  name:
+    ko: 박종혁
+    en: Jonghyeok Park
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  links:
+    github: https://github.com/jongparks
+  keywords:
+    - Backend
+    - Containers
+    - Kubernetes
+  description:
+    ko: 백엔드를 공부하다 보니 서버, 네트워크, 배포 같은 인프라 지식이 부족하다는 걸 자주 느꼈습니다. 그래서 요즘은 다양한 기술을 익히기보다 기본 개념을 제대로 이해하는 데 집중하고 있습니다. 서비스가 어떻게 배포되고 운영되는지 전체 흐름을 이해하는 것을 넘어, 그 아래에서 동작하는 인프라 구조까지 깊이 있게 이해하고 싶습니다. ASBG UOS에서 같은 고민을 가진 동료들과 함께 직접 부딪히며 인프라의 기초를 탄탄히 다져 가고 싶습니다.
+    en: While studying backend development, I've often felt gaps in my understanding of infrastructure, including servers, networks, and deployment. Lately, I've been focusing on understanding the fundamentals thoroughly rather than picking up a wide range of technologies. I want to go beyond seeing the full flow of how services are deployed and operated to deeply understand the infrastructure that supports them. At ASBG UOS, I hope to build a solid foundation in infrastructure through hands-on learning with peers who share these questions.
+- id: kim-gyutae
+  name:
+    ko: 김규태
+    en: Gyutae Kim
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  links:
+    github: https://github.com/kanggregorics03
+  keywords:
+    - Backend
+    - Cloud
+    - AI
+  description:
+    ko: 백엔드 개발을 공부하면서 개별 기능을 구현하는 것보다 그 기능이 실제 서비스 안에서 어떻게 연결되고 운영되는지가 더 궁금해졌습니다. API를 만들고 데이터베이스를 다루는 과정도 재미있지만, 배포 이후 서버가 어떻게 동작하는지, 트래픽이 늘어나면 어떤 문제가 생기는지에도 관심이 많습니다. 최근에는 AWS와 클라우드 환경을 공부하면서 개발과 운영이 생각보다 훨씬 밀접하다는 점을 알아가고 있습니다. 기술에 대한 시야를 넓히고, 제가 만든 서비스를 더 잘 이해하는 개발자로 성장하고 싶습니다.
+    en: As I study backend development, I've become more curious about how features connect and operate within a real service than about implementing any single feature. I enjoy building APIs and working with databases, but I'm also interested in how servers behave after deployment and what kinds of problems arise as traffic grows. Recently, while learning about AWS and cloud environments, I've been discovering how much more closely development and operations are connected than I expected. I want to broaden my technical perspective and become a developer who understands the services I build more deeply.
+- id: pyo-sungeun
+  name:
+    ko: 표성은
+    en: Sungeun Pyo
+  major:
+    ko: 영어영문학과
+    en: English Language and Literature
+  photo: img/pyo-sungeun.jpeg
+  links:
+    github: https://github.com/sepyo1013
+    linkedin: https://www.linkedin.com/in/sungeun-pyo-05ab26286
+  keywords:
+    - Data Analysis
+    - Databases
+    - Cloud Infrastructure
+  description:
+    ko: "AI 기반 외신 빅데이터 분석 플랫폼의 데이터를 활용해 주간 언론 동향 보고서를 작성하며, 반복되는 전처리 과정을 코드로 표준화해 작업 시간을 줄였습니다. n8n으로 AI 상담 챗봇과 요약 메일 전송을 자동화하는 워크플로도 구축했습니다. 자동화를 만들다 보니 이런 서비스가 어떤 구조 위에서 동작하는지 궁금해졌습니다. ASBG UOS에서는 데이터베이스와 클라우드 인프라를 더 깊이 공부하고 싶습니다. 자격증 트랙에도 함께 도전할 계획입니다. 관심사를 나누는 동료가 되고 싶습니다!"
+    en: "While preparing weekly media trend reports using data from an AI-powered big data platform for international news analysis, I reduced the time spent on repetitive preprocessing by standardizing it in code. I also built n8n workflows to automate an AI consultation chatbot and the delivery of summary emails. Building these automations made me curious about the architecture that supports services like these. At ASBG UOS, I'd like to study databases and cloud infrastructure in greater depth. I also plan to take on the certification track with fellow members. I look forward to sharing our interests and learning together!"
+- id: jeong-jiyun
+  name:
+    ko: 정지윤
+    en: Jiyun Jeong
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  links:
+    github: https://github.com/jiyun5826
+  keywords:
+    - Backend
+    - CI/CD
+    - Server Operations
+  description:
+    ko: "백엔드 개발을 하며 직접 서비스를 배포해 보니, 기능을 구현하는 데서 그치지 않고 서버가 어떻게 동작하는지, 제가 만든 코드가 어떤 과정을 거쳐 실제 서비스로 배포되는지까지 제대로 이해하고 싶어졌습니다. 그 과정에서 AWS, Docker, Nginx 등을 직접 다루며 자연스럽게 인프라와 클라우드에도 관심을 갖게 되었고, 이 분야를 더 체계적으로 공부하고 싶습니다! 아직 모르는 것이 많지만, 궁금한 것은 직접 찾아보고 적용해 봐야 제대로 배울 수 있다고 생각합니다. ASBG UOS에서 다양한 경험을 쌓으며 백엔드 코드가 실제 서비스로 이어지는 전체 과정을 알아가고 싶습니다."
+    en: "Deploying a service myself while working on backend development made me want to understand more than feature implementation. I wanted to know how servers work and how the code I write becomes a running service. Working hands-on with AWS, Docker, and Nginx along the way naturally sparked my interest in infrastructure and the cloud, and I'd like to study these areas more systematically! There's still a lot I don't know, but I believe I learn best by researching my questions and putting what I find into practice. Through a variety of experiences at ASBG UOS, I hope to understand the entire journey from backend code to a live service."
+- id: cho-ayoung
+  name:
+    ko: 조아영
+    en: Ayoung Cho
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  links:
+    github: https://github.com/look516
+  keywords:
+    - Serverless
+    - Databases
+    - Monitoring
+  description:
+    ko: 짧게나마 웹 서비스에 모니터링 시스템을 붙여 보며 생각지도 못한 부분에서 서비스에 장애가 생길 수 있다는 점을 깨달았습니다. 지속 가능한 서비스를 운영하는 것을 목표로 공부하고 있습니다. 아직 갈 길은 멀지만, ASBG UOS에서 클라우드를 공부하고 서비스를 운영하며 아키텍처와 기술에 대한 관점을 공유해 보고 싶습니다!
+    en: Even my brief experience adding a monitoring system to a web service taught me that services can fail in unexpected ways. I'm studying with the goal of operating services sustainably over the long term. I still have a long way to go, but at ASBG UOS, I'd love to study the cloud, operate services, and exchange perspectives on architecture and technology!
+- id: choi-jinyoung
+  name:
+    ko: 최진영
+    en: Jinyoung Choi
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  photo: img/choi-jinyoung.jpg
+  links:
+    github: https://github.com/glebungle
+  keywords:
+    - Cloud
+    - Infrastructure
+    - DevOps
+  description:
+    ko: 주로 프론트엔드 개발을 해 오다가 최근 백엔드 공부를 시작했습니다. AWS 교육을 계기로 클라우드와 인프라 분야에 관심을 갖게 되었고, 개발 역량을 키우는 데도 관련 지식이 많이 필요하다고 느껴 차근차근 공부하고 있습니다. ASBG UOS에서는 AWS와 인프라에 대한 기초 지식을 탄탄히 쌓고, 팀원들과 적극적으로 교류하며 함께 성장하고 싶습니다. 💭
+    en: I've mainly worked on frontend development and recently started learning backend development. Taking an AWS course sparked my interest in cloud and infrastructure, and I've been studying them step by step because I feel this knowledge is also essential to becoming a better developer. At ASBG UOS, I'd like to build a solid foundation in AWS and infrastructure, actively connect with my teammates, and grow together. 💭
