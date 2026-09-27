@@ -181,3 +181,20 @@
   description:
     ko: 주로 프론트엔드 개발을 해 오다가 최근 백엔드 공부를 시작했습니다. AWS 교육을 계기로 클라우드와 인프라 분야에 관심을 갖게 되었고, 개발 역량을 키우는 데도 관련 지식이 많이 필요하다고 느껴 차근차근 공부하고 있습니다. ASBG UOS에서는 AWS와 인프라에 대한 기초 지식을 탄탄히 쌓고, 팀원들과 적극적으로 교류하며 함께 성장하고 싶습니다. 💭
     en: I've mainly worked on frontend development and recently started learning backend development. Taking an AWS course sparked my interest in cloud and infrastructure, and I've been studying them step by step because I feel this knowledge is also essential to becoming a better developer. At ASBG UOS, I'd like to build a solid foundation in AWS and infrastructure, actively connect with my teammates, and grow together. 💭
+- id: paek-jaemin
+  name:
+    ko: 백재민
+    en: Jaemin Paek
+  major:
+    ko: 인공지능학과
+    en: Artificial Intelligence
+  photo: img/paek-jaemin.jpeg
+  links:
+    github: https://github.com/ashmin100
+  keywords:
+    - Cloud-native AI Infrastructure
+    - LLM Serving
+    - Computer Vision
+  description:
+    ko: "AI를 공부하면서 모델 자체의 성능뿐만 아니라, 만든 모델을 실제 환경에서 어떻게 안정적이고 효율적으로 운영할 수 있을지에도 관심을 갖게 되었습니다. LLM 기반 시스템을 만들며 출력이 예상과 다르게 나오거나 추론 속도가 느려지는 문제를 직접 마주하다 보니, 자연스럽게 모델 바깥의 시스템과 인프라에도 궁금증이 생겼습니다. 요즘은 LLM Serving과 Cloud-native AI Infrastructure에 관심을 두고, GPU 자원을 효율적으로 활용하고 서비스를 안정적으로 운영하는 방법을 공부하고 있습니다. ASBG UOS에서는 직접 클라우드 환경에서 여러 가지를 시도해 보며 이런 궁금증을 하나씩 풀어가고 싶습니다. 서로 막혔던 부분과 해결 과정을 편하게 공유하면서 같이 성장하고 싶습니다! "
+    en: "While studying AI, I became interested not only in the performance of the models themselves but also in how to operate the models I build reliably and efficiently in real-world environments. As I built LLM-based systems and encountered issues such as unexpected outputs and slow inference, I naturally became curious about the systems and infrastructure surrounding the models. These days, I'm interested in LLM Serving and Cloud-native AI Infrastructure, and I'm studying how to use GPU resources efficiently and operate services reliably. At ASBG UOS, I'd like to try different things hands-on in cloud environments and work through these questions one by one. I hope we can grow together by openly sharing where we got stuck and how we worked through those challenges!"
