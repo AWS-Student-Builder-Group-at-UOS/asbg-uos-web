@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 372" role="img" aria-label="브라우저가 HTML 하나를 받은 뒤 CSS, JavaScript, 이미지와 폰트, API 요청을 이어서 보내 네이버 메인 페이지 하나에 요청 263개가 기록된다">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="372" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="370" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">페이지 하나, 요청 263개</text>
+<text x="36" y="74" font-size="15" fill="#35526A">HTML 하나를 받은 뒤 이어지는 추가 요청들</text>
+
+<rect x="36" y="240" width="132" height="56" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="102" y="262" font-size="12" text-anchor="middle" fill="#35526A">사용자</text>
+<text x="102" y="284" font-size="16" font-weight="700" text-anchor="middle" fill="#123249">브라우저</text>
+
+<text x="300" y="108" font-size="12" font-weight="700" fill="#1160D8">01</text>
+<text x="324" y="108" font-size="13" font-weight="700" fill="#123249">페이지 요청 → HTML 받기</text>
+<rect x="300" y="120" width="240" height="34" fill="#DCEFFF" stroke="#79CDFF"/><rect x="300" y="120" width="6" height="34" fill="#79CDFF"/>
+<text x="320" y="142" font-size="14" font-weight="700" fill="#123249">HTML</text>
+<path d="M102 240V137H296" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<text x="300" y="184" font-size="12" font-weight="700" fill="#1160D8">02</text>
+<text x="324" y="184" font-size="13" font-weight="700" fill="#123249">필요한 리소스 추가 요청</text>
+<rect x="300" y="196" width="240" height="30" fill="#FFFFFF" stroke="#79CDFF"/><rect x="300" y="196" width="6" height="30" fill="#79CDFF"/>
+<text x="320" y="216" font-size="14"><tspan font-weight="700" fill="#123249">CSS</tspan><tspan fill="#35526A"> · 화면 꾸미기</tspan></text>
+<rect x="300" y="234" width="240" height="30" fill="#FFFFFF" stroke="#79CDFF"/><rect x="300" y="234" width="6" height="30" fill="#79CDFF"/>
+<text x="320" y="254" font-size="14"><tspan font-weight="700" fill="#123249">JavaScript</tspan><tspan fill="#35526A"> · 기능 실행</tspan></text>
+<rect x="300" y="272" width="240" height="30" fill="#FFFFFF" stroke="#79CDFF"/><rect x="300" y="272" width="6" height="30" fill="#79CDFF"/>
+<text x="320" y="292" font-size="14"><tspan font-weight="700" fill="#123249">이미지 · 폰트</tspan></text>
+<rect x="300" y="310" width="240" height="30" fill="#FFFFFF" stroke="#79CDFF"/><rect x="300" y="310" width="6" height="30" fill="#79CDFF"/>
+<text x="320" y="330" font-size="14"><tspan font-weight="700" fill="#123249">API</tspan><tspan fill="#35526A"> · 화면에 표시할 데이터</tspan></text>
+<line x1="168" y1="268" x2="296" y2="211" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="168" y1="268" x2="296" y2="249" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="168" y1="268" x2="296" y2="287" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="168" y1="268" x2="296" y2="325" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<line x1="554" y1="230" x2="594" y2="230" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="600" y="120" width="324" height="220" fill="#FFFFFF" stroke="#79CDFF"/><rect x="600" y="120" width="6" height="220" fill="#79CDFF"/>
+<text x="765" y="152" font-size="12" text-anchor="middle" fill="#35526A">개발자 도구 · Network</text>
+<text x="765" y="216" text-anchor="middle"><tspan font-size="64" font-weight="700" fill="#1160D8">263</tspan><tspan dx="8" font-size="18" fill="#35526A">requests</tspan></text>
+<text x="765" y="246" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">네이버 메인 페이지를 한 번 열 때</text>
+<line x1="645" y1="266" x2="885" y2="266" stroke="#D9E7F0"/>
+<text x="765" y="292" font-size="13" text-anchor="middle" fill="#35526A">사용자가 연 페이지는 하나</text>
+<text x="765" y="314" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">기록된 요청은 여러 개</text>
+</g>
+</svg>

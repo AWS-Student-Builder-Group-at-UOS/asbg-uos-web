@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-label="10.0.0.0/16은 32비트 중 앞 16비트가 네트워크 ID, 뒤 16비트가 호스트 ID이고, /16은 주소 65,536개, /24는 256개로 슬래시 뒤 숫자가 작을수록 범위가 크다">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="500" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="498" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">10.0.0.0/16, 어디까지가 네트워크일까</text>
+<text x="36" y="74" font-size="15" fill="#35526A">점으로 나뉜 숫자 하나 = 8비트, 모두 32비트</text>
+
+<rect x="108" y="102" width="128" height="62" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="172" y="134" font-size="26" font-weight="700" text-anchor="middle" fill="#123249">10</text>
+<text x="172" y="154" font-size="12" text-anchor="middle" fill="#35526A">8비트</text>
+<text x="244" y="134" font-size="26" font-weight="700" text-anchor="middle" fill="#35526A">.</text>
+<rect x="252" y="102" width="128" height="62" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="316" y="134" font-size="26" font-weight="700" text-anchor="middle" fill="#123249">0</text>
+<text x="316" y="154" font-size="12" text-anchor="middle" fill="#35526A">8비트</text>
+<text x="388" y="134" font-size="26" font-weight="700" text-anchor="middle" fill="#35526A">.</text>
+<rect x="396" y="102" width="128" height="62" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="460" y="134" font-size="26" font-weight="700" text-anchor="middle" fill="#123249">0</text>
+<text x="460" y="154" font-size="12" text-anchor="middle" fill="#35526A">8비트</text>
+<text x="532" y="134" font-size="26" font-weight="700" text-anchor="middle" fill="#35526A">.</text>
+<rect x="540" y="102" width="128" height="62" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="604" y="134" font-size="26" font-weight="700" text-anchor="middle" fill="#123249">0</text>
+<text x="604" y="154" font-size="12" text-anchor="middle" fill="#35526A">8비트</text>
+<text x="692" y="134" font-size="26" font-weight="700" fill="#1160D8">/16</text>
+
+<rect x="100" y="188" width="288" height="42" fill="#1160D8"/>
+<text x="244" y="214" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">네트워크 ID · 16비트</text>
+<rect x="388" y="188" width="288" height="42" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="532" y="214" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">호스트 ID · 16비트</text>
+<text x="692" y="214" font-size="13" fill="#35526A">합쳐서 32비트</text>
+
+<path d="M102 238V246H384V238M244 246V254" fill="none" stroke="#1160D8" stroke-width="1.5"/>
+<text x="244" y="274" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">/16 = 네트워크 ID에 쓰는 비트 수</text>
+<path d="M392 238V246H674V238M532 246V254" fill="none" stroke="#79CDFF" stroke-width="1.5"/>
+<text x="532" y="274" font-size="13" text-anchor="middle" fill="#35526A">나머지 16비트는 자동으로 호스트 ID</text>
+
+<text x="36" y="318" font-size="12" fill="#35526A">슬래시 뒤 숫자만 바꿔 보면</text>
+<text x="100" y="340" font-size="12" text-anchor="middle" fill="#35526A">0</text>
+<text x="244" y="340" font-size="12" text-anchor="middle" fill="#35526A">8</text>
+<text x="388" y="340" font-size="12" text-anchor="middle" fill="#35526A">16</text>
+<text x="532" y="340" font-size="12" text-anchor="middle" fill="#35526A">24</text>
+<text x="676" y="340" font-size="12" text-anchor="middle" fill="#35526A">32</text>
+<path d="M100 346V352M244 346V352M388 346V352M532 346V352M676 346V352" fill="none" stroke="#79CDFF"/>
+
+<text x="36" y="381" font-size="18" font-weight="700" fill="#1160D8">/16</text>
+<rect x="100" y="356" width="288" height="36" fill="#1160D8"/>
+<text x="244" y="379" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">네트워크 16</text>
+<rect x="388" y="356" width="288" height="36" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="532" y="379" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">호스트 16</text>
+<text x="692" y="379" font-size="14" fill="#123249"><tspan font-weight="700">주소 65,536개</tspan> · 범위가 크다</text>
+
+<text x="36" y="431" font-size="18" font-weight="700" fill="#1160D8">/24</text>
+<rect x="100" y="406" width="432" height="36" fill="#1160D8"/>
+<text x="316" y="429" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">네트워크 24</text>
+<rect x="532" y="406" width="144" height="36" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="604" y="429" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">호스트 8</text>
+<text x="692" y="429" font-size="14" fill="#123249"><tspan font-weight="700">주소 256개</tspan> · 범위가 작다</text>
+
+<text x="36" y="476" font-size="14" font-weight="700" fill="#1160D8">슬래시 뒤 숫자가 작을수록 호스트 ID가 많아져 범위가 크다</text>
+</g>
+</svg>

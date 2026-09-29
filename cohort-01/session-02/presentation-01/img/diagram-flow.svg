@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" role="img" aria-label="CIDR과 IP로 서버를 찾고, 포트로 그 서버 안의 프로그램을 찾고, TCP 또는 UDP로 데이터를 주고받는 네트워크 흐름">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="400" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="398" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">네트워크 흐름, 세 단계로</text>
+<text x="36" y="74" font-size="15" fill="#35526A">어디로 갈지 찾고, 어떻게 갈지 정하기</text>
+
+<text x="36" y="108" font-size="12" font-weight="700" fill="#1160D8">01</text>
+<text x="60" y="108" font-size="14" font-weight="700" fill="#123249">CIDR + IP로 서버 찾기</text>
+<rect x="36" y="124" width="220" height="192" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="44" y="141" font-size="12" font-weight="700" fill="#35526A">10.0.0.0/16</text>
+<rect x="48" y="182" width="92" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="94" y="206" font-size="12" text-anchor="middle" fill="#123249">10.0.0.8</text>
+<rect x="152" y="182" width="92" height="40" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="198" y="207" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">10.0.1.25</text>
+<rect x="48" y="242" width="92" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="94" y="266" font-size="12" text-anchor="middle" fill="#123249">10.0.2.14</text>
+<rect x="152" y="242" width="92" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="198" y="266" font-size="12" text-anchor="middle" fill="#123249">10.0.3.7</text>
+<text x="146" y="352" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">IP = 컴퓨터의 주소</text>
+<text x="146" y="372" font-size="13" text-anchor="middle" fill="#35526A">외울 땐 ZIP, 집</text>
+
+<line x1="274" y1="220" x2="302" y2="220" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+
+<text x="304" y="108" font-size="12" font-weight="700" fill="#1160D8">02</text>
+<text x="328" y="108" font-size="14" font-weight="700" fill="#123249">Port로 프로그램 찾기</text>
+<path d="M348 188L432 136L516 188Z" fill="#FFFFFF" stroke="#1160D8"/>
+<text x="432" y="178" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">10.0.1.25</text>
+<path d="M348 268V188H516V316H348V292" fill="#FFFFFF" stroke="#1160D8"/>
+<rect x="368" y="204" width="128" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="432" y="229" font-size="13" text-anchor="middle" fill="#35526A"><tspan font-size="14" font-weight="700" fill="#123249">:22</tspan> SSH</text>
+<rect x="368" y="260" width="128" height="40" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="432" y="285" font-size="13" text-anchor="middle" fill="#35526A"><tspan font-size="14" font-weight="700" fill="#123249">:80</tspan> 웹 서버</text>
+<line x1="312" y1="280" x2="364" y2="280" stroke="#1160D8" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="432" y="352" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">Port = 컴퓨터 안의 방</text>
+<text x="432" y="372" font-size="13" text-anchor="middle" fill="#35526A">외울 땐 Part, 방</text>
+
+<line x1="534" y1="220" x2="562" y2="220" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+
+<text x="572" y="108" font-size="12" font-weight="700" fill="#1160D8">03</text>
+<text x="596" y="108" font-size="14" font-weight="700" fill="#123249">TCP/UDP로 데이터 주고받기</text>
+<rect x="572" y="124" width="80" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="612" y="143" font-size="13" text-anchor="middle" fill="#123249">보내는 쪽</text>
+<rect x="844" y="124" width="80" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="884" y="143" font-size="13" text-anchor="middle" fill="#123249">받는 쪽</text>
+<path d="M612 152V316M884 152V316" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+
+<text x="748" y="176" font-size="12" text-anchor="middle" fill="#35526A"><tspan font-size="13" font-weight="700" fill="#123249">TCP</tspan> · 정확하게 · 순서 관리</text>
+<line x1="614" y1="196" x2="880" y2="196" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="705" y="185" width="22" height="22" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="716" y="200" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">1</text>
+<rect x="737" y="185" width="22" height="22" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="748" y="200" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">2</text>
+<rect x="769" y="185" width="22" height="22" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="780" y="200" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">3</text>
+<line x1="882" y1="222" x2="616" y2="222" stroke="#79CDFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="748" y="240" font-size="12" text-anchor="middle" fill="#35526A">도착 확인</text>
+
+<text x="748" y="278" font-size="12" text-anchor="middle" fill="#35526A"><tspan font-size="13" font-weight="700" fill="#123249">UDP</tspan> · 빠르게 · 실시간 게임, 영상·음성</text>
+<line x1="614" y1="298" x2="880" y2="298" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="705" y="287" width="22" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
+<rect x="737" y="287" width="22" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
+<rect x="769" y="287" width="22" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
+
+<text x="748" y="352" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">TCP = Control, 정확하게</text>
+<text x="748" y="372" font-size="13" text-anchor="middle" fill="#35526A">UDP = 빠르게</text>
+</g>
+</svg>
