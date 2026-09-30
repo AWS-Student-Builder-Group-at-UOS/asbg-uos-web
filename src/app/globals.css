@@ -241,18 +241,39 @@
   @apply my-10 border-line;
 }
 .article table {
-  @apply w-full border-collapse text-sm;
+  @apply w-full border-separate border-spacing-0 text-sm;
+  /* Keep readable columns on small screens; let the wrapper scroll instead. */
+  min-width: 40rem;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
 .article th,
 .article td {
-  @apply border border-line px-3 py-2 text-left align-top;
+  @apply border-r border-b border-line px-4 py-3 text-left align-top;
+  min-width: 7rem;
 }
 .article th {
-  @apply bg-surface-2 font-medium text-ink;
+  @apply whitespace-nowrap bg-surface-2 font-medium text-ink;
 }
 .article td {
   @apply text-muted;
 }
-.table-wrap {
-  @apply overflow-x-auto;
+.article th:last-child,
+.article td:last-child {
+  border-right: 0;
+}
+.article tbody tr:last-child td {
+  border-bottom: 0;
+}
+.article tbody tr:nth-child(even) {
+  @apply bg-surface-2;
+}
+.article td code {
+  white-space: nowrap;
+}
+.article .table-wrap {
+  @apply max-w-full overflow-x-auto rounded-md border border-line bg-surface;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
 }

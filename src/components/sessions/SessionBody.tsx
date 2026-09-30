@@ -1,10 +1,12 @@
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { getDict, type Locale } from "@/lib/i18n";
 import { contentUrl } from "@/lib/routes";
 
 const isAbsolute = (u: string) => /^(https?:)?\/\//.test(u) || u.startsWith("/") || u.startsWith("#") || u.startsWith("mailto:");
 
-export function SessionBody({ cohort, session, markdown }: { cohort: string; session: string; markdown: string }) {
+export function SessionBody({ cohort, session, markdown, locale }: { cohort: string; session: string; markdown: string; locale: Locale }) {
+  const d = getDict(locale);
   const resolve = (u: string) => (isAbsolute(u) ? u : contentUrl(cohort, session, u.replace(/^\.\//, "")));
 
   return (
@@ -23,7 +25,7 @@ export function SessionBody({ cohort, session, markdown }: { cohort: string; ses
             );
           },
           table: ({ children }) => (
-            <div className="table-wrap">
+            <div className="table-wrap" role="region" aria-label={d.sessions.tableScrollLabel} tabIndex={0}>
               <table>{children}</table>
             </div>
           ),

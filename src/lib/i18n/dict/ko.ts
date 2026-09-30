@@ -140,6 +140,7 @@ export const ko = {
     back: "세션 목록",
     prev: "이전 글",
     next: "다음 글",
+    tableScrollLabel: "표 (좌우로 스크롤할 수 있습니다)",
     empty: "아직 올라온 세션이 없습니다. 다음 세션이 정해지면 여기와 Meetup에 올립니다.",
   },
   members: {
