@@ -101,6 +101,8 @@ Talk thumbnails use the same language: a dark dot grid with three keywords on th
 └────────────────────────────────────────────────────────┘
 ```
 
+Diagrams inside the talk write-ups are quieter than the thumbnails: a white background, grey lines and a single blue. The rules, prompt and generator are in `template/session-diagram/`.
+
 ## Development and contributing
 
 Requires Node.js 20 or later.
