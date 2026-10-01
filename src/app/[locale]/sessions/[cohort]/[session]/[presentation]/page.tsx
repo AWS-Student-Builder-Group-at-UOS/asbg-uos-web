@@ -96,7 +96,7 @@ export default async function SessionPage({ params }: Props) {
           )}
 
           <div className="mt-10">
-            <SessionBody cohort={cohort} session={slug} markdown={body} />
+            <SessionBody cohort={cohort} session={slug} markdown={body} locale={locale} />
           </div>
 
           {session.files.length > 0 && (

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-label="ALB는 요청의 메서드, 경로, 헤더를 열어 보고 알맞은 서버로 보내고, NLB는 내용을 보지 않고 IP와 포트만 보고 빠르게 넘긴다">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="380" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="378" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">ALB는 내용을 보고, NLB는 주소만 본다</text>
+<text x="36" y="74" font-size="15" fill="#35526A">로드밸런서마다 라우팅 기준이 다르다</text>
+<line x1="480" y1="100" x2="480" y2="344" stroke="#D9E7F0"/>
+
+<text x="36" y="114" font-size="15" font-weight="700" fill="#123249"><tspan fill="#1160D8">ALB</tspan> · L7 애플리케이션 계층</text>
+<rect x="36" y="132" width="150" height="148" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="48" y="153" font-size="12" fill="#35526A">요청</text>
+<rect x="44" y="164" width="134" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="54" y="184" font-size="12" fill="#35526A">메서드</text>
+<text x="100" y="184" font-size="13" font-weight="700" fill="#123249">GET</text>
+<rect x="44" y="200" width="134" height="30" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="54" y="220" font-size="12" fill="#35526A">경로</text>
+<text x="100" y="220" font-size="13" font-weight="700" fill="#1160D8">/api/posts</text>
+<rect x="44" y="236" width="134" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="54" y="256" font-size="12" fill="#35526A">헤더</text>
+<text x="100" y="256" font-size="13" font-weight="700" fill="#123249">Host: …</text>
+<line x1="186" y1="206" x2="222" y2="206" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="226" y="181" width="80" height="50" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="266" y="212" font-size="16" font-weight="700" text-anchor="middle" fill="#123249">ALB</text>
+<text x="266" y="254" font-size="12" text-anchor="middle" fill="#35526A">요청 내용을</text>
+<text x="266" y="270" font-size="12" text-anchor="middle" fill="#35526A">열어 보고 라우팅</text>
+<path d="M306 206 H320 V250 H342" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M306 206 H320 V162 H342" fill="none" stroke="#1160D8" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="346" y="138" width="110" height="48" fill="#FFFFFF" stroke="#1160D8"/>
+<text x="401" y="157" font-size="12" text-anchor="middle" fill="#1160D8">경로 /api</text>
+<text x="401" y="176" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">API 서버</text>
+<rect x="346" y="226" width="110" height="48" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="401" y="245" font-size="12" text-anchor="middle" fill="#35526A">경로 /</text>
+<text x="401" y="264" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">웹 서버</text>
+<rect x="36" y="304" width="420" height="40" fill="#FFFFFF" stroke="#79CDFF"/><rect x="36" y="304" width="6" height="40" fill="#79CDFF"/>
+<text x="56" y="329" font-size="12" fill="#35526A">주로 쓰는 곳</text>
+<text x="136" y="329" font-size="14" font-weight="700" fill="#123249">웹, REST API 서비스</text>
+
+<text x="504" y="114" font-size="15" font-weight="700" fill="#123249"><tspan fill="#1160D8">NLB</tspan> · L4 전송 계층</text>
+<rect x="504" y="132" width="150" height="148" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="516" y="153" font-size="12" fill="#35526A">요청</text>
+<rect x="512" y="164" width="134" height="30" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="579" y="184" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">목적지 IP</text>
+<rect x="512" y="200" width="134" height="30" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="579" y="220" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">Port</text>
+<rect x="512" y="236" width="134" height="30" fill="#F2FAFF" stroke="#A9BCCB" stroke-dasharray="4 3"/>
+<text x="579" y="256" font-size="13" text-anchor="middle" fill="#A9BCCB">내용은 보지 않음</text>
+<line x1="654" y1="206" x2="690" y2="206" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="694" y="181" width="80" height="50" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="734" y="212" font-size="16" font-weight="700" text-anchor="middle" fill="#123249">NLB</text>
+<text x="734" y="254" font-size="12" text-anchor="middle" fill="#35526A">IP + Port 단위로</text>
+<text x="734" y="270" font-size="12" text-anchor="middle" fill="#35526A">빠르게</text>
+<rect x="806" y="132" width="118" height="148" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="812" y="147" font-size="12" font-weight="700" fill="#35526A">서버 그룹</text>
+<path d="M774 206 H790 V170 H816" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M774 206 H816" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M774 206 H790 V242 H816" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="820" y="157" width="92" height="26" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="866" y="175" font-size="13" text-anchor="middle" fill="#123249">서버 A</text>
+<rect x="820" y="193" width="92" height="26" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="866" y="211" font-size="13" text-anchor="middle" fill="#123249">서버 B</text>
+<rect x="820" y="229" width="92" height="26" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="866" y="247" font-size="13" text-anchor="middle" fill="#123249">서버 C</text>
+<rect x="504" y="304" width="420" height="40" fill="#FFFFFF" stroke="#79CDFF"/><rect x="504" y="304" width="6" height="40" fill="#79CDFF"/>
+<text x="524" y="329" font-size="12" fill="#35526A">주로 쓰는 곳</text>
+<text x="604" y="329" font-size="14" font-weight="700" fill="#123249">게임 서버처럼 대량 트래픽</text>
+</g>
+</svg>

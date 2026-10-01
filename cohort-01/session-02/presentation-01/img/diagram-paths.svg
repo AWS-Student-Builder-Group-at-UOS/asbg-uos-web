@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" role="img" aria-label="VPC를 오가는 세 갈래 길: 사용자 요청은 IGW, ALB를 거쳐 App 서버로 들어오고, App 서버는 NAT Gateway와 IGW를 거쳐 인터넷으로 나가고, 관리자는 IGW와 Bastion Host를 거쳐 SSH로 App 서버에 접속한다">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="460" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="458" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">VPC를 오가는 세 갈래 길</text>
+<text x="36" y="74" font-size="15" fill="#35526A">들어오는 길, 나가는 길, 관리하러 들어가는 길</text>
+
+<text x="218" y="112" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">인터넷</text>
+<text x="344" y="112" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">IGW</text>
+<text x="512" y="112" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">퍼블릭 서브넷</text>
+<text x="778" y="112" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">프라이빗 서브넷</text>
+
+<line x1="36" y1="232" x2="920" y2="232" stroke="#D9E7F0"/>
+<line x1="36" y1="328" x2="920" y2="328" stroke="#D9E7F0"/>
+
+<rect x="344" y="124" width="576" height="308" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="352" y="140" font-size="12" font-weight="700" fill="#35526A">VPC</text>
+<rect x="392" y="134" width="240" height="288" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<rect x="652" y="134" width="252" height="288" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+
+<text x="36" y="180" font-size="15" font-weight="700" fill="#1160D8">인바운드</text>
+<text x="36" y="200" font-size="12" fill="#35526A">사용자 요청</text>
+<rect x="160" y="162" width="116" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="218" y="189" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">사용자</text>
+<rect x="314" y="162" width="60" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="344" y="189" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">IGW</text>
+<rect x="432" y="162" width="160" height="44" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="512" y="189" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">ALB</text>
+<rect x="703" y="162" width="150" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="778" y="189" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">App 서버</text>
+<line x1="276" y1="184" x2="310" y2="184" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="374" y1="184" x2="428" y2="184" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="592" y1="184" x2="699" y2="184" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<text x="36" y="276" font-size="15" font-weight="700" fill="#1160D8">아웃바운드</text>
+<text x="36" y="296" font-size="12" fill="#35526A">서버가 밖으로</text>
+<rect x="160" y="258" width="116" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="218" y="285" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">외부 인터넷</text>
+<rect x="314" y="258" width="60" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="344" y="285" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">IGW</text>
+<rect x="432" y="258" width="160" height="44" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="512" y="285" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">NAT Gateway</text>
+<rect x="703" y="258" width="150" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="778" y="285" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">App 서버</text>
+<line x1="703" y1="280" x2="596" y2="280" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="432" y1="280" x2="378" y2="280" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="314" y1="280" x2="280" y2="280" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<text x="36" y="372" font-size="15" font-weight="700" fill="#1160D8">관리 접속</text>
+<text x="36" y="392" font-size="12" fill="#35526A">SSH</text>
+<rect x="160" y="354" width="116" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="218" y="381" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">관리자</text>
+<rect x="314" y="354" width="60" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="344" y="381" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">IGW</text>
+<rect x="432" y="354" width="160" height="44" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="512" y="381" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">Bastion Host</text>
+<rect x="703" y="354" width="150" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="778" y="381" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">App 서버</text>
+<line x1="276" y1="376" x2="310" y2="376" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="374" y1="376" x2="428" y2="376" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="592" y1="376" x2="699" y2="376" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+</svg>

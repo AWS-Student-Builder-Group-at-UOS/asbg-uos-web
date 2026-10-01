@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 384" role="img" aria-label="index.html이 내 PC에서 scp로 EC2의 /home/ec2-user로 옮겨지고, sudo mv로 Nginx 웹 폴더에 놓인 뒤, Nginx가 80번 포트로 브라우저에 전달하기까지. 그 전에 내 PC 창에서 키 권한을 좁히고 SSH로 접속한 뒤, EC2 창에서 Nginx를 설치하고 실행한다">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="384" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="382" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">index.html이 브라우저에 닿기까지</text>
+<text x="36" y="74" font-size="15" fill="#35526A">명령은 [내 PC] 창과 [EC2] 창, 두 곳에서 친다</text>
+
+<rect x="36" y="106" width="108" height="108" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="90" y="134" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">내 PC</text>
+<text x="90" y="158" font-size="12" text-anchor="middle" fill="#123249">index.html</text>
+<text x="90" y="200" font-size="12" text-anchor="middle" fill="#35526A">배포할 파일</text>
+
+<line x1="144" y1="160" x2="268" y2="160" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="208" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">scp</text>
+<rect x="154" y="168" width="108" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="208" y="183" font-size="12" text-anchor="middle" fill="#123249">[내 PC] 새 터미널</text>
+
+<rect x="272" y="106" width="124" height="108" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="334" y="134" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">EC2</text>
+<text x="334" y="158" font-size="12" text-anchor="middle" fill="#123249">/home/ec2-user/</text>
+<text x="334" y="174" font-size="12" text-anchor="middle" fill="#123249">index.html</text>
+<text x="334" y="200" font-size="12" text-anchor="middle" fill="#35526A">ec2-user 홈 폴더</text>
+
+<line x1="396" y1="160" x2="520" y2="160" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="460" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">sudo mv</text>
+<rect x="434" y="168" width="52" height="22" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="460" y="183" font-size="12" text-anchor="middle" fill="#123249">[EC2]</text>
+
+<rect x="524" y="106" width="150" height="108" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="599" y="134" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">Nginx 웹 폴더</text>
+<text x="599" y="158" font-size="12" text-anchor="middle" fill="#123249">/usr/share/nginx/html/</text>
+<text x="599" y="174" font-size="12" text-anchor="middle" fill="#123249">index.html</text>
+<text x="599" y="200" font-size="12" text-anchor="middle" fill="#35526A">root 소유 → sudo 필요</text>
+
+<line x1="674" y1="160" x2="798" y2="160" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="738" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">Nginx</text>
+<text x="738" y="183" font-size="12" text-anchor="middle" fill="#35526A">80번 포트</text>
+
+<rect x="802" y="106" width="122" height="108" fill="#FFFFFF" stroke="#1160D8"/>
+<text x="863" y="134" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">브라우저</text>
+<text x="863" y="158" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">http://PUBLIC_IP</text>
+<text x="863" y="200" font-size="12" text-anchor="middle" fill="#35526A">누구나 접속</text>
+
+<rect x="36" y="246" width="888" height="104" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="52" y="270" font-size="13" font-weight="700" fill="#123249">그 전에<tspan font-size="12" font-weight="400" fill="#35526A">  접속하고 Nginx 켜기</tspan></text>
+<rect x="768" y="260" width="12" height="12" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="786" y="270" font-size="12" fill="#35526A">내 PC 창</text>
+<rect x="854" y="260" width="12" height="12" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="872" y="270" font-size="12" fill="#35526A">EC2 창</text>
+
+<rect x="52" y="284" width="160" height="50" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="64" y="303" font-size="12" font-weight="700" fill="#35526A">[내 PC]</text>
+<text x="64" y="323" font-size="12.5" font-weight="700" fill="#1160D8">chmod 400<tspan font-size="12" font-weight="400" fill="#35526A"> · 키 권한</tspan></text>
+<line x1="212" y1="309" x2="240" y2="309" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="244" y="284" width="160" height="50" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="256" y="303" font-size="12" font-weight="700" fill="#35526A">[내 PC]</text>
+<text x="256" y="323" font-size="12.5" font-weight="700" fill="#1160D8">ssh<tspan font-size="12" font-weight="400" fill="#35526A"> 접속</tspan></text>
+<line x1="404" y1="309" x2="432" y2="309" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="436" y="284" width="220" height="50" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="448" y="303" font-size="12" font-weight="700" fill="#35526A">[EC2]</text>
+<text x="448" y="323" font-size="12.5" font-weight="700" fill="#1160D8">sudo dnf install -y nginx</text>
+<line x1="656" y1="309" x2="684" y2="309" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="688" y="284" width="220" height="50" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="700" y="303" font-size="12" font-weight="700" fill="#35526A">[EC2]</text>
+<text x="700" y="323" font-size="12.5" font-weight="700" fill="#1160D8">sudo systemctl start nginx</text>
+</g>
+</svg>

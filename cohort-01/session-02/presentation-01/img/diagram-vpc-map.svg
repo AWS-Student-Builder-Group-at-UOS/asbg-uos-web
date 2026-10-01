@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 588" role="img" aria-label="VPC 한 장 요약: IGW 아래 퍼블릭 서브넷에는 ALB, NAT Gateway, Bastion Host가, 프라이빗 서브넷에는 App 서버, Internal ALB, RDS, ElastiCache, EFS, Interface Endpoint가 있고, Interface Endpoint는 VPC 밖의 S3로 이어진다">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="588" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="586" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">VPC 한 장 요약</text>
+<text x="36" y="74" font-size="15" fill="#35526A">퍼블릭은 입구, 프라이빗은 안쪽</text>
+
+<rect x="36" y="167" width="780" height="391" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="42" y="182" font-size="12" font-weight="700" fill="#35526A">VPC</text>
+
+<rect x="466" y="92" width="110" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="521" y="112" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">인터넷</text>
+<line x1="521" y1="122" x2="521" y2="148" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="486" y="152" width="70" height="30" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="521" y="172" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">IGW</text>
+
+<rect x="52" y="198" width="748" height="106" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="62" y="216" font-size="13" font-weight="700" fill="#123249">퍼블릭 서브넷</text>
+<text x="68" y="251" font-size="12" fill="#35526A">라우팅 테이블</text>
+<text x="68" y="270" font-size="13" font-weight="700" fill="#1160D8">0.0.0.0/0 → IGW</text>
+<rect x="257" y="230" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="332" y="252" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">NAT Gateway</text>
+<text x="332" y="270" font-size="12" text-anchor="middle" fill="#35526A">프라이빗 → 밖으로</text>
+<rect x="446" y="230" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="521" y="252" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">ALB</text>
+<text x="521" y="270" font-size="12" text-anchor="middle" fill="#35526A">진입점 · 분산 · 헬스 체크</text>
+<rect x="634" y="230" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="709" y="252" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">Bastion Host</text>
+<text x="709" y="270" font-size="12" text-anchor="middle" fill="#35526A">SSH 중간 서버</text>
+
+<rect x="52" y="328" width="748" height="214" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="62" y="346" font-size="13" font-weight="700" fill="#123249">프라이빗 서브넷</text>
+<rect x="68" y="360" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="143" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">내부 서비스</text>
+<text x="143" y="400" font-size="12" text-anchor="middle" fill="#35526A">또 다른 서버</text>
+<rect x="257" y="360" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="332" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">Internal ALB/NLB</text>
+<text x="332" y="400" font-size="12" text-anchor="middle" fill="#35526A">VPC 안에서만</text>
+<rect x="446" y="360" width="150" height="52" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="521" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">App 서버</text>
+<text x="521" y="400" font-size="12" text-anchor="middle" fill="#35526A">EC2 · ECS · Lambda</text>
+<rect x="634" y="360" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="709" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">Interface Endpoint</text>
+<text x="709" y="400" font-size="12" text-anchor="middle" fill="#35526A">AWS 서비스로 가는 통로</text>
+<rect x="257" y="468" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="332" y="490" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">RDS</text>
+<text x="332" y="508" font-size="12" text-anchor="middle" fill="#35526A">관계형 DB</text>
+<rect x="446" y="468" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="521" y="490" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">ElastiCache</text>
+<text x="521" y="508" font-size="12" text-anchor="middle" fill="#35526A">Redis · RAM 키-값</text>
+<rect x="634" y="468" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="709" y="490" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">EFS</text>
+<text x="709" y="508" font-size="12" text-anchor="middle" fill="#35526A">공유 파일 · Mount Target</text>
+
+<rect x="840" y="360" width="84" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="882" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">S3</text>
+<text x="882" y="400" font-size="12" text-anchor="middle" fill="#35526A">AWS 서비스</text>
+
+<line x1="521" y1="182" x2="521" y2="226" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="521" y1="282" x2="521" y2="356" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M481 360 V316 H332 V286" fill="none" stroke="#1160D8" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<line x1="446" y1="386" x2="411" y2="386" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="257" y1="386" x2="222" y2="386" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="596" y1="386" x2="630" y2="386" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="784" y1="386" x2="836" y2="386" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M521 412 V440 H332 V464" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M521 412 V440 H709 V464" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="521" y1="412" x2="521" y2="464" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 390" role="img" aria-label="서버 한 대에 WEB, APP, DB가 CPU·메모리·디스크를 함께 쓰는 구성과, 세 역할을 Presentation, Application, Data 계층으로 나눠 각자 자원을 갖는 3-Tier 구성의 비교">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="390" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="388" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">한 대에 모으기 vs 역할별로 나누기</text>
+<text x="36" y="74" font-size="15" fill="#35526A">같은 세 역할, 자원을 함께 쓰느냐 따로 쓰느냐</text>
+
+<text x="36" y="112" font-size="15" font-weight="700" fill="#123249">서버 한 대</text>
+<rect x="36" y="128" width="224" height="192" fill="#FFFFFF" stroke="#79CDFF"/>
+<rect x="52" y="144" width="192" height="32" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="66" y="165" font-size="14"><tspan font-weight="700" fill="#123249">WEB</tspan><tspan fill="#35526A"> · Nginx</tspan></text>
+<rect x="52" y="184" width="192" height="32" fill="#FFFFFF" stroke="#1160D8"/>
+<text x="66" y="205" font-size="14"><tspan font-weight="700" fill="#123249">APP</tspan><tspan fill="#35526A"> · Spring Boot</tspan></text>
+<rect x="52" y="224" width="192" height="32" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="66" y="245" font-size="14"><tspan font-weight="700" fill="#123249">DB</tspan><tspan fill="#35526A"> · MySQL</tspan></text>
+<rect x="36" y="272" width="224" height="48" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="52" y="292" font-size="13" font-weight="700" fill="#123249">함께 쓰는 자원</text>
+<text x="52" y="310" font-size="13" fill="#35526A">CPU · 메모리 · 디스크</text>
+<text x="36" y="358" font-size="13" font-weight="700" fill="#1160D8">APP이 바쁘면 WEB·DB도 느려진다</text>
+
+<line x1="278" y1="236" x2="322" y2="236" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
+
+<text x="340" y="112" font-size="15" font-weight="700" fill="#123249">3-Tier</text>
+<rect x="364" y="128" width="120" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="424" y="148" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">사용자 브라우저</text>
+<line x1="424" y1="158" x2="424" y2="184" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="340" y="188" width="168" height="110" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="354" y="210" font-size="12" font-weight="700" fill="#1160D8">Presentation Tier</text>
+<text x="354" y="234" font-size="16" font-weight="700" fill="#123249">WEB</text>
+<text x="354" y="254" font-size="13" fill="#35526A">Nginx</text>
+<rect x="340" y="268" width="168" height="30" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="354" y="287" font-size="13" fill="#35526A">CPU · 메모리 · 디스크</text>
+<text x="340" y="320" font-size="13" fill="#35526A">화면과 리소스 제공</text>
+
+<line x1="508" y1="236" x2="544" y2="236" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="548" y="188" width="168" height="110" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="562" y="210" font-size="12" font-weight="700" fill="#1160D8">Application Tier</text>
+<text x="562" y="234" font-size="16" font-weight="700" fill="#123249">APP</text>
+<rect x="603" y="221" width="50" height="18" fill="#FFFFFF" stroke="#1160D8"/>
+<text x="628" y="234" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">≈ WAS</text>
+<text x="562" y="254" font-size="13" fill="#35526A">Spring Boot</text>
+<rect x="548" y="268" width="168" height="30" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="562" y="287" font-size="13" fill="#35526A">CPU · 메모리 · 디스크</text>
+<text x="548" y="320" font-size="13" fill="#35526A">업무 규칙 실행</text>
+
+<line x1="716" y1="236" x2="752" y2="236" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="756" y="188" width="168" height="110" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="770" y="210" font-size="12" font-weight="700" fill="#1160D8">Data Tier</text>
+<text x="770" y="234" font-size="16" font-weight="700" fill="#123249">DB</text>
+<text x="770" y="254" font-size="13" fill="#35526A">MySQL</text>
+<rect x="756" y="268" width="168" height="30" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="770" y="287" font-size="13" fill="#35526A">CPU · 메모리 · 디스크</text>
+<text x="756" y="320" font-size="13" fill="#35526A">저장 · 조회 · 수정</text>
+
+<text x="340" y="358" font-size="13" font-weight="700" fill="#1160D8">계층마다 별도 실행 환경 · 필요하면 여러 대</text>
+</g>
+</svg>

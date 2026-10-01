@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-label="개발자 컴퓨터 7.7.7.7에서 오는 SSH 22번 포트와 누구나(0.0.0.0/0)에서 오는 HTTP 80번 포트만 인터넷 게이트웨이와 보안 그룹을 지나 EC2에 닿고, 허용 규칙이 없는 다른 IP의 SSH 같은 인바운드는 보안 그룹에서 막힌다">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="520" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="518" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">보안 그룹: 허용한 것만 들어온다</text>
+<text x="36" y="74" font-size="15" fill="#35526A">차단 규칙 없이 허용 목록만 적는다</text>
+
+<rect x="46" y="96" width="140" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="116" y="121" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">개발자 <tspan font-size="12" font-weight="400" fill="#35526A">· 7.7.7.7</tspan></text>
+<rect x="290" y="96" width="140" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="360" y="121" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">누구나 <tspan font-size="12" font-weight="400" fill="#35526A">· 일반 사용자</tspan></text>
+<rect x="534" y="96" width="140" height="40" fill="#FFFFFF" stroke="#A9BCCB"/>
+<text x="604" y="121" font-size="14" font-weight="700" text-anchor="middle" fill="#A9BCCB">누구나</text>
+
+<path d="M116 136 V164 H260 V190" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M360 136 V164 H260 V190" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="108" y="155" font-size="12" font-weight="700" text-anchor="end" fill="#1160D8">SSH (22)</text>
+<text x="368" y="155" font-size="12" font-weight="700" fill="#1160D8">HTTP (80)</text>
+<path d="M604 136 V164 H476 V194" fill="none" stroke="#A9BCCB" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="612" y="155" font-size="12" font-weight="700" fill="#A9BCCB">SSH (22)</text>
+
+<rect x="36" y="212" width="640" height="276" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="44" y="228" font-size="11" fill="#35526A">VPC</text>
+<rect x="208" y="194" width="320" height="36" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="368" y="217" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">인터넷 게이트웨이</text>
+
+<rect x="60" y="250" width="592" height="220" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="68" y="266" font-size="11" fill="#35526A">서브넷</text>
+
+<rect x="84" y="304" width="544" height="150" fill="none" stroke="#1160D8"/>
+<text x="94" y="322" font-size="13" font-weight="700" fill="#1160D8">보안 그룹</text>
+
+<line x1="260" y1="230" x2="260" y2="342" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="270" y="294" font-size="12" font-weight="700" fill="#1160D8">규칙과 일치 → 통과</text>
+<line x1="476" y1="230" x2="476" y2="296" stroke="#A9BCCB" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M469 297 L483 311 M483 297 L469 311" fill="none" stroke="#1160D8" stroke-width="2.5"/>
+<text x="492" y="294" font-size="12" font-weight="700" fill="#35526A">허용 규칙 없음 → 차단</text>
+
+<rect x="196" y="346" width="128" height="66" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="260" y="385" font-size="16" font-weight="700" text-anchor="middle" fill="#123249">EC2</text>
+
+<rect x="352" y="318" width="252" height="122" fill="#FFFFFF" stroke="#79CDFF"/>
+<rect x="352" y="318" width="252" height="22" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="362" y="334" font-size="12" font-weight="700" fill="#123249">인바운드 규칙</text>
+<text x="362" y="358" font-size="13" fill="#123249">SSH</text>
+<text x="446" y="358" font-size="13" fill="#123249">TCP 22</text>
+<text x="516" y="358" font-size="13" font-weight="700" fill="#1160D8">7.7.7.7/32</text>
+<line x1="352" y1="366" x2="604" y2="366" stroke="#79CDFF"/>
+<text x="362" y="384" font-size="13" fill="#123249">HTTP</text>
+<text x="446" y="384" font-size="13" fill="#123249">TCP 80</text>
+<text x="516" y="384" font-size="13" font-weight="700" fill="#1160D8">0.0.0.0/0</text>
+<rect x="352" y="392" width="252" height="22" fill="#DCEFFF" stroke="#79CDFF"/>
+<text x="362" y="408" font-size="12" font-weight="700" fill="#123249">아웃바운드 규칙</text>
+<text x="362" y="432" font-size="13" fill="#123249">모든 트래픽</text>
+<text x="446" y="432" font-size="13" fill="#123249">전체</text>
+<text x="516" y="432" font-size="13" font-weight="700" fill="#1160D8">0.0.0.0/0</text>
+
+<rect x="700" y="318" width="224" height="122" fill="#FFFFFF" stroke="#79CDFF"/><rect x="700" y="318" width="6" height="122" fill="#79CDFF"/>
+<text x="720" y="341" font-size="12" font-weight="700" fill="#123249">소스 읽는 법</text>
+<text x="720" y="366" font-size="12" fill="#35526A"><tspan font-weight="700" fill="#1160D8">/32</tspan> = 딱 이 IP 하나</text>
+<text x="720" y="390" font-size="12" fill="#35526A"><tspan font-weight="700" fill="#1160D8">0.0.0.0/0</tspan> = 모든 IP (Anywhere)</text>
+<line x1="720" y1="404" x2="908" y2="404" stroke="#79CDFF"/>
+<text x="720" y="426" font-size="12" fill="#35526A">실습에서는 소스에 '내 IP' 선택</text>
+</g>
+</svg>

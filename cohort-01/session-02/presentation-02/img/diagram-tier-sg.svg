@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 376" role="img" aria-label="사용자, 외부 로드밸런서, WEB, APP, DB가 차례로 이어지고, 각 계층의 보안 그룹은 바로 앞 계층에서 오는 통신만 허용해 사용자가 DB에 직접 접근할 수 없다">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="376" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="374" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">계층마다 보안 그룹, 바로 앞 계층만 허용</text>
+<text x="36" y="74" font-size="15" fill="#35526A">출발지와 포트를 계층마다 따로 정한다</text>
+
+<rect x="36" y="126" width="84" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="78" y="148" font-size="12" text-anchor="middle" fill="#35526A">사용자</text>
+<text x="78" y="168" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">브라우저</text>
+
+<rect x="136" y="100" width="185" height="96" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="146" y="116" font-size="12" fill="#35526A">보안 그룹</text>
+<rect x="158" y="126" width="141" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="228" y="150" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">외부 로드밸런서</text>
+<text x="228" y="169" font-size="13" text-anchor="middle" fill="#35526A">ALB</text>
+
+<rect x="337" y="100" width="185" height="96" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="347" y="116" font-size="12" fill="#35526A">보안 그룹</text>
+<rect x="359" y="126" width="141" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="429" y="150" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">WEB</text>
+<text x="429" y="169" font-size="13" text-anchor="middle" fill="#35526A">Nginx</text>
+
+<rect x="538" y="100" width="185" height="96" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="548" y="116" font-size="12" fill="#35526A">보안 그룹</text>
+<rect x="560" y="126" width="141" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="630" y="150" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">APP</text>
+<text x="630" y="169" font-size="13" text-anchor="middle" fill="#35526A">Spring Boot</text>
+
+<rect x="739" y="100" width="185" height="96" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="749" y="116" font-size="12" fill="#35526A">보안 그룹</text>
+<rect x="761" y="126" width="141" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="831" y="150" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">DB</text>
+<text x="831" y="169" font-size="13" text-anchor="middle" fill="#35526A">MySQL</text>
+
+<line x1="120" y1="153" x2="154" y2="153" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="299" y1="153" x2="355" y2="153" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="500" y1="153" x2="556" y2="153" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="701" y1="153" x2="757" y2="153" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="136" y="206" width="185" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="150" y="226" font-size="12" font-weight="700" fill="#1160D8">허용</text>
+<text x="150" y="246" font-size="13" fill="#123249">사용자의 웹 접속</text>
+<rect x="337" y="206" width="185" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="351" y="226" font-size="12" font-weight="700" fill="#1160D8">허용</text>
+<text x="351" y="246" font-size="13" fill="#123249">외부 LB에서 오는 요청</text>
+<rect x="538" y="206" width="185" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="552" y="226" font-size="12" font-weight="700" fill="#1160D8">허용</text>
+<text x="552" y="246" font-size="13" fill="#123249">WEB·내부 LB에서 오는 요청</text>
+<rect x="739" y="206" width="185" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="753" y="226" font-size="12" font-weight="700" fill="#1160D8">허용</text>
+<text x="753" y="246" font-size="13" fill="#123249">APP에서 오는 DB 포트</text>
+
+<path d="M78 180V306H831V290" fill="none" stroke="#A9BCCB" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M825 272L837 284M837 272L825 284" fill="none" stroke="#A9BCCB" stroke-width="2.5"/>
+<text x="816" y="294" font-size="13" text-anchor="end" fill="#35526A">DB 직접 접근은 막힘</text>
+
+<text x="36" y="348" font-size="14" font-weight="700" fill="#1160D8">보안 그룹으로 필요한 통신만 허용한다</text>
+</g>
+</svg>

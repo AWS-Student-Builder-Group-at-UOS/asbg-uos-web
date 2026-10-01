@@ -141,6 +141,7 @@ export const en: Dict = {
     back: "All sessions",
     prev: "Previous",
     next: "Next",
+    tableScrollLabel: "Table (scroll horizontally to see more)",
     empty: "Nothing here yet. The next session goes up here and on Meetup once it's set.",
   },
   members: {

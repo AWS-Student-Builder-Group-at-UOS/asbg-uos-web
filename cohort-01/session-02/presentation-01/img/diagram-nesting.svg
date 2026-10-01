@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 474" role="img" aria-label="AWS 안에 VPC, VPC 안에 퍼블릭 서브넷과 프라이빗 서브넷, 서브넷 안에 EC2가 들어 있고, 인터넷은 IGW를 거쳐 퍼블릭 서브넷과만 직접 통신한다">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
+<rect width="960" height="474" fill="#F2FAFF"/>
+<rect x="1" y="1" width="958" height="472" fill="none" stroke="#D9E7F0"/>
+<g font-family="Arial, sans-serif">
+<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">AWS 안에, VPC 안에, 서브넷 안에, EC2</text>
+
+<rect x="36" y="152" width="888" height="298" fill="none" stroke="#79CDFF"/>
+<text x="46" y="171" font-size="12" font-weight="700" fill="#35526A">AWS Cloud</text>
+
+<rect x="60" y="210" width="840" height="220" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="70" y="232" font-size="12" font-weight="700" fill="#35526A">VPC</text>
+<text x="104" y="232" font-size="13" fill="#35526A">내가 소유하는 가상 네트워크 공간</text>
+
+<rect x="84" y="280" width="380" height="130" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="100" y="306" font-size="14" font-weight="700" fill="#123249">퍼블릭 서브넷</text>
+<text x="100" y="326" font-size="12" fill="#35526A">외부 인터넷과 직접 통신 가능</text>
+<rect x="214" y="346" width="120" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="274" y="373" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">EC2</text>
+
+<rect x="496" y="280" width="380" height="130" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
+<text x="512" y="306" font-size="14" font-weight="700" fill="#123249">프라이빗 서브넷</text>
+<text x="512" y="326" font-size="12" fill="#35526A">외부 인터넷에서 직접 접근 불가</text>
+<rect x="626" y="346" width="120" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="686" y="373" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">EC2</text>
+
+<rect x="320" y="80" width="120" height="36" fill="#FFFFFF" stroke="#79CDFF"/>
+<text x="380" y="103" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">인터넷</text>
+
+<line x1="380" y1="120" x2="380" y2="180" stroke="#1160D8" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="392" y="139" font-size="12" font-weight="700" fill="#1160D8">양방향</text>
+<rect x="320" y="184" width="120" height="52" fill="#DCEFFF" stroke="#1160D8"/>
+<text x="380" y="204" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">IGW</text>
+<text x="380" y="223" font-size="12" text-anchor="middle" fill="#35526A">인터넷 게이트웨이</text>
+<line x1="380" y1="240" x2="380" y2="276" stroke="#1160D8" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+<path d="M444 98H760V250" fill="none" stroke="#A9BCCB" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M752 254L768 270M768 254L752 270" fill="none" stroke="#A9BCCB" stroke-width="2.5"/>
+<text x="778" y="267" font-size="13" fill="#35526A">직접 접근 불가</text>
+</g>
+</svg>
