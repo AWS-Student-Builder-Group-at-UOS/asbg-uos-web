@@ -198,3 +198,20 @@
   description:
     ko: "AI를 공부하면서 모델 자체의 성능뿐만 아니라, 만든 모델을 실제 환경에서 어떻게 안정적이고 효율적으로 운영할 수 있을지에도 관심을 갖게 되었습니다. LLM 기반 시스템을 만들며 출력이 예상과 다르게 나오거나 추론 속도가 느려지는 문제를 직접 마주하다 보니, 자연스럽게 모델 바깥의 시스템과 인프라에도 궁금증이 생겼습니다. 요즘은 LLM Serving과 Cloud-native AI Infrastructure에 관심을 두고, GPU 자원을 효율적으로 활용하고 서비스를 안정적으로 운영하는 방법을 공부하고 있습니다. ASBG UOS에서는 직접 클라우드 환경에서 여러 가지를 시도해 보며 이런 궁금증을 하나씩 풀어가고 싶습니다. 서로 막혔던 부분과 해결 과정을 편하게 공유하면서 같이 성장하고 싶습니다! "
     en: "While studying AI, I became interested not only in the performance of the models themselves but also in how to operate the models I build reliably and efficiently in real-world environments. As I built LLM-based systems and encountered issues such as unexpected outputs and slow inference, I naturally became curious about the systems and infrastructure surrounding the models. These days, I'm interested in LLM Serving and Cloud-native AI Infrastructure, and I'm studying how to use GPU resources efficiently and operate services reliably. At ASBG UOS, I'd like to try different things hands-on in cloud environments and work through these questions one by one. I hope we can grow together by openly sharing where we got stuck and how we worked through those challenges!"
+- id: lee-jisu
+  name:
+    ko: 이지수
+    en: Jisu Lee
+  major:
+    ko: 컴퓨터과학부
+    en: Computer Science
+  links:
+    github: https://github.com/js1211-code
+    website: https://tang1211.tistory.com
+  keywords:
+    - Containers
+    - RDS
+    - MFA
+  description:
+    ko: "백엔드를 하다 보면 결국 가장 오래 붙잡고 있게 되는 건 데이터베이스더라고요. 쿼리 한 줄이 느려지는 것도, 데이터가 쌓이면서 구조가 버거워지는 것도 서비스를 돌려 봐야 비로소 보이는 문제였습니다. 그래서 요즘은 RDS로 DB를 직접 올려 보며 백업과 장애 대응, 읽기 부하를 나누는 방식까지 하나씩 확인해 보고 있어요. ASBG UOS에서는 이런 시행착오를 같이 나누면서, 서로의 궁금한 점을 편하게 물어보고 배울 수 있으면 좋겠습니다!"
+    en: "While working on backend development, I've found that databases are what I end up spending the most time on. Problems like a single query slowing down or a database structure struggling as data grows only became apparent when I actually ran a service. Lately, I've been setting up databases on RDS myself and exploring backups, failure recovery, and ways to distribute read traffic one step at a time. At ASBG UOS, I hope we can share these experiences, feel comfortable asking each other questions, and learn together!"
