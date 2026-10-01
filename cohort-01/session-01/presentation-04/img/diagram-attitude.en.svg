@@ -1,43 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-label="Start with AI, finish it myself: a person writes the spec and tests, AI implements, automated tests feed back failures, and a person verifies and owns the result">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="360" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="358" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">Start with AI, finish it myself</text>
-<text x="36" y="74" font-size="15" fill="#35526A">The human's job = design the loop + place the checkpoints</text>
-
-<rect x="50" y="110" width="230" height="60" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="165" y="131" text-anchor="middle" font-size="11" fill="#35526A">Human</text>
-<text x="165" y="153" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Spec · Tests</text>
-
-<rect x="330" y="110" width="230" height="60" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="445" y="131" text-anchor="middle" font-size="11" fill="#35526A">AI</text>
-<text x="445" y="153" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Implement</text>
-
-<rect x="330" y="250" width="230" height="60" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="445" y="271" text-anchor="middle" font-size="11" fill="#35526A">Automated</text>
-<text x="445" y="293" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Test failures · Feedback</text>
-
-<rect x="50" y="250" width="230" height="60" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="165" y="271" text-anchor="middle" font-size="11" fill="#35526A">Human</text>
-<text x="165" y="293" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Verify · Own it</text>
-
-<line x1="286" y1="140" x2="324" y2="140" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="460" y1="176" x2="460" y2="244" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="430" y1="244" x2="430" y2="176" stroke="#79CDFF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
-<text x="472" y="214" font-size="11" fill="#35526A">repeats while I sleep</text>
-<line x1="324" y1="280" x2="286" y2="280" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="165" y1="244" x2="165" y2="176" stroke="#1160D8" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="177" y="214" font-size="12" fill="#1160D8">next spec</text>
-
-<rect x="600" y="146" width="14" height="14" fill="#79CDFF"/>
-<text x="624" y="158" font-size="14" font-weight="700" fill="#123249">Left open</text>
-<text x="624" y="178" font-size="12" fill="#35526A">iteration · drafts · tests · docs</text>
-<rect x="600" y="226" width="14" height="14" fill="#123249"/>
-<text x="624" y="238" font-size="14" font-weight="700" fill="#123249">Locked</text>
-<text x="624" y="258" font-size="12" fill="#35526A">user data · payments · deployment</text>
-<text x="624" y="276" font-size="12" fill="#35526A">security · big structural changes</text>
-
-<text x="50" y="338" font-size="13" fill="#35526A">AI iterates where it is open; a person approves where it is locked</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 370" role="img" aria-label="Start with AI, finish it myself: a person writes the spec and tests, AI implements, automated tests feed back failures, and a person verifies and owns the result">
+<style>
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,d09GMgABAAAAAAhkAA4AAAAAD5gAAAgLAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbhUocKgZgP1NUQVREAIEECo54jCcBNgIkA2QLNAAEIAWDQgcgGx4NUVRxTof4cZCbMa8zoxIE+f5U9m8eBEDbvH+eekBZZOnaWOiqlHChS8VoMJpFt+tMg/4HCKdeEhT3P+Yqh2gSjaKNhUqz1AjluP1t3D4u0ux1GoQmqtlagqQhE0oEG4OZ9vYJGAe43gEB0AMAYlPUIWCgFMJ9QKY6Hoj+HbubcIse7IjFDQngjaNJVGhiLBpYsEdC6yAiU7RYBIxDaC6LqqOQFZusrgIKaWig+kGJqFyfKkVVROE6EghvxbK44w5Fu+4OAxew9lvyYAu+v8ATIcN/bjL0yUQx1cHUrq/6Yx/oB7TPU9czkhexf9VjilKuXynN9cXPqIna+07Vhrt/WKMHGz8K1zafgiJ4NTFtiWtiuKymZG+u1WVc0xyUOmh717Ulutv85EpNd90JA6EPG9xTP8X0FED1osgUp9QT5CYlkQAdegS0gBI3VAAIkI1FZECNAgMaJT1BKiOLUWqbVDiiQb6MBlUG9cIgU5PaT2aj0qHR7pJqnRiEEpQe0mVg4dCDeIGJ4qQMUFBIua/QzoafyRzIUSqTpl5SCNRLhM+w10fyVeYCldEjIKBBBIojAtURU2zhDgGIcAyOFoogIGFEABC0YhCguBsA4RZEqTBD2zQ0l4i/e2mMKNBQmXZ0wcpgwoggniRSSHO56gcsMNQqmsT30x2z32arrbLCcssstSQBwqxXBjwUq4JYBxSRwXoRzEs6VPjRimmMy7UkAKHApESs6XWMHlVLGWtKxpldvdJGY1ixhhUv5UsYMzJITxNeKevoMgxp+nQ5Nae5CQZ9Z/uaTiobdmhXLATK4tA/TKabw3nslm7inTtCv+G3b8sTblaW7xCu1bl1C0kW5K0Y/MethsLwO9a1Vqv52UwgEszyChWyoXcrvpru5l9bUFETndKQZobMYmyrokTqPSgGo+C+HWyyZ3ajklOGm+D+PL4ZpyFl0MjaDJ0MM8gVeww6V6E7Dh2o/KMiJuqKGqHa1m6z7XEnw3lO8hK6A6K8Lwo9ZEnOO2UbtPowKc2Y41SbN57nKotumc3qkRbDBW6Ms1juS7qly/RTObeda7bLykm0tMZoQX4AspU6yem3MMMQrBsoFkvVh8gD9Pc6Cs1WbxadOeHpmf7oBqhVyLt9XBh+wkHaMZxHl8prx0bHwDvhEXVwDLyHGfAheHqEWXrvxVY5ald6ldsuOZQs3dSpP1vjIS2v5V1jooQyV+Kwh1upVUkVYWkVEUtg84yOuoYi6Y8tFBlVT28cVq9UmaRcRdFiefqi1fJEnjxJVg9TB6sXtvXo2OCxqUqz7onevqE+Qr/m9boF1WgbEO734a88IHHG6YBRjlMdhq8Zd+fnHI3T1C2nYUDEym4hM23rn83aLs9YprIphLXs+nFyZsGq1TmF7yYtHnkpJHWr2vFjdquAvo18eqWY2i+OiW23LMXcu1W/ul4BuT80iUlbzg8dwxQXRjkKNm9Nyr/gzOmX0dqv1yltBVDm/t/gfsu/e0broDlX7VbvZRGRXgvtpsAAu8VrcVi41xJ7vwD2/zTWmbdurZM3ExdMfJI08vfu3mmbRnf1sce369IzpUv7TLrMGug/LquTqbmlwtVv/0sOyJ50qnsmdRXpw08Of3I1YNq8buH1e6k7nZtTpWf39p2nutagPulb2CqSXogyt3DhyX7s1VcLXmCL6ZzUsI+1p25ScNCIRj1C55lMa1LvurYPtg0J9Alq2rC/79p/h1o0MPWp37xF/xbNQv1mmyH9x6kVvNKWmrAmpN+e4TsLJ3dpEhbcwt/f1qpVXE/2/jgxp2BNbk7+cJFFiz9MzMrPXZNVEOouNp93hLRaHhomMC5isqSEeC0PC/NaFrSWMx3y3w7jLv9ema2DnOedjvytmxMLLoxyWpeu3bHHTp1fofvIXl7LHNY+gY5+rZeEh7VebLeYAuwmr4WR6v+O37v05YOnhoU0Pv3hdyd1pQ5xXm0iO+QU0mBol6Edejc3V9LVkLv59Cqyt9b8SnOmO0ITFl2xTh5/pod9liFMYfCz+ff16V+xbO3G3Xx6GzdXm1NpwQL7sOg5p/uMyjncM2a6evA36tjTY0/G3lTkN7ldvfHW9spr9wOGzG9vHc2QGnhKvgW+v47qawWviUuNWjGo3x7njsJJ/h6hwc29vSNbtovviTjKVzqSLx/PF078lQ/+lYr5+2ovPnY7/1jm7NxRl7ZPq1mrwcsaEaVXmd3cdzTVi8May/kfazR675RZGH7e86ueU6Nmjl+1WnVEWk7NGjn5lyGvg1QVPSBS+icYARsIU5WfjnxxORMAoVdZ0/epZQe6e//SKDQAPIsJmQLw+kXiuSoVeqtXqaMB9eec+BwN0wAwpgKl9rR9GQ3ME96AcjK1xaKMHV5JfYoqUhidpSi6S7fpKY2nu/iQSsJPbEI301j13kTayOtg+efIVCimnj3pLD6njpT7gVQJ1JYiqSHqsSMAZfBARXHEY4ilvWSyUSBIWsAbkotATbxdRNwY4qKgNfF9JZiLEl/WO6toyttqAuiF8tFFi1GofZUi6IWW+BFHPGkkEoGNcBxUZp0w96Axe/7Ibp/y8ZXpDDRPIja/AZFEpPq9SSQUB6E9fhiDe+EwKmNJCHEYzBCiIaDQRhLR/W02oSGeNKYVXvhhwkwgXsY6brgEoWzvc+OIpXLmTqD8NOIJb7gJnuyRuHZiDzb7ZtRxMlCD46ZaCb1jOHDKMT2/PXFEq8d3wdEhOmMoCshfFBY2EQAA) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,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) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="370" fill="#FFFFFF"/>
+<rect x="32" y="32" width="736" height="88" fill="#F4F6F8"/>
+<rect x="32" y="126" width="736" height="116" fill="#F4F6F8"/>
+<text x="50" y="81.55" font-size="15" font-weight="700" fill="#0B0F17">Human</text>
+<text x="50" y="175.55" font-size="15" font-weight="700" fill="#0B0F17">AI</text>
+<rect x="126" y="54" width="186" height="44" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="219" y="81.55" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">Write spec and tests</text>
+<rect x="566" y="54" width="186" height="44" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="659" y="81.55" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">Verify and own it</text>
+<rect x="300" y="148" width="112" height="44" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="356" y="175.55" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">Implement</text>
+<rect x="466" y="142" width="160" height="56" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="546" y="166.44" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">Automated tests</text>
+<text x="546" y="184.66" font-size="13" fill="#5B6470" text-anchor="middle">feed back failures</text>
+<path d="M219 98L219 170L293.5 170" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M300 170L292.5 173.75L292.5 166.25Z" fill="#5B6470"/>
+<path d="M412 162L459.5 162" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M466 162L458.5 165.75L458.5 158.25Z" fill="#5B6470"/>
+<path d="M466 178L418.5 178" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M412 178L419.5 174.25L419.5 181.75Z" fill="#1160D8"/>
+<text x="439" y="222" font-size="13" fill="#1160D8" text-anchor="middle">repeats while I sleep</text>
+<path d="M626 170L659 170L659 104.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M659 98L662.75 105.5L655.25 105.5Z" fill="#5B6470"/>
+<path d="M566 76L318.5 76" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M312 76L319.5 72.25L319.5 79.75Z" fill="#5B6470"/>
+<text x="439" y="68" font-size="13" fill="#5B6470" text-anchor="middle">next spec</text>
+<rect x="32" y="277" width="18" height="11" fill="#0B0F17"/>
+<path d="M36.5 277V268.2H45.5V271.6" fill="none" stroke="#0B0F17" stroke-width="2.4"/>
+<text x="62" y="285" font-size="15" fill="#0B0F17"><tspan font-weight="700">Leave open</tspan>  <tspan font-size="13.5" fill="#5B6470">where AI may iterate</tspan></text>
+<text x="32" y="316" font-size="14" fill="#2B323B">iteration, drafts, tests, docs</text>
+<rect x="416" y="277" width="18" height="11" fill="#0B0F17"/>
+<path d="M420.5 277V270.2H429.5V277" fill="none" stroke="#0B0F17" stroke-width="2.4"/>
+<text x="446" y="285" font-size="15" fill="#0B0F17"><tspan font-weight="700">Lock</tspan>  <tspan font-size="13.5" fill="#5B6470">where a person approves</tspan></text>
+<text x="416" y="316" font-size="14" fill="#2B323B">user data, payments, deployment, security, big</text>
+<text x="416" y="337" font-size="14" fill="#2B323B">structural changes</text>
 </svg>

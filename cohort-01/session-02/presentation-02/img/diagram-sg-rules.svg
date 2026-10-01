@@ -1,66 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-label="개발자 컴퓨터 7.7.7.7에서 오는 SSH 22번 포트와 누구나(0.0.0.0/0)에서 오는 HTTP 80번 포트만 인터넷 게이트웨이와 보안 그룹을 지나 EC2에 닿고, 허용 규칙이 없는 다른 IP의 SSH 같은 인바운드는 보안 그룹에서 막힌다">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="520" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="518" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">보안 그룹: 허용한 것만 들어온다</text>
-<text x="36" y="74" font-size="15" fill="#35526A">차단 규칙 없이 허용 목록만 적는다</text>
-
-<rect x="46" y="96" width="140" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="116" y="121" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">개발자 <tspan font-size="12" font-weight="400" fill="#35526A">· 7.7.7.7</tspan></text>
-<rect x="290" y="96" width="140" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="360" y="121" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">누구나 <tspan font-size="12" font-weight="400" fill="#35526A">· 일반 사용자</tspan></text>
-<rect x="534" y="96" width="140" height="40" fill="#FFFFFF" stroke="#A9BCCB"/>
-<text x="604" y="121" font-size="14" font-weight="700" text-anchor="middle" fill="#A9BCCB">누구나</text>
-
-<path d="M116 136 V164 H260 V190" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M360 136 V164 H260 V190" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="108" y="155" font-size="12" font-weight="700" text-anchor="end" fill="#1160D8">SSH (22)</text>
-<text x="368" y="155" font-size="12" font-weight="700" fill="#1160D8">HTTP (80)</text>
-<path d="M604 136 V164 H476 V194" fill="none" stroke="#A9BCCB" stroke-width="2" stroke-dasharray="6 4"/>
-<text x="612" y="155" font-size="12" font-weight="700" fill="#A9BCCB">SSH (22)</text>
-
-<rect x="36" y="212" width="640" height="276" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="44" y="228" font-size="11" fill="#35526A">VPC</text>
-<rect x="208" y="194" width="320" height="36" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="368" y="217" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">인터넷 게이트웨이</text>
-
-<rect x="60" y="250" width="592" height="220" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="68" y="266" font-size="11" fill="#35526A">서브넷</text>
-
-<rect x="84" y="304" width="544" height="150" fill="none" stroke="#1160D8"/>
-<text x="94" y="322" font-size="13" font-weight="700" fill="#1160D8">보안 그룹</text>
-
-<line x1="260" y1="230" x2="260" y2="342" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="270" y="294" font-size="12" font-weight="700" fill="#1160D8">규칙과 일치 → 통과</text>
-<line x1="476" y1="230" x2="476" y2="296" stroke="#A9BCCB" stroke-width="2" stroke-dasharray="6 4"/>
-<path d="M469 297 L483 311 M483 297 L469 311" fill="none" stroke="#1160D8" stroke-width="2.5"/>
-<text x="492" y="294" font-size="12" font-weight="700" fill="#35526A">허용 규칙 없음 → 차단</text>
-
-<rect x="196" y="346" width="128" height="66" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="260" y="385" font-size="16" font-weight="700" text-anchor="middle" fill="#123249">EC2</text>
-
-<rect x="352" y="318" width="252" height="122" fill="#FFFFFF" stroke="#79CDFF"/>
-<rect x="352" y="318" width="252" height="22" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="362" y="334" font-size="12" font-weight="700" fill="#123249">인바운드 규칙</text>
-<text x="362" y="358" font-size="13" fill="#123249">SSH</text>
-<text x="446" y="358" font-size="13" fill="#123249">TCP 22</text>
-<text x="516" y="358" font-size="13" font-weight="700" fill="#1160D8">7.7.7.7/32</text>
-<line x1="352" y1="366" x2="604" y2="366" stroke="#79CDFF"/>
-<text x="362" y="384" font-size="13" fill="#123249">HTTP</text>
-<text x="446" y="384" font-size="13" fill="#123249">TCP 80</text>
-<text x="516" y="384" font-size="13" font-weight="700" fill="#1160D8">0.0.0.0/0</text>
-<rect x="352" y="392" width="252" height="22" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="362" y="408" font-size="12" font-weight="700" fill="#123249">아웃바운드 규칙</text>
-<text x="362" y="432" font-size="13" fill="#123249">모든 트래픽</text>
-<text x="446" y="432" font-size="13" fill="#123249">전체</text>
-<text x="516" y="432" font-size="13" font-weight="700" fill="#1160D8">0.0.0.0/0</text>
-
-<rect x="700" y="318" width="224" height="122" fill="#FFFFFF" stroke="#79CDFF"/><rect x="700" y="318" width="6" height="122" fill="#79CDFF"/>
-<text x="720" y="341" font-size="12" font-weight="700" fill="#123249">소스 읽는 법</text>
-<text x="720" y="366" font-size="12" fill="#35526A"><tspan font-weight="700" fill="#1160D8">/32</tspan> = 딱 이 IP 하나</text>
-<text x="720" y="390" font-size="12" fill="#35526A"><tspan font-weight="700" fill="#1160D8">0.0.0.0/0</tspan> = 모든 IP (Anywhere)</text>
-<line x1="720" y1="404" x2="908" y2="404" stroke="#79CDFF"/>
-<text x="720" y="426" font-size="12" fill="#35526A">실습에서는 소스에 '내 IP' 선택</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 304" role="img" aria-label="개발자 컴퓨터 7.7.7.7에서 오는 SSH 22번 포트와 누구나(0.0.0.0/0)에서 오는 HTTP 80번 포트만 인터넷 게이트웨이와 보안 그룹을 지나 EC2에 닿고, 허용 규칙이 없는 다른 IP의 SSH 같은 인바운드는 보안 그룹에서 막힌다">
+<style>
+@font-face{font-family:"d-mono";font-weight:400;src:url(data:font/woff2;base64,d09GMgABAAAAAASUAA8AAAAACFwAAAQ9AAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbIBxYBmA/U1RBVEgAbBEICoVkhHwBNgIkAxoLGAAEIAWEAAcgG9kGUZQwysUUXyyYm1vBtc+EESbCQiglFPevKQ36hODhPzf7+16CBUadqoWag1dPJ0DdweeL2lp0J7vvKxXn+e9vdG59bybTJAgoigIKmwk8jyiNdfd1F6StsvznBMls2df//37qIgG/7+FCcIgVd/+cZ8u2b+ug6TdbpEX6aJ6iUTwwmW3LLiJ7CiEStyXSY/TYUgjgAACSICiyP9AcdpRYfL0GVirgfwBAAE0+naTitx4z6U22ssxkimNlaQYrPIJKBTGRu80uKhuFRiMIGrUbFldhgrwlCPRgtNjR0w4y2Ki88Bcjq7uXR3Ey+m//oM7iEkAA5CgfA05mgmAlwW4S5JPX0nJaACvnzLooQFDtpgBJ5iqQH6AQZAoBEAAkUMBuCgF2Uw2DnbZTSE6VqukauQ0yCha8hkf4/wvveMXLnvdwXRFgE0QEDDbdDmAv3NEvgZiA/cBxRwspZuUih2rq0S02q7p9e+7Wow6HGrZsMc9usThmLnntNXH266/bL301bLz2mnbJK69w1quv2i99PRp+5RW7aWl9lbMGoWlSsYqzX7PDt5g0sQ2tRZfC8+EQHW2LXPr6KNynJLzRp5+/byG89zYj8gAbz0yO/VvgYg6xhVeU5Cha9MBT2y2BQxmKpmyq1jjmzGwXdmqejJryoXIqhnBgZqT1tmRqmjkzGp4895Q9G2Om7b1DfY1Nvd1FZ42PFZ1pZm1qD4e3GqPqzvT55zH62BuhDVfLtMcDBXYMnbN7+SRjwNPZNeA2TkIk3zSsxptJTizs+3dAgexcoi8+0nJbMkWJj/b1x0aBU0l0io30Hdd93sKzoiNFAZte43cEI1EFrhC9p/Kk7MZKg+2Be/ILfvu+qifSp/lHTPalC09NBZdc9eNt9Xn9hjtY+GPEW9558BKDRzdb30o82z96jvFBf3fP9PVtNx25eZSybb5EVdeEt29svmfHrkdDvd2NDdFpvaNjRq+PNnYHe1/Y1btjdL7PS06OV/mO+0Y63e0DocGBwVC7u07xjjd5Gptc3S0tze4WV5nGd6ecdgpqEdrfX8sHVfi7k2E5qpoHOvEP8BynVAQQr+vMs2YXp7a1/mpVlC8Anw7fHQX47OPkC/+oVVmtOAEzCUDgT2K5MULFtC+gFGR+QYeXQqOSRqdrpeff4DsEsKuncFAIqnHtmjNsVrMBt4MgYbfbkbTV/UjR6Amkyg/I5GDyRWa5aRcT4Mg0s4C7vnshWk7CLSbuZEkrlixLc9JV09UCM3yhBZvfAgWp3m9QUsyqBXOurUvG9FsWk5TiVBylkP5xKc2qVFmyws2YMavSnJgNVbIWJM0BrJO6nGEVFsVsSqt831xyBPQxtpih+u0lGetmJNWo1KBatRYRQ9x6tXRdb1GB8vGtnAKRcxUkrFANzsRqU5hR3ff+qKC0GetWzBkSs2HGJgUA/08HggI=) format("woff2")}
+@font-face{font-family:"d-mono";font-weight:500;src:url(data:font/woff2;base64,d09GMgABAAAAAARkAA8AAAAACDAAAAQMAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbIBwqBmA/U1RBVEQAZBEICoVghHIBNgIkAxYLFAAEIAWEGAcgG6kGUZQwyrUUPxJjWw1biVs0GgiHQ1vU2katfI+g2u+zZ3c/groQsCJW6EiiRHURNjrCxKX8VybA7mLzhuq02aaCAqltoN3WF/PgF/GVHZz4vh8c/z/dO71Xmz9Yc4iFeNfaNqeG08aiNNGA2jQWfcHawAEtjMjStuZMT+gliI2YKRISEZ2BQBeQhFCEQNtijaDTkiE9yFagqgCBtrW6pUnDFT42RnygWgWjSroFLaiR5ussAM7a4rgNCHEMSKElG4a/1o0rwiFw2XL6/Pf/C8pxaB4QkKZphuUyhdCUMJWG1dKe2x0RCA+eGD3QGpBiCIJYFAvIQoq1AAIkZEyhBKbSXQIMFUNhORwCGhk1fcWR7rnVj0T80ZnqaHVYwIIQlQHWhjH0BZ+JMwWU1zAWVMglShn2Wjuaid6wtTG/ez2rV79f0Oh2ap10tHc4d0o7H+keS3TUu0QCvIzHc3NTJskUtDBppfeWJpMwsiWRONa5dygWHkzCyTS0MJVqWWLQb7z6MHdpHLw8kJAnemzIy2jHQLvctBsshqW7SfDDywim+IQ0koi9I09IIuceHQL/6N0+PdxQo78fv1xd4N6YAaRm1i8gqhtKAgkkBMeWPSPoKXq83RP8hpOrT07s2KzdjDZzwl8iX2BnBaMjRwE8e1014COzTCJRMdJHGggXBBxDUjaT5Y5xyAFIRYoQW+jLkLszTT1iYSu6/+Tv5uY3is6BclnZGKFngMqmjbuIgwMOOsuWKXJnyNBHe5kiKrbxtLjxg77SzOrTMBjsER8O/DA/Nmc7WTDbWfRNla47FVEGR5g7QuGi4KhSFRiFPxzCqMCI0ojm8FpnGhCHEUL3cwkPMWA8FMCp0LMjHjvl5sxNrW1H5vSKhqQ5Ak9mrmPRnOiQg0ie4FDbVDqhrPOymrO4arYZ9BXJQ1j+hFgxblUUl31VKAQ0GmIm8PkWAhWhCYYU/8sUJeMWhZg/EcTKjVwNg8OQiWRSuSgSclkG4jMS5gaJdANDeiYeQEUgPhI37/0dv1N0+F8z5x/w9dZeBODb59BjsL5ype15OaAugeD3+dMtha8bflDQhxQLdn4NDaxPNxwcDCDQshcKhLyqYx5kUVr4ABBxmNopTvo+ibP9bouL1UFcMxerRXUr46ha0I27sIj9GNawX9BfKzfeglP8AmYKcbJziGhGgENAMoeegzUkZZVcYStRC/Fz8S6zjeKLinDwC2kEru5ROE0PCGPAwrJzbodHmWCY+XlhxViFmFl5knXOPDQbP58IzPXunlu4FErIT+tfbRflYRSCh0GFg8ME0xIawjSr9UCj/vhezSkCsy7ockodzRObnQKI9XkxfqmVhVOUl1yEkYeTmZafl5EPCqje2/l5AAA=) format("woff2")}
+@font-face{font-family:"d-mono";font-weight:600;src:url(data:font/woff2;base64,d09GMgABAAAAAAQMAA4AAAAAB2gAAAO2AAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcWAZgP1NUQVREAFIRCAqEIINQATYCJAMWCxQABCAFhBwHIBsRBsguCmxjYvgwRssiF/mGnWb/Utjj4UGP6v0kC4gdoFJqd1vj7BmXR1RCrvcv94yWCoHPw9e7QG1cpoTbTC93aQrXaYVAxUWIgxsAX/xRFliVnH11mt5hvFtdTBEMYvtSCtBbQt+pNLXSvDQNYH78BR/4QSy25dAgKXqwSSocHo3rcYiGfBWoqjk70fj61l5QyiDPAYGq2ssmjrr1G6dQEvQ3cIzGRoqYAiWOk8nSMWXrmzdTUarShoOvJEsWe0BGcoJIMO14rITsGA2QhCpWYwjowtS0wr3WCtKf/082WnQCAUnD5G20JhdCZQnqE6M98R6CRCKs26m4qAORTG0iiBb13amQRMe6NCid4m2JsHelRgJVVZZItJYpR0Geo7V02VfY5F+TF+QfCVQGVFJZCJHnaiFUAXWBqriIcjQGqoNEKoQgz4XIsqx2bXeGPssWKGpUXKurVH0R0Tfbt1VWFpaXV7u01NGSkoUni8vDsqKqFZQ4WlpYrf/dohc+uRveeb9qJa0X5s7Mf7fk1cY1rPmyhYuOSzuFD95IoAdF4kR3Ex9nDR82r8wPwHmsUz1qKNEnVItqFpxmb9bek3NPVvSJdkdhbVS/zKq46Jfv6eCGSs+373BtW9rRyQ5bYcd2Ort1SQcTXLIJPX02fjkY2JZCX48Loy0956WtcXEsF+Xtt22126RDWVXV7tGKrF8/tLeNyskbLy/0dHbX1vvupg7OtMZ58Nfau8xJl6/IF9WmZXvPW3cK/D/rPIgocIjfa9ubyc4fb1iVV1m4SMQbyLSC/rKars42Xb0FqtWz7bUVkygbLjcO/dj46tSFNP+3YWT98PbgM00vL/N5+sJpK2p+Wr6VN5B2ovjnGxjx3zVU6aPy9SDBv/Cp038dFYiH/SZfjX5+Va3hv1VO0+/g68U3FgG++XJ74b/y9UnXtDVQUQKC/1tIFgeEng4QVzdJ/Cqby5C+pwvrzn5pJRGq6EWiugYBWb5VzYljLKuCKwiE+i4gUdPzkBrsHTLtA1TQNNrLFbWNkYqgeqyGFoyxETrQxsEgdKSOY8ZhsBbxKAQS4pQtU7ZcTr1IGKcGGIoAcerEY9AwM+xPlRSExOAJnIJICMISFMuQgUCFl6dMSzeDkZBhDoY3AxOX2PBDaXCMJCQdWg1Vp9sCs+HuXxNS4qbwsqQrkClTiX7darQqQWLzmjSaPHSdU9r9sHelqajuVDPraDwQ+9Q/1QOTQKnGiJvVBJkSR5nRjZEwJUkC5Jf0BYICAA==) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,d09GMgABAAAAAAjYAA4AAAAAD8QAAAiBAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgUAcKgZgP1NUQVREAIFcCpJ8jxYBNgIkA0ILMgAEIAWDQgcgG7MMaB6FcePTRFyiHOISbWplpnwWPCBe9S9pUqUzOziIs0er2xM+iNkv8CQMz5/rrbzAgxa0zC0AxyFyLZ2jeXfltbv79YPOzP/wqaO1Vpk/rF582os1NBRrHjKl7L/Pm98rkMQkmYVG01DENItW8VIJhUQonWdNneNSYgkicueYz65vJRBAANAS4XUQ/MV9KpBBtutg4QDYp40OCwDsKIAXRrOp40MCABNQNgpPJ4CRUHkl3VzmbABeMKAxI9/a5Hrowerd6agM9iolFgrNgfQKBKs4QdZKVIm42M7srex8OQh60Bn1F/AkkpC/c6e8S7aKF6TrUCGiLdv2c7QHk5TZWJDxmZspQOcQJ29jN1QLnQXKECAQiRcKBCEVmiyc6BWGAP7NsSGSd6dPOLKFJwehlehkopxReVovFBBliFb8wtSiTIrx6ubaYowpNji/cbXNr+3XO491031y5YsSo9++vWu6ds5kgX/hvo3BzXfb587fziGFTn+tNmHUiD6dvbMrs+O2DrVi6lhA/0vbKzqrtf01njT62ihW+raURDWJwJCaKgJ1Eg4ByAdB9aAU2F1FKalRWCiwQaGFUPsyzuYpU65cJVXETYQ6Q3XBw658Ed1ng9sjQxgYlrIlEo2S6uxSPUSAE0WDqDAxvfW1jRuRd6zfAss3UFju3ER1JhDNfp/Y3peIFduOxtpDcWTVzAjRPhA5LN+sKx8LoliUc2dCaqLOQwYiFuEK63zfDeYaMWdRkBfrbKEBGdX4fk7oRybcWcRObj52cKKeQQhh+sVFzsB2UQqRDqMQ0SKkYy5trR9BjNQ3IjBX129mQ6G8QMQWTbaq75krRwMdt/aRvpiDGs5oMwEwIkvMQlpmXBJhVIqJHooEUQL4Fia0Uv0WEZswdsIxk0VA6CPt8JnVGghls8A08QVJWmPnOQErIdmqOzfvOzhRj/bUaMOGA0eH7cOXRH9NoKCILVrO4YuQ0To5KUR6Ueow1y7QfcfG7YyUDpb1F6+8zQoO/kht5oN29B1o96ij9h22DxM98iCvPb8jA3VloFAvOWMTiGQIoaqum8dN5zvpYWf0aLPw7pT3x5ov1eMwwAnu/di9zzWQQ33LhL5nLu8xNcg7KnrrpvkDcCSUxBk+HYCj8AAcM9zPwEPUUYXwf9Ju9Tl8dDbWhdwf7nFSVeNx3E8Kd87QIZI57RhI31F1xLjq1Qmp7iab49MWa4muiUqGRa8cny9jpO1LaFxAgoZzeF+453FVtfvJYHh0QLWDc7lXY/KyeXt/Kde5B3sWZHobrA9PWqwle8Yq6MPsi3NpSO5U6KzCnZ9FVZ9Gkp6npZK3T6NqvaiG+Ht6WiQrG62w+1j8l78UX2XYC79EQvEdyOrCUiggC2bPc86TYEvCE0QkV0uyJsZJXig6v5E2lb4WcJe/JsG4fzqpwIlv8nJnGvQYBFBiOkWDft69vGgrEsjO8dyR2LqvW61Hje/l52vAvusfMHC8NrmHzGM/6LEPPoQ7qbHv+X3hfTXY/rLU7zJZ0EX+O6590UNLq+AqMLDen9s/TOKJ8xr9+LF0a4Z9xaRKvXPILfAySkQffnZ5dxlMlyfbDxhyzvaDgRPb2aGPY+comOn/gxUim1Uvfrol0Sh48PhgERj5vcenD6qC7p5YMADbSbdV3Pt972vDDsNdMOVsUw67/Se8Og4ShS6EoOp3Y7ZjIPmD/xJRiZja4D87dkT/XPQvf7vg8dX6q5zrj64/hXlxvNDLREo9xTjzDVwG/xO82X+TY32fqbdQ2njSVHsF7YPFKO9SwNQEeiIW9MMx12pDP0Hsndujd1+14QSv7lKy+17C8OoYkIbey6RkdjbtCKC/6ex4REHjB4dQ4h/V/7tt9UysWELT/6p9wyjcIFXcYX/KZDK2Oglo+lD9pK3dW4oUbrBfEP1lPf1d2nOmNDJU+2qAnzi4KWX7etJmNnY8Vpo+c+zLBsP2KMHoqjuvL7YcxLCM277cv4wBPXec7TJ/UAWed3859tH9FZiUlLBHur/6MJYh7J0lmkzFYIzCrSyNwmJ0Ta2isIYkS2tDUhTGEoDs28fVx8FVB9UHOdqHOIrYuQ8rEWr6o8g13aL4CfA1FUbh70uOquoXI0zc6xpTdnczMnAnjinefzCu6EE0MPJwG1d+AKrOzY+5e4YuNHnUnqK3/jtEvvhD5wfpdB++5eNJmJj2QuOjy5He4x+6PkTmH/UfXXS6CQMnvjMZGm06Ygpw9/8+33n+46WeWNA3EQtYVzejeWGvyzFaq8Tb1wv8MLzcRt8d+u2t7zmugfdBkrnLHD7RcSmqZYruGroXdAO6CYHB67nu9NyhKzK857Znyed3z8z/9W0/n0KiGywxZR8ZNWHvWejmCgTVj9Kpw6GVuior+xXvoLFYPFqFEJ+E7wMbJAw3hRsa5MBx8GXex8+Z5qYTCbmp583GJs6Z5aUSiHnp50wnopua+W5g5WSGYFoEoyOaBF0wMnUGYRv4ogAAvv7B+0U9iy3/eFyI42h2waV1Adgz/U46AA7uC1kHhW42Y3zJmQbA+VlR/AyZXeRIcjr/HUBPWuoxcQj0R4zRf4CYTLFOnd5G300V50fK2kepRfMEI9/blDxCN6cXVUjXclZeEfrBPIrANPJZCi1CafzNIBQIKtFMIIkzRmDRhFldVS3QtOA1vk09DtcQEIgSvsAjIapgUjhuI9oSSBCRhOCNJ16EwU8+0BnqYC7GrhL6VdhJR5MIKJBmCt4h2rihuwu6E8YNAkU3pW4AJgoOASJ+YIeerjq/+mfKU4tc6tCYprTFAUfs0Zyr84Qw4I6h3PhAAuAPsaOmIJIgvBIiQS5mAqwSEDT9DPWpukZP0rtFZ6q6F7Sv0D9g9AiUGTdMWSTgKt64QovJ7uZNkAI=) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,d09GMgABAAAAAAZYAA4AAAAAC0QAAAYBAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbgTIcKgZgP1NUQVREAIEMCosEiS0BNgIkAzQLHAAEIAWDOgcgG1wJyI7RY0ckA6xw5cmDcZx4gNY9/2dmZ/feJyEJEWxGkkJyUzQalIzkKP9/f8DT/qVQquHuQ53oYlClTJmZI9Db94nKzx9L/e+i6A4wEg/0wM4sE6M0Oih6Qd6tZdGAAx5uOCCcCm42iM68mAX8245nhwioDogOPRNUh3ATqmovEGVUcqYY+EvlOAZ8CX4Yz7hEXYsBCxFBVBiFoiwoi2oDNPQzRC4IqouIUsyYDahynUmVllJSJ4KzMdHUTPEpbY8LqsmKduRK/LHidHQqNsQLcvK+tOPAHpMv3kLEzU6yCSJ9AYw9R06WFMAhortFzAUVa3C/ZvgIBEhD6KvQGldYup36QO3zVmt1OAL8jSOAWAEiqV2OUI2yj0UZsWTqz1A/X/r8O9KsAZoSoqqqNX8Jko5f3XZ1n+2xxNFto0f/bDpeRJIAvzF5i7xMHiQP5LtmuCW8Dr8eNjksOXSK3xYITv6gBsM+A+gNwg7iIUACBYIgl0mSQiFXCAlUey5Ng14Rw8+iCYU0SJ9mLteRHcWOtChK1NpKaWm+CqPv/eX8ec7I47PQ9eQcSjy7IJOr+maC581lpPvVnU1en5NwW62AHwXGOWqvt0ZsmluQ1iYOE/1yUay4UNuGoBDVtGZpykxLi5AW89g0c1t5uDDCa+FRUZaQjTZTuZQv5y5B1/OznJGn5LkL6Nk+Q0j30/Pi+lKKBedSVfKEJv+XW+ega0LoPHpWq42WU9dTzaGiV8v3E0sv3LmAICg8eXJLIj4fSrSZtmZxq+tHm60Rm2Ew56TTk6IOPF8unhVLVcGHc5Tzl31zaiNWldO1cNjoNZEqRGxkdRfqy9ZWy+1IT3S8vlgMAnWrDC41A8Qrv1I3M0AGByDBfkOM4yOkT2rkclKMD0YV1KyqLjs/Y07Z2VUYVtAXIcN4mb4U4eCiR4Jxp4/4nVqXe//hhhzfjYdX8tavemq71w+Y5w/993FRpfmDWb7k43GQ7ffrON5hM/W69hAcx73Fjlz1fWyl78NGmwSny2DdYsqv3/OzVq/91IwGx5ANSTPrZuVWwn/Ct/2bDuDh3Vfvz/wW/l/5D5S13gVKLUH4tjP5XLJMWNqyl7zfdJ/8YdnY6S3Toev5excXtjkdtcgaFxeMEJcXtDhZjspalxcSSfcM8rC9/f0SaaxMStFXhqp6AOJnMBkiGuzoDvrPC8aJDjqAmwsBThZZT9ZqKjLeF04adxjbOhQZCe3O7nYtW7q6rmbpKteSYxaPKctW1dQtW+1RZqn/e51LaXZ4cGmGsUZD41qXkozg8JJsyW4EY19cewhO42Me3fjdvtK19oobCdPu2Ew6uF9Q0vQSmQ6XHLpndY1jzzkkyD54z3bUxFXXCYcLDuntC7dxC2ZhhgVz3XP//cdj/OK5BvPi2R45/3Tt3WxfkhDoUxK/xb6rU8Qw+wTGxemH7ASYvSOZhLw5mTl/+XH3XUxvMeVhZODOd/Hu0z0D3afuNhDE7YbeUwM9vadv40Ty1erQWGNqeqzJWCMlGQuNMaWnxhjlv04C6H7OG//pyYk1Pk2WyR5H55VajImnE70U8j2jUya4NFrWej0drefOG3UiEWc9uvGoVkr5g+J/V0mWkVBqSR68c/w2VD1nXR+dJqn0VIRGR5Rr/eITNEHBmsTfia7TD2tmzX5k7DrcLomdv+Tg9MGrZzmmD3xw+TcgCON+3mMzV1QhiHxXzlgAr5eVTwB8eFt7CoIqg0o6pglASQSB77m5rISEswQgTterUQY7wwuQ31SRtltfPBZyhWqINQTFId+fnO5QEZg1DMMYEZjHVbUJVUhsYBBQdtBRJDuqaTY7M0B1Zypn54ZYwyr09zAJAdXDr2CjUA6uGqu88/pCgirVmtXS09LBiay+0vz5PlcAkQx6JiKpmtXDaHkx0MPkqqWGU8OoyNVSEZGSk7LlFEzU8uHXqmcyv6cfbwF8hYmQQEyiQASltgPSr9aqo1cFI8J5Upg0q6ZTRySAN/+nxtUF/9UHcaP38pqmW0a9IT8uXhUTlTQ4ORM9JSpQqSCcAA==) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="304" fill="#FFFFFF"/>
+<rect x="194" y="50" width="250" height="228" fill="#F4F6F8"/>
+<text x="212" y="268" font-size="12.5" font-weight="600" fill="#5B6470">VPC</text>
+<rect x="304" y="78" width="128" height="184" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<text x="304" y="70" font-size="12.5" font-weight="600" fill="#1160D8">보안 그룹</text>
+<rect x="336" y="72" width="82" height="104" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="377" y="129.92" font-size="16" font-weight="700" fill="#0B0F17" text-anchor="middle">EC2</text>
+<rect x="32" y="70" width="112" height="44" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="88" y="89.86" font-size="13.5" font-weight="600" fill="#0B0F17" text-anchor="middle">개발자</text>
+<text x="88" y="104.14" font-size="12" class="m" fill="#5B6470" text-anchor="middle">7.7.7.7</text>
+<path d="M144 92L329.5 92" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M336 92L328.5 95.75L328.5 88.25Z" fill="#5B6470"/>
+<text x="212" y="84" font-size="12" font-weight="500" class="m" fill="#2B323B">SSH 22</text>
+<rect x="32" y="134" width="112" height="44" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="88" y="153.86" font-size="13.5" font-weight="600" fill="#0B0F17" text-anchor="middle">누구나</text>
+<text x="88" y="168.14" font-size="12" fill="#5B6470" text-anchor="middle">일반 사용자</text>
+<path d="M144 156L329.5 156" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M336 156L328.5 159.75L328.5 152.25Z" fill="#5B6470"/>
+<text x="212" y="148" font-size="12" font-weight="500" class="m" fill="#2B323B">HTTP 80</text>
+<rect x="32" y="210" width="112" height="44" fill="#FFFFFF" stroke="#E3E7EC" stroke-width="1"/>
+<text x="88" y="229.86" font-size="13.5" font-weight="600" fill="#8A94A0" text-anchor="middle">누구나</text>
+<text x="88" y="244.14" font-size="12" fill="#8A94A0" text-anchor="middle">다른 IP</text>
+<path d="M144 232H296" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<path d="M298 226L310 238M310 226L298 238" fill="none" stroke="#0B0F17" stroke-width="2"/>
+<text x="318" y="236.5" font-size="12.5" fill="#5B6470">규칙에 없어 차단</text>
+<text x="212" y="224" font-size="12" font-weight="500" class="m" fill="#8A94A0">SSH 22</text>
+<rect x="185" y="58" width="18" height="212" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<text x="194" y="44" font-size="12.5" font-weight="600" fill="#5B6470" text-anchor="middle">IGW</text>
+<text x="480" y="44" font-size="14" font-weight="700" fill="#0B0F17">인바운드 규칙</text>
+<rect x="480" y="56" width="288" height="26" fill="#F4F6F8"/>
+<text x="490" y="73.44" font-size="12" font-weight="600" fill="#5B6470">유형</text>
+<text x="586" y="73.44" font-size="12" font-weight="600" fill="#5B6470">포트</text>
+<text x="660" y="73.44" font-size="12" font-weight="600" fill="#5B6470">소스</text>
+<path d="M480 126L768 126" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="490" y="101" font-size="13.5" fill="#0B0F17">SSH</text>
+<text x="586" y="101" font-size="13" class="m" fill="#0B0F17">TCP 22</text>
+<text x="660" y="101" font-size="13" font-weight="600" class="m" fill="#0B0F17">7.7.7.7/32</text>
+<text x="660" y="118" font-size="12" fill="#5B6470">이 IP 하나만</text>
+<path d="M480 170L768 170" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="490" y="145" font-size="13.5" fill="#0B0F17">HTTP</text>
+<text x="586" y="145" font-size="13" class="m" fill="#0B0F17">TCP 80</text>
+<text x="660" y="145" font-size="13" font-weight="600" class="m" fill="#0B0F17">0.0.0.0/0</text>
+<text x="660" y="162" font-size="12" fill="#5B6470">모든 IP</text>
+<text x="480" y="202" font-size="14" font-weight="700" fill="#0B0F17">아웃바운드 규칙</text>
+<rect x="480" y="214" width="288" height="26" fill="#F4F6F8"/>
+<text x="490" y="231.44" font-size="12" font-weight="600" fill="#5B6470">유형</text>
+<text x="586" y="231.44" font-size="12" font-weight="600" fill="#5B6470">포트</text>
+<text x="660" y="231.44" font-size="12" font-weight="600" fill="#5B6470">소스</text>
+<path d="M480 274L768 274" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="490" y="262" font-size="13.5" fill="#0B0F17">모든 트래픽</text>
+<text x="586" y="262" font-size="13.5" fill="#0B0F17">전체</text>
+<text x="660" y="262" font-size="13" font-weight="600" class="m" fill="#0B0F17">0.0.0.0/0</text>
+<text x="480" y="300" font-size="12.5" fill="#5B6470">실습에서는 SSH 소스로 '내 IP'를 고른다</text>
 </svg>

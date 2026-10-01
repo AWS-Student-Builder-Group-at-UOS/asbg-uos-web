@@ -1,41 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 474" role="img" aria-label="AWS 안에 VPC, VPC 안에 퍼블릭 서브넷과 프라이빗 서브넷, 서브넷 안에 EC2가 들어 있고, 인터넷은 IGW를 거쳐 퍼블릭 서브넷과만 직접 통신한다">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="474" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="472" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">AWS 안에, VPC 안에, 서브넷 안에, EC2</text>
-
-<rect x="36" y="152" width="888" height="298" fill="none" stroke="#79CDFF"/>
-<text x="46" y="171" font-size="12" font-weight="700" fill="#35526A">AWS Cloud</text>
-
-<rect x="60" y="210" width="840" height="220" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="70" y="232" font-size="12" font-weight="700" fill="#35526A">VPC</text>
-<text x="104" y="232" font-size="13" fill="#35526A">내가 소유하는 가상 네트워크 공간</text>
-
-<rect x="84" y="280" width="380" height="130" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="100" y="306" font-size="14" font-weight="700" fill="#123249">퍼블릭 서브넷</text>
-<text x="100" y="326" font-size="12" fill="#35526A">외부 인터넷과 직접 통신 가능</text>
-<rect x="214" y="346" width="120" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="274" y="373" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">EC2</text>
-
-<rect x="496" y="280" width="380" height="130" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="512" y="306" font-size="14" font-weight="700" fill="#123249">프라이빗 서브넷</text>
-<text x="512" y="326" font-size="12" fill="#35526A">외부 인터넷에서 직접 접근 불가</text>
-<rect x="626" y="346" width="120" height="44" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="686" y="373" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">EC2</text>
-
-<rect x="320" y="80" width="120" height="36" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="380" y="103" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">인터넷</text>
-
-<line x1="380" y1="120" x2="380" y2="180" stroke="#1160D8" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-<text x="392" y="139" font-size="12" font-weight="700" fill="#1160D8">양방향</text>
-<rect x="320" y="184" width="120" height="52" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="380" y="204" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">IGW</text>
-<text x="380" y="223" font-size="12" text-anchor="middle" fill="#35526A">인터넷 게이트웨이</text>
-<line x1="380" y1="240" x2="380" y2="276" stroke="#1160D8" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-
-<path d="M444 98H760V250" fill="none" stroke="#A9BCCB" stroke-width="2" stroke-dasharray="4 3"/>
-<path d="M752 254L768 270M768 254L752 270" fill="none" stroke="#A9BCCB" stroke-width="2.5"/>
-<text x="778" y="267" font-size="13" fill="#35526A">직접 접근 불가</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 404" role="img" aria-label="AWS 안에 VPC, VPC 안에 퍼블릭 서브넷과 프라이빗 서브넷, 서브넷 안에 EC2가 들어 있고, 인터넷은 IGW를 거쳐 퍼블릭 서브넷과만 직접 통신한다">
+<style>
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,d09GMgABAAAAAAbwAA4AAAAADBAAAAaYAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbggIcKgZgP1NUQVREAIEcCotciWUBNgIkAzwLIAAEIAWDQgcgGwQKIB6DbevxeBwMHviqr9aVwKhMPED+/eeZufggu4UUu6IeAqqEVMWVXiq72/Uf/K3eD9tlzF0rulowYp0OpPsfwOnmxaVpNl0PMKVhQAMWs1Krt0KlUSbULBii0uo3fDvQB/3n0M+T+KvUHClr93JjgfpyjoB6QBwouaARwmuoNS4Gam1eiQQop8o7LUCRwhdH0inqdgv0isBNGCmboVTvUy1qBugkgKgSovdGCCWTiG1IXd5cTTTBIBIdshfMtz6EClYOe/YEe16xJ7V73lP9q4GyWcF3bcys0sZIpKI/iNnyprJK4J8UQOIVXYvT/HFULWDJZmPOAQ+0HPETo+OYZBLEwIwQMNmag6TVcID40wjcvH+tYDsSeQcESJdjVwAYRhKq1E07MOMZF2h1nQj+42NGWjKNa84UauJhAJIiUSK4QdVJNG60YEQwrv0rDKJBazQsSqZsuarVPB+/5c5297ENx+0XOi9G/IeXZ7Xne3ccdMB+L3j2F4pDCsYm1idMDp8RdhcQFyVogjwodwYIDwHEjwEpQu6NwkqpkkgzMrlMSKVzdTpKiqRhMLVpWl+vlDkR9uRmmkiriW6ChStPh10ucBZ5ZZfVlclFUolQcAEl7Lj2JWHUlSswoHKVOPr69Ro5VTywY3t0Cxl4+3Gfh1elpDIdKLFJKpoDOKTSq1AMWASdwNYjI1ciMCIDuUKmBEYBFVgJ/YQIZXKRqFSFRLcmlUmh4VxCVvf1jzXSKw8IhFBXJNTUFaDYajNbIrv++DqC1KlUHkol1x5do/uWWxFmkxMpOxkYQtbmIJSJRVJo2BoFtHY7hxJrs6akMbS4PCrsklS342EFBhRElBcBNFdKaJFez6OJ4IrGwUCY3jEJXBUXRATCdXl5VJIMBG5ekchOcd6WFQ5xgbqElBsZQEjakFGUL1IBSOxlSl5b09LoazpUm7Ko6rSEulHC3l3SClTNNcNNZoDfFaeqo80Af8Dt8Kf2Niu4k/AH/BlneujpikxQOLyYASQ0RSgSLv6+KOdKdqtrUkZtz7ZuzdOFizVPtnV114xPU/TQqjy0Xb/wMW7w8v0hm1ZWPHm2ujxo4/4FHvZlTzhzcVB93oq1t1eOsd+0jzWifCMkzq3NqesOKa/oDs+QJlSNqLMIh3keCHl+GNZdMujgN+OaFT9OHHkSOxawmypVg6OqZYOjC5pT41KLbJFS9pLAnRHH9k7vN/LAR8P06a/0g/egHH8A1bGCQ+sMItOBSoQ+JJhEUwVz+V0r0Azm7/pW79/RhnR038Z9f8NXf98pWujFmyxmbZrnFSzcYN9hlyBXXDl8hYvxvoS6VMfmr/2/bNX53tWrNnHJgydt18bvie+jwXXUwRu5Vasu9E5dtf7/g9sbDy2XN3zZ/OW1W9oM2IFPI13p2avo7v+nNa7cegdwbXfoHbbCnYXFA38WuAc8mZuOeA0T4uDuN6Yt1bZsuCtvzmndmgaG/9eGVm7Du4eOsW8vuY2NCfaTL97uti/e7Kc4sN9fsXCz3b1wu798f7+Ne2PVmvxctWpvdD8YYHw/jSo3X6PZFzsA5J9m3Qds73103Jv72+6nf9jw4PkD3JHhex39zg4c0u/c2GnkyDsdA84NGTjg7B3aoeSgMy23q6QstxsdSkscaTndZSU5Xc0HFgMcPqEatWFUdQzty+gdN1hsNWszepxh2r1p5ZEt/NX5FYKZ9TrNAtikpu/Y1lO528N3iVb9XL7zwApY23jghDML/78gfs60bbHFHApTM7eIOJt2izrZMO6VccGP9eYl92tLclc0bmiEnrf+/XlgdYMhXJ+cmam0xhUUWJOSzQXfh/c988A6YdJ9o3uvQ5I+e9bu8cOR/3WDb70FwLu7IQj7CpBDz5xroS79Wp1Ug+9Pax4HwC8/tp8Gz91Lq5bgTACqvr0lvw6Gah7IqC0AcV3fVM294TnIboKAbBso0kdhePobqqre45m/Mk1BKgyFZGiC9OD49JL2lrPJbDiaBLKs1sXQQlqDpYAygkkpjKjRCYzEYrbK1Bsjs9wqem6uF2mB+tAPRo3mEHBNC5DCQshmZePQTk9Lp5PYSoVEiVBGb9cX0zMRK+DQxUIrlIGeRYV2ap3ob6Ei105FTAaBF4qcggmqglpdTOPPjBQmWoREybJJSFVLjqz8ALKvtuugZ2UhhjK/fe4ONjodxKKFiSIWIFqUKLECE6kWml1/DXXFKKvpr2Sml8XKRKVQJzkTPSU0sHu30S4A) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,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) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="404" fill="#FFFFFF"/>
+<rect x="32" y="96" width="736" height="282" fill="#F4F6F8"/>
+<text x="48" y="120" font-size="13" font-weight="600" fill="#5B6470">AWS 클라우드</text>
+<rect x="52" y="140" width="696" height="218" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="72" y="186" font-size="14" fill="#0B0F17"><tspan font-weight="700" fill="#0B0F17">VPC</tspan>  <tspan font-size="13" fill="#5B6470">내가 소유한 가상 네트워크</tspan></text>
+<rect x="72" y="222" width="320" height="112" fill="#F4F6F8"/>
+<text x="90" y="252" font-size="14" font-weight="700" fill="#0B0F17">퍼블릭 서브넷</text>
+<text x="90" y="276" font-size="13" fill="#5B6470">인터넷과 직접</text>
+<text x="90" y="295" font-size="13" fill="#5B6470">통신할 수 있다</text>
+<rect x="274" y="256" width="100" height="44" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="324" y="283.55" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">EC2</text>
+<rect x="408" y="222" width="320" height="112" fill="#F4F6F8"/>
+<text x="426" y="252" font-size="14" font-weight="700" fill="#0B0F17">프라이빗 서브넷</text>
+<text x="426" y="276" font-size="13" fill="#5B6470">인터넷에서 직접</text>
+<text x="426" y="295" font-size="13" fill="#5B6470">들어올 수 없다</text>
+<rect x="610" y="256" width="100" height="44" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="660" y="283.55" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">EC2</text>
+<rect x="264" y="24" width="120" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="324" y="47.18" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">인터넷</text>
+<rect x="248" y="116" width="152" height="48" fill="#FFFFFF" stroke="#1160D8" stroke-width="1"/>
+<text x="324" y="138.41" font-size="15" font-weight="700" fill="#0B0F17" text-anchor="middle">IGW</text>
+<text x="324" y="152.69" font-size="12" fill="#5B6470" text-anchor="middle">인터넷 게이트웨이</text>
+<path d="M324 66.5L324 109.5" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M324 116L320.25 108.5L327.75 108.5Z" fill="#1160D8"/>
+<path d="M324 60L327.75 67.5L320.25 67.5Z" fill="#1160D8"/>
+<path d="M324 170.5L324 249.5" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M324 256L320.25 248.5L327.75 248.5Z" fill="#1160D8"/>
+<path d="M324 164L327.75 171.5L320.25 171.5Z" fill="#1160D8"/>
+<text x="336" y="92" font-size="12.5" fill="#1160D8">양방향</text>
+<path d="M384 42H660V210" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<path d="M654 204L666 216M666 204L654 216" fill="none" stroke="#0B0F17" stroke-width="2"/>
+<text x="674" y="214" font-size="12.5" fill="#5B6470">직접 접근 불가</text>
 </svg>

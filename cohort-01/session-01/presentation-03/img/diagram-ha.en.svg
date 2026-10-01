@@ -1,76 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-label="Growing from one server to two, then a load balancer, then a shared session store">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="380" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="378" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">Keeping the service up even if one server stops</text>
-<text x="36" y="74" font-size="15" fill="#35526A">The questions asked while following one request</text>
-<text x="36" y="108" font-size="12" font-weight="700" fill="#1160D8">01</text>
-<text x="60" y="108" font-size="13" font-weight="700" fill="#123249">One server</text>
-<rect x="102" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="132" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
-<rect x="52" y="156" width="160" height="100" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="58" y="168" font-size="9" fill="#35526A">VPC</text>
-<rect x="97" y="196" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="132" y="215" font-size="11" text-anchor="middle" fill="#123249">Server A</text>
-<line x1="132" y1="142" x2="132" y2="192" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="132" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">If this server stops?</text>
-<text x="132" y="348" font-size="11" text-anchor="middle" fill="#35526A">the service stops with it</text>
-<line x1="234" y1="210" x2="262" y2="210" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="268" y="108" font-size="12" font-weight="700" fill="#1160D8">02</text>
-<text x="292" y="108" font-size="13" font-weight="700" fill="#123249">Two servers?</text>
-<rect x="334" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="364" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
-<rect x="276" y="156" width="176" height="100" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="282" y="168" font-size="9" fill="#35526A">VPC</text>
-<rect x="286" y="196" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="321" y="215" font-size="11" text-anchor="middle" fill="#123249">Server A</text>
-<rect x="372" y="196" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="407" y="215" font-size="11" text-anchor="middle" fill="#123249">Server B</text>
-<line x1="364" y1="142" x2="321" y2="192" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="364" y1="142" x2="407" y2="192" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="364" y="180" font-size="16" font-weight="700" text-anchor="middle" fill="#1160D8">?</text>
-<text x="364" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">Is two servers enough?</text>
-<text x="364" y="348" font-size="11" text-anchor="middle" fill="#35526A">nothing routes the requests</text>
-<line x1="466" y1="210" x2="494" y2="210" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="500" y="108" font-size="12" font-weight="700" fill="#1160D8">03</text>
-<text x="524" y="108" font-size="13" font-weight="700" fill="#123249">Load balancer</text>
-<rect x="566" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="596" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
-<rect x="508" y="150" width="176" height="122" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="514" y="162" font-size="9" fill="#35526A">VPC</text>
-<rect x="554" y="160" width="84" height="24" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="596" y="176" font-size="11" text-anchor="middle" fill="#123249">Load balancer</text>
-<rect x="518" y="216" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="553" y="235" font-size="11" text-anchor="middle" fill="#123249">Server A</text>
-<rect x="604" y="216" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="639" y="235" font-size="11" text-anchor="middle" fill="#123249">Server B</text>
-<line x1="596" y1="142" x2="596" y2="158" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="576" y1="184" x2="553" y2="212" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="616" y1="184" x2="639" y2="212" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="596" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">How are requests split?</text>
-<text x="596" y="348" font-size="11" text-anchor="middle" fill="#35526A">the load balancer spreads them</text>
-<line x1="698" y1="210" x2="726" y2="210" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="732" y="108" font-size="12" font-weight="700" fill="#1160D8">04</text>
-<text x="756" y="108" font-size="13" font-weight="700" fill="#123249">Shared sessions</text>
-<rect x="798" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="828" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
-<rect x="740" y="150" width="176" height="152" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="746" y="162" font-size="9" fill="#35526A">VPC</text>
-<rect x="786" y="158" width="84" height="22" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="828" y="173" font-size="11" text-anchor="middle" fill="#123249">Load balancer</text>
-<rect x="750" y="204" width="70" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="785" y="222" font-size="11" text-anchor="middle" fill="#123249">Server A</text>
-<rect x="836" y="204" width="70" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="871" y="222" font-size="11" text-anchor="middle" fill="#123249">Server B</text>
-<rect x="786" y="262" width="84" height="24" fill="#FFFFFF" stroke="#1160D8"/>
-<text x="828" y="278" font-size="11" text-anchor="middle" fill="#123249">Cache server</text>
-<line x1="828" y1="142" x2="828" y2="156" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="808" y1="180" x2="785" y2="200" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="848" y1="180" x2="871" y2="200" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="785" y1="232" x2="812" y2="260" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="871" y1="232" x2="844" y2="260" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="828" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">Does the login survive?</text>
-<text x="828" y="348" font-size="11" text-anchor="middle" fill="#35526A">a shared session store for both</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-label="Growing from one server to two, then a load balancer, then a shared session store">
+<style>
+@font-face{font-family:"d-mono";font-weight:500;src:url(data:font/woff2;base64,d09GMgABAAAAAANkAA4AAAAABoAAAAMOAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcKgZgP1NUQVREADwRCAqDDIJSATYCJAMQCw4ABCAFhBgHIBtFBcgeg+NuKUSJiMViAEMR9SGP559f+9/aZ+5XSYpoE4/azJM2i1Z59f0MlUYoNFrHs/j4/Nfp35dJAU9FhZoQk3rXL63+lsJa2PU0/znV/u8mN5Z4HxM/xGhvoBOujREGXlQUYHgoeWDWS7eJBO0K/II6Vw3x6PJWwaQ1mciZgTEBgjXoAYJJuxXhsHWRj7WsE8kXlONWErIigBpybgHOzv3cRk06oYIJjsbXvnGldwy3sVVd9///F2gnyCZAoJbrIbYKFDGusIyDnTjPTWaWgAdPtHaSj2jmEchqVkAnKgWAgEKHZZRgGddeMKqJslVdD1tV9/r3/WsBRHrmEKNgGuN4Bl4DoIFSIorWwrg5+8IoYVBEoC4iKDyCCiVhm6+dI1PccBKBqcGnT+Jrr05lcPZp6PC9QPTpU9jmhw948f694Pn728kRuDf8KBLv+RC2+ekeGdz9GPoaPLu1jLenyOv0RECEXxWRcGIK44Rh0v0pqvrlxR0XldVlvDLE/L4olRWuTpdIHvYwvxhUXSxfZO2mhofzu3JyzyyV9I0NhvTYA0PN65f8Y+baemVHY+4kv3eo4PZUx4akRQb5c/5FF1dmDVSM1TQX9iYtl5UO9qSWNqoac3wReYe/trTdsdkCQ3lzBsuAsaJR2NbDm5qIjLsewhgn+rrUbA1mXvHkA+/ZV0KtcCd/9WsvgJ8I8rZWx3vaoY5q+xZMUb/gveSoGODDV+997Oyruo4GowqEqgR1i0jyFn5xXFlRY7hJlapWQ9R8H8zysylDUNJCwBtgQyw7CGXWO+gc9xianQGMWEmePGp7OhQEpqOh0jg7lc/NkSgQmjXo5eI2z8vCxIxFq1GlRh2agJkBbZCBhY+QmeLlYmXAYNG6+bHMXLx8aEXMWCw3nxaVKplY6HU/nQoMF4dKMwy8GAZ2aOFb5YxcnFgV0rQ42x4n6qB4T5v42Wl5VavQqEqVViI8vca0KlqfKbfm0DkatYjhL9vCclpO12hGXJuY+Zsa6Fn4OQxjadlZMHhcHLScKKBfTWUAAA==) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:500;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,d09GMgABAAAAAAL4AA4AAAAABdgAAAKiAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhQbYhwqBmA/U1RBVEQAPAqBfIIFATYCJAMMCwgABCAFgzoHIBvkBAAeA+7GCRUmeHJiXisSnfHQ/36sO/MfqtmscUgmySOdZskTJEoQW29lK5JXS8SH39977huk+z1IymtSF5qcpbY6ouGdpZpAhAHxxiPZT93k34HmWzSwFNrnBbgmRV2AoQe2NIoCSfgvMAvYgvLmkhLRszaVogsEmgEhhSLQaIglZs03OBqyRxnVpZBV4MfoHeZUlkKcISryWKiX2gG9NBGVEFJiWbGLeYQ+U18DQKldyy0i1EwJn4H7rsufhphhF76TVBAAsDoxUdgD5VYzH4pQ9xS/IKAsiCyAPtJCqJfoxmAIc5GXX03A/mYUEwUQRTsC0cRsgUpICQIkKnQTEugmbAzUKkLq45ZAMS+HCDkoVKAW9VgH1wAo3iALSbZ8UxPT2NCMRKKv+/fdfDw63u4aB19u+qTv73vT0Out9pvok5sXaI7H8xYdnuZNo0TfUQmQSa9usgSowA9QwHcr50iCcrLTNpgOSfDUDzQJyXazMA4MF1iYRepbRahrM32XmxfJXSP3yfUbDXXls/luE95+nDRfNXG15McQU6NgE2PcEKMaCzYyDTY24Q7BpsYAPoEgdjRvnOl/mpzzn7iQOOBXSeoowP+n42P4fufKFysG1EkQPK9bL0IQMwNCOKnq4YY8QtmGL4LKFFEQZKnRFSFRJMAc2HIY4SynVntyZUb5uMTJNRYsSbWmvRcINIc2shTqQ99VgO8vNIeXMuUaVCqQJ181ahGUJXOWrFBBChSj/DWoUSqPiUIFSoWrlKNajlLZMlTKRsXKUKlAhkzFckTKkadGsQyVLJiyYs6BEy/RYkRxWm24gNinlaoUKFOK8v5+ijUol68KZcWUJUqfFUuWbBjsMmVy3jBOzs1w56lMsWwBqmUoViCLEPDxbwgCAA==) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="400" fill="#FFFFFF"/>
+<text x="32" y="42" font-size="15" fill="#0B0F17"><tspan font-weight="500" class="m" fill="#8A94A0">1</tspan>  <tspan font-weight="600" fill="#0B0F17">One server</tspan></text>
+<text x="116.5" y="88" font-size="14" fill="#5B6470" text-anchor="middle">User</text>
+<rect x="32" y="110" width="169" height="208" fill="#F4F6F8"/>
+<text x="42" y="130" font-size="12" font-weight="500" fill="#8A94A0">VPC</text>
+<rect x="80.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="116.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">Server A</text>
+<path d="M116.5 97L116.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M116.5 204L112.75 196.5L120.25 196.5Z" fill="#5B6470"/>
+<text x="32" y="348" font-size="14" fill="#5B6470">If it stops, the service</text>
+<text x="32" y="369" font-size="14" fill="#5B6470">stops with it</text>
+<path d="M211 28L211 372" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="221" y="42" font-size="15" fill="#0B0F17"><tspan font-weight="500" class="m" fill="#8A94A0">2</tspan>  <tspan font-weight="600" fill="#0B0F17">One more</tspan></text>
+<text x="305.5" y="88" font-size="14" fill="#5B6470" text-anchor="middle">User</text>
+<rect x="221" y="110" width="169" height="208" fill="#F4F6F8"/>
+<text x="231" y="130" font-size="12" font-weight="500" fill="#8A94A0">VPC</text>
+<rect x="228.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="264.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">Server A</text>
+<rect x="310.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#1160D8" stroke-width="1"/>
+<text x="346.5" y="227.18" font-size="14" font-weight="500" fill="#1160D8" text-anchor="middle">Server B</text>
+<path d="M305.5 97L305.5 174L264.5 174L264.5 197.5" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-dasharray="4 4" stroke-linejoin="miter"/>
+<path d="M264.5 204L260.75 196.5L268.25 196.5Z" fill="#8A94A0"/>
+<path d="M305.5 174L346.5 174L346.5 197.5" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-dasharray="4 4" stroke-linejoin="miter"/>
+<path d="M346.5 204L342.75 196.5L350.25 196.5Z" fill="#8A94A0"/>
+<rect x="296.5" y="140" width="18" height="22" fill="#F4F6F8"/>
+<text x="305.5" y="157" font-size="17" font-weight="700" fill="#1160D8" text-anchor="middle">?</text>
+<text x="221" y="348" font-size="14" fill="#5B6470">Which server gets each</text>
+<text x="221" y="369" font-size="14" fill="#5B6470">request?</text>
+<path d="M400 28L400 372" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="410" y="42" font-size="15" fill="#0B0F17"><tspan font-weight="500" class="m" fill="#8A94A0">3</tspan>  <tspan font-weight="600" fill="#0B0F17">Load balancer</tspan></text>
+<text x="494.5" y="88" font-size="14" fill="#5B6470" text-anchor="middle">User</text>
+<rect x="410" y="110" width="169" height="208" fill="#F4F6F8"/>
+<text x="420" y="130" font-size="12" font-weight="500" fill="#8A94A0">VPC</text>
+<rect x="417.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="453.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">Server A</text>
+<rect x="499.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="535.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">Server B</text>
+<rect x="435.5" y="142" width="118" height="32" fill="#FFFFFF" stroke="#1160D8" stroke-width="1"/>
+<text x="494.5" y="163.18" font-size="14" font-weight="500" fill="#1160D8" text-anchor="middle">Load balancer</text>
+<path d="M494.5 97L494.5 135.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M494.5 142L490.75 134.5L498.25 134.5Z" fill="#5B6470"/>
+<path d="M453.5 174L453.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M453.5 204L449.75 196.5L457.25 196.5Z" fill="#5B6470"/>
+<path d="M535.5 174L535.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M535.5 204L531.75 196.5L539.25 196.5Z" fill="#5B6470"/>
+<text x="410" y="348" font-size="14" fill="#5B6470">Does the login survive a</text>
+<text x="410" y="369" font-size="14" fill="#5B6470">server switch?</text>
+<path d="M589 28L589 372" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="599" y="42" font-size="15" fill="#0B0F17"><tspan font-weight="500" class="m" fill="#8A94A0">4</tspan>  <tspan font-weight="600" fill="#0B0F17">Shared sessions</tspan></text>
+<text x="683.5" y="88" font-size="14" fill="#5B6470" text-anchor="middle">User</text>
+<rect x="599" y="110" width="169" height="208" fill="#F4F6F8"/>
+<text x="609" y="130" font-size="12" font-weight="500" fill="#8A94A0">VPC</text>
+<rect x="606.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="642.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">Server A</text>
+<rect x="688.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="724.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">Server B</text>
+<rect x="624.5" y="142" width="118" height="32" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="683.5" y="163.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">Load balancer</text>
+<path d="M683.5 97L683.5 135.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M683.5 142L679.75 134.5L687.25 134.5Z" fill="#5B6470"/>
+<path d="M642.5 174L642.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M642.5 204L638.75 196.5L646.25 196.5Z" fill="#5B6470"/>
+<path d="M724.5 174L724.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M724.5 204L720.75 196.5L728.25 196.5Z" fill="#5B6470"/>
+<rect x="624.5" y="272" width="118" height="32" fill="#FFFFFF" stroke="#1160D8" stroke-width="1"/>
+<text x="683.5" y="293.18" font-size="14" font-weight="500" fill="#1160D8" text-anchor="middle">Cache server</text>
+<path d="M642.5 240L642.5 265.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M642.5 272L638.75 264.5L646.25 264.5Z" fill="#5B6470"/>
+<path d="M724.5 240L724.5 265.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M724.5 272L720.75 264.5L728.25 264.5Z" fill="#5B6470"/>
+<text x="599" y="348" font-size="14" fill="#5B6470">Both servers keep</text>
+<text x="599" y="369" font-size="14" fill="#5B6470">sessions in one place</text>
 </svg>

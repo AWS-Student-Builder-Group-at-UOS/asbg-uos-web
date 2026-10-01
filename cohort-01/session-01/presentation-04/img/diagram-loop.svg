@@ -1,44 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-label="디지털트윈 루프와 루프를 이루는 네 레이어">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="420" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="418" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">현실을 가상에 복제하고, 분석·예측·제어까지 하나의 루프로</text>
-<text x="36" y="74" font-size="15" fill="#35526A">새 기술이 아니라 있는 기술의 집약체</text>
-
-<rect x="60" y="120" width="200" height="64" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="160" y="142" text-anchor="middle" font-size="11" fill="#35526A">현실</text>
-<text x="160" y="166" text-anchor="middle" font-size="16" font-weight="700" fill="#123249">건물 · 센서</text>
-
-<rect x="340" y="120" width="200" height="64" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="440" y="142" text-anchor="middle" font-size="11" fill="#35526A">가상</text>
-<text x="440" y="166" text-anchor="middle" font-size="16" font-weight="700" fill="#123249">3D 복제</text>
-
-<rect x="340" y="280" width="200" height="64" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="440" y="302" text-anchor="middle" font-size="11" fill="#35526A">AI</text>
-<text x="440" y="326" text-anchor="middle" font-size="16" font-weight="700" fill="#123249">분석 · 예측</text>
-
-<rect x="60" y="280" width="200" height="64" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="160" y="302" text-anchor="middle" font-size="11" fill="#35526A">제어</text>
-<text x="160" y="326" text-anchor="middle" font-size="16" font-weight="700" fill="#123249">설비 명령</text>
-
-<line x1="266" y1="152" x2="334" y2="152" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="440" y1="190" x2="440" y2="274" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="334" y1="312" x2="266" y2="312" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="160" y1="274" x2="160" y2="190" stroke="#1160D8" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="172" y="237" font-size="12" fill="#1160D8">다시 데이터</text>
-
-<text x="60" y="384" font-size="13" fill="#35526A">폐루프 · 결과가 다시 입력으로 들어와 스스로 나아지는 구조</text>
-
-<text x="600" y="130" font-size="12" fill="#35526A">루프를 이루는 레이어</text>
-<rect x="600" y="142" width="320" height="48" fill="#FFFFFF" stroke="#79CDFF"/><rect x="600" y="142" width="6" height="48" fill="#79CDFF"/>
-<text x="763" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">프론트 · 보여주기</text>
-<rect x="600" y="202" width="320" height="48" fill="#FFFFFF" stroke="#79CDFF"/><rect x="600" y="202" width="6" height="48" fill="#79CDFF"/>
-<text x="763" y="232" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">백엔드 · 모으기</text>
-<rect x="600" y="262" width="320" height="48" fill="#FFFFFF" stroke="#79CDFF"/><rect x="600" y="262" width="6" height="48" fill="#79CDFF"/>
-<text x="763" y="292" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">인프라 · 돌리기</text>
-<rect x="600" y="322" width="320" height="48" fill="#FFFFFF" stroke="#79CDFF"/><rect x="600" y="322" width="6" height="48" fill="#79CDFF"/>
-<text x="763" y="352" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">AI · 예측하기</text>
-<text x="600" y="398" font-size="14" font-weight="700" fill="#1160D8">구멍 하나 → 루프 전체 정지</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-label="디지털트윈 루프와 루프를 이루는 네 레이어">
+<style>
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:500;src:url(data:font/woff2;base64,d09GMgABAAAAAAVoAA4AAAAACYgAAAUSAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbcBwqBmA/U1RBVEQAdAqIPIciATYCJAMeCxYABCAFgz4HIBvfBwiehbEzLbkYUVs7XaTDY/0QjQDCk5pNk6Y6SHyQ7g+tc3Ta2qctkZVOL9zDY4lQCzrQwy4FgA1MAWgSOD3YANjh/67W1IZBxbOxES7OHYQ2AKSIHXBJ+ApfIV+WYDywqm1thY+rrFCmEJuJPRnCyhoUJ8FCyErYM58ioAQIIpEgCChorqto+EgjKwitXxLsCyEx7I2xdSsCfcFDqhPLQ4CMA/G0SGVQW2ORTN+FJgiuyURtW2otjM+Z8+PspeFXEpKu8fM4J1pEzzgmOrZCxuuoGCGQY4dNt7aEv8avx+n55aqcdwzfI0A8MLkSjZWERYh6qwur+b13rfIIRrBmu6M3UkUQqyxASMOvWDBgLM0aGVSvkKiNLb5rZRmxxoboXwsPPvTwp4/dulT/9XjVVd3tcD/03dOxBg1vc/SdVn1rmwhMIygw6w60I/QgigHxNFlEglhWQqP52IhzcakYl0qUK1eOC2+sxCChQtPaPvvAeU+zlpxS3Ke4p7C3sHsfCIUKhRNzzVKo8LOfLp55+MU7IRSnVwyV/vHV6RdqmJDXqM+YfvD62w3dU+eLa47/tdcc+OqHhaM/fj0c9MYnxVcl7MA6ubttDnr99cI+hbS4pzIUMlVC5VBtQQyp9vfg6j+vveXASrhw9PfCQe+8MVBePIb8KHv3Qsz86puN+w7nLe7btWWVkSr71GB+HWIPK/PIh689mMwhrCA1r5ChXBWptjv25o9Y7wOWF7yl9MQNYHnJvz/8fQ86MP9XtGx8WPv/xqe1v9Y5tI6ozql14lur41932vyu5Mp3zVvcPgPZ/z9VlvG6tbovLn95/ZEsx6FF3/YZpdWU/9Xkbvua1/Nftb61Mkz4/IOz5Fc80sUfvwP9PGygeoD1UPTokUuTBFdeiyTfeW571ZrFsxe7bEvMyN+HtaRvncIJ9YQTjy9C0dwS/Il3T5BMPLEkC+UXyTXvii2d4F+8kFNYvBjjPxAOdnubRQuFizX78INg8cf3TVVOQYubTj+9O+T47PPTKxTLL5253bf5n/s1e3zjHKnF90yRZ673edj3qNoMrt388VOXpAnOv1RKfv7MfjXqMxwDtH3sxWfPCWKcmfUMa2cnJ2+cFcQ0O5Mdv3FOsmlHjJ/GxrFZGpv7bTQz4xtrbh6TrbWxd5OFKvWr90Ga3Je9pH/5nLLlgzuGIXVrw0NoJr1NcR9tewtkD7ilptjBZ4zzEPOQnCj9nt8zujednHLS7FxLro63PSMDshJNhynmwgtvH3fS/QSpc6QsOfD//ZKZ9wf4eFV5UXi9vQJufjjzc/f391l7VLu7Hl0ztuFhE7Yc5+rmUTNhHaZR7CUqP6epAAMvptVBxRTnNBSPrwREdTDOGan75B9//56aKdUbDeavmgcPPCggTKrLMKB+80Xh/r/l7Dnw0YaFuYDPP9n6uJbl/unqdD2LdK947a2UnJJIQyKLBpLCn3Jm+BXJPMko49Ts14YrGwWXMoIVBYN5QcBFBfuzC3Ee/ckMQUv9DZGKlhoy+tq8N64aEgNdrc/q7suRQCnUh53yW7Or3LS7YRSqEx3A4pggV3l1V52h26c2DiDG5xvtZEfGSlsLkM3oaCaajILTUSAzuQuAI4hoCzTWjti/SV5H3XTWRz/DrKwtWTVwubI3P9UZAIUMAkYVaycqTnsh3XTUFWgNdHWH76HNpIPSTy5u0X8HxtmvowA7kj4TTgSQ7EC57BgGAA==) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="300" fill="#FFFFFF"/>
+<rect x="32" y="40" width="176" height="62" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="120" y="66.58" font-size="12.5" font-weight="500" fill="#8A94A0" text-anchor="middle">현실</text>
+<text x="120" y="84.67" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">건물과 센서</text>
+<rect x="256" y="40" width="176" height="62" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="344" y="66.58" font-size="12.5" font-weight="500" fill="#8A94A0" text-anchor="middle">가상</text>
+<text x="344" y="84.67" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">3D 복제</text>
+<rect x="256" y="200" width="176" height="62" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="344" y="226.57" font-size="12.5" font-weight="500" fill="#8A94A0" text-anchor="middle">AI</text>
+<text x="344" y="244.67" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">분석과 예측</text>
+<rect x="32" y="200" width="176" height="62" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="120" y="226.57" font-size="12.5" font-weight="500" fill="#8A94A0" text-anchor="middle">제어</text>
+<text x="120" y="244.67" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">설비 명령</text>
+<path d="M208 71L249.5 71" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M256 71L248.5 74.75L248.5 67.25Z" fill="#5B6470"/>
+<path d="M344 102L344 193.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M344 200L340.25 192.5L347.75 192.5Z" fill="#5B6470"/>
+<path d="M256 231L214.5 231" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M208 231L215.5 227.25L215.5 234.75Z" fill="#5B6470"/>
+<path d="M120 200L120 108.5" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M120 102L123.75 109.5L116.25 109.5Z" fill="#1160D8"/>
+<text x="110" y="156" font-size="13.5" fill="#1160D8" text-anchor="end">다시 데이터</text>
+<text x="232" y="143" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">폐루프</text>
+<text x="232" y="165" font-size="13" fill="#5B6470" text-anchor="middle">결과가 다시</text>
+<text x="232" y="184" font-size="13" fill="#5B6470" text-anchor="middle">입력으로 들어온다</text>
+<text x="480" y="52" font-size="13.5" fill="#5B6470">루프를 이루는 레이어</text>
+<path d="M480 66L768 66" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="94" font-size="15" font-weight="600" fill="#0B0F17">프론트엔드</text>
+<text x="768" y="94" font-size="14" fill="#5B6470" text-anchor="end">보여 준다</text>
+<path d="M480 110L768 110" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="138" font-size="15" font-weight="600" fill="#0B0F17">백엔드</text>
+<text x="768" y="138" font-size="14" fill="#5B6470" text-anchor="end">모은다</text>
+<path d="M480 154L768 154" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="182" font-size="15" font-weight="600" fill="#0B0F17">인프라</text>
+<text x="768" y="182" font-size="14" fill="#5B6470" text-anchor="end">돌린다</text>
+<path d="M480 198L768 198" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="226" font-size="15" font-weight="600" fill="#0B0F17">AI</text>
+<text x="768" y="226" font-size="14" fill="#5B6470" text-anchor="end">예측한다</text>
+<path d="M480 242L768 242" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="272" font-size="13.5" fill="#2B323B">하나라도 멈추면 루프 전체가 멈춘다</text>
 </svg>

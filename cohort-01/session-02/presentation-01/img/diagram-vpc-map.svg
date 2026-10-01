@@ -1,71 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 588" role="img" aria-label="VPC 한 장 요약: IGW 아래 퍼블릭 서브넷에는 ALB, NAT Gateway, Bastion Host가, 프라이빗 서브넷에는 App 서버, Internal ALB, RDS, ElastiCache, EFS, Interface Endpoint가 있고, Interface Endpoint는 VPC 밖의 S3로 이어진다">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="588" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="586" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">VPC 한 장 요약</text>
-<text x="36" y="74" font-size="15" fill="#35526A">퍼블릭은 입구, 프라이빗은 안쪽</text>
-
-<rect x="36" y="167" width="780" height="391" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="42" y="182" font-size="12" font-weight="700" fill="#35526A">VPC</text>
-
-<rect x="466" y="92" width="110" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="521" y="112" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">인터넷</text>
-<line x1="521" y1="122" x2="521" y2="148" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="486" y="152" width="70" height="30" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="521" y="172" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">IGW</text>
-
-<rect x="52" y="198" width="748" height="106" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="62" y="216" font-size="13" font-weight="700" fill="#123249">퍼블릭 서브넷</text>
-<text x="68" y="251" font-size="12" fill="#35526A">라우팅 테이블</text>
-<text x="68" y="270" font-size="13" font-weight="700" fill="#1160D8">0.0.0.0/0 → IGW</text>
-<rect x="257" y="230" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="332" y="252" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">NAT Gateway</text>
-<text x="332" y="270" font-size="12" text-anchor="middle" fill="#35526A">프라이빗 → 밖으로</text>
-<rect x="446" y="230" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="521" y="252" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">ALB</text>
-<text x="521" y="270" font-size="12" text-anchor="middle" fill="#35526A">진입점 · 분산 · 헬스 체크</text>
-<rect x="634" y="230" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="709" y="252" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">Bastion Host</text>
-<text x="709" y="270" font-size="12" text-anchor="middle" fill="#35526A">SSH 중간 서버</text>
-
-<rect x="52" y="328" width="748" height="214" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="62" y="346" font-size="13" font-weight="700" fill="#123249">프라이빗 서브넷</text>
-<rect x="68" y="360" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="143" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">내부 서비스</text>
-<text x="143" y="400" font-size="12" text-anchor="middle" fill="#35526A">또 다른 서버</text>
-<rect x="257" y="360" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="332" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">Internal ALB/NLB</text>
-<text x="332" y="400" font-size="12" text-anchor="middle" fill="#35526A">VPC 안에서만</text>
-<rect x="446" y="360" width="150" height="52" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="521" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">App 서버</text>
-<text x="521" y="400" font-size="12" text-anchor="middle" fill="#35526A">EC2 · ECS · Lambda</text>
-<rect x="634" y="360" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="709" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">Interface Endpoint</text>
-<text x="709" y="400" font-size="12" text-anchor="middle" fill="#35526A">AWS 서비스로 가는 통로</text>
-<rect x="257" y="468" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="332" y="490" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">RDS</text>
-<text x="332" y="508" font-size="12" text-anchor="middle" fill="#35526A">관계형 DB</text>
-<rect x="446" y="468" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="521" y="490" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">ElastiCache</text>
-<text x="521" y="508" font-size="12" text-anchor="middle" fill="#35526A">Redis · RAM 키-값</text>
-<rect x="634" y="468" width="150" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="709" y="490" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">EFS</text>
-<text x="709" y="508" font-size="12" text-anchor="middle" fill="#35526A">공유 파일 · Mount Target</text>
-
-<rect x="840" y="360" width="84" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="882" y="382" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">S3</text>
-<text x="882" y="400" font-size="12" text-anchor="middle" fill="#35526A">AWS 서비스</text>
-
-<line x1="521" y1="182" x2="521" y2="226" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="521" y1="282" x2="521" y2="356" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M481 360 V316 H332 V286" fill="none" stroke="#1160D8" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
-<line x1="446" y1="386" x2="411" y2="386" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="257" y1="386" x2="222" y2="386" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="596" y1="386" x2="630" y2="386" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="784" y1="386" x2="836" y2="386" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M521 412 V440 H332 V464" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M521 412 V440 H709 V464" fill="none" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="521" y1="412" x2="521" y2="464" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="VPC 한 장 요약: IGW 아래 퍼블릭 서브넷에는 ALB, NAT Gateway, Bastion Host가, 프라이빗 서브넷에는 App 서버, Internal ALB, RDS, ElastiCache, EFS, Interface Endpoint가 있고, Interface Endpoint는 VPC 밖의 S3로 이어진다">
+<style>
+@font-face{font-family:"d-mono";font-weight:500;src:url(data:font/woff2;base64,d09GMgABAAAAAAPwAA8AAAAAB5AAAAOZAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbIBxYBmA/U1RBVEQAYhEICoQQgzMBNgIkAxgLFgAEIAWEGAcgGxgGURSRI/gigadiebkhvES0RLVQNYFVjbM9MY4jfVZwHAueR//qz00yD+Pd/SDZwaygbtB9ohNytL9v9lPZOAntAWr9XBLIP9jt/VuAWXRkQUBRFFDYFnglmV1q0MffT/33/9KK5jtaOh4t2qqtbU1RNMEJNlAmPh3IxMYDlKkba55SwKDQEUPjRIiyQkAYAChCaEJAUD5F6GhxeAkRBmAtAKDpKGacrzz1DDZlSMkgjfKMZjCIgGoYxinmzlaWGg7NzXJCmGRGL/kqAPXHDEBb/ANyM15DoMIHACCgEACAHufGIbwrNOkv/8PssgYIQK3jLlBIiBAeBbLxgWJ830jWRMDoFxNRcYgRhwCy9RVoQlUCAAJAAQ2y8ROQTUAHQJRHcRQyaseem8laoJAh/rF9A3vNXrUnnjpTyAK4A1cKgVizCALIpsNyMdx35zLL7KKCHv99BGVMyXDcxOPGOKa7G3GGRNzw4DWplCxOp0Nrk8nu3VhJcE0iwSJGnJ5OKxqUkAr2KLknkQhJKBCUCEETIjQg1D848K7oFxww3pO5Iq/6UR9lItFjVBb3LZUQ3efGZ7XsTceHD8NRjMrbL2261L9yuS7lKBNrP/1i42H21JWDM/pUmFBzzUanWowLRRu1OJqr0qJBsdm9bhqzWi1Xq9C4QrFuOXf0/ad7YN+efZU6tx/SYegbx4beSJMY1fZndJ2J4dYF+yVbONhG1xOrW7i5QilzR6e/dzS7+cBpx9rdwsEpU0sm9zk+Ue9L39QpmDSp9zE2aNCoyOzuNxshWL5cQybreUWYyvtlq5YxbHzuVb9BdgjJAVorPVNppeqneplemJK4f94DkP87wrlvZRlQwN9AmmW/3hFAzlfNdfzsnYGxet8iWr8HvOl1rCfA21dTnvxtqc4aVwjgUAAE6+tTlyTnwns1YA6g+qpKHXXH8ka9o+8NX1ndoJL8wmogCvBQyJrctPjAITAU2TyhEnUNtVr+0SgWGJCnYlpHkRoYCIQbBHnF46C4eBaLEmIt05RC5dFxGCxT2bhR4yaVXWJRynZQOIY075ROwaMQ9po1FhNLoTOUtbFMJpVh3ogRDE5c3YIbIigkI2wUHYEiRovTsgGaQmYavjDY+YbzSKITzr/NsIgwujFDM0aNWnDt3IZDC+2WY8gArR2GlWP4GvVHJ6f5yzw79YEby4AJP49C4lgke0wYEYdwTiHByPwAsDuoAhAX) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,d09GMgABAAAAAAM8AA4AAAAABmwAAALkAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgRAcKgZgP1NUQVREAEwKgkSCJQE2AiQDFAsMAAQgBYM6ByAbTAURlZu7IX4e2MbSBwucdAkoAwKgSUiM17n0tPLfxksEkd3zVc/OFxABxkmIGZnRRcIjWt0GTZym/koP6BcA83/NC1uC/jfqsm677EUjbTQapUjxgGviZlxbs+K2aGAhj+0JjUVRF+BCanvA84Ee+PExIP2h3qw4MRr9ri5pE4HKgCQkWQhU1FoXadiIcdNUXbd42wZVZfgyMmuXb9mgPJOSVVACL5ZQXtJeRhcDFDJ1lp5AKCSFLJZEQIek0IqS5G21x+qvAZDLPp5e1ZTpkt/DLRClt51FzsUokJAVmMHQadOnelNzM8vd/n9N+C/iFwTkAWUeRHOVhVBeQm0JraWdK1dtC6zetnhd1BCy6gKiUnoVhZAkECChQG2FQG1ZL1RUXpI0N9JoM0sl3EcofVN6pfRy6TEFAEIZUBEVMAU3QEAGZRFCZMXa5up7t2nP7iFVZvY/H35oOvP++9Ch+wfmsx99BA+vHNUcen0dF3z7KXz4s+8i33wwqFyl8t4qdHdXauSuynsqiiucXKeSxMp1Wg8pgPuBDNynpRCSgPwBDTnW8FF7uk0yHtyIfXj9DfMeD2+arrp+bPPM/NeuH+Y9/8odte/q8a1uz+4nvn84TAo9fbu70t4HP6t1IewBrzIPdpbqPFiyd/21SvWrn8bV7/lXrtb1j5ENPniw3Q49Vaox9dQWvAgVYmLDWxzXeKG932/li/Lgm/ULLsCP303e1SL9yn0x61BOAsFrMMtLwLWoEHQTZcpzI/wJZb6wMLWwt9z/LQTKaKssCBqq6IBC5Aroh8uGtvqxSVVL2EIfm4o5jS1jgIeZsrr52RdUjsZgKykf7R+3hsqBB3O6sZ6IvDADOxAOhiOgJiqgvJ5rvE8StfaEnbEaQ04YMLR7FUlKYbssP1fIScgfCaYyuf6gl9ks34Dhs5OpqGsAS0vK2hCmIOIPA2cHwu1jrkPKfOV6I/Zi3i6rK0xlRioijULyBQAA) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="520" fill="#FFFFFF"/>
+<rect x="32" y="104" width="608" height="392" fill="#F4F6F8"/>
+<text x="48" y="126" font-size="13" font-weight="600" fill="#5B6470">VPC</text>
+<rect x="46" y="140" width="580" height="108" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<rect x="46" y="264" width="580" height="218" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="60" y="162" font-size="13.5" font-weight="600" fill="#0B0F17">퍼블릭 서브넷</text>
+<text x="612" y="162" font-size="12.5" fill="#0B0F17" text-anchor="end"><tspan fill="#5B6470">라우팅  </tspan><tspan font-weight="500" class="m" fill="#2B323B">0.0.0.0/0 → IGW</tspan></text>
+<text x="60" y="286" font-size="13.5" font-weight="600" fill="#0B0F17">프라이빗 서브넷</text>
+<rect x="54" y="178" width="169.33" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="138.67" y="202.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">NAT Gateway</text>
+<text x="138.67" y="218.06" font-size="12.5" fill="#5B6470" text-anchor="middle">프라이빗에서 밖으로</text>
+<rect x="251.33" y="178" width="169.33" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="336" y="202.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">ALB</text>
+<text x="336" y="218.06" font-size="12.5" fill="#5B6470" text-anchor="middle">분산과 헬스 체크</text>
+<rect x="448.67" y="178" width="169.33" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="533.33" y="202.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">Bastion Host</text>
+<text x="533.33" y="218.06" font-size="12.5" fill="#5B6470" text-anchor="middle">SSH 중간 서버</text>
+<rect x="54" y="300" width="169.33" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="138.67" y="324.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">Internal ALB/NLB</text>
+<text x="138.67" y="340.06" font-size="12.5" fill="#5B6470" text-anchor="middle">VPC 안에서만</text>
+<rect x="251.33" y="300" width="169.33" height="54" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1"/>
+<text x="336" y="324.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">App 서버</text>
+<text x="336" y="340.06" font-size="12.5" fill="#5B6470" text-anchor="middle">EC2, ECS, Lambda</text>
+<rect x="448.67" y="300" width="169.33" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="533.33" y="324.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">Interface Endpoint</text>
+<text x="533.33" y="340.06" font-size="12.5" fill="#5B6470" text-anchor="middle">AWS 서비스로 가는 통로</text>
+<rect x="54" y="400" width="169.33" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="138.67" y="424.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">내부 서비스</text>
+<text x="138.67" y="440.06" font-size="12.5" fill="#5B6470" text-anchor="middle">또 다른 서버</text>
+<rect x="251.33" y="400" width="114.22" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="308.44" y="424.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">RDS</text>
+<text x="308.44" y="440.06" font-size="12.5" fill="#5B6470" text-anchor="middle">관계형 DB</text>
+<rect x="377.56" y="400" width="114.22" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="434.67" y="424.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">ElastiCache</text>
+<text x="434.67" y="440.06" font-size="12.5" fill="#5B6470" text-anchor="middle">Redis, 인메모리</text>
+<rect x="503.78" y="400" width="114.22" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="560.89" y="424.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">EFS</text>
+<text x="560.89" y="440.06" font-size="12.5" fill="#5B6470" text-anchor="middle">공유 파일</text>
+<rect x="664" y="300" width="104" height="54" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="716" y="324.31" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">S3</text>
+<text x="716" y="340.06" font-size="12.5" fill="#5B6470" text-anchor="middle">VPC 밖</text>
+<rect x="276" y="24" width="120" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="336" y="47.18" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">인터넷</text>
+<rect x="290" y="84" width="92" height="40" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1"/>
+<text x="336" y="109.18" font-size="14" font-weight="700" fill="#0B0F17" text-anchor="middle">IGW</text>
+<path d="M336 60L336 77.5" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M336 84L332.25 76.5L339.75 76.5Z" fill="#1160D8"/>
+<path d="M336 124L336 171.5" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M336 178L332.25 170.5L339.75 170.5Z" fill="#1160D8"/>
+<path d="M336 232L336 293.5" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M336 300L332.25 292.5L339.75 292.5Z" fill="#1160D8"/>
+<path d="M296 300L296 256L138.67 256L138.67 238.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-dasharray="4 4" stroke-linejoin="miter"/>
+<path d="M138.67 232L142.42 239.5L134.92 239.5Z" fill="#5B6470"/>
+<path d="M251.33 327L229.83 327" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M223.33 327L230.83 323.25L230.83 330.75Z" fill="#5B6470"/>
+<path d="M138.67 354L138.67 393.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M138.67 400L134.92 392.5L142.42 392.5Z" fill="#5B6470"/>
+<path d="M420.67 327L442.17 327" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M448.67 327L441.17 330.75L441.17 323.25Z" fill="#5B6470"/>
+<path d="M618 327L657.5 327" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M664 327L656.5 330.75L656.5 323.25Z" fill="#5B6470"/>
+<path d="M336 354V377M308.44 377H560.89" fill="none" stroke="#5B6470" stroke-width="1.5"/>
+<path d="M308.44 377L308.44 393.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M308.44 400L304.69 392.5L312.19 392.5Z" fill="#5B6470"/>
+<path d="M434.67 377L434.67 393.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M434.67 400L430.92 392.5L438.42 392.5Z" fill="#5B6470"/>
+<path d="M560.89 377L560.89 393.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M560.89 400L557.14 392.5L564.64 392.5Z" fill="#5B6470"/>
 </svg>

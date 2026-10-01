@@ -1,44 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-label="The digital twin loop and the four layers that make it up">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="420" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="418" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="22" font-weight="700" fill="#123249">Replicate reality, then analyze, predict and control: one loop</text>
-<text x="36" y="74" font-size="15" fill="#35526A">Not a new technology, a collection of existing ones</text>
-
-<rect x="60" y="120" width="200" height="64" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="160" y="142" text-anchor="middle" font-size="11" fill="#35526A">Real</text>
-<text x="160" y="166" text-anchor="middle" font-size="16" font-weight="700" fill="#123249">Building · Sensors</text>
-
-<rect x="340" y="120" width="200" height="64" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="440" y="142" text-anchor="middle" font-size="11" fill="#35526A">Virtual</text>
-<text x="440" y="166" text-anchor="middle" font-size="16" font-weight="700" fill="#123249">3D replica</text>
-
-<rect x="340" y="280" width="200" height="64" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="440" y="302" text-anchor="middle" font-size="11" fill="#35526A">AI</text>
-<text x="440" y="326" text-anchor="middle" font-size="16" font-weight="700" fill="#123249">Analyze · Predict</text>
-
-<rect x="60" y="280" width="200" height="64" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="160" y="302" text-anchor="middle" font-size="11" fill="#35526A">Control</text>
-<text x="160" y="326" text-anchor="middle" font-size="16" font-weight="700" fill="#123249">Equipment commands</text>
-
-<line x1="266" y1="152" x2="334" y2="152" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="440" y1="190" x2="440" y2="274" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="334" y1="312" x2="266" y2="312" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="160" y1="274" x2="160" y2="190" stroke="#1160D8" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="172" y="237" font-size="12" fill="#1160D8">data again</text>
-
-<text x="60" y="384" font-size="13" fill="#35526A">Closed loop: the result feeds back in as input, and the system improves itself</text>
-
-<text x="600" y="130" font-size="12" fill="#35526A">The layers that make up the loop</text>
-<rect x="600" y="142" width="320" height="48" fill="#FFFFFF" stroke="#79CDFF"/><rect x="600" y="142" width="6" height="48" fill="#79CDFF"/>
-<text x="763" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Front-end · Show</text>
-<rect x="600" y="202" width="320" height="48" fill="#FFFFFF" stroke="#79CDFF"/><rect x="600" y="202" width="6" height="48" fill="#79CDFF"/>
-<text x="763" y="232" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Back-end · Collect</text>
-<rect x="600" y="262" width="320" height="48" fill="#FFFFFF" stroke="#79CDFF"/><rect x="600" y="262" width="6" height="48" fill="#79CDFF"/>
-<text x="763" y="292" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">Infrastructure · Run</text>
-<rect x="600" y="322" width="320" height="48" fill="#FFFFFF" stroke="#79CDFF"/><rect x="600" y="322" width="6" height="48" fill="#79CDFF"/>
-<text x="763" y="352" text-anchor="middle" font-size="15" font-weight="700" fill="#123249">AI · Predict</text>
-<text x="600" y="398" font-size="14" font-weight="700" fill="#1160D8">One hole → the whole loop stops</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-label="The digital twin loop and the four layers that make it up">
+<style>
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,d09GMgABAAAAAAkAAA4AAAAAESQAAAiqAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbhhAcKgZgP1NUQVRWAHQKkTiOWwE2AiQDeAs+AAQgBYMmByAbkg5RVHKGJ/jyII57saCyIraNloxusO3oFOXKxJOvUf4sBg9El/6b2dnD7qlSCukKILkaSeH0KiYFmOoKOyiozx3cJmJpmbhQsAyh4L9nxKy+Zi2A/yE7C0D5kDfeTM6O4D1JD3YASpZiVbQ2Eqkpqkxs1Jxaa/UWj+LtRePNh4ZMF8uEqmfIvpgvaunmEqYROk0TiW+YJBJZtFH6Z0ojpESICVvlHCJaowzNbdzfPQcBuAAA6eFdCDykQ/y6gEEOSiCr16zfHBDZcVAfAArAshCA6N11QB8YQAICiY0RYDgQOJDkQwFFKIHAjWOy/qu0Nz0SFLoxOQLFNM4FsmAG69HQkCKREzs6BjZMLceBVCXP7AGfBKVQchRwVZinylHFSIkdLym1Hx0kyko6siHFAhSIkHiCFzcfm7LuANtjPUB1Yj3SMI31k1XWhwZwFrg56wjxH8Ky8pJR7dCTWRNUw863bluYAHXD/AUxKDYrqtAcrKcsFcx0SbRFChiZEpPUpJtwoUYaXA4HPOQ9GAh0ZAKCgEROwJYlz419rnTLrKIuZltUzkWeTJb1cbGyrRCz0EEvpq4BS6WcvEysnIZAA2dONXQnVmse3ow3WYi2r/g/OURW8QktURX1jaosnQbifhJIiQbkQA7t3mOQAP77KhHJEPLJyYaA3aSYBWiaSR7RUwR7AilNoxWuEjJP0eExPjQUWShAHQwSagYmFiskihwy2gTW058evP9a1vQ1V19FgEsQRsCP5VGQc0BpkJMRemyAIJ30eRJhtaEBOgmqxZPiahXEbcXS+LL5k3IpX05fWmX/wVP50/p89hSFlKP3pfpCwSBrtFOa7ncbQdN71Wgvvn9uzePjGZOQYMYmJQltbGKiERPf3EhKSjJjExJQhjBC8fFGTGKiGJsU2BAIhAdNZZ6+baYeY9JX1cC4nxfjuOJ5mpE294Qba362V+fIbsbnwAYnFzV1M9oQxgmi6kAQOxttnnq/H3zCi3TkmlpYGPQI7zNHTvZhcRyG82UGU4RpPEt0hqJhN6uYwnS0Y67H5VJ9ZFNmP2h1i0i82GH0NrubPYzmw81oo3dgsDGYVsyuzNydmXHYxUCVTuf0GIB7wNZjTE9QZVFlsHu+sWKGMv7paFCkJAvOVaz9J7cV4eFF2CLMYFVExGhRfalv5XhgF121+Pea0tl5izD60KubasaEg2a0yYuHGcON+N1SIud8oPdyUiAwPKCm5gFmG+OfS7vE2N2XzdiLOxmz44LhnBwZBbKPy2M/FQVyQNNLpveYK1KfTvM96Bv3YLz+cnTHqlXNkcSfpWZ/e7R9YsuIMuufrMfajqtwJQMNMYd4lCI4mEM1ZMZjl8ID/R3nk5UVi8cnbuq5tXleSNkm6Y6jLdijmZRW5sS7qdvDi25x9tdELIa+MZTkCVYyQGT3/cmD/25e8f+6KRUGNFQrPiEubnQYnEVYZHo1D5xVyuHlahaT6qGBRa3Pdk9nDv27Rt3/h82Rn82VdUZ2DS3i8zmHieR6WvayVp95tp5BxXB2g/znIXfHvu2rxUqf5W5OHfx/42bF35uTp5AN0Olan12pt6Fv3DgSl6J8LQOarGlHWOCsVgsvIjQ6HWGBZbkSnEV4dJ/9Xk4N/o5L5/uwOfqHvcd/PgapoaMMVDuyi8i15ZndJVR17nhrIR1F2wgfPXwgXROVbhEW+uTWttWvS+v+VG8kgq9Yhw9M+He+VrnpeVMzDzj+ep3B1aGd98Q2qc+V13Wa7K88xyvVMUFk+/2xQ7/Gqfh6c3yD723SRYU2ljk1iw/DY0oLkVIwrlaCeQ+lqbLzYimYRCpfrFQIfWMowZM70Fmplw4XF6+6F6ZG8k5rRFBGjgGf7CjzcayrGKoYInfbTY8fx/8lfMd3hqmw9GMjUw1VBU6/lxuV4uniNkdlDzRXcomindnZnREH22abdqfRG7Nzh41PQvEDgjxyCg863pt4bdsrf8m2lQdRlUV4vCZjZCqichmfN9BZqRYP1gd/UiVAZ2Tp8PCk3Z7GBv/GzQk5aU7D29jovxsjgo6bw2mtFcGrYjF8Vg7icutF4KyWDVbr6Zr1hhK+y7UWDRh4tuz/TZMqTGh0nfueiiFjfEUXUFNhDEml00V8/7iITM3aaeRDspnG72H1dVggI01N+RSsxhekl+FYO0/X23esdWp5Yn/u2VlnzpZW0Bov5zq1szDHE9lxT3SDgenMNMl2qN6hU+HppfGDOadnnTufX8aoX85WCkeTaY7QwEafXNVmjs0q9VwzquaEn+crVnxV6eppLnS4qeSYT/EJFTezr3kgIm+gX6Bkd5cWrzoXpkbSTst4aALOhM11VAAHr15xn2e83/B09h/wZC/j8owvsyfluoqbPaf9Ps9af4jTC3cv+fo1R4HZZWulq5O5SbocNY8kH9/O5f9HjmQ8c6/wyJUjBwG6bpwXlfkULvVt5M+wLN+PLNlGfs8S9vPIhsqGG5BkAmUno/Xt7yfKSwZxxlnoBDjIQw8Q0UpPxP9/KCJ5UVebJIbrccd/W/EEIBqlrzvt1rn2Xv9PBncA8DSq3QyAV88HnCfH/4q9hz0SBPuNgLmD6B1AWbi4T/DTwhywSEoQP1ilqnNUm4c6JFP9BGGRQ+Qucqg12tAxxIhj9CBXjMpGOTG2EBxEMAbD1pwirxCj/SFCHqCQisTiZSih/FxB+vCLM9Q1n6BBRwujJDZSIpvH3GjwTgaAI5QT+BlNLMiFXyzx0EmsUY5+MxUq1qnIZpGNErwZI8AlMhJIdts8VKOiZqElISKmB7KJ5xSjCCpOFuoBMJen1WZhoCSCoxeJP/VES0BP4CMfh1a4IBEWgfEdXHJw6YkYyP3klChEcYpQlvJU48adK3KB3B54OFq6hJ0VJdCCtUC0UBN7DkhxABUjC3kIFmNbL0neiubimux7EgwOVHlSOeQkeOAA8P//xBIA) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:500;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="300" fill="#FFFFFF"/>
+<rect x="32" y="40" width="176" height="62" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="120" y="66.58" font-size="12.5" font-weight="500" fill="#8A94A0" text-anchor="middle">Real</text>
+<text x="120" y="84.67" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">Building and sensors</text>
+<rect x="256" y="40" width="176" height="62" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="344" y="66.58" font-size="12.5" font-weight="500" fill="#8A94A0" text-anchor="middle">Virtual</text>
+<text x="344" y="84.67" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">3D replica</text>
+<rect x="256" y="200" width="176" height="62" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="344" y="226.57" font-size="12.5" font-weight="500" fill="#8A94A0" text-anchor="middle">AI</text>
+<text x="344" y="244.67" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">Analyze and predict</text>
+<rect x="32" y="200" width="176" height="62" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="120" y="226.57" font-size="12.5" font-weight="500" fill="#8A94A0" text-anchor="middle">Control</text>
+<text x="120" y="244.67" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">Equipment commands</text>
+<path d="M208 71L249.5 71" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M256 71L248.5 74.75L248.5 67.25Z" fill="#5B6470"/>
+<path d="M344 102L344 193.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M344 200L340.25 192.5L347.75 192.5Z" fill="#5B6470"/>
+<path d="M256 231L214.5 231" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M208 231L215.5 227.25L215.5 234.75Z" fill="#5B6470"/>
+<path d="M120 200L120 108.5" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M120 102L123.75 109.5L116.25 109.5Z" fill="#1160D8"/>
+<text x="110" y="156" font-size="13.5" fill="#1160D8" text-anchor="end">data again</text>
+<text x="232" y="143" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">Closed loop</text>
+<text x="232" y="165" font-size="13" fill="#5B6470" text-anchor="middle">results feed</text>
+<text x="232" y="184" font-size="13" fill="#5B6470" text-anchor="middle">back in as input</text>
+<text x="480" y="52" font-size="13.5" fill="#5B6470">Layers that make up the loop</text>
+<path d="M480 66L768 66" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="94" font-size="15" font-weight="600" fill="#0B0F17">Front-end</text>
+<text x="768" y="94" font-size="14" fill="#5B6470" text-anchor="end">shows</text>
+<path d="M480 110L768 110" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="138" font-size="15" font-weight="600" fill="#0B0F17">Back-end</text>
+<text x="768" y="138" font-size="14" fill="#5B6470" text-anchor="end">collects</text>
+<path d="M480 154L768 154" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="182" font-size="15" font-weight="600" fill="#0B0F17">Infrastructure</text>
+<text x="768" y="182" font-size="14" fill="#5B6470" text-anchor="end">runs</text>
+<path d="M480 198L768 198" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="226" font-size="15" font-weight="600" fill="#0B0F17">AI</text>
+<text x="768" y="226" font-size="14" fill="#5B6470" text-anchor="end">predicts</text>
+<path d="M480 242L768 242" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="480" y="272" font-size="13.5" fill="#2B323B">If one stops, the whole loop stops</text>
 </svg>

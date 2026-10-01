@@ -1,69 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" role="img" aria-label="CIDR과 IP로 서버를 찾고, 포트로 그 서버 안의 프로그램을 찾고, TCP 또는 UDP로 데이터를 주고받는 네트워크 흐름">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="400" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="398" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">네트워크 흐름, 세 단계로</text>
-<text x="36" y="74" font-size="15" fill="#35526A">어디로 갈지 찾고, 어떻게 갈지 정하기</text>
-
-<text x="36" y="108" font-size="12" font-weight="700" fill="#1160D8">01</text>
-<text x="60" y="108" font-size="14" font-weight="700" fill="#123249">CIDR + IP로 서버 찾기</text>
-<rect x="36" y="124" width="220" height="192" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="44" y="141" font-size="12" font-weight="700" fill="#35526A">10.0.0.0/16</text>
-<rect x="48" y="182" width="92" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="94" y="206" font-size="12" text-anchor="middle" fill="#123249">10.0.0.8</text>
-<rect x="152" y="182" width="92" height="40" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="198" y="207" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">10.0.1.25</text>
-<rect x="48" y="242" width="92" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="94" y="266" font-size="12" text-anchor="middle" fill="#123249">10.0.2.14</text>
-<rect x="152" y="242" width="92" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="198" y="266" font-size="12" text-anchor="middle" fill="#123249">10.0.3.7</text>
-<text x="146" y="352" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">IP = 컴퓨터의 주소</text>
-<text x="146" y="372" font-size="13" text-anchor="middle" fill="#35526A">외울 땐 ZIP, 집</text>
-
-<line x1="274" y1="220" x2="302" y2="220" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-
-<text x="304" y="108" font-size="12" font-weight="700" fill="#1160D8">02</text>
-<text x="328" y="108" font-size="14" font-weight="700" fill="#123249">Port로 프로그램 찾기</text>
-<path d="M348 188L432 136L516 188Z" fill="#FFFFFF" stroke="#1160D8"/>
-<text x="432" y="178" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">10.0.1.25</text>
-<path d="M348 268V188H516V316H348V292" fill="#FFFFFF" stroke="#1160D8"/>
-<rect x="368" y="204" width="128" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="432" y="229" font-size="13" text-anchor="middle" fill="#35526A"><tspan font-size="14" font-weight="700" fill="#123249">:22</tspan> SSH</text>
-<rect x="368" y="260" width="128" height="40" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="432" y="285" font-size="13" text-anchor="middle" fill="#35526A"><tspan font-size="14" font-weight="700" fill="#123249">:80</tspan> 웹 서버</text>
-<line x1="312" y1="280" x2="364" y2="280" stroke="#1160D8" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="432" y="352" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">Port = 컴퓨터 안의 방</text>
-<text x="432" y="372" font-size="13" text-anchor="middle" fill="#35526A">외울 땐 Part, 방</text>
-
-<line x1="534" y1="220" x2="562" y2="220" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-
-<text x="572" y="108" font-size="12" font-weight="700" fill="#1160D8">03</text>
-<text x="596" y="108" font-size="14" font-weight="700" fill="#123249">TCP/UDP로 데이터 주고받기</text>
-<rect x="572" y="124" width="80" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="612" y="143" font-size="13" text-anchor="middle" fill="#123249">보내는 쪽</text>
-<rect x="844" y="124" width="80" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="884" y="143" font-size="13" text-anchor="middle" fill="#123249">받는 쪽</text>
-<path d="M612 152V316M884 152V316" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-
-<text x="748" y="176" font-size="12" text-anchor="middle" fill="#35526A"><tspan font-size="13" font-weight="700" fill="#123249">TCP</tspan> · 정확하게 · 순서 관리</text>
-<line x1="614" y1="196" x2="880" y2="196" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="705" y="185" width="22" height="22" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="716" y="200" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">1</text>
-<rect x="737" y="185" width="22" height="22" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="748" y="200" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">2</text>
-<rect x="769" y="185" width="22" height="22" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="780" y="200" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">3</text>
-<line x1="882" y1="222" x2="616" y2="222" stroke="#79CDFF" stroke-width="1.5" marker-end="url(#arrow)"/>
-<text x="748" y="240" font-size="12" text-anchor="middle" fill="#35526A">도착 확인</text>
-
-<text x="748" y="278" font-size="12" text-anchor="middle" fill="#35526A"><tspan font-size="13" font-weight="700" fill="#123249">UDP</tspan> · 빠르게 · 실시간 게임, 영상·음성</text>
-<line x1="614" y1="298" x2="880" y2="298" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="705" y="287" width="22" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<rect x="737" y="287" width="22" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<rect x="769" y="287" width="22" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-
-<text x="748" y="352" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">TCP = Control, 정확하게</text>
-<text x="748" y="372" font-size="13" text-anchor="middle" fill="#35526A">UDP = 빠르게</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 332" role="img" aria-label="CIDR과 IP로 서버를 찾고, 포트로 그 서버 안의 프로그램을 찾고, TCP 또는 UDP로 데이터를 주고받는 네트워크 흐름">
+<style>
+@font-face{font-family:"d-mono";font-weight:400;src:url(data:font/woff2;base64,d09GMgABAAAAAASoAA4AAAAACEAAAARQAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcWAZgP1NUQVRIAEwRCAqGEIUbATYCJAMaCxgABCAFhAAHIBvCBlFUUYIgvjiwiQx76EJEKw2pwyiLipXKrSLrrovG4hiK/qDvhl+Gz8H/92Pt3PfeLvD3IyZNPG0odGYbTKeLJTJDJGsJTCdSgmmCpMe/Z81bKCueUZhpslCZ7Yn+FVGcAOIfb/e2AYUUJGkUBTQPPNM05n4tZOe/K+fFqZoxLRrPY4ZgEDvW0J7HumkssBDWxpgerJakFi4YFRRrmy0nzF+IM05Pgp4ZikDSoxm06Sw4pAnAPwBAIBnBkgApzp7eAb0gG2iTWs0w5YU0POCF8CsEW47PhBouSUSSaBU0hwLssQIAyzJfF7BSBizUcLUYtnKoLXCEAYL+/kesaBoggC12BQakEPVlBlokgBEJN9UwAAH8E2M6agsSWiQCYzkC+wAnlrELtbwD7pdySZZyJBSTzQAaDkGBlGPgD/x/csdVl8f/b0SFeiAlAG2ABsANaAegA5ABGGdEjDj+oRHR0CCGJnldX85x05OaleLLSs0kKU/AMy0WQ2PjcWx6NApjIhFiejyOxsZiGdMiERgTjWYlZyBs+v7NCEvKRFmAjY3HyfOXt2vstnMZ0yI4URzBL4RzSrPAOy1GkNEoNj1+HI09Fsvo4D2f2Zp2NalI4KhwQxbKRBSWgEEG+LISGWxU3ognwDuejiw7N2Xa0HhYe2Pb3V2VHochDJgLd83ZVcPs4uoCG8GSv/bEoPT3tfapEK/s11/Tp9Jq610pTP9+w3pXWN0snbbdGLJCLMcsi6lfTAVpkZ8FmmTvM9W3e2rvoDvFwx/gwDLThgzqGean79/aZvTb+0kzYc3QVyRj1OTh/Y0Um1ct5bW24Wpju4+Etoui0TQc2ub0H94riSxPTlbgfEVnc+kLBn2FoQlNgAvaRhUd+FqBSq3h9qpITrcP9lHaII3nEatcDkd2PpEepGwaZV1/Jhwsq7Z57lbfIHBiWcXbpHo40ktyq+9FW+U4/IFNZa5fKD1uelIJnXN0fenKGq21KmDOKzhisqgEfLKeJZd7WTxSoDJarhRY8ioDVi1seR+6zq2rUKhldpPD7jDJ1GuFtlqoEQjZKrFYpBaz01XwMWzEMEhqD+n3awCU/bsGSWX/B95FQQ5+gmu2awACeme/d3y4Wi/5SnN/AtxX1pEAPNz2O/uzuhnDBwCKDIDwPUbsBLAmdE9wDZZPLLEEliTP0uFoI//ABwIlCxJlTtzxKJfsJ3WjBriAgbRYBabOJbglZyCMBCjoyohQNJSySJCzho6S668YIyOboNZbH0P1E0ZpMEALLAwsHC3gGgS1oBcU1h8wyaGf3roJ8utmpYEGaNBbP/210KHRpgH66E+Ejo4SBl0+kA+NX2890Q0S1I9fUA9zkczqKqS3XgagFfd2HMFvBViC16VmUwbqwasfJho+BgYxgouahXi7dp+u0rh5vxbmJ4bN9xeGdLWga5UCJV0v12sMX8irhzA/l9568uolEQD/mQGIAwAAAA==) format("woff2")}
+@font-face{font-family:"d-mono";font-weight:500;src:url(data:font/woff2;base64,d09GMgABAAAAAAOoAA4AAAAABvwAAANTAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcWAZgP1NUQVREAEwRCAqDRIMFATYCJAMUCxIABCAFhBgHIBu6BSMRlpMVBP9MsOmuLmiEQqN4hGxfPAwLhyaBBIFMshvM6pm+Z4+H/1/73z535osIppLwJGZN06N0ojc8iTVb3STxaSxmYJwafYQvDVC7EoSQFuKj07NDgnJRNTkA/H/unf7RBIzrYUMwxNscNq0TRWvTWGKRtW1OsbFI4oA8dbZMO+1LmJQg8SoiAy8WqNarv1i6fO0GlXIoCkCTDzVZyq4/vOP0UfUyG6Vx+MC+HSqhMrncEe5qzfvkymTKlQuhXJ62RF8ZqRQRrMH42GpyLCCFKp12+BOb1i1Z64mBpme//z+SL4wSAlJreoqByoVQKaFVwlDp3L79pwMHTu84HMOEXKOA6Ik+MiHFcBAgIUOrTKBVbiYqK5IHmmR6UTg7HnZVnxRvAuWgXIWQhCgKDQiVoBE1OIUb6EQtSDJJMmZv5IhpbGzNB9fnPTdW1JXvrKuo3bxv4+6Npffv49KHDzXX3r1z8e3bTRg49rzVJYPBJtZl1VFz7f7daM1ro07G2DHDHIbY96/1Dvvwg4eL0Cxt/tao4Si25ihrlcXKEAVvxVcV/Z0fprqt5kjKGO/jnSWSMfF+oynWn73JBLrF+oxjBKEYmne4JiBAwIuYxOUAXqOq+6fS14/6sGB7r6S73icQOq0JDXfe3QvYkiSDEpO0F8s03AUrV/UMpl6AK1ePrRzrTHC6ysPlhNQmUSwq0I1L9SaNXGUUEeQwpISAhyokyKr3qbmpqslwz9Pgdu+hDtXw+w7p/yWDr7imYh85/t3ig6t/AnF3iq9t/XJbw9y/lVn2DT5vaTN8+Xjyf7dFII3OBqJcAsHf86YtktR49psPj5GibzKSTDTT+Ich9t4jUGmiTK1TgAOPUqNEyvIqXCcotLpOSb17lJnpOeWGBirTHUMV5QbHfKWgNrazPcLD7DDh+c8arjquWuKY4y446YB99jttoMkmmmyqgTbYb9MNVrn9yRTYnIgG3BMpsCSd8kUTSTDal0rFklwSyesXV0+PEyeiYVLGnZhwh8JcNIrgiUZSxBtaMe9wGCSsrPVb3nRoLEEhsshkntMq0/POW5Y2BFQuaAeOkNP9RYdf84Era61hXeYBAz/PPelPhzWpsZB/whoNj0VqodidXCU6) format("woff2")}
+@font-face{font-family:"d-mono";font-weight:600;src:url(data:font/woff2;base64,d09GMgABAAAAAATIAA4AAAAACIgAAARwAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcWAZgP1NUQVREAFwRCAqGMIU1ATYCJAMaCxgABCAFhBwHIBsEB1FUUY4CfHFgjDHpQSHUnGQy5NrqUqTpdh1Fj5udhVQh/N74d9BTY799d/dFBPXGkBiiZYvSLERvJiVoiNC1FJUGzf7HzvrBAo40CLHSJGtMoOEK3Z5YSa8/d2R9tUr2dzzPc3vvq4CztERrv+Oj0QYS7sPTTEc6s35H544HFAk+0iiwOTTgY8bW/wCcauf/mrpIb8uPC8FD7HU/H1ZTFNiZrYMSaDqRgQ14INqgON1kzMsPUWQm80rQ2QgElTUSnDr6hiGbA/wDAI68nokws3Bc4NNQyKSqWGMssgDZiIg5zqRhSftoNGAFLFWSAFeMxUAGzCQ8YGi47mBKH4AJAQdUntrItbUPnlDNVX5uX+B6wREABDC1OQPVMon4GZAmBPWEn0iUFwBMPReSAiUCTpwAoMaMAWCJSSMACIABFqSJCKSJ9QOi/AyvaigzKwfXDmIsvM3/s58ksJucyF+DaEcMSAhAFhAF76ALAI2ANAAMyxARi39o55yLx0OutquhMhx2w1kF3smCrPBoZGR55IhzgmXv89athSVjRte1Fyw7lbsmDCxZWWCDCq3jVyEXVoTQ1/uxU35q+bhK1kw7mj1h+OL/pLqAicmNo9dsnh4RKQ+2BZKjZwohpbtXJgK7kw2KNHnAxEHp6FYA4aZh1YXP7/ko0EZJYzWv+vUO17WNKqyohqeOfi63NizRPIUwnn9w6sGM0TBogN10zs9g5lNzei3ITHhusVwUMxkM0ZO+nWMxlp4IUprNBm5opIHd0qiPLvvIUOS3OgLeH3eiw5rMZUP8FcH+ZgEdQnaZJGnhrZdkTcdrlN7m5uP7mbnTBzvr/TGzddbnkIcG2zqUj3sceHmSBVXR+hYjnt7OHGtDTIpbErX67yONPWJvEr6V4ZTJNtu5k5kzshFJdkYR+6i3dSDUX1A2kjO/TLT553kT6Iq64xbvVPde1vxTsyPQ3qz/OKdU3P20LzacPc8itV8v/av6Ju0gffZkR7eXor2gL+rjsOaZNmKWJIrL/oeIFodjjDS1tYVN9jFHS5AIFJYFi2dIoq15hsN6KXuP2WVr8fn9Yre5zr1sBJLCdHMoQumwlDT4urm3ibgjZ34CPnc9pPg4+ziuNRlXCT3hKsDPW3DNJnwFvYSCvz4CoF/3iJYeHjHPt9/aF8Dj2PEE4OmevVze7rtBbTWAlwEg/LZ2c2NwtZJfYCImX5iQACgL1DPpejDc25sEQrqJhFmiFsugrpWqCgD7AO9A0m4DI+oEWD3eAKc+AI9i6hVetelVEoQzDioozixoID9zl2gkNyvQikLbwIqJiOJJmOBMLCSGRZEkOpFiOPQKYVHiSEux2c1W8KIoLI6EZqdZPBrHBYOJiLF2X7EItYSSgllFYi0hJZe2yiBEGCWNh2Y3a3sw9TPgizp474gVSQtYRig7HM5t1KBWfdy52tkCQfndW0mWabRbmGeKcRok9aqtQR3Tfl3DkDyglJgWlKRl3XgLkmKWDKKkLEgTAeD/TAAxAAAA) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,d09GMgABAAAAAAi4AA4AAAAAD6QAAAhfAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgTIcKgZgP1NUQVREAIFcCpJojnYBNgIkA0QLNAAEIAWDQgcgG4cMIwPBxgEQxZwh+asD21j60BcMHCGkEFapjs1kHG85XFsqweHbfMbujf+Ipe/QPcwH+Ju9Xz/NrAFs0nEkDnITDnJdB4oId/fSlmnzKMDEKg4E4rbGNHmCErhehazTQIoH+J+hQm/Hwk0D5v8UQAKG/782g4oLO3MWzVteaJHHYfn+//1c3Z1HS0SxH7FQ7HRKJpS/O717yAR7PMQ9wRJWOZ3SRKXh1UsmdA6hdF41U7BWshIkXNsxjK+0byQgAGIAIwUhGAjh7CJ0WKEM3zmhkNhJpfmQQALwlTFgpRXngwlMEBKLEcgp0AkKd1P9LLHo3chplv+PMmPFBGCUuwBRSEMVGY3inE6NOqUeA53SiGZnsuykRIIGtCYuAqxOJZTnjvUKoD4fzZOJZBt6zbAQHNb5Qq/7VwGSTbxzYDGQXe4AsIkljCgEIIcKnX43I7OUAOD/ONGIMhBIUv0BEJUSCZxBUFBQQ9hiYXIyUiPp9GuYYSNJYPMGC0AgwvY82PtjcMXwkuEnEzsmY6dq96vubz2idsr79J/zrlcnr725QTog2PCyJDv0t/UcMmPM8AbB0vOL51bMNfBP8xv2Xez11avP9ZvDJXsl61um8SbGxnIGAGISiDZAL/4EgLUCYa0SoDLxgtEz4itIpqlZQRglrEIxcmjVbQjRMoNfhMInnIBUpchxmFolYYQiHhHUnlIJkVp3HJ3V5uiCiSCnhOTG/zeNbkXADU137u0JXXM3yg68HKf1Ur4ixnflxnKYwtuW6we3J4WcYlz7U/FOFVyXA3atx5k2rwqBuGzpVxc3bTTUUT3oDqipgtWUkY5J+nfppfpwRA/ShD8+L2DUesivS1r/exrLJIe+h0FFJunv5uLUoqRkYD+gfFsVlLNlMlNfyus7rRlWkdXjMi+93i1vKzB7q4gBi9TByrtXYbOrGA8Kop8B7c+lmzGWsWRBfAIMts8RvSppP+eBpRJzUoFxsWOQcm9K1ic3xcn6KZceyD17eFEuFhGixfe/XHXNfc+2odpPur8i22ccOEXl+b9tcFW11TO58S7+uDtC9JjWGjbUgWgcVJ4Q6mclLI8dtJ3F9TOMpVVt9+S8DhdaZeF0tc/YfMuX/uga7JdKBytKgTLf2l59B+ANpaDj1gAd5itYBK/TF3LpS1LNwjcP71b5xJpF7pEV4+XpTzduTn8yXlYeMeCaXCEVTIds98bHjJbth0yGdwY+ebZ7vtHQoQ30ym1PFNYyQHmUvPJ0QZpg27YUwcm8pcWPGm/Z79nq8+DhNh/nvfxnJGg7SPRsn45ZtkNj07Oqstt9vRU3n1Vvybzlk1jvyS2bF8gtbXBP/HSRBJm2o4V/6AL1whEE3dgxsnLhG1Yrj5fK9LIrR8i10YF9SwKTUhYHzuuLXosIXXrPSI/s0qb0BxiDe7G2iONf47czGAJ1I819DxTZmzW1aA+X8h7wEGHzq2usS7Yt8/iTi8t60B+rmGgMPpLhbNXQpb1Yf+HeBeRR3vlM+EgdDxWCIS70HZMUJgqZ156t171mqDR13WiH1sOVkyuREMJ71rWasshwxyB+9zkcQ6GC0MNucyAwGgh4wvrBogeIdR8TgiErlC5JC5gImBP0qVb5iJbSzDGtRnlxLJ1carzYrXClcN48pCabXze9vjTDacTpV9rFXxeVFW4erz3uWnRGVEm06b2S7CIVed4yFXWp59V7q62O3vS99fbWGJ83hBwpdoY7JpLDXp7LH+GLJkn4C79LP5IbfU8ZeRJUiLEkGrI/tWS4Y/vmp/aJD9/3kCyQWvfWdjSYjVXJf0LdsunX9nv23/P/rBJobP224htiH7kJNYV/ornj3IhE321fhWEJYfytW6nbqP6eStNr789byWmYGZpBcuGYAAxZAeua67exb56DzpuO3L0UfUmooqO2Z9MexGxOfjXyyuKDT0nvQ8u1gb2jA56XiBzvvZwxjsnuTMezn3tc24bWzhXoFNXd5YxwbL4m3XEBeCt4aPss705JhRbafueJi0RZsrI7NQVkYeNLXZtm2HEeZtYxblOa/QMTmuEmlmYJ7tOcbuvie+kPMIybn3tCjgmCySralocWL4OksCu5EJxTD48zfAavaobsHVGU71p+MNP1qKtLxrKDCl1c7/l7r2v68caZ6/hFiXJJ/ib+Bdv0BxhBybK7oWzwXg6Go4FlzGfHNphl7+vRPbEk9Uh2wHCAYWLy6NHeTr3knZuMn0+V/VkYMBZQTb86fLUi8L7cfYtUeaG4l887yTXffHjLc5O1p9WCtu9S+FfWsSHKfMbcIqxj4//KnYrzd55Rs1i/9XW3+SHzp45Tg1NIWPjzy+CXifoMd4zB6mKtXMqmR5FPDLhqPLVrh+nFroYIaAKP+rDLGAEpShpCP4C3mD1b+X7M/cJofgzfoDHgLDmOko2qYYtq2CB7P8WQzE/5MwBw6P9/EQCI+SqtvU8VEiS5X5mcCQB4mBffDwDPHhefhdE/LiOTkQuA8XfE9nfHw4RCD8mxf/CJJW60gngO0MaRTFuIDorMqic/LEqThC9tMzror+BSbF8DZ7SjDS5wRjWaYCSQFSLinUOV4Q3WDASaPiKoBxUEqSrkAmE4AT1wwymQQHI4FU4oHE/24TS4YlcYHTYLvOhEAGJRg3AWpGJA0tJhHcBLgUJVimXJkKkU287VaMWi1hrb7J5yKfkrjWXyualsvnW+QMXSTJQW8lRJZX0qtvCOsnqeLFem4JVnKAtR+pmWzFiz4MiZl1BhQjjfbewCwmWkEnZ+gXzslPxUrasUylQigjVZARkUZDXP3ZbhUwKZxlscIc0ZCgkpr+SeChQ8VQDPk+QWZSmoplTh3z93AAAA) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,d09GMgABAAAAAAPgAA4AAAAAB0QAAAOKAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgSYcKgZgP1NUQVREAEwKg3iDLwE2AiQDHAsQAAQgBYM6ByAb9AUgLgfsxvEbiRVfLPgxnBhWodXSD6gERbUIEUGlC+tZSSeZESKiRzJi+ICYub5yIAyyjwy6WtO9C5GwkcD3IYIyySpCFdnxrCpcx0eVSBGquh7dbCx6Dg+kxdlb9qviMaZbATB16oMEMGCbc8HwAouPadE52k1/pbFxTMFeqdbdAKOssGx2gEkkebFEnGfe6lqvP/+X47sNer5FD+zM/tlaz+9w7Ia1qRdgRmVjgQTcBgk47EUHJHnqxpiAogadPlv3RHQWgeaAJCQNIdBUf4LnL4zlAN2wfWYMkBx+GT3X754aA4uTkmuiB5owoZJMpmMuRpcD9QXApFQgx5NChlwSQiJmlqh0oISwTwGQN95MBwXF2PwzHjsE6eMLKUvJCA8ZtZXz1uez8OudL5+81hY4/0r8CchnFi+jN18IlYT2GP3x3XsHZhD239E5gtpAcq0RRLN0CZmQJBAgIUN7mkB7usmgqUqS9PYh4rqmtxch6rr+sz7X79fvCAAQStASzXEefwFy0EBIQogcy/p2zDtXHQ8cwPfd28WK1ZeBpue/aUe/nWYXvt9N26nyxxrvrxfHfv71P2dD8xZZi3tgyFq1OYv+PEd/UIEZHWhxoNWFB0NHv+lph6zatGp+oB2+ozRpfuNovBxRtmjsAVi9yZkbRkFKF6Fy2I2kDHoRyqEXzLSEJSj/Yebd/r/+jmV23a07Rv2sO6yfjLWx7AKz6SbB8tGp9Rn4QhffOZbnqcfnm7zmrWsi7stflobS9Re33fU2hLX2Vl538ImftLH/4fEK53jjXsNhvDwc64OXDc++/d7bqp69+t73vPJrm+6yTblxacR8w12WzV9vMPQOL4/+Li19+whrT40Pt1sfdPLdI4HnLoqF4n4pPBdGSuXyFKE5qQXgQ4FY1fVx9JObtoqm/19lFfjzxi1bAP/9fdtHYM41LfeVN5CUEgi+S6ciIOE5ZNYwZcXDcVN8tLV43IH8yoFiAHfxjANklPoyQbB9TR2mirwJpgNlwkAbk7S0g8lMnZjOZUxh5h7dMP65K2ge3cE0U8Xgx22DH6N5LVafXafROsGu3kRDKHFUZwQhn8us4QzpzIhd5VSZlTK7EhQqkPAyuRHE0sZlbO8ZqCiN2eolxLgw2OQKJa/uDp3FDPD9g0afVesAlIqIJRQheukms5x0g1T1Yj4OW4xKkVNm1CmowLVrFxg=) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="332" fill="#FFFFFF"/>
+<path d="M258.67 130L276.17 130" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M282.67 130L275.17 133.75L275.17 126.25Z" fill="#8A94A0"/>
+<path d="M517.33 130L534.83 130" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M541.33 130L533.83 133.75L533.83 126.25Z" fill="#8A94A0"/>
+<rect x="32" y="32" width="218.67" height="196" fill="#F4F6F8"/>
+<text x="44" y="54" font-size="13" font-weight="500" class="m" fill="#5B6470">10.0.0.0/16</text>
+<path d="M68.87 116V90H64.23L93.23 74L122.23 90H117.59V116Z" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1" stroke-linejoin="miter"/>
+<text x="93.23" y="134" font-size="12.5" class="m" fill="#2B323B" text-anchor="middle">10.0.0.8</text>
+<path d="M165.08 116V90H160.44L189.44 74L218.44 90H213.8V116Z" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="189.44" y="134" font-size="12.5" font-weight="600" class="m" fill="#1160D8" text-anchor="middle">10.0.1.25</text>
+<path d="M68.87 192V166H64.23L93.23 150L122.23 166H117.59V192Z" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1" stroke-linejoin="miter"/>
+<text x="93.23" y="210" font-size="12.5" class="m" fill="#2B323B" text-anchor="middle">10.0.2.14</text>
+<path d="M165.08 192V166H160.44L189.44 150L218.44 166H213.8V192Z" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1" stroke-linejoin="miter"/>
+<text x="189.44" y="210" font-size="12.5" class="m" fill="#2B323B" text-anchor="middle">10.0.3.7</text>
+<path d="M326.64 222V78H312.67L400 38L487.33 78H473.36V222Z" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="400" y="71" font-size="13" font-weight="600" class="m" fill="#1160D8" text-anchor="middle">10.0.1.25</text>
+<rect x="340.67" y="100" width="118.67" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="352.67" y="123.18" font-size="14" fill="#0B0F17"><tspan font-weight="600" class="m" fill="#0B0F17">:22</tspan>  <tspan fill="#2B323B">SSH</tspan></text>
+<rect x="340.67" y="152" width="118.67" height="36" fill="#EDF3FC" stroke="#1160D8" stroke-width="1"/>
+<text x="352.67" y="175.18" font-size="14" fill="#0B0F17"><tspan font-weight="600" class="m" fill="#1160D8">:80</tspan>  <tspan fill="#2B323B">웹 서버</tspan></text>
+<path d="M290.67 170L334.17 170" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M340.67 170L333.17 173.75L333.17 166.25Z" fill="#1160D8"/>
+<text x="575.33" y="46" font-size="13" fill="#5B6470" text-anchor="middle">보내는 쪽</text>
+<text x="742" y="46" font-size="13" fill="#5B6470" text-anchor="middle">받는 쪽</text>
+<path d="M575.33 58L575.33 228" fill="none" stroke="#C5CCD4" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M742 58L742 228" fill="none" stroke="#C5CCD4" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="658.67" y="80" font-size="14" font-weight="700" fill="#0B0F17" text-anchor="middle">TCP</text>
+<path d="M575.33 102L735.5 102" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M742 102L734.5 105.75L734.5 98.25Z" fill="#5B6470"/>
+<rect x="612.67" y="92" width="20" height="20" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1"/>
+<text x="622.67" y="106.6" font-size="12.5" font-weight="600" class="m" fill="#0B0F17" text-anchor="middle">1</text>
+<rect x="636.67" y="92" width="20" height="20" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1"/>
+<text x="646.67" y="106.6" font-size="12.5" font-weight="600" class="m" fill="#0B0F17" text-anchor="middle">2</text>
+<rect x="660.67" y="92" width="20" height="20" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1"/>
+<text x="670.67" y="106.6" font-size="12.5" font-weight="600" class="m" fill="#0B0F17" text-anchor="middle">3</text>
+<path d="M742 128L580.83 128" fill="none" stroke="#8A94A0" stroke-width="1.25" stroke-linejoin="miter"/>
+<path d="M575.33 128L581.83 124.75L581.83 131.25Z" fill="#8A94A0"/>
+<text x="658.67" y="146" font-size="12.5" fill="#5B6470" text-anchor="middle">도착 확인</text>
+<text x="658.67" y="170" font-size="14" font-weight="700" fill="#0B0F17" text-anchor="middle">UDP</text>
+<path d="M575.33 192L735.5 192" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M742 192L734.5 195.75L734.5 188.25Z" fill="#5B6470"/>
+<rect x="612.67" y="182" width="20" height="20" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<rect x="636.67" y="182" width="20" height="20" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<rect x="660.67" y="182" width="20" height="20" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="32" y="262" font-size="15" font-weight="600" fill="#0B0F17">IP로 서버를 찾고</text>
+<text x="32" y="286" font-size="13.5" fill="#2B323B">IP는 컴퓨터의 주소</text>
+<text x="32" y="307" font-size="13" fill="#8A94A0">외울 땐 ZIP, 집</text>
+<text x="290.67" y="262" font-size="15" font-weight="600" fill="#0B0F17">포트로 프로그램을 찾고</text>
+<text x="290.67" y="286" font-size="13.5" fill="#2B323B">포트는 컴퓨터 안의 방</text>
+<text x="290.67" y="307" font-size="13" fill="#8A94A0">외울 땐 Part, 방</text>
+<text x="549.33" y="262" font-size="15" font-weight="600" fill="#0B0F17">TCP나 UDP로 주고받는다</text>
+<text x="549.33" y="286" font-size="13.5" fill="#2B323B">TCP는 정확하게, UDP는 빠르게</text>
+<text x="549.33" y="307" font-size="13" fill="#8A94A0">TCP의 C는 Control</text>
 </svg>
