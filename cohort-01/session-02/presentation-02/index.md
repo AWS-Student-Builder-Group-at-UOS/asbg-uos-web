@@ -2,8 +2,10 @@
 date: 2026-09-29
 title:
   ko: 3-Tier 아키텍처란?
+  en: What Is a 3-Tier Architecture?
 description:
   ko: "서버 한 대에 웹, 애플리케이션, DB를 모두 올려도 웹사이트는 돌아갑니다. 그런데도 역할별로 실행 환경을 나누는 이유를 접근 제한, 계층별 확장, 자원과 변경의 영향 분리로 정리하고, 모든 서비스에 필요한 건 아닌 이유까지 짚었습니다. 이어서 EC2 한 대에 Nginx를 올려 나만의 웹페이지를 배포하고, 보안 그룹 규칙 하나로 접속이 막히고 열리는 것까지 확인하는 실습 과정을 정리했습니다."
+  en: "A website runs fine with the web server, application, and database all on one server. So why split them into separate environments by role? Access control, scaling each tier on its own, and keeping resources and changes contained, plus why not every service needs it. Then the hands-on: deploying your own web page with Nginx on a single EC2 instance, and watching one security group rule block access and open it again."
 keywords: [3-Tier, EC2, Nginx]
 speakers: [hwang-sujin]
 thumbnail: img/thumbnail.svg

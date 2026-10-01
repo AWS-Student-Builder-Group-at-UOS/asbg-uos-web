@@ -2,8 +2,10 @@
 date: 2026-09-29
 title:
   ko: 네트워크 기초부터 AWS 서비스 이해까지
+  en: From Network Basics to AWS Services
 description:
   ko: "IP와 포트, TCP와 UDP, CIDR까지 꼭 필요한 네트워크 용어만 짚은 뒤, 'AWS 안에 VPC, VPC 안에 서브넷, 서브넷 안에 EC2'라는 그림 위에서 퍼블릭 서브넷과 프라이빗 서브넷에 무엇을 두는지, 요청이 어떤 길로 들어오고 나가는지, NACL과 보안 그룹이 각각 어디를 지키는지까지 정리했습니다."
+  en: "Only the network terms you really need, IP and ports, TCP and UDP, and CIDR, then one picture to hang AWS on: a VPC inside AWS, subnets inside the VPC, EC2 inside the subnets. On top of it, what goes in public and private subnets, which paths requests take in and out, and what NACLs and security groups each guard."
 keywords: [Network Basics, VPC, Subnet]
 speakers: [lee-chaewoo]
 thumbnail: img/thumbnail.svg
