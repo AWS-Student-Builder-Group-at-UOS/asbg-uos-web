@@ -1,66 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 456" role="img" aria-label="EC2를 만드는 순서는 VPC, 인터넷 게이트웨이, 서브넷, 보안 그룹, EC2로 바깥에서 안으로 들어가고, 지우는 순서는 그 역순이다. 서울 리전 기본 VPC가 앞의 세 단계를 이미 갖추고 있어 실습은 보안 그룹부터 직접 만들었다">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="456" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="454" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">만들 땐 바깥에서 안으로, 지울 땐 안에서 바깥으로</text>
-<text x="36" y="74" font-size="15" fill="#35526A">해체는 조립의 역순</text>
-
-<rect x="36" y="130" width="384" height="260" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<rect x="46" y="140" width="20" height="20" fill="#1160D8"/>
-<text x="56" y="154" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">1</text>
-<text x="74" y="155" font-size="13" font-weight="700" fill="#123249">VPC</text>
-
-<rect x="138" y="112" width="180" height="36" fill="#FFFFFF" stroke="#79CDFF"/>
-<rect x="148" y="120" width="20" height="20" fill="#1160D8"/>
-<text x="158" y="134" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">2</text>
-<text x="176" y="135" font-size="13" font-weight="700" fill="#123249">인터넷 게이트웨이</text>
-
-<rect x="60" y="170" width="336" height="200" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<rect x="70" y="180" width="20" height="20" fill="#1160D8"/>
-<text x="80" y="194" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">3</text>
-<text x="98" y="195" font-size="13" font-weight="700" fill="#123249">서브넷</text>
-
-<rect x="84" y="210" width="288" height="140" fill="none" stroke="#1160D8"/>
-<rect x="94" y="220" width="20" height="20" fill="#1160D8"/>
-<text x="104" y="234" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">4</text>
-<text x="122" y="235" font-size="13" font-weight="700" fill="#123249">보안 그룹</text>
-
-<rect x="148" y="256" width="160" height="64" fill="#DCEFFF" stroke="#1160D8"/>
-<rect x="198" y="278" width="20" height="20" fill="#1160D8"/>
-<text x="208" y="292" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">5</text>
-<text x="226" y="294" font-size="16" font-weight="700" fill="#123249">EC2</text>
-
-<text x="520" y="110" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">만들 때</text>
-<text x="520" y="127" font-size="12" text-anchor="middle" fill="#35526A">바깥 → 안</text>
-<text x="836" y="110" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">지울 때</text>
-<text x="836" y="127" font-size="12" text-anchor="middle" fill="#35526A">안 → 바깥</text>
-<line x1="520" y1="140" x2="520" y2="390" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<line x1="836" y1="392" x2="836" y2="142" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="508" y="182" font-size="12" font-weight="700" text-anchor="end" fill="#1160D8">처음</text>
-<text x="508" y="376" font-size="12" text-anchor="end" fill="#35526A">마지막</text>
-<text x="848" y="376" font-size="12" font-weight="700" fill="#1160D8">처음</text>
-<text x="848" y="182" font-size="12" fill="#35526A">마지막</text>
-<rect x="548" y="136" width="264" height="144" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="556" y="153" font-size="12" fill="#35526A">서울 리전 기본 VPC에 이미 있음</text>
-<rect x="556" y="162" width="248" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<rect x="564" y="167" width="20" height="20" fill="#1160D8"/><text x="574" y="181" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">1</text>
-<text x="594" y="182" font-size="13" font-weight="700" fill="#123249">VPC</text>
-<rect x="556" y="200" width="248" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<rect x="564" y="205" width="20" height="20" fill="#1160D8"/><text x="574" y="219" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">2</text>
-<text x="594" y="220" font-size="13" font-weight="700" fill="#123249">인터넷 게이트웨이</text>
-<rect x="556" y="238" width="248" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<rect x="564" y="243" width="20" height="20" fill="#1160D8"/><text x="574" y="257" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">3</text>
-<text x="594" y="258" font-size="13" font-weight="700" fill="#123249">서브넷</text>
-<rect x="548" y="292" width="264" height="104" fill="none" stroke="#1160D8"/>
-<text x="556" y="309" font-size="12" font-weight="700" fill="#1160D8">이번 실습에서 직접 만든 것</text>
-<rect x="556" y="318" width="248" height="30" fill="#DCEFFF" stroke="#1160D8"/>
-<rect x="564" y="323" width="20" height="20" fill="#1160D8"/><text x="574" y="337" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">4</text>
-<text x="594" y="338" font-size="13" font-weight="700" fill="#123249">보안 그룹</text>
-<rect x="556" y="356" width="248" height="30" fill="#DCEFFF" stroke="#1160D8"/>
-<rect x="564" y="361" width="20" height="20" fill="#1160D8"/><text x="574" y="375" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">5</text>
-<text x="594" y="376" font-size="13" font-weight="700" fill="#123249">EC2</text>
-
-<text x="36" y="426" font-size="14" font-weight="700" fill="#1160D8">안에 리소스가 남아 있으면 바깥 리소스는 지워지지 않는다</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 396" role="img" aria-label="EC2를 만드는 순서는 VPC, 인터넷 게이트웨이, 서브넷, 보안 그룹, EC2로 바깥에서 안으로 들어가고, 지우는 순서는 그 역순이다. 서울 리전 기본 VPC가 앞의 세 단계를 이미 갖추고 있어 실습은 보안 그룹부터 직접 만들었다">
+<style>
+@font-face{font-family:"d-mono";font-weight:600;src:url(data:font/woff2;base64,d09GMgABAAAAAAOwAA4AAAAABvwAAANYAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcKgZgP1NUQVREADwRCAqEAIMpATYCJAMSCxAABCAFhBwHIBuiBQCO0ScjmMsRxxyg6omK56lh7v29TenFxUZWF5euaKrKZsGexIJmPDjGIzEKzihgffi87P2kEDJyZWWENF3hRJxInI3z/t+pmsN4APMx4kEcawkdcLINAz4m93kxKPWCYWveINNHjCnubpXeKhi2KgG5qKhrg5cKrQGCYfvkKMy0gNfDvB1RSCSrpSticKd01xRcLucRUlIElGDIZMcPfndVWodL2JTe+fb/NfWELAQEyjx1A5s8RAwqmEVhF/XeYOQJePFm2EokIKpJBLJGdQE6okQKIKCgg1m0YJabQ9CvimJTemvYlNxa67VHAoi0ZgIxAMYxhM+AXwAqKIqIItTq6ybU+dKSdk9/jxF/Tz9/2of4Lrp7NL5ufsQfIx9fvuw8+/Bg5h6447PwGdPx8qXvoufP8eHZs7Zbzy5F+eNp90VH5+bnvovuXiVzj9zxkeA52oPKuhcXtRHmjj/xIwZfyhfDno3QAt4LYSMemy+Noy1FdfT6Y/RGuvbh3WT/ZfKaE8tP9CerW9Tw6H173ib3GFObbzRwPznaa80sl5VN49PXCxOXREvyi4uXzPHwMc+bOaXelJo+UJAlamopq5BcrMlKCrNykE5Mme5y65vh0VmmSRFvZ2Sy36fkmYbMROr2dpIjJWOgcqaHd8dUg7XSqMnsyC9tbqr3D233HhprKCsc4lNg/FRlzLy76Ge7vX1l3f8nB1BOVJvT8nurZ3sOXU7NKiovVt0flIiPPphT1avWcJqYN+v/Rf4WVLAFmdaK6nyHMx/AXwT5nuo4FvDicWDePy+a/gh/uvZ0AvTecI+w2V6WLJoB9CsgfEWvPCBIDPqYEjAlf6XYK2m0tBhpIBhwpFMR7kZ0QUv1Bl+BPcSsHVCM+wEdx25BtRtAn+WI6X7bKWAQGM0QxCMoVpDALzOekMIn81HKwWkqjomBEY+RIkmKNIw2RixGJZbJeHmmCcfBjDWKxyg2gWfkwBnHkDPi8ZzG5dDRMTCh8AkjtEbRuzY6k7A4o1hWrmaZ09BzsONp2UPFGcx6BOeo5VMGE6yGcZJpZUqSJFeHFqXq5HLVPqKxavUxZpQd2PuZJkzKyNc0B+pUXvf7tmLZmJRwsBpTjTfMymRUCwebYXY00L5I+T8AAAA=) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,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) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="396" fill="#FFFFFF"/>
+<rect x="220" y="52" width="360" height="266" fill="#F4F6F8" stroke="#C5CCD4" stroke-width="1"/>
+<rect x="234" y="66" width="20" height="20" fill="#0B0F17"/>
+<text x="244" y="80.6" font-size="13" font-weight="600" class="m" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="262" y="80" font-size="14.5" font-weight="700" fill="#0B0F17">VPC</text>
+<rect x="405.87" y="34" width="158.13" height="36" fill="#F4F6F8" stroke="#C5CCD4" stroke-width="1"/>
+<rect x="415.87" y="43" width="20" height="20" fill="#0B0F17"/>
+<text x="425.87" y="57.6" font-size="13" font-weight="600" class="m" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="443.87" y="57.18" font-size="14" font-weight="600" fill="#0B0F17">인터넷 게이트웨이</text>
+<rect x="242" y="102" width="316" height="198" fill="#E8ECF0"/>
+<rect x="256" y="116" width="20" height="20" fill="#0B0F17"/>
+<text x="266" y="130.6" font-size="13" font-weight="600" class="m" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="284" y="130" font-size="14.5" font-weight="700" fill="#0B0F17">서브넷</text>
+<rect x="264" y="150" width="272" height="132" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<rect x="278" y="164" width="20" height="20" fill="#1160D8"/>
+<text x="288" y="178.6" font-size="13" font-weight="600" class="m" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="306" y="178" font-size="14.5" font-weight="700" fill="#1160D8">보안 그룹</text>
+<rect x="325" y="202" width="150" height="50" fill="#EDF3FC" stroke="#1160D8" stroke-width="1.5"/>
+<rect x="370" y="218" width="20" height="20" fill="#1160D8"/>
+<text x="380" y="232.6" font-size="13" font-weight="600" class="m" fill="#FFFFFF" text-anchor="middle">5</text>
+<text x="396" y="232.55" font-size="15" font-weight="700" fill="#1160D8">EC2</text>
+<path d="M176 58L176 245.5" fill="none" stroke="#0B0F17" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M176 252L172.25 244.5L179.75 244.5Z" fill="#0B0F17"/>
+<text x="160" y="72" font-size="14.5" font-weight="700" fill="#0B0F17" text-anchor="end">만들 때</text>
+<text x="160" y="92" font-size="13" fill="#5B6470" text-anchor="end">바깥에서 안으로</text>
+<path d="M624 252L624 64.5" fill="none" stroke="#0B0F17" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M624 58L627.75 65.5L620.25 65.5Z" fill="#0B0F17"/>
+<text x="640" y="72" font-size="14.5" font-weight="700" fill="#0B0F17">지울 때</text>
+<text x="640" y="92" font-size="13" fill="#5B6470">안에서 바깥으로</text>
+<text x="640" y="226" font-size="12" fill="#8A94A0">안에 리소스가 남아 있으면</text>
+<text x="640" y="243" font-size="12" fill="#8A94A0">바깥은 지워지지 않는다</text>
+<rect x="220" y="341" width="16" height="14" fill="#F4F6F8" stroke="#C5CCD4" stroke-width="1"/>
+<text x="244" y="352" font-size="13" fill="#0B0F17"><tspan font-weight="600" fill="#5B6470">1~3  </tspan><tspan fill="#2B323B">서울 리전 기본 VPC에 이미 있다</tspan></text>
+<rect x="469.91" y="341" width="16" height="14" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<text x="493.91" y="352" font-size="13" fill="#0B0F17"><tspan font-weight="600" fill="#1160D8">4, 5  </tspan><tspan fill="#2B323B">이번 실습에서 직접 만든 것</tspan></text>
 </svg>

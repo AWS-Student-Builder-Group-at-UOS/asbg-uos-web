@@ -1,61 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 376" role="img" aria-label="사용자, 외부 로드밸런서, WEB, APP, DB가 차례로 이어지고, 각 계층의 보안 그룹은 바로 앞 계층에서 오는 통신만 허용해 사용자가 DB에 직접 접근할 수 없다">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="376" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="374" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">계층마다 보안 그룹, 바로 앞 계층만 허용</text>
-<text x="36" y="74" font-size="15" fill="#35526A">출발지와 포트를 계층마다 따로 정한다</text>
-
-<rect x="36" y="126" width="84" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="78" y="148" font-size="12" text-anchor="middle" fill="#35526A">사용자</text>
-<text x="78" y="168" font-size="14" font-weight="700" text-anchor="middle" fill="#123249">브라우저</text>
-
-<rect x="136" y="100" width="185" height="96" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="146" y="116" font-size="12" fill="#35526A">보안 그룹</text>
-<rect x="158" y="126" width="141" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="228" y="150" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">외부 로드밸런서</text>
-<text x="228" y="169" font-size="13" text-anchor="middle" fill="#35526A">ALB</text>
-
-<rect x="337" y="100" width="185" height="96" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="347" y="116" font-size="12" fill="#35526A">보안 그룹</text>
-<rect x="359" y="126" width="141" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="429" y="150" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">WEB</text>
-<text x="429" y="169" font-size="13" text-anchor="middle" fill="#35526A">Nginx</text>
-
-<rect x="538" y="100" width="185" height="96" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="548" y="116" font-size="12" fill="#35526A">보안 그룹</text>
-<rect x="560" y="126" width="141" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="630" y="150" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">APP</text>
-<text x="630" y="169" font-size="13" text-anchor="middle" fill="#35526A">Spring Boot</text>
-
-<rect x="739" y="100" width="185" height="96" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="749" y="116" font-size="12" fill="#35526A">보안 그룹</text>
-<rect x="761" y="126" width="141" height="54" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="831" y="150" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">DB</text>
-<text x="831" y="169" font-size="13" text-anchor="middle" fill="#35526A">MySQL</text>
-
-<line x1="120" y1="153" x2="154" y2="153" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="299" y1="153" x2="355" y2="153" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="500" y1="153" x2="556" y2="153" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="701" y1="153" x2="757" y2="153" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-
-<rect x="136" y="206" width="185" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="150" y="226" font-size="12" font-weight="700" fill="#1160D8">허용</text>
-<text x="150" y="246" font-size="13" fill="#123249">사용자의 웹 접속</text>
-<rect x="337" y="206" width="185" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="351" y="226" font-size="12" font-weight="700" fill="#1160D8">허용</text>
-<text x="351" y="246" font-size="13" fill="#123249">외부 LB에서 오는 요청</text>
-<rect x="538" y="206" width="185" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="552" y="226" font-size="12" font-weight="700" fill="#1160D8">허용</text>
-<text x="552" y="246" font-size="13" fill="#123249">WEB·내부 LB에서 오는 요청</text>
-<rect x="739" y="206" width="185" height="52" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="753" y="226" font-size="12" font-weight="700" fill="#1160D8">허용</text>
-<text x="753" y="246" font-size="13" fill="#123249">APP에서 오는 DB 포트</text>
-
-<path d="M78 180V306H831V290" fill="none" stroke="#A9BCCB" stroke-width="2" stroke-dasharray="6 4"/>
-<path d="M825 272L837 284M837 272L825 284" fill="none" stroke="#A9BCCB" stroke-width="2.5"/>
-<text x="816" y="294" font-size="13" text-anchor="end" fill="#35526A">DB 직접 접근은 막힘</text>
-
-<text x="36" y="348" font-size="14" font-weight="700" fill="#1160D8">보안 그룹으로 필요한 통신만 허용한다</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 276" role="img" aria-label="사용자, 외부 로드밸런서, WEB, APP, DB가 차례로 이어지고, 각 계층의 보안 그룹은 바로 앞 계층에서 오는 통신만 허용해 사용자가 DB에 직접 접근할 수 없다">
+<style>
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,d09GMgABAAAAAAQsAA0AAAAAB4gAAAPZAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcKgZgP1NUQVREAFQKhWSFGAE2AiQDEgsOAAQgBYNCByAbRwbIjsK22TMiOWWNP5es3PHw/di3c99XjWtadzaZxAWveHJPTDdLDe9kjSaZpMfzt5pXC6ElEfxrZZ6I6gT8zzX1/jUuWq9FT2lZYBWYIEd7A5wPpPyer6mKo0A20eGIaNranOKiDAwfxqXx4Xg+mNxYoKyHDrQWHJkIYrLw/z+AxIwxhetM5hCxmAtqE2BwNr8GlwrC5KayF4GHQ5Je6sJ1748MkiwiAIDV7UkJcBgIr06Lzv5TAPwb0DsgILuQWw0MkBJCUUIXDiNwZ+mMYgTsP0XEkDwkqwlBlHCpADJCkkCAhAy68AJdQpaAqqIka+DF+pNrTvXzTv//D8pn/j/0SXZLdy029wJEtpB3oip6gLcAcRQAZEEeWQU5+eyhk5ISAjn3Yx8OlqqqoPI85XIz/b5xIzFZcPs2wkvieO94SYn8W7esUiFRJVkhhaTLJO5AwTkZtRJVfXjIg/rrDyQ6H/FRg+Cx5HXZq4jHk+wSCNrh8yV+J/caRGBCkuB0fl8Tya+qqFJAip94Hch1lC8vSGdI4CVnobxcvA3jAHx/pQo7OAA/4Ab8jFyvcIv4AT/vx+TNqyWdD61nYju29fpfAM7KWr0deiZLDMfTX1r8WzaPR90y5FZd09uiZ+uUeQ9E6/daRY1hB8JgcuP96PudUfei7zXvoj2A7ZiguF8tbLifwRjuU4s4fkIjYqTP6iP9GmEnmlZt1c8IsrdH3TbDpoYdhtizfpNUi5xh/MwEmzkzbhB76rRR7Ow4kz07YRR/unXdflNihIsLMXy/SVvLPhNyuM9Fjthn2gKTJ0era56bjoc2buzyv/Kz0G7y3eZ3Vr0s3QtvOnyqN46HPNaoYB58t+VdxejjnY/VkjM21lSF7Zsj+Oqo2TazCZNjnLwjleX5R45xKytOcAuOlFdekx3nVHrvp3u4soKDXTG6q48f1dUD88t6sKgefpzOe0n3nGlf7oBo/U66dm3Xzl0ATyAQmzTY4u8f5ch6/hLDiwG852T3Ar48LrwIKv88CwxRDEBBAsEPjBcFmmwLQOTsmPQeeg7yP6jzosIHQt46I6isYWVX4EVWHJgD5sIYTy6p28tlzMhvzGYuZ8FaNm/aizoEqqEFThyaYfq88qTCVYA8+SoUYqJjKEawBgbYs2XPAUEEJgxBqAoluOissDBxxSpEVYyKi4KoEAVBMu1JRESCgfhvpSuBISpkx5oDW248BEiUJIFHizIh+d1CRZjycBEQCImlCvkYLCdwYM0eAVP03549J2btzaz2TKSgfkggwT+Jg8lfHgxFmGJEGCYyPPDvny4Q) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,d09GMgABAAAAAATYAA4AAAAACPwAAASCAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgUAcKgZgP1NUQVREAGwKhmCFRgE2AiQDKgsYAAQgBYM6ByAbUwcgHoXpRrs1TbK+ZOIGAU+n/by3m7g8aXtEKuGu8FbMl5D7Ak9QWgK8dTbYlGJitEmNXlXxW//y3/8AhELn/5jp/ho3C27Rgc0sIq2KmrJoXD7BvVG1aKUNOC/wiOjUjTEEjUJ8u+9eE2olCMAOAEgEEjMCAViZzUEmJGUU4KlX97bjiQrwy4hqre9uxwwNj4pFIrCMBMxIUqhAngam4di3/YEDRjMKfu7/bpWjpY78pQGGS0wIFECiYsBoNknETaa8AuNc81ETFTBYNb4lv8AABof6F/CkSiN/5055l4LpmkAIpGP8LMznG7Q7aHpmxBeUf4k4BggANcrgAjR2BAIzEhhLArPJgcamXgE072pd+CBQ8SYAhE1+ASgIJBIAAYAEFGAsBQGMpVICfHlTkGjiJMqQo/hc99PgKKCJlWB+xNGdvvWNz3zs3d0e+gACIQhsfP14MBkcAHETAKACYAQkyrbbVAwq2pnVsTbbeNVunOjdV6remp/V6ZTDQ0TPsLDN6TFkH7YODuAdnF53rl3LdWvWFLC2DrF6Hl+/Xly/bp3VLm3bC8Tq9FA87nzGgs/OjVy3YQci7U4Ppw+e0ouE3gaxufIDm6x2MVBlNbtrh2wkHlwDxu4cXm7QarANewkPo6/J1ic8cVbFdjmA8Y516w7mFW9bs2YN161da0vTDVmdtgu7dxcXrtmxo6DIcqveBpJoMS1qAwW8AlTwskyaEBKoN83Clui6YUahK378mmr7+D3VZ0IOGw5j+tAV8+T6Cv2Vzry4a3vzMrw985T7i4ufaurten9Hw7MNV59rX+yfExIRulJ3pBpuds/PrVsSkh8atCJr1cKEo637EbL1rk9rK/967rmKvz6tvrNX3rgp4g1X4o6dqxOj3tz832IMrsUTtfvjwnOr2s63Vb9w4a/Tu/idjgtP6hcX9MKh4aGt991/1aYjwy/ppyKL+yNC29LSQvX+sJL/312MHOdK9vI/4+H94Jmp3i+et3v5n0+etNY1zyf+C5tP/hdzaR03NMEvTbB4Sfdz7hnv17v/ZfY7+8qV4q/dX7O8F4yemKXt6brht+uvJ/89nffds7/zxsZEq/1d96Rs6gqIbUhOohZdQampvUExDUnJdPi9AalhH25yY5rlzv1hl256eOIHE30+/mTmfTMrLBuZ9gDw9Q4EILInr/44rWilV8RZs2IGYGdb1T0A+3Z3/4XfF2HaatIBExIAAZ+z0owDml8VBDKt1QyPiY1g+IqFaQLO9BTO+CGBKsiV31BG8MuHCBRFADYcjAAIMMzKNRSEagEi0CUJ5oogSTypISmE6SxW3UgGorxGNBLgQJgAu5gKkg2zmL+/PtjFcuJ16DSkW7NGTXppVqNxWM7BnyZdM50mxZA+7Rot0aJZuxzd6vWq165OtW51NEX5b21WrYauXp56jfroqnVbYSl/y4UKF69AoXzhwdJnUHRvtx7NOrTTMG0y3ZBOTXpo/C3loJmfgKPxQAsmKbdkuaZi9Rvz6+J00NVJ1auarlktBQBGRrgTAQ==) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="276" fill="#FFFFFF"/>
+<rect x="32" y="108" width="70" height="56" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="67" y="132.54" font-size="14" font-weight="600" fill="#0B0F17" text-anchor="middle">사용자</text>
+<text x="67" y="149.82" font-size="12" fill="#5B6470" text-anchor="middle">브라우저</text>
+<rect x="121" y="92" width="146" height="88" fill="none" stroke="#1160D8" stroke-width="1.25" stroke-dasharray="5 3"/>
+<rect x="133" y="108" width="122" height="56" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="194" y="133.49" font-size="14.5" font-weight="700" fill="#0B0F17" text-anchor="middle">외부 LB</text>
+<text x="194" y="149.24" font-size="12.5" fill="#5B6470" text-anchor="middle">ALB</text>
+<path d="M102 136L126.5 136" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M133 136L125.5 139.75L125.5 132.25Z" fill="#5B6470"/>
+<text x="121" y="204" font-size="12" font-weight="600" fill="#1160D8">허용</text>
+<text x="121" y="224" font-size="13" fill="#2B323B">사용자의 웹 접속</text>
+<rect x="286" y="92" width="146" height="88" fill="none" stroke="#1160D8" stroke-width="1.25" stroke-dasharray="5 3"/>
+<rect x="298" y="108" width="122" height="56" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="359" y="133.49" font-size="14.5" font-weight="700" fill="#0B0F17" text-anchor="middle">WEB</text>
+<text x="359" y="149.24" font-size="12.5" fill="#5B6470" text-anchor="middle">Nginx</text>
+<path d="M255 136L291.5 136" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M298 136L290.5 139.75L290.5 132.25Z" fill="#5B6470"/>
+<text x="286" y="204" font-size="12" font-weight="600" fill="#1160D8">허용</text>
+<text x="286" y="224" font-size="13" fill="#2B323B">외부 LB에서 온 요청</text>
+<rect x="451" y="92" width="146" height="88" fill="none" stroke="#1160D8" stroke-width="1.25" stroke-dasharray="5 3"/>
+<rect x="463" y="108" width="122" height="56" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="524" y="133.49" font-size="14.5" font-weight="700" fill="#0B0F17" text-anchor="middle">APP</text>
+<text x="524" y="149.24" font-size="12.5" fill="#5B6470" text-anchor="middle">Spring Boot</text>
+<path d="M420 136L456.5 136" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M463 136L455.5 139.75L455.5 132.25Z" fill="#5B6470"/>
+<text x="451" y="204" font-size="12" font-weight="600" fill="#1160D8">허용</text>
+<text x="451" y="224" font-size="13" fill="#2B323B">WEB이나 내부 LB에서</text>
+<text x="451" y="243" font-size="13" fill="#2B323B">온 요청</text>
+<rect x="616" y="92" width="146" height="88" fill="none" stroke="#1160D8" stroke-width="1.25" stroke-dasharray="5 3"/>
+<rect x="628" y="108" width="122" height="56" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="689" y="133.49" font-size="14.5" font-weight="700" fill="#0B0F17" text-anchor="middle">DB</text>
+<text x="689" y="149.24" font-size="12.5" fill="#5B6470" text-anchor="middle">MySQL</text>
+<path d="M585 136L621.5 136" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M628 136L620.5 139.75L620.5 132.25Z" fill="#5B6470"/>
+<text x="616" y="204" font-size="12" font-weight="600" fill="#1160D8">허용</text>
+<text x="616" y="224" font-size="13" fill="#2B323B">APP에서 온 DB 포트 통신</text>
+<rect x="32" y="30" width="16" height="12" fill="none" stroke="#1160D8" stroke-width="1.25" stroke-dasharray="5 3"/>
+<text x="56" y="41" font-size="12.5" fill="#1160D8">보안 그룹</text>
+<path d="M67 108V66H689V82" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<path d="M683.5 80.5L694.5 91.5M694.5 80.5L683.5 91.5" fill="none" stroke="#0B0F17" stroke-width="2"/>
+<text x="675" y="58" font-size="12.5" fill="#5B6470" text-anchor="end">사용자가 DB로 바로 가는 길은 막혀 있다</text>
 </svg>

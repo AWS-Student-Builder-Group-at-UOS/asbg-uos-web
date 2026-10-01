@@ -1,61 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 390" role="img" aria-label="서버 한 대에 WEB, APP, DB가 CPU·메모리·디스크를 함께 쓰는 구성과, 세 역할을 Presentation, Application, Data 계층으로 나눠 각자 자원을 갖는 3-Tier 구성의 비교">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="390" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="388" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">한 대에 모으기 vs 역할별로 나누기</text>
-<text x="36" y="74" font-size="15" fill="#35526A">같은 세 역할, 자원을 함께 쓰느냐 따로 쓰느냐</text>
-
-<text x="36" y="112" font-size="15" font-weight="700" fill="#123249">서버 한 대</text>
-<rect x="36" y="128" width="224" height="192" fill="#FFFFFF" stroke="#79CDFF"/>
-<rect x="52" y="144" width="192" height="32" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="66" y="165" font-size="14"><tspan font-weight="700" fill="#123249">WEB</tspan><tspan fill="#35526A"> · Nginx</tspan></text>
-<rect x="52" y="184" width="192" height="32" fill="#FFFFFF" stroke="#1160D8"/>
-<text x="66" y="205" font-size="14"><tspan font-weight="700" fill="#123249">APP</tspan><tspan fill="#35526A"> · Spring Boot</tspan></text>
-<rect x="52" y="224" width="192" height="32" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="66" y="245" font-size="14"><tspan font-weight="700" fill="#123249">DB</tspan><tspan fill="#35526A"> · MySQL</tspan></text>
-<rect x="36" y="272" width="224" height="48" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="52" y="292" font-size="13" font-weight="700" fill="#123249">함께 쓰는 자원</text>
-<text x="52" y="310" font-size="13" fill="#35526A">CPU · 메모리 · 디스크</text>
-<text x="36" y="358" font-size="13" font-weight="700" fill="#1160D8">APP이 바쁘면 WEB·DB도 느려진다</text>
-
-<line x1="278" y1="236" x2="322" y2="236" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-
-<text x="340" y="112" font-size="15" font-weight="700" fill="#123249">3-Tier</text>
-<rect x="364" y="128" width="120" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="424" y="148" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">사용자 브라우저</text>
-<line x1="424" y1="158" x2="424" y2="184" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-
-<rect x="340" y="188" width="168" height="110" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="354" y="210" font-size="12" font-weight="700" fill="#1160D8">Presentation Tier</text>
-<text x="354" y="234" font-size="16" font-weight="700" fill="#123249">WEB</text>
-<text x="354" y="254" font-size="13" fill="#35526A">Nginx</text>
-<rect x="340" y="268" width="168" height="30" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="354" y="287" font-size="13" fill="#35526A">CPU · 메모리 · 디스크</text>
-<text x="340" y="320" font-size="13" fill="#35526A">화면과 리소스 제공</text>
-
-<line x1="508" y1="236" x2="544" y2="236" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-
-<rect x="548" y="188" width="168" height="110" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="562" y="210" font-size="12" font-weight="700" fill="#1160D8">Application Tier</text>
-<text x="562" y="234" font-size="16" font-weight="700" fill="#123249">APP</text>
-<rect x="603" y="221" width="50" height="18" fill="#FFFFFF" stroke="#1160D8"/>
-<text x="628" y="234" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">≈ WAS</text>
-<text x="562" y="254" font-size="13" fill="#35526A">Spring Boot</text>
-<rect x="548" y="268" width="168" height="30" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="562" y="287" font-size="13" fill="#35526A">CPU · 메모리 · 디스크</text>
-<text x="548" y="320" font-size="13" fill="#35526A">업무 규칙 실행</text>
-
-<line x1="716" y1="236" x2="752" y2="236" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-
-<rect x="756" y="188" width="168" height="110" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="770" y="210" font-size="12" font-weight="700" fill="#1160D8">Data Tier</text>
-<text x="770" y="234" font-size="16" font-weight="700" fill="#123249">DB</text>
-<text x="770" y="254" font-size="13" fill="#35526A">MySQL</text>
-<rect x="756" y="268" width="168" height="30" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="770" y="287" font-size="13" fill="#35526A">CPU · 메모리 · 디스크</text>
-<text x="756" y="320" font-size="13" fill="#35526A">저장 · 조회 · 수정</text>
-
-<text x="340" y="358" font-size="13" font-weight="700" fill="#1160D8">계층마다 별도 실행 환경 · 필요하면 여러 대</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 336" role="img" aria-label="서버 한 대에 WEB, APP, DB가 CPU·메모리·디스크를 함께 쓰는 구성과, 세 역할을 Presentation, Application, Data 계층으로 나눠 각자 자원을 갖는 3-Tier 구성의 비교">
+<style>
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,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) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="336" fill="#FFFFFF"/>
+<text x="32" y="42" font-size="16" font-weight="700" fill="#0B0F17">서버 한 대</text>
+<text x="432" y="42" font-size="16" font-weight="700" fill="#0B0F17">3-Tier</text>
+<rect x="32" y="58" width="304" height="226" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<rect x="48" y="74" width="272" height="40" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="62" y="99.55" font-size="15" fill="#0B0F17"><tspan font-weight="700" fill="#0B0F17">WEB</tspan>  <tspan font-size="13" fill="#5B6470">Nginx</tspan></text>
+<rect x="48" y="126" width="272" height="40" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<text x="62" y="151.55" font-size="15" fill="#0B0F17"><tspan font-weight="700" fill="#1160D8">APP</tspan>  <tspan font-size="13" fill="#5B6470">Spring Boot</tspan></text>
+<rect x="48" y="178" width="272" height="40" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="62" y="203.55" font-size="15" fill="#0B0F17"><tspan font-weight="700" fill="#0B0F17">DB</tspan>  <tspan font-size="13" fill="#5B6470">MySQL</tspan></text>
+<rect x="48" y="236" width="272" height="32" fill="#F4F6F8"/>
+<text x="184" y="256.81" font-size="13" fill="#2B323B" text-anchor="middle">CPU, 메모리, 디스크를 함께 쓴다</text>
+<text x="32" y="312" font-size="13.5" fill="#5B6470">APP이 바쁘면 WEB과 DB도 느려진다</text>
+<path d="M356 171L405.5 171" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M412 171L404.5 174.75L404.5 167.25Z" fill="#8A94A0"/>
+<text x="384" y="160" font-size="12.5" fill="#5B6470" text-anchor="middle">나누면</text>
+<rect x="432" y="58" width="336" height="56" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<text x="448" y="82" font-size="15" fill="#0B0F17"><tspan font-weight="700">WEB</tspan>  <tspan font-size="13" fill="#5B6470">Nginx</tspan></text>
+<text x="448" y="102" font-size="12" fill="#8A94A0">Presentation Tier</text>
+<rect x="633.4" y="72" width="122.6" height="28" fill="#F4F6F8"/>
+<text x="643.4" y="90.62" font-size="12.5" fill="#2B323B">CPU, 메모리, 디스크</text>
+<path d="M472 114L472 136.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M472 143L468.25 135.5L475.75 135.5Z" fill="#5B6470"/>
+<rect x="432" y="143" width="336" height="56" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<text x="448" y="167" font-size="15" fill="#0B0F17"><tspan font-weight="700">APP</tspan>  <tspan font-size="13" fill="#5B6470">Spring Boot</tspan></text>
+<text x="448" y="187" font-size="12" fill="#8A94A0">Application Tier, WAS</text>
+<rect x="633.4" y="157" width="122.6" height="28" fill="#F4F6F8"/>
+<text x="643.4" y="175.62" font-size="12.5" fill="#2B323B">CPU, 메모리, 디스크</text>
+<path d="M472 199L472 221.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M472 228L468.25 220.5L475.75 220.5Z" fill="#5B6470"/>
+<rect x="432" y="228" width="336" height="56" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<text x="448" y="252" font-size="15" fill="#0B0F17"><tspan font-weight="700">DB</tspan>  <tspan font-size="13" fill="#5B6470">MySQL</tspan></text>
+<text x="448" y="272" font-size="12" fill="#8A94A0">Data Tier</text>
+<rect x="633.4" y="242" width="122.6" height="28" fill="#F4F6F8"/>
+<text x="643.4" y="260.62" font-size="12.5" fill="#2B323B">CPU, 메모리, 디스크</text>
+<text x="432" y="312" font-size="13.5" fill="#5B6470">계층마다 실행 환경과 자원을 따로 쓴다</text>
 </svg>

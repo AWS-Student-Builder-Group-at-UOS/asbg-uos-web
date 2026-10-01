@@ -1,68 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 384" role="img" aria-label="index.html이 내 PC에서 scp로 EC2의 /home/ec2-user로 옮겨지고, sudo mv로 Nginx 웹 폴더에 놓인 뒤, Nginx가 80번 포트로 브라우저에 전달하기까지. 그 전에 내 PC 창에서 키 권한을 좁히고 SSH로 접속한 뒤, EC2 창에서 Nginx를 설치하고 실행한다">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="384" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="382" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">index.html이 브라우저에 닿기까지</text>
-<text x="36" y="74" font-size="15" fill="#35526A">명령은 [내 PC] 창과 [EC2] 창, 두 곳에서 친다</text>
-
-<rect x="36" y="106" width="108" height="108" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="90" y="134" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">내 PC</text>
-<text x="90" y="158" font-size="12" text-anchor="middle" fill="#123249">index.html</text>
-<text x="90" y="200" font-size="12" text-anchor="middle" fill="#35526A">배포할 파일</text>
-
-<line x1="144" y1="160" x2="268" y2="160" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="208" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">scp</text>
-<rect x="154" y="168" width="108" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="208" y="183" font-size="12" text-anchor="middle" fill="#123249">[내 PC] 새 터미널</text>
-
-<rect x="272" y="106" width="124" height="108" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="334" y="134" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">EC2</text>
-<text x="334" y="158" font-size="12" text-anchor="middle" fill="#123249">/home/ec2-user/</text>
-<text x="334" y="174" font-size="12" text-anchor="middle" fill="#123249">index.html</text>
-<text x="334" y="200" font-size="12" text-anchor="middle" fill="#35526A">ec2-user 홈 폴더</text>
-
-<line x1="396" y1="160" x2="520" y2="160" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="460" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">sudo mv</text>
-<rect x="434" y="168" width="52" height="22" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="460" y="183" font-size="12" text-anchor="middle" fill="#123249">[EC2]</text>
-
-<rect x="524" y="106" width="150" height="108" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="599" y="134" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">Nginx 웹 폴더</text>
-<text x="599" y="158" font-size="12" text-anchor="middle" fill="#123249">/usr/share/nginx/html/</text>
-<text x="599" y="174" font-size="12" text-anchor="middle" fill="#123249">index.html</text>
-<text x="599" y="200" font-size="12" text-anchor="middle" fill="#35526A">root 소유 → sudo 필요</text>
-
-<line x1="674" y1="160" x2="798" y2="160" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="738" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#1160D8">Nginx</text>
-<text x="738" y="183" font-size="12" text-anchor="middle" fill="#35526A">80번 포트</text>
-
-<rect x="802" y="106" width="122" height="108" fill="#FFFFFF" stroke="#1160D8"/>
-<text x="863" y="134" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">브라우저</text>
-<text x="863" y="158" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">http://PUBLIC_IP</text>
-<text x="863" y="200" font-size="12" text-anchor="middle" fill="#35526A">누구나 접속</text>
-
-<rect x="36" y="246" width="888" height="104" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="52" y="270" font-size="13" font-weight="700" fill="#123249">그 전에<tspan font-size="12" font-weight="400" fill="#35526A">  접속하고 Nginx 켜기</tspan></text>
-<rect x="768" y="260" width="12" height="12" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="786" y="270" font-size="12" fill="#35526A">내 PC 창</text>
-<rect x="854" y="260" width="12" height="12" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="872" y="270" font-size="12" fill="#35526A">EC2 창</text>
-
-<rect x="52" y="284" width="160" height="50" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="64" y="303" font-size="12" font-weight="700" fill="#35526A">[내 PC]</text>
-<text x="64" y="323" font-size="12.5" font-weight="700" fill="#1160D8">chmod 400<tspan font-size="12" font-weight="400" fill="#35526A"> · 키 권한</tspan></text>
-<line x1="212" y1="309" x2="240" y2="309" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="244" y="284" width="160" height="50" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="256" y="303" font-size="12" font-weight="700" fill="#35526A">[내 PC]</text>
-<text x="256" y="323" font-size="12.5" font-weight="700" fill="#1160D8">ssh<tspan font-size="12" font-weight="400" fill="#35526A"> 접속</tspan></text>
-<line x1="404" y1="309" x2="432" y2="309" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="436" y="284" width="220" height="50" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="448" y="303" font-size="12" font-weight="700" fill="#35526A">[EC2]</text>
-<text x="448" y="323" font-size="12.5" font-weight="700" fill="#1160D8">sudo dnf install -y nginx</text>
-<line x1="656" y1="309" x2="684" y2="309" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="688" y="284" width="220" height="50" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="700" y="303" font-size="12" font-weight="700" fill="#35526A">[EC2]</text>
-<text x="700" y="323" font-size="12.5" font-weight="700" fill="#1160D8">sudo systemctl start nginx</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="index.html이 내 PC에서 scp로 EC2의 /home/ec2-user로 옮겨지고, sudo mv로 Nginx 웹 폴더에 놓인 뒤, Nginx가 80번 포트로 브라우저에 전달하기까지. 그 전에 내 PC 창에서 키 권한을 좁히고 SSH로 접속한 뒤, EC2 창에서 Nginx를 설치하고 실행한다">
+<style>
+@font-face{font-family:"d-mono";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,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) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="420" fill="#FFFFFF"/>
+<rect x="173.33" y="32" width="125.34" height="46" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<text x="236" y="52" font-size="14" font-weight="700" fill="#0B0F17" text-anchor="middle">내 PC 창</text>
+<text x="236" y="69" font-size="12" fill="#5B6470" text-anchor="middle">PowerShell, 터미널</text>
+<path d="M236 78L236 404" fill="none" stroke="#C5CCD4" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="433.54" y="32" width="108.93" height="46" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<text x="488" y="52" font-size="14" font-weight="700" fill="#0B0F17" text-anchor="middle">EC2 창</text>
+<text x="488" y="69" font-size="12" fill="#5B6470" text-anchor="middle">SSH로 접속한 창</text>
+<path d="M488 78L488 404" fill="none" stroke="#C5CCD4" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="665.8" y="32" width="76.4" height="46" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<text x="704" y="52" font-size="14" font-weight="700" fill="#0B0F17" text-anchor="middle">브라우저</text>
+<text x="704" y="69" font-size="12" fill="#5B6470" text-anchor="middle">누구나</text>
+<path d="M704 78L704 404" fill="none" stroke="#C5CCD4" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M32 266L768 266" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="32" y="110" font-size="14" font-weight="700" fill="#0B0F17">준비</text>
+<text x="32" y="129" font-size="12" fill="#5B6470">접속하고 Nginx 켜기</text>
+<text x="32" y="298" font-size="14" font-weight="700" fill="#0B0F17">배포</text>
+<text x="32" y="317" font-size="12" fill="#5B6470">파일 옮기고 열기</text>
+<rect x="192.25" y="99" width="87.5" height="26" fill="#F4F6F8"/>
+<text x="202.25" y="116.62" font-size="12.5" class="m" fill="#0B0F17">chmod 400</text>
+<text x="289.75" y="116.62" font-size="12.5" fill="#5B6470">키 권한 좁히기</text>
+<path d="M236 152L481.5 152" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M488 152L480.5 155.75L480.5 148.25Z" fill="#5B6470"/>
+<text x="362" y="144" font-size="12.5" class="m" fill="#0B0F17" text-anchor="middle">ssh ec2-user@PUBLIC_IP</text>
+<text x="362" y="170" font-size="12" fill="#5B6470" text-anchor="middle">접속</text>
+<rect x="384.25" y="179" width="207.5" height="26" fill="#F4F6F8"/>
+<text x="394.25" y="196.62" font-size="12.5" class="m" fill="#0B0F17">sudo dnf install -y nginx</text>
+<text x="601.75" y="196.62" font-size="12.5" fill="#5B6470">설치</text>
+<rect x="380.5" y="219" width="215" height="26" fill="#F4F6F8"/>
+<text x="390.5" y="236.62" font-size="12.5" class="m" fill="#0B0F17">sudo systemctl start nginx</text>
+<text x="605.5" y="236.62" font-size="12.5" fill="#5B6470">실행</text>
+<path d="M236 300L481.5 300" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M488 300L480.5 303.75L480.5 296.25Z" fill="#1160D8"/>
+<text x="362" y="292" font-size="12.5" class="m" fill="#0B0F17" text-anchor="middle">scp index.html</text>
+<text x="362" y="318" font-size="12" fill="#5B6470" text-anchor="middle">새 터미널에서 홈 폴더로</text>
+<rect x="324.25" y="327" width="327.5" height="26" fill="#EDF3FC" stroke="#1160D8" stroke-width="1"/>
+<text x="334.25" y="344.62" font-size="12.5" class="m" fill="#0B0F17">sudo mv index.html /usr/share/nginx/html/</text>
+<path d="M488 380L697.5 380" fill="none" stroke="#1160D8" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M704 380L696.5 383.75L696.5 376.25Z" fill="#1160D8"/>
+<text x="596" y="372" font-size="12.5" class="m" fill="#0B0F17" text-anchor="middle">http://PUBLIC_IP</text>
+<text x="596" y="398" font-size="12" fill="#5B6470" text-anchor="middle">80번 포트로 전달</text>
 </svg>

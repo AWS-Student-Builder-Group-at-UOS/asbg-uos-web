@@ -1,76 +1,82 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-label="서버 한 대에서 시작해 두 대, 로드밸런서, 공유 세션 저장소까지 구조가 커지는 과정">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="380" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="378" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">서버 한 대가 멈춰도 서비스가 계속되려면</text>
-<text x="36" y="74" font-size="15" fill="#35526A">요청 하나를 따라가며 던진 질문들</text>
-<text x="36" y="108" font-size="12" font-weight="700" fill="#1160D8">01</text>
-<text x="60" y="108" font-size="13" font-weight="700" fill="#123249">서버 한 대</text>
-<rect x="102" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="132" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
-<rect x="52" y="156" width="160" height="100" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="58" y="168" font-size="9" fill="#35526A">VPC</text>
-<rect x="97" y="196" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="132" y="215" font-size="11" text-anchor="middle" fill="#123249">서버 A</text>
-<line x1="132" y1="142" x2="132" y2="192" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="132" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">이 서버가 멈추면?</text>
-<text x="132" y="348" font-size="11" text-anchor="middle" fill="#35526A">서비스도 같이 멈춘다</text>
-<line x1="234" y1="210" x2="262" y2="210" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="268" y="108" font-size="12" font-weight="700" fill="#1160D8">02</text>
-<text x="292" y="108" font-size="13" font-weight="700" fill="#123249">두 대로 늘리면?</text>
-<rect x="334" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="364" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
-<rect x="276" y="156" width="176" height="100" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="282" y="168" font-size="9" fill="#35526A">VPC</text>
-<rect x="286" y="196" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="321" y="215" font-size="11" text-anchor="middle" fill="#123249">서버 A</text>
-<rect x="372" y="196" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="407" y="215" font-size="11" text-anchor="middle" fill="#123249">서버 B</text>
-<line x1="364" y1="142" x2="321" y2="192" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="364" y1="142" x2="407" y2="192" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="364" y="180" font-size="16" font-weight="700" text-anchor="middle" fill="#1160D8">?</text>
-<text x="364" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">두 대로 늘리면 끝일까?</text>
-<text x="364" y="348" font-size="11" text-anchor="middle" fill="#35526A">요청을 어디로 보낼지가 없다</text>
-<line x1="466" y1="210" x2="494" y2="210" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="500" y="108" font-size="12" font-weight="700" fill="#1160D8">03</text>
-<text x="524" y="108" font-size="13" font-weight="700" fill="#123249">로드밸런서</text>
-<rect x="566" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="596" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
-<rect x="508" y="150" width="176" height="122" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="514" y="162" font-size="9" fill="#35526A">VPC</text>
-<rect x="554" y="160" width="84" height="24" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="596" y="176" font-size="11" text-anchor="middle" fill="#123249">로드밸런서</text>
-<rect x="518" y="216" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="553" y="235" font-size="11" text-anchor="middle" fill="#123249">서버 A</text>
-<rect x="604" y="216" width="70" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="639" y="235" font-size="11" text-anchor="middle" fill="#123249">서버 B</text>
-<line x1="596" y1="142" x2="596" y2="158" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="576" y1="184" x2="553" y2="212" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="616" y1="184" x2="639" y2="212" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="596" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">요청은 어떻게 나눠 보낼까?</text>
-<text x="596" y="348" font-size="11" text-anchor="middle" fill="#35526A">로드밸런서가 요청을 분산한다</text>
-<line x1="698" y1="210" x2="726" y2="210" stroke="#79CDFF" stroke-width="3" marker-end="url(#arrow)"/>
-<text x="732" y="108" font-size="12" font-weight="700" fill="#1160D8">04</text>
-<text x="756" y="108" font-size="13" font-weight="700" fill="#123249">공유 세션 저장소</text>
-<rect x="798" y="120" width="60" height="22" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="828" y="135" font-size="11" text-anchor="middle" fill="#123249">User</text>
-<rect x="740" y="150" width="176" height="152" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="746" y="162" font-size="9" fill="#35526A">VPC</text>
-<rect x="786" y="158" width="84" height="22" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="828" y="173" font-size="11" text-anchor="middle" fill="#123249">로드밸런서</text>
-<rect x="750" y="204" width="70" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="785" y="222" font-size="11" text-anchor="middle" fill="#123249">서버 A</text>
-<rect x="836" y="204" width="70" height="28" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="871" y="222" font-size="11" text-anchor="middle" fill="#123249">서버 B</text>
-<rect x="786" y="262" width="84" height="24" fill="#FFFFFF" stroke="#1160D8"/>
-<text x="828" y="278" font-size="11" text-anchor="middle" fill="#123249">캐시 서버</text>
-<line x1="828" y1="142" x2="828" y2="156" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="808" y1="180" x2="785" y2="200" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="848" y1="180" x2="871" y2="200" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="785" y1="232" x2="812" y2="260" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="871" y1="232" x2="844" y2="260" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="828" y="328" font-size="12" font-weight="700" text-anchor="middle" fill="#1160D8">서버가 바뀌어도 로그인은?</text>
-<text x="828" y="348" font-size="11" text-anchor="middle" fill="#35526A">공유 세션 저장소를 같이 쓴다</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-label="서버 한 대에서 시작해 두 대, 로드밸런서, 공유 세션 저장소까지 구조가 커지는 과정">
+<style>
+@font-face{font-family:"d-mono";font-weight:500;src:url(data:font/woff2;base64,d09GMgABAAAAAANkAA4AAAAABoAAAAMOAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcKgZgP1NUQVREADwRCAqDDIJSATYCJAMQCw4ABCAFhBgHIBtFBcgeg+NuKUSJiMViAEMR9SGP559f+9/aZ+5XSYpoE4/azJM2i1Z59f0MlUYoNFrHs/j4/Nfp35dJAU9FhZoQk3rXL63+lsJa2PU0/znV/u8mN5Z4HxM/xGhvoBOujREGXlQUYHgoeWDWS7eJBO0K/II6Vw3x6PJWwaQ1mciZgTEBgjXoAYJJuxXhsHWRj7WsE8kXlONWErIigBpybgHOzv3cRk06oYIJjsbXvnGldwy3sVVd9///F2gnyCZAoJbrIbYKFDGusIyDnTjPTWaWgAdPtHaSj2jmEchqVkAnKgWAgEKHZZRgGddeMKqJslVdD1tV9/r3/WsBRHrmEKNgGuN4Bl4DoIFSIorWwrg5+8IoYVBEoC4iKDyCCiVhm6+dI1PccBKBqcGnT+Jrr05lcPZp6PC9QPTpU9jmhw948f694Pn728kRuDf8KBLv+RC2+ekeGdz9GPoaPLu1jLenyOv0RECEXxWRcGIK44Rh0v0pqvrlxR0XldVlvDLE/L4olRWuTpdIHvYwvxhUXSxfZO2mhofzu3JyzyyV9I0NhvTYA0PN65f8Y+baemVHY+4kv3eo4PZUx4akRQb5c/5FF1dmDVSM1TQX9iYtl5UO9qSWNqoac3wReYe/trTdsdkCQ3lzBsuAsaJR2NbDm5qIjLsewhgn+rrUbA1mXvHkA+/ZV0KtcCd/9WsvgJ8I8rZWx3vaoY5q+xZMUb/gveSoGODDV+997Oyruo4GowqEqgR1i0jyFn5xXFlRY7hJlapWQ9R8H8zysylDUNJCwBtgQyw7CGXWO+gc9xianQGMWEmePGp7OhQEpqOh0jg7lc/NkSgQmjXo5eI2z8vCxIxFq1GlRh2agJkBbZCBhY+QmeLlYmXAYNG6+bHMXLx8aEXMWCw3nxaVKplY6HU/nQoMF4dKMwy8GAZ2aOFb5YxcnFgV0rQ42x4n6qB4T5v42Wl5VavQqEqVViI8vca0KlqfKbfm0DkatYjhL9vCclpO12hGXJuY+Zsa6Fn4OQxjadlZMHhcHLScKKBfTWUAAA==) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:500;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,d09GMgABAAAAAAL4AA4AAAAABdgAAAKgAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhQbYhwqBmA/U1RBVEQAPAqBfIIFATYCJAMMCwgABCAFgzoHIBvkBAAeA+7GCRUmKifmta4XnfHQ/36sO/MfqtmscUgmySOdZskTJEoQW29lK5JXS8SH39977hukTwyw8prU4ShnqY1IdmfDoSYQYUBcHMl+6ib/DjTfooGl0D4vwDUp6gIMPbClURRIwn+BWcAWlDeXlIietakUXSDQDAgpFIFGQ6xRa/6hsVA/yqoth7oCP0bvMK+6HIoMUZHHQr3UDuhljKiEkBLLil3MI3jMcA0ApXYjd8hRMyV7Du67Ln8aoUZd+E5SQQDA6o6LwQFoPGruQxuoe4o/EFAW5JZAH1Uh1Et0ozCEuigorCVg/2SVEi0QRTsC0UTtgEpICQIkKnSTEegmawzUKkLq45FAMT/HCDkoVKAW9VgH1wAo3iALSYZmSwvV3NSM5KLvh/fdfDy63u4bh19u+1Qf3nvTyOudztvY09sXaI6n+xZdnuZto9LAURmQSa9usgyowA9QwHcr50iCcrLTxZ8NS/LmBYvDcj2sRMGRXCtpNM8mytCUGrjcvkztGXtIbdxqaqicL/SY8g1gZvgbKBqkPoVJhKFiEW6YsMZChZJQkZg7hEpEAD6BIHaMb13pyGjXf0UZRcCvsvRxgP/PxyfwH1eFQoVSQJ0EwfO69SIEcTMghJOqHm7IE5Rt+COoTJEHQZYaXZERRQnMgS2HEa5yarUnV2ZUjkucXGPBilRr2keBQHOYIqugPniuFnx/oSV8VKjUpFqRAoVq0SyDxpolazZoQhQpRROoSZ1yBcSKFSkXqVqeWnnK5cpSLRdNvCzVimTJVipPtDwF6pTKUs2KhA1LTlz4iBUnhstqwwXEP61Wo0iFcjTeP0CpJpUK1aCxIWGNhseGNWt2+LtMic8bJsi7Ge68VSiVK0itLKWK5JABPsYIBAAAAA==) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="400" fill="#FFFFFF"/>
+<text x="32" y="42" font-size="15" fill="#0B0F17"><tspan font-weight="500" class="m" fill="#8A94A0">1</tspan>  <tspan font-weight="600" fill="#0B0F17">서버 한 대</tspan></text>
+<text x="116.5" y="88" font-size="14" fill="#5B6470" text-anchor="middle">사용자</text>
+<rect x="32" y="110" width="169" height="208" fill="#F4F6F8"/>
+<text x="42" y="130" font-size="12" font-weight="500" fill="#8A94A0">VPC</text>
+<rect x="80.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="116.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">서버 A</text>
+<path d="M116.5 97L116.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M116.5 204L112.75 196.5L120.25 196.5Z" fill="#5B6470"/>
+<text x="32" y="348" font-size="14" fill="#5B6470">멈추면 서비스도 같이 멈춘다</text>
+<path d="M211 28L211 372" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="221" y="42" font-size="15" fill="#0B0F17"><tspan font-weight="500" class="m" fill="#8A94A0">2</tspan>  <tspan font-weight="600" fill="#0B0F17">한 대 더</tspan></text>
+<text x="305.5" y="88" font-size="14" fill="#5B6470" text-anchor="middle">사용자</text>
+<rect x="221" y="110" width="169" height="208" fill="#F4F6F8"/>
+<text x="231" y="130" font-size="12" font-weight="500" fill="#8A94A0">VPC</text>
+<rect x="228.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="264.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">서버 A</text>
+<rect x="310.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#1160D8" stroke-width="1"/>
+<text x="346.5" y="227.18" font-size="14" font-weight="500" fill="#1160D8" text-anchor="middle">서버 B</text>
+<path d="M305.5 97L305.5 174L264.5 174L264.5 197.5" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-dasharray="4 4" stroke-linejoin="miter"/>
+<path d="M264.5 204L260.75 196.5L268.25 196.5Z" fill="#8A94A0"/>
+<path d="M305.5 174L346.5 174L346.5 197.5" fill="none" stroke="#8A94A0" stroke-width="1.5" stroke-dasharray="4 4" stroke-linejoin="miter"/>
+<path d="M346.5 204L342.75 196.5L350.25 196.5Z" fill="#8A94A0"/>
+<rect x="296.5" y="140" width="18" height="22" fill="#F4F6F8"/>
+<text x="305.5" y="157" font-size="17" font-weight="700" fill="#1160D8" text-anchor="middle">?</text>
+<text x="221" y="348" font-size="14" fill="#5B6470">요청을 어느 서버로 보낼까?</text>
+<path d="M400 28L400 372" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="410" y="42" font-size="15" fill="#0B0F17"><tspan font-weight="500" class="m" fill="#8A94A0">3</tspan>  <tspan font-weight="600" fill="#0B0F17">로드밸런서</tspan></text>
+<text x="494.5" y="88" font-size="14" fill="#5B6470" text-anchor="middle">사용자</text>
+<rect x="410" y="110" width="169" height="208" fill="#F4F6F8"/>
+<text x="420" y="130" font-size="12" font-weight="500" fill="#8A94A0">VPC</text>
+<rect x="417.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="453.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">서버 A</text>
+<rect x="499.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="535.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">서버 B</text>
+<rect x="435.5" y="142" width="118" height="32" fill="#FFFFFF" stroke="#1160D8" stroke-width="1"/>
+<text x="494.5" y="163.18" font-size="14" font-weight="500" fill="#1160D8" text-anchor="middle">로드밸런서</text>
+<path d="M494.5 97L494.5 135.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M494.5 142L490.75 134.5L498.25 134.5Z" fill="#5B6470"/>
+<path d="M453.5 174L453.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M453.5 204L449.75 196.5L457.25 196.5Z" fill="#5B6470"/>
+<path d="M535.5 174L535.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M535.5 204L531.75 196.5L539.25 196.5Z" fill="#5B6470"/>
+<text x="410" y="348" font-size="14" fill="#5B6470">서버가 바뀌어도 로그인은</text>
+<text x="410" y="369" font-size="14" fill="#5B6470">유지될까?</text>
+<path d="M589 28L589 372" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="599" y="42" font-size="15" fill="#0B0F17"><tspan font-weight="500" class="m" fill="#8A94A0">4</tspan>  <tspan font-weight="600" fill="#0B0F17">공유 세션 저장소</tspan></text>
+<text x="683.5" y="88" font-size="14" fill="#5B6470" text-anchor="middle">사용자</text>
+<rect x="599" y="110" width="169" height="208" fill="#F4F6F8"/>
+<text x="609" y="130" font-size="12" font-weight="500" fill="#8A94A0">VPC</text>
+<rect x="606.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="642.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">서버 A</text>
+<rect x="688.5" y="204" width="72" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="724.5" y="227.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">서버 B</text>
+<rect x="624.5" y="142" width="118" height="32" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="683.5" y="163.18" font-size="14" font-weight="500" fill="#0B0F17" text-anchor="middle">로드밸런서</text>
+<path d="M683.5 97L683.5 135.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M683.5 142L679.75 134.5L687.25 134.5Z" fill="#5B6470"/>
+<path d="M642.5 174L642.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M642.5 204L638.75 196.5L646.25 196.5Z" fill="#5B6470"/>
+<path d="M724.5 174L724.5 197.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M724.5 204L720.75 196.5L728.25 196.5Z" fill="#5B6470"/>
+<rect x="624.5" y="272" width="118" height="32" fill="#FFFFFF" stroke="#1160D8" stroke-width="1"/>
+<text x="683.5" y="293.18" font-size="14" font-weight="500" fill="#1160D8" text-anchor="middle">캐시 서버</text>
+<path d="M642.5 240L642.5 265.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M642.5 272L638.75 264.5L646.25 264.5Z" fill="#5B6470"/>
+<path d="M724.5 240L724.5 265.5" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M724.5 272L720.75 264.5L728.25 264.5Z" fill="#5B6470"/>
+<text x="599" y="348" font-size="14" fill="#5B6470">두 서버가 세션을 한곳에 두고</text>
+<text x="599" y="369" font-size="14" fill="#5B6470">같이 쓴다</text>
 </svg>

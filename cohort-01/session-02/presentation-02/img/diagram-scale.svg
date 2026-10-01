@@ -1,66 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 388" role="img" aria-label="APP 계층만 1대에서 3대로 늘리고 WEB과 DB는 그대로 둔다. 서버 사양을 키우는 Scale Up과 서버 수를 늘리는 Scale Out의 차이">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="388" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="386" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">바쁜 계층만 늘린다</text>
-<text x="36" y="74" font-size="15" fill="#35526A">APP만 1대에서 3대로, WEB과 DB는 그대로</text>
-
-<rect x="36" y="162" width="88" height="70" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="80" y="193" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">WEB</text>
-<text x="80" y="212" font-size="13" text-anchor="middle" fill="#35526A">Nginx</text>
-<text x="80" y="300" font-size="13" text-anchor="middle" fill="#35526A">1대 · 그대로</text>
-
-<line x1="124" y1="197" x2="152" y2="197" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-
-<rect x="156" y="175" width="84" height="44" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="198" y="202" font-size="13" font-weight="700" text-anchor="middle" fill="#123249">로드밸런서</text>
-
-<rect x="276" y="108" width="216" height="164" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="286" y="124" font-size="12" fill="#35526A">Auto Scaling · 조건에 따라 대수 조절</text>
-<rect x="298" y="136" width="172" height="34" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="384" y="158" font-size="14" text-anchor="middle"><tspan font-weight="700" fill="#123249">APP</tspan><tspan fill="#35526A"> · Spring Boot</tspan></text>
-<rect x="298" y="180" width="172" height="34" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="384" y="202" font-size="14" text-anchor="middle"><tspan font-weight="700" fill="#123249">APP</tspan><tspan fill="#35526A"> · Spring Boot</tspan></text>
-<rect x="298" y="224" width="172" height="34" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="384" y="246" font-size="14" text-anchor="middle"><tspan font-weight="700" fill="#123249">APP</tspan><tspan fill="#35526A"> · Spring Boot</tspan></text>
-<text x="384" y="300" font-size="14" font-weight="700" text-anchor="middle" fill="#1160D8">1대 → 3대</text>
-
-<line x1="240" y1="197" x2="294" y2="153" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="240" y1="197" x2="294" y2="197" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="240" y1="197" x2="294" y2="241" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-
-<line x1="470" y1="153" x2="524" y2="176" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="470" y1="197" x2="524" y2="197" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="470" y1="241" x2="524" y2="218" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-
-<rect x="528" y="162" width="88" height="70" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="572" y="193" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">DB</text>
-<text x="572" y="212" font-size="13" text-anchor="middle" fill="#35526A">MySQL</text>
-<text x="572" y="300" font-size="13" text-anchor="middle" fill="#35526A">1대 · 그대로</text>
-
-<line x1="644" y1="108" x2="644" y2="316" stroke="#D9E7F0"/>
-
-<text x="672" y="122" font-size="14" font-weight="700" fill="#123249">Scale Up</text>
-<rect x="672" y="145" width="44" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="694" y="164" font-size="12" font-weight="700" text-anchor="middle" fill="#123249">APP</text>
-<line x1="716" y1="160" x2="750" y2="160" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="754" y="132" width="88" height="56" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="798" y="165" font-size="15" font-weight="700" text-anchor="middle" fill="#123249">APP</text>
-<text x="672" y="210" font-size="13" fill="#35526A">서버 사양(CPU·메모리)을 키운다</text>
-
-<text x="672" y="246" font-size="14" font-weight="700" fill="#123249">Scale Out</text>
-<rect x="672" y="260" width="44" height="30" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="694" y="279" font-size="12" font-weight="700" text-anchor="middle" fill="#123249">APP</text>
-<line x1="716" y1="275" x2="750" y2="275" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="754" y="260" width="44" height="30" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="776" y="279" font-size="12" font-weight="700" text-anchor="middle" fill="#123249">APP</text>
-<rect x="806" y="260" width="44" height="30" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="828" y="279" font-size="12" font-weight="700" text-anchor="middle" fill="#123249">APP</text>
-<rect x="858" y="260" width="44" height="30" fill="#DCEFFF" stroke="#79CDFF"/>
-<text x="880" y="279" font-size="12" font-weight="700" text-anchor="middle" fill="#123249">APP</text>
-<text x="672" y="312" font-size="13" fill="#35526A">서버 수를 늘린다</text>
-
-<text x="36" y="356" font-size="14" font-weight="700" fill="#1160D8">확장할 계층은 병목을 확인한 뒤 결정한다</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-label="APP 계층만 1대에서 3대로 늘리고 WEB과 DB는 그대로 둔다. 서버 사양을 키우는 Scale Up과 서버 수를 늘리는 Scale Out의 차이">
+<style>
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,d09GMgABAAAAAAc8AA4AAAAADYQAAAblAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbhBYcKgZgP1NUQVREAIEUCow8iiwBNgIkA0gLJgAEIAWDOgcgG1ULo6KUbtqS/cWBDe5RK6Ih9IiUschC/v+jx0Eka0K58s30muYlcmPxmOI6eP5b871vdkIDoQKAYnLVTMJ83kJSmfR4IHasCLNFkog5XNsN80gcTXyPuOQXRyV0SoeSaBEeeC73b60SL+v52LgBs8GTPZA0sDTgawhPuw5mBypj0gFIO7iTlIF4mflfDnC2lvbmARWwAjb2nSX/u09UBFTkKim+wgFSPOmmro5VFaq6CqfrL99ZmynzVyc0RzKV/90KAhwAUISSgwgwuiM0c+v+HBznoPMWHDTgU9HoFHbcggkZCS0lV4x8kQLZNXQEB6BqXZEm7FsJZgId5Igr6bKmguqRhq9e43qvR7+nK1rHrQUDXcTEHiIVdVVT3QpUv1kWANWfvS+j/xcM8WGU6gxfklIqbCAtcab3l5vohfXls/QMESc8JylNsRIgkKIFIAgfLVLAiAsEhJaUIMDoyftA0N2tpmvr9HB4WoLYQN8AG9Z66q2s1jwSAVA0EOGSEw+LGfx0dsk2t3kwjA7e87vUw9he6MxGiCQFmodE9wbXCOmMgH+dGqEciJa1WV8qdRoCQlFAC8MT2ONqtP6LdQqgPRctp7OqhrGZhRUai7e2d/kDnVXUjUbE+WeovrRrx7JFC+aNGYXp16OzwFQq8s7fHdAByAfqBwA0gDhQgtvbnwxARUgcbS2pm1vbUrtstnX/ltkBXXvqVlmNPLUwVE2NZCi2Zxv6RtdkGurJSpgpRxGFSmUy0Xgdk/5w/74U790zTtnnHcJk+8CXS61h6ZcPKTx4YdAg9GFOWmUoLPunGFt69cgk7vFr2w3jlWmdUqVCIYps01a+UowTrSyTdH8kuZVoypSIUK2rZJc41Uc2yCQ0dSqFpIgwW66NdWGcJ73IloSPKxcmQt9oydNwcunuy+TJjikXImYWPYQ6O2CFcmgn5qgbrDrJtD3Tpk156aCf7Qce181XDFuzlSArmWLPP7nFvtnO489KlseeEPkKLkoGGO3+nI5NefYwLZmZ8cKhVa3FaQgaTUuFPunEyNUS87pQNuXXEpQIKNInoUAEAtgNGnb5VZaqQN9r+naywvJF3TALnqtBTDxPg77qvqF+A2gXMdOOG77ocBxinpOEOLCxIJR1Hh6dkUnx8w/De8KzvpMUNVx0DfUCUHU76qJ/eDhUSZegp63mFChv+S7mBcBRxFSuhvid7+31Pb8aVJFEUXDbcAKzevho1Mp48s5lRUCNKXrY2tmfvYHEH8Sg/p/n8Y5/P+WiPrO3R3Wm4Gcvp5zVp+GaXtd+qdLqfW2YlBBPYp9rbW3iYVJ8gssbqPnd1+5/TU6/V1uXefsteRD9bOSRYqhHhCA9NEXf88qsItCdbGkIx8jZ20XL6UCqwJYMowJ5IueUHp8FkwVF+3+ipqcpYqouU7VKUVvbBWWpuTglK5kgWqo65tHKBK5u6U3l0zsdeZWHP4ld3Z/QogNcjjhAirDJzsZ3rIVz88yF8VSdk4qNiF1+CeTpFW/NNh9pBBTcmA2rxlfmbMNXIbaBH0z4b/phw38Nk2W32GBkJ2zIgJMroTQBtE7UXrbG+BJIWMUiQlPPVxfnryxj6iSmbe9nvCJAH5DQetajMvuCY/Zg1l3+Zrp+D3uyPBzVZ+dXFzH2sG2O4XI7TRAlbgmscH2qyvk3OJz378Oa/srroeR1ajJfsgZCUNSxiXIwqIuI1K+PcrTVIuC14DQ+GnLa+tXIKrDB9bkk/88Ylv//Xbmr4Rm54Mc8oX41w1wvPEzPzCrG2JAIxlOwUXqcib06LFT9QYArOL/xvEsB6MQDagwPaC2NJZdYhm0JGbpuGcdZSX8WZuL/HhdzkAwdyHmI3grPQemh0xDhDNlFwpr1gYGaNRFOEBThoFMTDPpBYPn98jOUX+Wr90CtHfVrcwZPUp+5VxkIFwbqFWMZY8EDJpnA0bg0dCjYdyVrHt8q10RprjsZNny+xvBl1gDAuepOAmQt8PvGWn4e66hvySAJwMuL/xt49024oEs7KnuaoQBIUAAEP5VQEsPgGYGYHjefw1p5iNhLL2nFK9noGZ/yTOPMi/9mZYZJybbfJ/uvS1wLyvFqq3itVZimJn6qJvyuZ3xRDQTyCAMAEa5nrKQlcQoYBaAWPeXVStpCdWCEfW/Nq2PG+KriBvlXEXBBe6gtyaD3cXLYgn7U7Ow9HMlEkjPsQxwiejUUrEe2hrU9XGyJQhSyrbEj3hlvi0M74mDL4W5kNMYab4onulhXvc+YMEpURk7N3MJMTqX9NiwfenQi29nC4c/fsvawJznBKGEE5kUhiASfen+hw0xZ4S9IXtXOWu7qwDqCdTpLa2oU/1tlAA==) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="300" fill="#FFFFFF"/>
+<rect x="32" y="114" width="84" height="64" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="74" y="144.17" font-size="15" font-weight="700" fill="#0B0F17" text-anchor="middle">WEB</text>
+<text x="74" y="158.92" font-size="12.5" fill="#5B6470" text-anchor="middle">Nginx</text>
+<text x="74" y="208" font-size="12.5" fill="#5B6470" text-anchor="middle">1대 그대로</text>
+<rect x="144" y="124" width="104" height="44" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="196" y="151" font-size="13.5" font-weight="600" fill="#0B0F17" text-anchor="middle">로드밸런서</text>
+<path d="M116 146L137.5 146" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M144 146L136.5 149.75L136.5 142.25Z" fill="#5B6470"/>
+<rect x="282" y="52" width="182" height="188" fill="#F4F6F8"/>
+<text x="294" y="72" font-size="12.5" font-weight="600" fill="#5B6470">Auto Scaling</text>
+<rect x="298" y="78" width="150" height="36" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="312" y="101.18" font-size="14" fill="#0B0F17"><tspan font-weight="700" fill="#0B0F17">APP</tspan>  <tspan font-size="12.5" fill="#5B6470">Spring Boot</tspan></text>
+<path d="M248 146L262 146L262 96L291.5 96" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M298 96L290.5 99.75L290.5 92.25Z" fill="#5B6470"/>
+<rect x="298" y="128" width="150" height="36" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<text x="312" y="151.18" font-size="14" fill="#0B0F17"><tspan font-weight="700" fill="#1160D8">APP</tspan>  <tspan font-size="12.5" fill="#5B6470">Spring Boot</tspan></text>
+<path d="M248 146L291.5 146" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M298 146L290.5 149.75L290.5 142.25Z" fill="#5B6470"/>
+<rect x="298" y="178" width="150" height="36" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<text x="312" y="201.18" font-size="14" fill="#0B0F17"><tspan font-weight="700" fill="#1160D8">APP</tspan>  <tspan font-size="12.5" fill="#5B6470">Spring Boot</tspan></text>
+<path d="M248 146L262 146L262 196L291.5 196" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M298 196L290.5 199.75L290.5 192.25Z" fill="#5B6470"/>
+<text x="373" y="260" font-size="13" font-weight="600" fill="#1160D8" text-anchor="middle">1대에서 3대로</text>
+<rect x="498" y="114" width="84" height="64" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="540" y="144.17" font-size="15" font-weight="700" fill="#0B0F17" text-anchor="middle">DB</text>
+<text x="540" y="158.92" font-size="12.5" fill="#5B6470" text-anchor="middle">MySQL</text>
+<text x="540" y="208" font-size="12.5" fill="#5B6470" text-anchor="middle">1대 그대로</text>
+<path d="M448 96L462 96L462 146L491.5 146" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M498 146L490.5 149.75L490.5 142.25Z" fill="#5B6470"/>
+<path d="M448 146L491.5 146" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M498 146L490.5 149.75L490.5 142.25Z" fill="#5B6470"/>
+<path d="M448 196L462 196L462 146L491.5 146" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M498 146L490.5 149.75L490.5 142.25Z" fill="#5B6470"/>
+<path d="M602 52L602 240" fill="none" stroke="#E3E7EC" stroke-width="1"/>
+<text x="624" y="58" font-size="14" font-weight="700" fill="#0B0F17">Scale Up</text>
+<rect x="624" y="88" width="22" height="22" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<path d="M652 99L669 99" fill="none" stroke="#8A94A0" stroke-width="1.25" stroke-linejoin="miter"/>
+<path d="M674 99L668 102L668 96Z" fill="#8A94A0"/>
+<rect x="682" y="70" width="40" height="40" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<text x="624" y="132" font-size="13" fill="#2B323B">서버 사양을 키운다</text>
+<text x="624" y="149" font-size="12" fill="#8A94A0">CPU, 메모리 증설</text>
+<text x="624" y="180" font-size="14" font-weight="700" fill="#0B0F17">Scale Out</text>
+<rect x="624" y="210" width="22" height="22" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<path d="M652 221L669 221" fill="none" stroke="#8A94A0" stroke-width="1.25" stroke-linejoin="miter"/>
+<path d="M674 221L668 224L668 218Z" fill="#8A94A0"/>
+<rect x="682" y="210" width="22" height="22" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<rect x="712" y="210" width="22" height="22" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<rect x="742" y="210" width="22" height="22" fill="#FFFFFF" stroke="#1160D8" stroke-width="1.5"/>
+<text x="624" y="254" font-size="13" fill="#2B323B">서버 수를 늘린다</text>
+<text x="624" y="271" font-size="12" fill="#8A94A0">로드밸런서로 분산</text>
 </svg>

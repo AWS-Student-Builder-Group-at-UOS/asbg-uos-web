@@ -1,27 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-label="The bigger the unit handed off, the bigger what must be verified. The gap between the range handed off and the range you can verify is what to learn next">
-<rect width="960" height="360" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="358" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="22" font-weight="700" fill="#123249">The bigger the unit you hand off, the bigger what you verify</text>
-
-<text x="40" y="98" font-size="12" fill="#35526A">Unit handed off ↑ · What to verify ↑</text>
-<rect x="40" y="110" width="120" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="54" y="136" font-size="14" fill="#123249">One line</text>
-<rect x="40" y="160" width="200" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="54" y="186" font-size="14" fill="#123249">Function · File</text>
-<rect x="40" y="210" width="290" height="40" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="54" y="236" font-size="14" fill="#123249">Feature</text>
-<rect x="40" y="260" width="400" height="40" fill="#FFFFFF" stroke="#1160D8"/>
-<text x="54" y="286" font-size="14" font-weight="700" fill="#123249">A system wrapping several layers</text>
-<text x="40" y="334" font-size="14" font-weight="700" fill="#1160D8">Upper limit of delegation = the range you can verify</text>
-
-<text x="520" y="98" font-size="13" fill="#123249">How far do I hand off to AI,</text>
-<text x="520" y="118" font-size="13" fill="#123249">and how far can I verify the result myself?</text>
-<text x="520" y="170" font-size="12" fill="#35526A">Range handed off</text>
-<rect x="520" y="180" width="400" height="26" fill="#1160D8"/>
-<text x="520" y="238" font-size="12" fill="#35526A">Range I can verify</text>
-<rect x="520" y="248" width="260" height="26" fill="#79CDFF"/>
-<rect x="780" y="248" width="140" height="26" fill="none" stroke="#1160D8" stroke-dasharray="4 3"/>
-<text x="850" y="300" text-anchor="middle" font-size="12" fill="#1160D8">↑ that gap = what to learn next</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 262" role="img" aria-label="The bigger the unit handed off, the bigger what must be verified. The gap between the range handed off and the range you can verify is what to learn next">
+<style>
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="262" fill="#FFFFFF"/>
+<text x="32" y="83.55" font-size="15" font-weight="600" fill="#0B0F17">Range handed off</text>
+<text x="32" y="137.55" font-size="15" font-weight="600" fill="#0B0F17">Range I can verify</text>
+<rect x="228" y="64" width="540" height="28" fill="#4A525C"/>
+<rect x="228" y="118" width="302.4" height="28" fill="#AEB6BF"/>
+<rect x="530.4" y="118" width="237.6" height="28" fill="#EDF3FC" stroke="#1160D8" stroke-width="1.25" stroke-dasharray="5 4"/>
+<path d="M530.4 46L530.4 154" fill="none" stroke="#0B0F17" stroke-width="1.25" stroke-dasharray="3 3"/>
+<text x="530.4" y="40" font-size="13.5" fill="#2B323B" text-anchor="middle">Upper limit of handing off</text>
+<text x="649.2" y="172" font-size="13.5" font-weight="600" fill="#1160D8" text-anchor="middle">That gap is what to learn next</text>
+<path d="M228 200L764 200" fill="none" stroke="#8A94A0" stroke-width="1.25" stroke-linejoin="miter"/>
+<path d="M770 200L763 203.5L763 196.5Z" fill="#8A94A0"/>
+<path d="M336 195L336 205" fill="none" stroke="#8A94A0" stroke-width="1.25"/>
+<text x="336" y="226" font-size="13.5" fill="#5B6470" text-anchor="middle">One line</text>
+<path d="M460.2 195L460.2 205" fill="none" stroke="#8A94A0" stroke-width="1.25"/>
+<text x="460.2" y="226" font-size="13.5" fill="#5B6470" text-anchor="middle">Function, file</text>
+<path d="M584.4 195L584.4 205" fill="none" stroke="#8A94A0" stroke-width="1.25"/>
+<text x="584.4" y="226" font-size="13.5" fill="#5B6470" text-anchor="middle">Feature</text>
+<text x="768" y="226" font-size="13.5" fill="#5B6470" text-anchor="end">System across layers</text>
+<text x="32" y="205" font-size="13.5" font-weight="600" fill="#5B6470">Unit handed off</text>
+<text x="32" y="226" font-size="13" fill="#8A94A0">bigger unit, more to verify</text>
 </svg>

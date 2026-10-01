@@ -1,48 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-label="NACL은 서브넷 입구에서 들어오는 요청과 나가는 응답을 각각 규칙으로 검사하고, 보안 그룹은 인스턴스 앞에서 허용한 요청의 응답을 자동으로 통과시킨다">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#1160D8" stroke-width="1.6"/></marker></defs>
-<rect width="960" height="440" fill="#F2FAFF"/>
-<rect x="1" y="1" width="958" height="438" fill="none" stroke="#D9E7F0"/>
-<g font-family="Arial, sans-serif">
-<text x="36" y="46" font-size="24" font-weight="700" fill="#123249">NACL은 서브넷을, 보안 그룹은 인스턴스를 지킨다</text>
-<text x="36" y="74" font-size="15" fill="#35526A">둘 다 경호원, 지키는 단위와 방식이 다르다</text>
-
-<rect x="216" y="100" width="708" height="204" fill="none" stroke="#79CDFF" stroke-dasharray="4 3"/>
-<text x="254" y="119" font-size="12" font-weight="700" fill="#35526A">서브넷</text>
-
-<rect x="36" y="144" width="90" height="116" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="81" y="202" font-size="16" font-weight="700" text-anchor="middle" fill="#123249">외부</text>
-<text x="81" y="222" font-size="12" text-anchor="middle" fill="#35526A">인터넷</text>
-
-<rect x="190" y="114" width="52" height="176" fill="#DCEFFF" stroke="#1160D8"/>
-<text x="216" y="207" font-size="14" font-weight="700" text-anchor="middle" fill="#1160D8">NACL</text>
-
-<rect x="560" y="116" width="340" height="172" fill="none" stroke="#1160D8"/>
-<text x="572" y="134" font-size="12" font-weight="700" fill="#1160D8">보안 그룹</text>
-<rect x="700" y="144" width="160" height="116" fill="#FFFFFF" stroke="#79CDFF"/>
-<text x="780" y="202" font-size="16" font-weight="700" text-anchor="middle" fill="#123249">EC2</text>
-<text x="780" y="222" font-size="12" text-anchor="middle" fill="#35526A">인스턴스</text>
-
-<text x="140" y="162" font-size="13" font-weight="700" fill="#123249">요청</text>
-<line x1="126" y1="172" x2="186" y2="172" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="242" y1="172" x2="556" y2="172" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="560" y1="172" x2="696" y2="172" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="254" y="162" font-size="12" fill="#1160D8">인바운드 규칙 검사</text>
-<text x="572" y="162" font-size="12" fill="#1160D8">인바운드 허용?</text>
-
-<text x="140" y="252" font-size="13" font-weight="700" fill="#123249">응답</text>
-<line x1="700" y1="232" x2="564" y2="232" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="560" y1="232" x2="246" y2="232" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="190" y1="232" x2="130" y2="232" stroke="#79CDFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="254" y="252" font-size="12" fill="#1160D8">아웃바운드 규칙 따로 검사 · Stateless</text>
-<text x="572" y="252" font-size="12" fill="#1160D8">자동 허용 · Stateful</text>
-
-<rect x="36" y="328" width="434" height="72" fill="#FFFFFF" stroke="#79CDFF"/><rect x="36" y="328" width="6" height="72" fill="#79CDFF"/>
-<text x="58" y="369" font-size="15" font-weight="700" fill="#123249">NACL</text>
-<text x="166" y="357" font-size="13" fill="#35526A">서브넷 단위 · 하위 인스턴스 일괄 적용</text>
-<text x="166" y="380" font-size="13" font-weight="700" fill="#1160D8">허용 / 거부 둘 다</text>
-<rect x="490" y="328" width="434" height="72" fill="#FFFFFF" stroke="#79CDFF"/><rect x="490" y="328" width="6" height="72" fill="#79CDFF"/>
-<text x="512" y="369" font-size="15" font-weight="700" fill="#123249">보안 그룹(SG)</text>
-<text x="620" y="357" font-size="13" fill="#35526A">인스턴스(ALB, EC2) 단위</text>
-<text x="620" y="380" font-size="13" font-weight="700" fill="#1160D8">허용만 가능</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 316" role="img" aria-label="NACL은 서브넷 입구에서 들어오는 요청과 나가는 응답을 각각 규칙으로 검사하고, 보안 그룹은 인스턴스 앞에서 허용한 요청의 응답을 자동으로 통과시킨다">
+<style>
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,d09GMgABAAAAAAVEAA4AAAAACaAAAATrAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbgWgcKgZgP1NUQVREAIEECoc4hgsBNgIkAzALGgAEIAWDOgcgG+QHII7UVveHZBYEPG769yJASahPPBNVOnOYeMWhZpl5uy+ic1fof4Bwqf9zP19318CjaBzowDajLozWYTXtDHDiA4oMm4a2Pf9R+t+mqcMRNJCpM6sG+9YCAegAgMQUCwINxDZgpwpNkCK69HIR6InMSiEQBeDD0SI5NiMFGyABIgUlAglbKxsSwQAUpzQiOQi7BAZZQUaSEA67SkACcUINiRC2QAE60Q8VBRHk35jFf0fx76ka0pQ0qAwFgeyUUAeXL5W/GjUIJdOkvWJZLG1EBbWRchj4mTikAxRKRUhABiQUQAigrtPlHshWjF3drL/5QqFNKB4DAkBpp84FDHTExlkhHFBVYnLjE7IE8CcPlwhBoBBcChCatBGQl0SRAKwAauQ04sf/KQhHIQ0oSTAyNgwa0REnnelFn0Vv177b+HJXN78/+P1052yz1RbrrF1Q1yBnsVbbEQhJoPO9JQED8IFYAAAoAFjgJZSQsaBgQSgQbVMq6RZdUXRLY/eJMSI42DBNqSC/8lLn00xHvl5gz8slWHw4fdo+++RJJp46pRWeOTM40lReJbbr58WkCzdKXDvl1s0QAqUg9ASbDtsp6m+06Obg+ZrVYYaKsPwCYb4/edYVdebCGSE0TNciaXZZiwkSmhKqaukiEDMYuxwigkXYyABxEHgGzwmRNUuB1ZEvB0um3dRG6sKRFyrC8hqyD6dOMfHkSfvs06fFpDNntJMTFbqEbp9rcOYZQ7IEtR6lLew1iMtFEKEBMzxekLyAtTaBrPqPQYF/dZILJ4Fy5tSq0Hnu5Aruuc7iJyP14jcjX7Z4oD7Amel3Zc1oOzB9btrI09/9NPLk3JSUgVNbD05x9GogBc/4415Q0bLtDZcu7Hf77uK+DZZs+99hzn0Y/ndDrKvmHnz7xxjvG2/kX28PHwerszT17c8MNFCq7/hB+6EO6lxb9czvHd/XZtDNJ0WHi8Ld0+K3cuR2GvqJhpabpWuWXyqFG3+Xq6ze//u8/3zJA2olwL4E2Bn3qeKnJ3HPvvVNuD/hw9NNqc9S2+0ccv+kb/rd6AdbH1R83+8PNhUuktPKJsDh4+1q9GHzh4DRpcr6VvVPYxUNv7onl5IZ+WczP2pd/6uLHY530FzPLh++3PbpCP9dtoh6N7InH582tYTfyC2cdTN36okpre/j17MLnRfTW3b0du/eMTm9VUS3tJbtPd17gFC9zq6QetZ2uVd395g6US3atR4V37CTM65ps7iI8oUTj99N/+HHe8kTt41zd/j1ry3fzrh40u55EwjAlqcIQPQtvXPy5rOjg9q8ssk2AK55R30GcPtGxiFq+dpYE6wewIoEgIBvhdFGAJHSBRDI4roNfhDnQN1MLXU/o5VVmMooTHURpuU+zauuqfpGOik3iEEAOg2wACDATnbGIyOUAKANmAxBNdowJAKJYsi0Ii1XCWOotGM+3UIT7gYI0EVZYGjYRI3LDUEXDXCSShr5ZJBIPAlkYTAPg0Y0oBGNMehJIh4MupFPNinEU5ckEkmhHxnEkkUsKcQQSQYxGAxiYQglkig8MEAV31njud5mQ+rRmAa0pDVOXLgZSOtk2RkGvZpBJomkkoIBqq40SD5pJJCJQWPq0QiDGlz8RjSiKTUHyVd3us7BxG7Mn+tEKh5i6E4WkXhIJBoZAHw+ChEAAA==) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="316" fill="#FFFFFF"/>
+<rect x="212" y="96" width="556" height="194" fill="#F4F6F8"/>
+<text x="236" y="116" font-size="12.5" font-weight="600" fill="#8A94A0">서브넷</text>
+<rect x="480" y="116" width="272" height="154" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<rect x="32" y="150" width="104" height="100" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="84" y="205.55" font-size="15" font-weight="600" fill="#0B0F17" text-anchor="middle">인터넷</text>
+<rect x="664" y="158" width="80" height="84" fill="#FFFFFF" stroke="#C5CCD4" stroke-width="1"/>
+<text x="704" y="197.05" font-size="16" font-weight="700" fill="#0B0F17" text-anchor="middle">EC2</text>
+<text x="704" y="214.8" font-size="12.5" fill="#5B6470" text-anchor="middle">인스턴스</text>
+<path d="M136 168L657.5 168" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M664 168L656.5 171.75L656.5 164.25Z" fill="#5B6470"/>
+<path d="M664 232L142.5 232" fill="none" stroke="#5B6470" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M136 232L143.5 228.25L143.5 235.75Z" fill="#5B6470"/>
+<text x="146" y="160" font-size="12.5" fill="#5B6470">요청</text>
+<text x="146" y="250" font-size="12.5" fill="#5B6470">응답</text>
+<rect x="203" y="104" width="18" height="178" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<text x="212" y="38" font-size="14.5" font-weight="700" fill="#0B0F17" text-anchor="middle">NACL</text>
+<text x="212" y="58" font-size="12.5" fill="#5B6470" text-anchor="middle">서브넷 단위, Stateless</text>
+<text x="212" y="76" font-size="12.5" fill="#8A94A0" text-anchor="middle">허용과 거부 규칙</text>
+<text x="232" y="160" font-size="12.5" fill="#2B323B">인바운드 규칙 검사</text>
+<text x="232" y="250" font-size="12.5" fill="#0B0F17">아웃바운드 규칙 따로 검사</text>
+<rect x="471" y="124" width="18" height="138" fill="#FFFFFF" stroke="#0B0F17" stroke-width="1.25"/>
+<text x="480" y="38" font-size="14.5" font-weight="700" fill="#0B0F17" text-anchor="middle">보안 그룹</text>
+<text x="480" y="58" font-size="12.5" fill="#5B6470" text-anchor="middle">인스턴스 단위, Stateful</text>
+<text x="480" y="76" font-size="12.5" fill="#8A94A0" text-anchor="middle">허용 규칙만</text>
+<text x="500" y="160" font-size="12.5" fill="#2B323B">인바운드 규칙 검사</text>
+<text x="500" y="250" font-size="12.5" font-weight="600" fill="#1160D8">응답은 자동 허용</text>
 </svg>
