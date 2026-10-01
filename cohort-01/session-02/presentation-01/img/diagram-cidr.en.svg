@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 292" role="img" aria-label="In 10.0.0.0/16, the first 16 of 32 bits are the network ID and the last 16 the host ID. /16 holds 65,536 addresses and /24 holds 256: the smaller the number after the slash, the bigger the range">
+<style>
+@font-face{font-family:"d-mono";font-weight:400;src:url(data:font/woff2;base64,d09GMgABAAAAAAKUAA4AAAAABWwAAAJAAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcWAZgP1NUQVRIADwRCApocAE2AiQDDAsKAAQgBYQAByAbeQQArgpsY+TYTX0R0VCpaSuNla/pwrHx8DVGe3937w5XSypZdPolNFStkBgSngjdPEE62aO53YamhXwV0QjxE5I8v+jEblhPIBNuAJxgHMFdnraQXZltiZD/nGQXN7mxOMp7bADQWhRI1vnEsZQ2UICTAsosIE69/UWDTip7y3cV6GSIYWLNuvMNxgpUgEAnY8ySOPHk/BEqIGEuB+L8GcthzA2nKGZ0u88+KpI8kRjOSjoQNzWQmiMENrcfj4O2sYwUOgIIANgXdoa/EablP+0oK6IZAalXeoMRGoXQQUIfCWOki6ccRTgznkVjhaKPjCTFTdJzZCHFOBAgIaOPLNBHMQGNipCMMK3Cfr5+qC8AISrdEQrogIwu6IEB6AISlSil7G3q2ni0a1OXztHZzHvWzCmXKf5eufaD/ni55RfGy20P0STXwAi0wntXDgLxZHb7nZ4e6r7kf738Hb4cePwEfP1Ei1rVxos8Ao0SCKrqpQMMxizkOws5pPhnlg/wxF+BooOkiywAQBbo5IaeKB1xnzOEPu5D0s0zyBZ4B8WYAA0GxRi+0ahYJgi6xGFkLHH+XeN0ikuYUuWr4VkOQbPMMMscI+zhaGg9zWsRtEOjFGgSQSt1iFNqtNAEpxFSae1MN90pPrZ3hKVjSrmVC7SGpGVQVNYWTioVyDK7O/mDuZVxU+lCszoZrrExzXwzzLDYPhfM2V6uOnoWXvx6HyL/oDVanhMgvaoayFOp7kcdEC7jSRelHFfoAXWzEBYA) format("woff2")}
+@font-face{font-family:"d-mono";font-weight:500;src:url(data:font/woff2;base64,d09GMgABAAAAAAMsAA4AAAAABjwAAALUAAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcWAZgP1NUQVREAEQRCAqCFIF3ATYCJAMQCw4ABCAFhBgHIBsgBQieg01ZnhWHqLoowtuWbTxE/iHx8P/7o9/nvjeg63yjAUyD+LX6pC+EygqWBGavLjyf//3cfVMJhYkaovan+oZ5GiVDiGQSh0iJ3jgkCpE5/znP/ueaepF8dJhYjt8u0noNMmuLUmrwHa3w3iyNB+Qzb9lGe40yk5M6ie4qUKlbH7J2dHoZAjkUAIFKw7xYWK9smqF1yGA0xmO6VGAgoOTlcjcMbfbLZ0KmRAkoUsKn3eR3XDqT1gHr8t+Mg/BGClKoABAAsHPr0DSeqXmyn//vIF9JeiAgNacX0I8nhHIJzVgYxjpVKFICJo4zVWJA5OoRiK74BZmQYhQQICFDM7ZAM45xUM4Y6+fkKQjE/WXF++JN8QwBEKKgDqEUVKMcK8A+0A6qQZJJFESe5/X1Yk6+gy8tPSrlV+8qrGRXeq9fk+s3b8T3r17h6uXL1bMONcwiUU8jXElTyq4M5MSnd0OcV0eNqqgy6/rTpQcHPPZFO04n5H+bOKPxEJ1tbcQe2p2u1ubsXHPTmE57U3NjlnEk+7XHK2sCOXXYU8qsrYCUhfL308am6W/Buv4yeOw9433GDM4Y7p8vILP/biFlz1QE5fj7Bt64+4Ag7s6JKL/u1cW/CbLsC/Bx951dAJ/e08X/b8VkMmdqUCqB4MtR2g2x3Og7ByOk+MrbgVv47CPeEZQaxlYtEwAgE6hyBlvkFbgBlRKaPSpJrSdKZqFXJTccUEp0hl4uNRhJVVAdh9EuchodIU9XMUoUM4Y0NB1rKykootS83Lz81JYV5aiNySnpaDXz2hrKcjIotQFdVFFDW4eaWRFFNXVEubgUlMASXWlOGQ01Lgdy2jJyqtwkHXPIa6ijnBtWLXe4MxAEunh2QVcVo83DKcTNLWbVoiHTYtbNtsYhkwnr1J6vyr3olrBYjTkrB1/LC4roz8vJKumqmUAxqkoyFjXUMOrYQDEvCB0AAAA=) format("woff2")}
+@font-face{font-family:"d-mono";font-weight:600;src:url(data:font/woff2;base64,d09GMgABAAAAAAOQAA4AAAAABsgAAAM7AAGzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcKgZgP1NUQVREAFQRCAqDNIJnATYCJAMSCxAABCAFhBwHIBt4BQAeBW5rc7ytRRUlKCup82kE1RrWM7cBRB0ZiS6aFIIPPzgynuW7d57KE13pzJX1AeAzAT8AyQSyPgQVI2lSp6aiioj/du2bMIi8yEo4i+gA/IT/39/kj3EB9jDxED81tk0KqAt4LMPAy9Y4DwshD4gWiDeJTsSr7H/luwo0GjYbthIor4ehCvxnAIFGs0RYTLnRFz1UDqaSiFVyUwdgEPlsTYHV+tgCTVwAGRp0dniy9e0th0eAGNrv/z9BWcDWAAjI3nwBYNxgIdRLdGNhGusynqAw4PT1ZDA+TNEOgxjJZgCVkDELECBRoRsu0K3MAtCsXirGKWnoGIrBCUntR+tnaOYT85H5ABgACPGfMRDqQCsacQu8BQAFpBRSIkppKpNN+GRr2dqQUbV7o4Y0t1SN0fT87VVsRGmOFk2Pabrp7seL2IoLb4av+YYaaXrE2u/fYfm3b/Wvvj2aOgpaojmOR7CaNNrr+O6aHz+wFTTpsev3PDD0v9UbDn6V525cS2Mrfgxf8+4RLL/8vmHRiPnq7Tc23ehQy2plMPjjlUS9aHC/LPWikvxHUhz50mKG0FH6/Zw566fx7W73+uWDh5+tXDK/IqnVdzpM3OpaX4D/MGJSTcyQkPhCCePbtS8acg1bypkvQpCP+lLEupFomb3LS2Zclb42maHy8ZJhG2mlOmASzoWOddhSyTcE4lZTOlTpJEl7RdHuDXoczqBV9EkmFv4+Ch13/NP2wnw6AH4J4p32Af75QdcY29ehePUZgA/NZ5oA+PiLsgCqFMtUIaBWgiDBjNwkCAhb5kAFZHwxiS06CogE2IKhzpyfENXU5BngojTgBcAeQrcTkFq9h8q8V1BMB6DGYHh0rck4GEFz7MCIscnAjJFxd8Ss4fEEvPIKFiAlxSVQEA0VDR2kXgIBCSIkleox1Uh5KYQ+FMRtACUhj1SCiCRQKAUlFkpKcUlq/IBeCn3yspTmIpD6EDLCR6mSi8nLoSis8+I7yBUEHqj2qrgBGT1IagpGKipWjWp5lbPa8q1AXsK9FyFxGxHvk5OMicSLGwM1cb97v3UIWUkeeRn9wig9MpL61MrL6pGDA//30eQP) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:400;src:url(data:font/woff2;base64,d09GMgABAAAAAAm0AA4AAAAAEmgAAAldAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGiIbhmIcKgZgP1NUQVRWAIEMCpMEkBkBNgIkA3wLQAAEIAWDJgcgG8QPUZRy0pER/DyMjZWNj2REIqkiHbttYCp0ef1duUcQrZXVc7MPhHFxqAA9K1bAlpUAlBEqrBIZyWTk9c/Ttv7PHQaFGcTc6KS+sjhg01YjFSaLjTUbkVhsdNgvqvzlRgH8d0Viq+2ptVZ/Xywh3l4sfqjodGg0KqGcve6bHWIe39CkWmlkMYtiiVYteWiVUBuh8Vpag9uaDMspliRYtvT3/TUF0AdAwYAJggQbARlpNBwCeky1FLY7Ok4F3PM5Lgtw4YB8L4A4V+CwAAsoQMAE+AQwLBjCZAgHDoQwCDIGMjq7YfLhwEVlGLis4Lwudfmi8ltIWnYisuBjCxhGGpU+EqaS0AKDKIkEAuZMx4BEx4rGuoKTw9gCMHGQQA92dSCsEgOGKNgEI6rKbExG5EyIlWfAsQSLyA0AyFsmK7EWcBA30GtBuKzAfCCRPM7Tyc0zfvKekgTY4x1GTObgleiZv2Qsyb2xGSlYjVnoJoGf3lUudkkXGZD1xJpmyR6QX7JEluTA2HPH03AAq0XgGG6EMKMRdq0CMaMuB+iCYQANEgETMFPeHxDuIVlAH9T16DsrtmRwEA5EZOR0M5801kg36+DacQBtAiZo1uEvgdtUprxGY+syQavK6SCYHXcdVCvhNkxU3HngXRgAcaDfpJF1K7MNLtUCUe3nAWMYwBrYJV2RCwH4P5kVhd7JMOzJxvsxS2wC0OI45YWx9VQBAAILILJDRANxZT9xRggGwkRzLbLcSmvIqOTSsynO90iAVDpHPhPHe5y//v77X//qzdeeefyxRx+BWFFhgqtvBdaC8hPUiwAWgDmADqBAC4ApSG/ZaUSgZUgwDKvVYjjOwVmLR4QsVpuOh0wLGYnjc0aGsK7w+fg8gjU5ZDJyptTthoorOLpm1X4URA8MoJr+foJzkPryQ6j+4AsX4Sb3a+HBTLKcYHJxIoh3hQNnuaabM6RS9fZCdV8fmUDLWJS09KqIActE0n+2ALwHEf7e3jniPgDVDGhbtVq1m8TJe2/8dNWnyigCiC+piHl6L3wZiftbFpEKSETcjjIO+BKj4/60j6sAhiJYopwauYDsjTa5uQL4lSGnwUVZCbB62N+CVUN6d0JaMajTFUkikjXJrj4fFmuBEyeLNDBNhruX1Z4sEsjJdzrnj809ArFujsEmIaVHA/qA6sqxoZRDKPuY0mICJ4aUigqXwY6HIxuGkjnV6hxEL4hjN41mClDdu5JUVnXfk1U6Bfe7pGWXa0dEz7KYJH79twom2EQ2yiO/fP/RVclUE/3rfpCvqqKqFFWPokX95Y+hgr5Ijrq368/7UpJODD0965I694ykn5xZ5fRjgt1oMgM8wtI6X14AeGKHs5Rxuqvz/K2oDxSnf2x0Dp09bR/60ttmOlTWPa/zoOSLrw5Llp34iHsemA+NhliU1L+rvwi04cWGdw3nQeWmMGuvOfQQmF0X8e//sUXx372kPbA80JuiWbkqVjcjKrNRRpVHK6KX5ZgXKXI9ieGR50mt3XtNVpJ5boW3/cDzjm2sVfJ477LkotbEnJ2FHd83nyIXdbLtDEQD0bT5h3PdIo8gu6mrsfhtR1vx+1errynTIxJQ4RE+X+tx6gqty85fb6SulLgkF9brCnOb86hzFbBfV3Px+7aO4rddjU3ZHgGP+psz/CQw29p8YeE8yiPKLt9N66grFRWSc3Refj6toy64SqgrtDEfLvm22T3k87nRp+u3rO0x1v19UyrdsiedWu+VJ2dvzEjcn5pbpmzfqc0X5k2SLFtyeZS81H1OYoEZjJNxm+L2/xzrocWZ48XMvj3/mZ2qjFf5T3bDrT2RFa9n550PlW9Wujbtrar/hHtLJKsSZNd31ZQO+o4VD3bVKT53lZvrb0tvKD/Xo25J09JpVHtZCXWmOUer9Bmbg+qksx5xuR+Ybf4I7gzt3qy1juMpKZeazvp9Kl65VZCg8Ihl3nRgHRP6hX6IwNgn83Vwp2i3ZxmirbPk8r2cKxnyqjlx+VvlyuOV/f5eh9uYHWMUrDBG3z35HX9ZRtYi4b+sYnF5gi8XlqTpLO3erDLb0THlV5WaRQlJbrGkxTlf0u63vjaM0BZbtnxOl79t8wECK23R79xolVyy2SRXaA2DYbOVusIFUJc24xOr8Ef8zaMuMnDu7XzfVUNmlUgk6+IK/USdcAFyaRIKTcvHc/y78nHGKXfnZS92ntz6n/Fx7kjKKfX7YZ7YZI5Pj9LN4sXOX54WmzHs8IzNkzZudmTmbb2lbKg4JdE3B+WcD453xhfG2WcIYhevVsenhR+dtn7S1u2m9ILNF+QlllZZnpetbYPp4pPLNy3/mkFETZN8OHvxkkMr1sQ1itRVqcthSb2wQ9hxmTNLe9hcUrQ/LeVSw1m/L47nNIrWRFVFKr2Z0PRfWFk/XtT9fhH+Dv25aueiN++8usErHZUPsqpOhNrPhkbGFpSuSChpr0n7z8mwvXY1PS+u+kO358OWJs/n31ZtS9u/XavdmZyq3LpVnZm+OyVlO1KrtNt3pmVCX/iPuppLrvTYg406OcmShBrTeI0JltJTr3Jqa7tySk9ZEgSNxjRJKEtOenWJB9NddZd+1O0o2L9TJHfGJalRe3ZT2dm7KbUHJaJYuXOnqFB+okZAWaVSibmGp1LV8CRmqVRmrRIogHuibZt5wl2c+pdncPzEvz0TJ3v+njh+0DMZ8BXgAsV4UDthXP71/594MIyN+93zb4MqQhGIQ8x+/HYhMkEDxLQaUAXTd2vo/U8QEHtGH6YXfnM8mD/IYrAA8MucuQGA/1+7VsPUNj+wKNAEoPM3h/ixMnURsY3HjKe102IXwA0MA2iuwyGmD7PRP6vg30iqUtDUqxwCAZpqqlXOwtR6BGpXQwu6CUVAbWEH+Dm4i2wBjSygBXtuYvzXyJTLML+azlMLhvoDW/2IoYQAP+6LMbbbVM1tUZQAETCNxK+afDcHBlTZYDPBiZDp+CIMV66IYTVbR1wqYhLqEAZY6odGCKAvxgIIPe1MELOyKeegp1PEZaJ2HLjYQs2SfWksPdPy4aTKFbPQmcdAzyKJQwGXAhb5cjjkm0gDiIyXI5cJKEidYg5zP89F5ltioVV4xFTUlHgZvS+BhnRwOmZaWUw0q1FMytkUcQrAEs1iqpm5Aosnvsyskbqapzlbq6A7Ghl+VjlM9PIwALTbaLAA) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:600;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"d-sans";font-weight:700;src:url(data:font/woff2;base64,d09GMgABAAAAAASMAA4AAAAACGQAAAQzAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGhobgXAcKgZgP1NUQVREAEwKhUCFCQE2AiQDIgsUAAQgBYM6ByAbIgdALgZysmsUzhFSevFqO7EVzm/226RrPDzN/ee5k8njZQLN7JBLoLeyQqFuLVpWwPbn5+u091NIUypGYQ6CSVfG0Tq2nnQFZKjXSQLysPc/gD76/7kc/9vZpPimaGB5JGOO53NhdAW4yNemxDfQWR5mAXK+W3ueh0FgMGJ/l2C3ribQAYQkC1mWBVrG4mKtzcgrA9czzTQJrjJ8Na5/ut1Igj0SQlJzR9IQGpKNrLFXC2t1qK4b8dlFqEaC9VJdqxSy9K+SK2RVQT6EmidVyBZPc/V8SHSB9j82FAYpqCwRmiuRopQ88ca648WR/j58Otc+Zp2DknJ2HsCHkiB95Wla+iYFkoyAnWv2lpfCJRiJX9/+rzfATKN3otbLy8uDwEjOYv9S9B2vPxbremcXjYCTV5px5AHJekIQ7fQJUAhJAgESCvRlJdCXtYVAS0OSjJSEg19Bk7PxpFQ/uGXIYIE1oWl9b6CDL0Hss0Dfi6ghhJAqopIxb+T8mAh36ylTWJMnXdps4pWmccxCsywWx8VjY9C5rfKcljAM3KosKwM3vX/w8StcdjGM05JAxJ7AmGMohhw15jwuK2PCwMwBxzxT+W2Wr5XOUzzA9aDT1YQex7c/3kKzbj+2pMudd5d0lIXYmhA7dhcoY+55U5zqnB0e4gRAegrVp5wFKOAjyPDKkyx4gvwPcv77xr2t2eVNSS1CuaShM12t6eDxO7ShS4y8MGzc9LJ35uVp5cptuy+uW3BnzBH/7uo3r5+9S6+ypqRGqIqpZG2mkS2rsndcVTuVXbbg3oJMKk1SaWc7Z29zskLZnaQsicGsJi+6+KZnzbrH3dNOIyMq0M6aWlLs6nTSeW1N7jJUgyauuPKfAH97vScWXmVNisxUlnelyXNolYrOyVfTfeq8IqCWuHjkz+op3+eEO63foqmfMzax76bHXj558h2I3uWSXbI/H9/Y+dSxFQ+IRRddJ8QfKac2WtI8l9T1e9kJu1CzMq1w1uAEeuzh6oVPf5Dx5opW3ZeZrTKbVNlZZo3GjDJBu9pMZ2SD26uDYy3CULCua1T72U09DWn6fgHpFjCvqwadgDdtK0g0UB44DwKxI3DqjMqORjfp//ZFA/xANCwH/PqYFgOvS2rXZYcDqEsgOHD+Bj8lfwQg/PsbDd6Lm+SfHClDtJbWrpXRalIe8FKQfPkQmuazlcUBgXSu5QYrkZtYCjQmjCdlku4OMYXF9OIcxZSWO0zXzPWiKejEUDBtjZj4ur04x0waFL1JjLp16kLDHDISWxo2DkyubjhMlknMSJ2S9ehGKmLUjtaO1KaZURtMBc3r1qwFrl3JyHcyw+kz06XgSCMioVGmXClJrf4EFVKNTLpRSBjmZcJNotfF5ANOBRsmjgzs6Xni1xiW3G2uUvu+fJ0aBdcmG60ZrlsrK6DrnyUYAAAA) format("woff2")}
+text{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.m{font-family:"d-mono","Geist Mono",ui-monospace,Menlo,Consolas,monospace}
+.s{font-family:"d-sans",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+</style>
+<rect width="800" height="292" fill="#FFFFFF"/>
+<text x="247" y="52" font-size="15" font-weight="500" class="m" fill="#2B323B" text-anchor="middle">10</text>
+<text x="299" y="52" font-size="15" class="m" fill="#8A94A0" text-anchor="middle">.</text>
+<text x="351" y="52" font-size="15" font-weight="500" class="m" fill="#2B323B" text-anchor="middle">0</text>
+<text x="403" y="52" font-size="15" class="m" fill="#8A94A0" text-anchor="middle">.</text>
+<text x="455" y="52" font-size="15" font-weight="500" class="m" fill="#2B323B" text-anchor="middle">0</text>
+<text x="507" y="52" font-size="15" class="m" fill="#8A94A0" text-anchor="middle">.</text>
+<text x="559" y="52" font-size="15" font-weight="500" class="m" fill="#2B323B" text-anchor="middle">0</text>
+<text x="32" y="52" font-size="13" fill="#5B6470">8 bits per number</text>
+<text x="32" y="82.29" font-size="17" font-weight="500" class="m" fill="#0B0F17"><tspan fill="#0B0F17">10.0.0.0</tspan><tspan font-weight="600" fill="#1160D8">/16</tspan></text>
+<rect x="200" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="212" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="224" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="236" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="248" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="260" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="272" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="284" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="304" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="316" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="328" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="340" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="352" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="364" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="376" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="388" y="64" width="10" height="24" fill="#1160D8"/>
+<rect x="408" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="420" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="432" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="444" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="456" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="468" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="480" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="492" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="512" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="524" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="536" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="548" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="560" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="572" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="584" y="64" width="10" height="24" fill="#D9DEE4"/>
+<rect x="596" y="64" width="10" height="24" fill="#D9DEE4"/>
+<path d="M200 96V102H398V96" fill="none" stroke="#1160D8" stroke-width="1.25"/>
+<path d="M408 96V102H606V96" fill="none" stroke="#8A94A0" stroke-width="1.25"/>
+<text x="299" y="122" font-size="13.5" font-weight="600" fill="#1160D8" text-anchor="middle">Network ID, 16 bits</text>
+<text x="507" y="122" font-size="13.5" fill="#5B6470" text-anchor="middle">Host ID, 16 bits</text>
+<text x="632" y="79.92" font-size="16" fill="#0B0F17"><tspan font-weight="700">65,536</tspan><tspan font-size="14" font-weight="400" fill="#5B6470"> addresses</tspan></text>
+<text x="632" y="110" font-size="13" fill="#5B6470">bigger range</text>
+<text x="32" y="186.29" font-size="17" font-weight="500" class="m" fill="#0B0F17"><tspan fill="#0B0F17">10.0.0.0</tspan><tspan font-weight="600" fill="#1160D8">/24</tspan></text>
+<rect x="200" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="212" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="224" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="236" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="248" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="260" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="272" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="284" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="304" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="316" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="328" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="340" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="352" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="364" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="376" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="388" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="408" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="420" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="432" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="444" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="456" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="468" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="480" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="492" y="168" width="10" height="24" fill="#1160D8"/>
+<rect x="512" y="168" width="10" height="24" fill="#D9DEE4"/>
+<rect x="524" y="168" width="10" height="24" fill="#D9DEE4"/>
+<rect x="536" y="168" width="10" height="24" fill="#D9DEE4"/>
+<rect x="548" y="168" width="10" height="24" fill="#D9DEE4"/>
+<rect x="560" y="168" width="10" height="24" fill="#D9DEE4"/>
+<rect x="572" y="168" width="10" height="24" fill="#D9DEE4"/>
+<rect x="584" y="168" width="10" height="24" fill="#D9DEE4"/>
+<rect x="596" y="168" width="10" height="24" fill="#D9DEE4"/>
+<path d="M200 200V206H502V200" fill="none" stroke="#1160D8" stroke-width="1.25"/>
+<path d="M512 200V206H606V200" fill="none" stroke="#8A94A0" stroke-width="1.25"/>
+<text x="351" y="226" font-size="13.5" font-weight="600" fill="#1160D8" text-anchor="middle">Network ID, 24 bits</text>
+<text x="559" y="226" font-size="13.5" fill="#5B6470" text-anchor="middle">Host ID, 8 bits</text>
+<text x="632" y="183.92" font-size="16" fill="#0B0F17"><tspan font-weight="700">256</tspan><tspan font-size="14" font-weight="400" fill="#5B6470"> addresses</tspan></text>
+<text x="632" y="214" font-size="13" fill="#5B6470">smaller range</text>
+<text x="32" y="274" font-size="13.5" fill="#2B323B">The smaller the number after the slash, the more host bits and the bigger the range</text>
+</svg>
