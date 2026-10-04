@@ -29,7 +29,7 @@ export function Hero({ locale, latestCohort }: { locale: Locale; latestCohort: s
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">{hero.body}</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <ButtonLink href={routes.sessions(locale, latestCohort)}>
+            <ButtonLink href={routes.activities(locale, latestCohort)}>
               {hero.primary}
               <Icon name="arrowRight" size={12} />
             </ButtonLink>

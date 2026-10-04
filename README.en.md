@@ -2,7 +2,7 @@
 
 [한국어](README.md)
 
-The official website of AWS Student Builder Groups at University of Seoul, ASBG UOS for short. ASBG is the official student community that AWS runs at universities, and ASBG UOS is its group at the University of Seoul. The site introduces what the club does and gathers each cohort's talks, members and official channels in one place.
+The official website of AWS Student Builder Groups at University of Seoul, ASBG UOS for short. ASBG is the official student community that AWS runs at universities, and ASBG UOS is its group at the University of Seoul. The site introduces what the club does and gathers each cohort's activity records, members and official channels in one place.
 
 Site: https://asbg.uos.ac.kr
 
@@ -24,13 +24,13 @@ Next.js was chosen mainly for search and sharing. Every page is generated as com
 
 | Area | Used |
 | --- | --- |
-| Framework | Next.js 16 (App Router), React 19, TypeScript |
-| Styling | Tailwind CSS 4. Design tokens live in one place, `src/app/globals.css` |
+| Framework | Next.js (App Router), React, TypeScript |
+| Styling | Tailwind CSS, shared design tokens |
 | Content | Markdown + YAML frontmatter, react-markdown, remark-gfm |
 | Content validation | zod, schema-checked at build time |
-| Localization | `app/[locale]` routes with Korean and English dictionaries |
+| Localization | Korean and English |
 | Theme | next-themes, light and dark |
-| Share images | next/og and sharp, rendering talk thumbnails from SVG to PNG |
+| Share images | next/og and sharp, rendering activity thumbnails from SVG to PNG |
 | Fonts | Pretendard, Geist Mono |
 | Hosting | Vercel |
 
@@ -53,11 +53,11 @@ flowchart LR
   class c4 black
 ```
 
-There are only four colors. The university's blue goes where people are meant to click, such as links and buttons, and the color of a sky with clouds in it goes where the eye should land first, such as icons and accents. White and black complete the set, and every grey and translucent surface is one of the four at a different opacity. Light and dark mode only swap the roles of the same four colors. Keeping the palette this small means the look holds together no matter who adds a page.
+The site UI uses four base colors. The university's blue goes where people are meant to click, such as links and buttons, and the color of a sky with clouds in it goes where the eye should land first, such as icons and accents. White and black complete the set, and every grey and translucent surface is one of the four at a different opacity. Light and dark mode only swap the roles of the same four colors. Keeping the palette this small means the look holds together no matter who adds a page.
 
 ### Pixels
 
-Every icon is pixel art on a 16×16 grid, and the code defines it exactly as it looks, as a grid of characters. On the left is the logo as written in `src/components/icons.tsx`; on the right is what appears on screen.
+Every icon is pixel art on a 16×16 grid, and the code defines it exactly as it looks, as a grid of characters. On the left is the grid that defines the logo; on the right is what appears on screen.
 
 ```
 ...##..##..##...          ████    ████    ████
@@ -78,40 +78,16 @@ Every icon is pixel art on a 16×16 grid, and the code defines it exactly as it 
 ...##..##..##...          ████    ████    ████
 ```
 
-A single pixel is just a square, but together they become a lock or a server. It is the same principle as the cloud, where small services such as instances, functions and queues are wired into one product. The logo, the channel icons and the session thumbnails are all drawn on this one grid.
+A single pixel is just a square, but together they become a lock or a server. It is the same principle as the cloud, where small services such as instances, functions and queues are wired into one product. The logo, the channel icons and the activity thumbnails are all drawn on this one grid.
 
 ### Circuit board
 
-All the graphics speak the language of a circuit board. The dot grid in the background is a perfboard before any part is placed, the diagrams drawn on it with chips and traces are the closed loop and the request path on the home page, and the small squares at card corners are solder pads. Numbers, dates and keywords, the information closest to code, are set in a monospace font (Geist Mono), a nod to sessions that mostly happen in everyone's own console.
+The background dot grid evokes a perfboard before components are placed, while chips and traces depict connected systems. The small squares at card corners come from solder pads. Just as connected components form a working circuit, these shapes express a community that learns and builds together.
 
-Talk thumbnails use the same language: a dark dot grid with three keywords on the left and, on the right, one pixel icon that represents the talk inside a dashed frame. The guide, prompt and validation script are in `template/session-thumbnail/`.
+Numbers, dates and keywords use a monospace font to evoke a terminal. Repeating simple dots, lines and squares makes the pages feel like parts of the same board.
 
-```
-┌────────────────────────────────────────────────────────┐
-│  · · · · · · · · · · · · · · · · · · · · · · · · · · · │
-│    ASBG UOS · COHORT 01                                │
-│                                                        │
-│    COMMUNITY                     ╭ ─ ─ ─ ─ ─ ─ ─ ╮     │
-│    HANDS-ON                          ██   ██           │
-│    CURRICULUM                    │   ██   ██     │     │
-│                                     ████ ████          │
-│                                  ╰ ─ ─ ─ ─ ─ ─ ─ ╯     │
-│    SESSION 01 · PRESENTATION 01                        │
-│  · · · · · · · · · · · · · · · · · · · · · · · · · · · │
-└────────────────────────────────────────────────────────┘
-```
+## Contributing
 
-Diagrams inside the talk write-ups are quieter than the thumbnails: a white background, grey lines and a single blue. The rules, prompt and generator are in `template/session-diagram/`.
+Send content updates and design or code improvements as a Pull Request. Follow the existing writing style and design principles, and keep the Korean and English versions in sync.
 
-## Development and contributing
-
-Requires Node.js 20 or later.
-
-```bash
-npm install
-npm run dev      # http://localhost:3000
-npm run build    # static build, including content validation
-npm run lint
-```
-
-Content lives under `cohort-NN/` at the repository root, one folder per cohort. Talks go in `session-NN/presentation-NN/index.md` and members in `members/*.yaml`, with photos and PDFs kept in the same folders. `src/lib/content/schema.ts` is the reference for every field, and copying an existing file is the fastest way to start. Send changes as a Pull Request.
+To run locally, install Node.js, then run `npm install` and `npm run dev`. Check your changes with `npm run lint` and `npm run build` before submitting.

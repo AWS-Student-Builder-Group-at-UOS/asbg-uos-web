@@ -3,17 +3,17 @@ import path from "node:path";
 import { getCohorts, getLatestCohort } from "./cohorts";
 import { getMembers, type Member } from "./members";
 import { cohortDir } from "./paths";
-import { getSessions, type Session } from "./sessions";
+import { getActivities, type Activity } from "./activities";
 
 export * from "./cohorts";
 export * from "./members";
-export * from "./sessions";
+export * from "./activities";
 
-export function getSpeakers(session: Session): Member[] {
-  const { all } = getMembers(session.cohort);
-  return session.speakers.map((id) => {
+export function getSpeakers(activity: Activity): Member[] {
+  const { all } = getMembers(activity.cohort);
+  return activity.speakers.map((id) => {
     const member = all.find((m) => m.id === id);
-    if (!member) throw new Error(`[content] ${session.cohort}/${session.slug}: unknown speaker "${id}"`);
+    if (!member) throw new Error(`[content] ${activity.cohort}/${activity.slug}: unknown speaker "${id}"`);
     return member;
   });
 }
@@ -21,7 +21,7 @@ export function getSpeakers(session: Session): Member[] {
 export function getStats() {
   const cohorts = getCohorts();
   const latest = getLatestCohort();
-  const done = cohorts.flatMap((c) => getSessions(c.slug)).filter((s) => s.status === "done");
+  const done = cohorts.flatMap((c) => getActivities(c.slug)).filter((activity) => activity.type === "presentation" && activity.status === "done");
   return {
     members: getMembers(latest.slug).all.length,
     presentations: done.length,
