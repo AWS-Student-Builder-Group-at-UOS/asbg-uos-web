@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({
     locale,
     path: "/resources",
-    title: locale === "ko" ? "공식 채널과 자료" : d.resources.title,
+    title: locale === "ko" ? "최근 소식과 채널" : d.resources.title,
     description: d.resources.body,
   });
 }
