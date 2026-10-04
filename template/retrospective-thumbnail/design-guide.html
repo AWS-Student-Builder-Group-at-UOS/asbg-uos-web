@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASBG UOS 활동 회고 썸네일 디자인 가이드</title>
+<style>
+  :root {
+    --ink: #0b0f17;
+    --body: #2b323b;
+    --muted: #5b6470;
+    --faint: #8a94a0;
+    --line: #e3e7ec;
+    --surface: #f5f7fa;
+    --accent: #1160d8;
+    --sky: #42b4ff;
+    --black: #0b0f17;
+    --spec: #ff3b7a;
+    --mono: ui-monospace, SFMono-Regular, Menlo, "Geist Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; scroll-padding-top: 24px; }
+  body {
+    margin: 0; background: #fff; color: var(--ink);
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", system-ui, sans-serif;
+    font-size: 15px; line-height: 1.7; letter-spacing: -0.01em; word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 1040px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.doc { border-bottom: 1px solid var(--ink); padding-bottom: 28px; }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 22px; font-weight: 700; }
+  dl.meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0; }
+  dl.meta dt { color: var(--faint); font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  dl.meta dd { margin: 4px 0 0; font-family: var(--mono); font-size: 13px; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 16px 0; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 12px; }
+  nav.toc a { color: var(--muted); text-decoration: none; }
+  nav.toc a:hover { color: var(--accent); }
+  section { padding-top: 56px; }
+  h2 { font-size: 22px; letter-spacing: -0.01em; margin: 0 0 18px; display: flex; align-items: baseline; gap: 14px; }
+  h2 .n { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.08em; }
+  h3 { font-size: 15.5px; margin: 34px 0 10px; }
+  p { margin: 0 0 12px; color: var(--body); }
+  ul, ol { margin: 0 0 12px; padding-left: 20px; color: var(--body); }
+  li { margin: 5px 0; }
+  li::marker { color: var(--faint); }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 12px 0 20px; }
+  th, td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--surface); font-weight: 600; font-size: 12.5px; }
+  td.mono, .mono { font-family: var(--mono); font-size: 12.5px; }
+  pre { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; font-family: var(--mono); font-size: 12.5px; line-height: 1.55; overflow: auto; margin: 12px 0 20px; }
+  code { font-family: var(--mono); background: var(--surface); padding: 1px 5px; border-radius: 4px; font-size: 0.92em; }
+  pre code { background: none; padding: 0; font-size: inherit; }
+  figure { margin: 16px 0 24px; }
+  figcaption { font-size: 12.5px; color: var(--muted); margin-top: 8px; font-family: var(--mono); }
+  .thumb { position: relative; }
+  .thumb svg { display: block; width: 100%; height: auto; border-radius: 6px; }
+  .thumb svg.overlay { position: absolute; inset: 0; pointer-events: none; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; margin: 12px 0 14px; }
+  .icon { border: 1px solid var(--line); border-radius: 6px; padding: 12px 8px 10px; text-align: center; cursor: pointer; background: #fff; }
+  .icon:hover { border-color: var(--faint); }
+  .icon.sel { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .icon svg { width: 72px; height: 72px; display: block; margin: 0 auto 8px; background: var(--black); border-radius: 4px; }
+  .icon .name { font-family: var(--mono); font-size: 12px; }
+  .note { border-left: 2px solid var(--sky); padding: 2px 0 2px 14px; color: var(--muted); font-size: 13.5px; margin: 12px 0 20px; }
+  .check { padding-left: 0; }
+  .check li { list-style: none; position: relative; padding-left: 26px; margin: 7px 0; }
+  .check li::before { content: ""; position: absolute; left: 0; top: 8px; width: 12px; height: 12px; border: 1.5px solid var(--faint); border-radius: 2px; }
+  .cap { display: flex; justify-content: space-between; gap: 12px; }
+  @media (max-width: 720px) {
+    dl.meta, .grid2 { grid-template-columns: 1fr; }
+    h1 { font-size: 28px; }
+    .page { padding: 40px 16px 72px; }
+  }
+  @media print {
+    nav.toc { display: none; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<header class="doc">
+  <p class="eyebrow">ASBG UOS · Retrospective Thumbnail</p>
+  <h1>활동 회고 썸네일 디자인 가이드</h1>
+  <dl class="meta">
+    <div><dt>문서</dt><dd>v4.0 · 2026-10-04</dd></div>
+    <div><dt>적용 대상</dt><dd>cohort-NN/activities/{slug}/img/thumbnail.svg</dd></div>
+    <div><dt>산출물</dt><dd>SVG · 1200 × 750</dd></div>
+  </dl>
+</header>
+<nav class="toc">
+  <a href="#s1">01 개요</a><a href="#s2">02 고정 요소</a><a href="#s3">03 바뀌는 요소</a><a href="#s4">04 생성</a><a href="#s5">05 검증</a><a href="#s6">06 템플릿</a>
+</nav>
+<section id="s1">
+  <h2><span class="n">01</span>개요</h2>
+  <p>과제, 프로젝트, 스터디, 기수 전체의 회고를 발표와 같은 구도로 만든다. 왼쪽의 키워드 세 줄과 세션 번호, 오른쪽의 점선 프레임과 픽셀 아이콘, 점 격자의 위치와 치수는 발표 템플릿과 같다. 회고는 연한 파랑 바탕, 검정 글자, 파란 강조색으로 구분한다.</p>
+  <p>회고끼리는 연한 파랑과 공통 구도, 하단의 RECAP 표기를 고정한다. 기수 번호, 키워드, 세션 번호, 주제 아이콘만 바꾼다. 세션 번호나 과제의 존재를 전제로 하지 않는다. 아래 그림은 템플릿 사용 예시이며 실제 활동 성과를 나타내지 않는다.</p>
+  <div class="grid2" id="fig-examples"></div>
+</section>
+<section id="s2">
+  <h2><span class="n">02</span>고정 요소</h2>
+  <table>
+    <thead><tr><th>요소</th><th>규칙</th></tr></thead>
+    <tbody>
+      <tr><td>캔버스</td><td>1200 × 750, 16:10. 루트에 <code>viewBox="0 0 1200 750"</code>와 <code>shape-rendering="crispEdges"</code>. width · height 속성은 없다.</td></tr>
+      <tr><td>배경</td><td>연한 파랑 <code>#F2FAFF</code>. 하늘색 <code>#42B4FF</code>를 흰색에 7% 섞은 값으로, 사이트의 <code>--surface-2</code>와 같다. 48px 여백 안의 24px 점 격자(하늘색, 불투명도 0.3)와 강조 점 46개(파란색, 0.5)는 발표 템플릿의 위치를 그대로 쓴다. 다크 모드에서도 연한 파랑을 유지한다.</td></tr>
+      <tr><td>색</td><td>바탕 <code>#F2FAFF</code>, 점 격자 <code>#42B4FF</code>, 글자 <code>#0B0F17</code>, 강조 <code>#1160D8</code>만 쓴다.</td></tr>
+      <tr><td>프레임</td><td>발표와 같은 점선 팔각 프레임. x 736~1120, y 214~556. stroke 3, dash 10 14, 파란색 불투명도 0.7.</td></tr>
+      <tr><td>아이콘</td><td>16 × 16 격자, 칸당 16px, 원점 (800, 257). <code>#1160D8</code> 단색. 기본은 notebook.</td></tr>
+      <tr><td>상단</td><td><code>ASBG UOS · COHORT NN</code>. x 84, y 132, 크기 30, 자간 4, 파란색.</td></tr>
+      <tr><td>세션 번호</td><td>발표와 같은 픽셀 숫자. 숫자 하나 6 × 8칸, 한 칸 12px, 두 숫자 간격 84. x 84, y 570 ~ 666. 파란색.</td></tr>
+      <tr><td>레이블</td><td>세션이 있으면 x 268에 <code>SESSION</code>(y 626)과 <code>RECAP</code>(y 666), 없으면 x 84, y 666에 <code>RECAP</code>만. 크기 26, 자간 3, 검정 불투명도 0.6.</td></tr>
+      <tr><td>글꼴</td><td><code>Menlo, ui-monospace, monospace</code>. 글꼴, 이미지, 필터, 그라디언트, 외부 참조를 추가하지 않는다.</td></tr>
+    </tbody>
+  </table>
+  <p>발표와 같은 위치, 크기, 글꼴, 점 격자와 프레임을 유지한다. 별도의 띠, 괘선이나 큰 유형 제목은 추가하지 않는다. 제목과 작성자는 페이지에서 보여주므로 썸네일에 넣지 않는다.</p>
+</section>
+<section id="s3">
+  <h2><span class="n">03</span>바뀌는 요소</h2>
+  <p>값은 활동 폴더와 <code>index.md</code>의 frontmatter에서 읽는다. <code>type: retrospective</code>여야 한다. 기수는 <code>cohort-NN</code>, 관련 세션은 선택 필드 <code>session</code>이다. 세션이 있으면 왼쪽 아래에 세션 번호를 픽셀 숫자로 그리고, 없으면 숫자 없이 <code>RECAP</code>만 쓴다. 기수 번호는 상단에 항상 표시한다. 프로젝트나 스터디 회고도 같은 규칙을 쓴다. 제목에서 번호를 추측하거나 가상의 세션 번호를 만들지 않는다.</p>
+  <p>세션 번호의 k번째 숫자(0 또는 1)의 칸 (열 c, 행 r)은 <code>&lt;rect x="84 + 84k + 12c" y="570 + 12r" width="12" height="12"/&gt;</code>다. 숫자 모양은 이 문서의 <code>&lt;script id="digits"&gt;</code>에 있는 0 ~ 9를 그대로 쓰고, 한 자리 세션도 <code>02</code>처럼 두 자리로 그린다.</p>
+  <p>키워드는 <code>keywords</code>의 세 개를 순서대로 대문자로 쓴다. 영어, 숫자, ASCII 문장부호를 사용한다. 글자 크기와 기준선은 가장 긴 키워드로 정하고, 세 줄의 크기는 같다. SVG 안에서 &amp;, &lt;, &gt;는 엔티티로 바꾼다.</p>
+  <table>
+    <thead><tr><th>가장 긴 키워드</th><th>크기</th><th>기준선 y</th></tr></thead>
+    <tbody><tr><td>18자 이하</td><td>56</td><td>318 · 392 · 466</td></tr><tr><td>19 ~ 23자</td><td>44</td><td>332 · 392 · 452</td></tr><tr><td>24 ~ 28자</td><td>36</td><td>342 · 392 · 442</td></tr></tbody>
+  </table>
+  <p>키워드가 29자 이상이면 생성 전에 본문의 키워드를 다듬는다. 썸네일만 줄여 쓰지 않는다.</p>
+  <h3>아이콘을 바꾸는 경우</h3>
+  <p>기본 notebook은 모든 회고에 쓸 수 있다. 글의 중심이 뚜렷할 때만 나침반, 공구, 책처럼 한눈에 알아보는 사물 하나로 바꾼다. 이미 있는 발표 아이콘을 그대로 가져오거나 결과 수치, 로고, 복잡한 흐름도를 그리지 않는다. 그리는 규칙은 발표 썸네일 가이드 6.3과 같다.</p>
+  <ul>
+    <li>16줄, 각 줄 16글자. <code>#</code>는 채움, <code>.</code>은 비움. 여백 행과 열도 생략하지 않는다.</li>
+    <li>면으로 채운 실루엣이 기본이고, 윤곽선은 두 칸 두께로 그린다. 사물을 알려 주는 특징은 1 ~ 3개만 빈칸으로 뚫는다.</li>
+    <li>긴 쪽이 12 ~ 14칸을 차지하게 가운데에 놓고, 대칭인 사물은 칸 하나까지 대칭으로 그린다. 본체에서 떨어진 점을 흩뿌리지 않는다.</li>
+    <li>한 칸마다 <code>&lt;rect x="800 + 16c" y="257 + 16r" width="16" height="16"/&gt;</code>. <code>g#icon</code> 안에 넣으며 중복 칸을 만들지 않는다.</li>
+    <li>폭 360px의 카드와 1200 × 630 공유 이미지에서 실루엣과 키워드가 선명해야 한다.</li>
+  </ul>
+  <pre id="glyph-view"></pre>
+</section>
+<section id="s4">
+  <h2><span class="n">04</span>생성</h2>
+  <p>활동 폴더에 본문을 먼저 쓰고 frontmatter에 <code>thumbnail: img/thumbnail.svg</code>를 지정한다. 기본 notebook은 다음 명령으로 바로 생성한다. 기존 썸네일은 다시 쓴다.</p>
+  <pre><code>node template/retrospective-thumbnail/build.mjs cohort-01/activities/session-02-retrospective</code></pre>
+  <p>직접 그린 아이콘은 16줄의 격자 문자열만 담은 텍스트 파일로 전달한다. 이 파일은 제작용이며 게시물 폴더에 둘 필요가 없다.</p>
+  <pre><code>node template/retrospective-thumbnail/build.mjs cohort-01/activities/cohort-retrospective /tmp/retrospective-icon.txt</code></pre>
+  <p>기수 전체의 회고에는 <code>session</code>을 생략한다. <a href="prompt.md">prompt.md</a>는 자료를 읽고 아이콘을 정하는 작업까지 맡길 때 사용한다.</p>
+</section>
+<section id="s5">
+  <h2><span class="n">05</span>검증</h2>
+  <pre><code>node template/retrospective-thumbnail/validate.mjs cohort-01/activities/session-02-retrospective/img/thumbnail.svg</code></pre>
+  <ul class="check">
+    <li>연한 파랑 바탕, 점 격자, 점선 프레임, 문자 배치가 템플릿과 완전히 같다.</li>
+    <li>문자는 상단, 키워드 세 줄, 레이블이다. 레이블은 세션이 있으면 <code>SESSION</code>과 <code>RECAP</code> 두 줄, 없으면 <code>RECAP</code> 한 줄이다.</li>
+    <li>기수, 키워드, 픽셀 숫자로 그린 세션 번호가 폴더와 index.md의 값과 맞는다. 세션이 없는 회고에는 숫자가 없다.</li>
+    <li>세션 번호는 <code>g#session</code> 안의 12 × 12 rect뿐이고 숫자 모양과 칸 하나까지 같다.</li>
+    <li>아이콘은 격자 안의 중복 없는 rect로만 구성하고 8행 × 8열 이상, 긴 쪽 12칸 이상을 차지한다.</li>
+    <li>30 KB 이하의 SVG 하나이며 외부 리소스가 없다.</li>
+    <li>실제 활동 목록의 카드 크기에서 확인하고, 관련 세션이 없는 회고도 확인한다.</li>
+  </ul>
+  <p>생성기는 저장 전 같은 규칙으로 검증한다. 검증 스크립트는 직접 작성하거나 수정한 SVG도 검사한다. 페이지 렌더링을 위한 임시 회고를 작성했다면 확인 후 게시물과 임시 자산을 제거한다.</p>
+</section>
+<section id="s6">
+  <h2><span class="n">06</span>템플릿</h2>
+  <p>원문은 이 문서의 <code>&lt;script id="template"&gt;</code>에 있다. <code>{{COHORT}}</code>, <code>{{KEYWORDS}}</code>, <code>{{ICON}}</code>, <code>{{DIGITS}}</code>, <code>{{LABEL}}</code> 다섯 자리만 바꾼다. 세션이 있으면 DIGITS는 세션 번호 rect, LABEL은 <code>&lt;text x="268" y="626"&gt;SESSION&lt;/text&gt;</code>와 <code>&lt;text x="268" y="666"&gt;RECAP&lt;/text&gt;</code> 두 줄이다. 세션이 없으면 DIGITS는 비우고 LABEL은 <code>&lt;text x="84" y="666"&gt;RECAP&lt;/text&gt;</code> 한 줄이다.</p>
+  <pre id="template-view"></pre>
+</section>
+</div>
+<script type="text/plain" id="template">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" shape-rendering="crispEdges">
+<defs>
+<pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#42B4FF" opacity="0.3"/></pattern>
+</defs>
+<rect width="1200" height="750" fill="#F2FAFF"/>
+<g transform="translate(48 48)">
+<rect width="1104" height="654" fill="url(#g)"/>
+<rect x="0" y="0" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="1080" y="192" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="1056" y="384" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="1032" y="576" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="1008" y="120" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="984" y="312" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="960" y="504" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="936" y="48" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="912" y="240" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="888" y="432" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="864" y="624" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="840" y="168" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="816" y="360" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="792" y="552" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="768" y="96" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="744" y="288" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="720" y="480" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="696" y="24" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="672" y="216" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="648" y="408" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="624" y="600" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="600" y="144" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="576" y="336" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="552" y="528" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="528" y="72" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="504" y="264" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="480" y="456" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="456" y="0" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="432" y="192" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="408" y="384" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="384" y="576" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="360" y="120" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="336" y="312" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="312" y="504" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="288" y="48" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="264" y="240" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="240" y="432" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="216" y="624" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="192" y="168" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="168" y="360" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="144" y="552" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="120" y="96" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="96" y="288" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="72" y="480" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="48" y="24" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+<rect x="24" y="216" width="6" height="6" fill="#1160D8" opacity="0.5"/>
+</g>
+<path d="M736 214H1080L1120 254V516L1080 556H776L736 516Z" fill="none" stroke="#1160D8" stroke-width="3" stroke-dasharray="10 14" opacity="0.7" shape-rendering="geometricPrecision"/>
+<g id="icon" fill="#1160D8">
+{{ICON}}
+</g>
+<text x="84" y="132" font-family="Menlo, ui-monospace, monospace" font-size="30" fill="#1160D8" letter-spacing="4">ASBG UOS · COHORT {{COHORT}}</text>
+<g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#0B0F17">
+{{KEYWORDS}}
+</g>
+<g id="session" fill="#1160D8">
+{{DIGITS}}
+</g>
+<g id="label" font-family="Menlo, ui-monospace, monospace" font-size="26" fill="#0B0F17" opacity="0.6" letter-spacing="3">
+{{LABEL}}
+</g>
+</svg>
+</script>
+<script type="application/json" id="digits">
+{
+  "0": [".####.", "##..##", "##..##", "##..##", "##..##", "##..##", "##..##", ".####."],
+  "1": ["..##..", ".###..", "..##..", "..##..", "..##..", "..##..", "..##..", ".####."],
+  "2": [".####.", "##..##", "....##", "...##.", "..##..", ".##...", "##....", "######"],
+  "3": [".####.", "##..##", "....##", "..###.", "....##", "....##", "##..##", ".####."],
+  "4": ["...##.", "..###.", ".####.", "##.##.", "######", "...##.", "...##.", "...##."],
+  "5": ["######", "##....", "#####.", "....##", "....##", "....##", "##..##", ".####."],
+  "6": ["..###.", ".##...", "##....", "#####.", "##..##", "##..##", "##..##", ".####."],
+  "7": ["######", "....##", "...##.", "...##.", "..##..", "..##..", ".##...", ".##..."],
+  "8": [".####.", "##..##", "##..##", ".####.", "##..##", "##..##", "##..##", ".####."],
+  "9": [".####.", "##..##", "##..##", "##..##", ".#####", "....##", "...##.", ".###.."]
+}
+</script>
+<script type="application/json" id="glyphs">
+{
+  "notebook": [
+    "................",
+    "................",
+    "...#..#..#..#...",
+    "..############..",
+    "..############..",
+    "..##........##..",
+    "..##.######.##..",
+    "..##........##..",
+    "..##.######.##..",
+    "..##........##..",
+    "..##.####...##..",
+    "..##........##..",
+    "..############..",
+    "...##########...",
+    "................",
+    "................"
+  ]
+}
+</script>
+<script>
+(() => {
+  const template = document.getElementById("template").textContent.trim();
+  const digits = JSON.parse(document.getElementById("digits").textContent);
+  const glyphs = JSON.parse(document.getElementById("glyphs").textContent);
+  const cells = (rows, x, y, size) =>
+    rows.flatMap((row, r) => [...row].flatMap((cell, c) => (cell === "#" ? [`<rect x="${x + c * size}" y="${y + r * size}" width="${size}" height="${size}"/>`] : [])));
+  const examples = [
+    { session: "02", keywords: ["ARCHITECTURE", "FEEDBACK", "ITERATION"], caption: "관련 세션이 있는 회고 · 구성 예시" },
+    { session: "", keywords: ["COMMUNITY", "LEARNING", "NEXT STEPS"], caption: "기수 전체의 회고 · 구성 예시" },
+  ];
+  examples.forEach(({ session, keywords, caption }) => {
+    const label = session ? `<text x="268" y="626">SESSION</text>\n<text x="268" y="666">RECAP</text>` : `<text x="84" y="666">RECAP</text>`;
+    const svg = template
+      .replace("{{COHORT}}", "01")
+      .replace("{{ICON}}", () => cells(glyphs.notebook, 800, 257, 16).join("\n"))
+      .replace("{{KEYWORDS}}", () => keywords.map((keyword, i) => `<text x="84" y="${[318, 392, 466][i]}" font-size="56">${keyword}</text>`).join("\n"))
+      .replace("{{DIGITS}}", () => [...session].flatMap((digit, k) => cells(digits[digit], 84 + k * 84, 570, 12)).join("\n"))
+      .replace("{{LABEL}}", label);
+    const figure = document.createElement("figure");
+    figure.innerHTML = `<div class="thumb">${svg}</div><figcaption>${caption}</figcaption>`;
+    document.getElementById("fig-examples").appendChild(figure);
+  });
+  document.getElementById("glyph-view").textContent = glyphs.notebook.join("\n");
+  document.getElementById("template-view").textContent = template;
+})();
+</script>
+</body>
+</html>

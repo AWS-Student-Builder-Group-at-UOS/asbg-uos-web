@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { QueryLink } from "@/components/ui/QueryLink";
 import type { Cohort } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
@@ -18,7 +18,7 @@ export function CohortTabs({
       {[...cohorts].reverse().map((c) => {
         const isActive = c.slug === active;
         return (
-          <Link
+          <QueryLink
             key={c.slug}
             href={href(c.slug)}
             aria-current={isActive ? "page" : undefined}
@@ -28,7 +28,7 @@ export function CohortTabs({
             )}
           >
             {label(c.number)}
-          </Link>
+          </QueryLink>
         );
       })}
     </nav>
