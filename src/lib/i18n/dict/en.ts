@@ -177,6 +177,7 @@ export const en: Dict = {
   resources: {
     title: "Resources",
     body: "Each channel is for something different, so here's what goes where.",
+    channels: "Channels",
     items: {
       linkedin: { title: "LinkedIn", body: "Official page. Updates and session recaps." },
       github: { title: "GitHub", body: "Session materials and lab code." },
@@ -184,6 +185,17 @@ export const en: Dict = {
       instagram: { title: "Instagram", body: "Recruiting and event news, posted here first." },
       meetup: { title: "Meetup", body: "Official event announcements and RSVPs." },
       moreGroups: { title: "More ASBG", body: "The full list of AWS Student Builder Groups worldwide. Worth a look to see what other schools are doing." },
+    },
+    feed: {
+      title: "Latest on Instagram",
+      viewAll: "View all",
+      untitled: "Instagram post",
+      open: "View on Instagram",
+      viewPhotos: "View photos",
+      play: "Play on Instagram",
+      prev: "Previous photo",
+      next: "Next photo",
+      close: "Close",
     },
   },
   common: { copy: "Copy", copied: "Copied", open: "Open", more: "More", less: "Less" },

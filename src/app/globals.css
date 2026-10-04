@@ -74,6 +74,9 @@
   html.dark {
     color-scheme: dark;
   }
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
   body {
     @apply bg-canvas text-ink font-sans antialiased;
     font-feature-settings: "ss05", "cv01";
