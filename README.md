@@ -101,7 +101,7 @@ flowchart LR
 └────────────────────────────────────────────────────────┘
 ```
 
-활동 회고 썸네일은 같은 색과 점 격자, 키워드 배치를 쓰되, 오른쪽 프레임을 실선으로 겹친 기록지 모양으로 고정하고 하단에 `RETROSPECTIVE`를 표시합니다. 회고끼리는 이 틀을 공유하며, 세션과 연결되지 않은 프로젝트나 기수 전체 회고도 번호 없이 사용할 수 있습니다. 가이드와 프롬프트, 생성기, 검증기는 `template/retrospective-thumbnail/`에 있습니다.
+회고 썸네일은 흰 기록지와 파란 책등, `RECAP` 표제와 세 줄의 키워드로 구성합니다. 어두운 점 격자를 쓰는 발표와 바탕색과 배치를 달리하면서 같은 브랜드 색과 픽셀 아이콘을 공유합니다. 회고끼리는 이 틀을 유지하며, 세션과 연결되지 않은 프로젝트나 기수 전체 회고도 번호 없이 사용할 수 있습니다. 가이드와 프롬프트, 생성기, 검증기는 `template/retrospective-thumbnail/`에 있습니다.
 
 발표 본문의 도식은 썸네일과 달리 흰 바탕에 회색 선과 파랑 하나만 쓰는 차분한 그림입니다. 규칙과 프롬프트, 생성 스크립트는 `template/session-diagram/`에 있습니다.
 
@@ -144,7 +144,7 @@ cohort-01/
 | `keywords` | 세 개. 썸네일을 만들 때는 각 1~28자의 영어 키워드 |
 | `session`, `presentation` | 관련 세션과 발표 번호. 필요한 글에만 양의 정수로 지정 |
 | `speakers` | 발표자의 멤버 ID 목록. 생략 가능 |
-| `author` | 운영진처럼 글을 쓴 주체. 문자열 또는 `{ ko, en }`, 생략 가능 |
+| `author` | 문자열 또는 `{ ko, en }`. 코어팀은 `{ group: core }`로 지정하면 `@core`가 해당 기수 Members의 Core 섹션으로 연결됨. 생략 가능 |
 | `thumbnail` | 선택 이미지 경로. 템플릿 사용 시 `img/thumbnail.svg` |
 
 회고의 frontmatter는 아래처럼 작성합니다. 세션과 연결된 회고만 `session`을 넣으며 `presentation`은 필요하지 않습니다. 본문 구성은 [Session 02 회고](cohort-01/activities/session-02-retrospective/index.md)를 참고할 수 있습니다.
@@ -157,8 +157,7 @@ title:
   ko: 함께 배우는 방식을 돌아보며
   en: Reflecting on how we learn together
 author:
-  ko: ASBG UOS 운영진
-  en: ASBG UOS Organizers
+  group: core
 keywords: [Community, Feedback, Iteration]
 thumbnail: img/thumbnail.svg
 ---
@@ -170,7 +169,9 @@ thumbnail: img/thumbnail.svg
 
 기수는 `/ko/activities/cohort-01`처럼 경로로 선택하고, 상세 주소는 `/ko/activities/cohort-01/{slug}`입니다. 기존 발표 주소인 `/ko/sessions/cohort-01/session-01/presentation-01`도 새 상세 주소로 이동합니다.
 
-검색과 필터는 URL에 저장되어 새로고침하거나 링크를 공유해도 같은 목록을 볼 수 있습니다. 유형과 상태는 버튼으로 고르며 기기별 기본 드롭다운을 쓰지 않습니다.
+검색과 필터는 URL에 저장되어 새로고침하거나 링크를 공유해도 같은 목록을 볼 수 있습니다. 데스크톱에서는 짧은 검색창과 선택 버튼을 한 줄에 배치하고, 모바일에서는 검색과 유형을 바로 보여 주되 상태와 정렬은 필터 버튼으로 펼칩니다. 기기별 기본 드롭다운을 쓰지 않습니다.
+
+`session 02`, `session 2`, `session-02`, `세션 02`는 모두 `session: 2`인 발표와 회고를 찾습니다. 검색어와 유형·상태 필터는 함께 적용됩니다. 오래된순은 날짜, 세션 번호, 글 유형, 발표 번호, slug 순서이며, 최신순은 그 순서를 정확히 뒤집습니다. 같은 날짜와 세션에서는 발표 다음에 회고를 놓습니다.
 
 | 파라미터 | 값 | 생략했을 때 |
 | --- | --- | --- |

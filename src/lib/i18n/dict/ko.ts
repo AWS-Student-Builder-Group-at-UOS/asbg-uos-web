@@ -134,7 +134,7 @@ export const ko = {
   activities: {
     title: "Activities",
     body: "기수마다 배우고 만든 것, 함께 활동하며 돌아본 것을 기록합니다.",
-    types: { presentation: "발표", retrospective: "활동 회고" },
+    types: { presentation: "발표", retrospective: "회고" },
     upcoming: "Upcoming",
     speaker: "Speaker",
     author: "작성",
@@ -149,7 +149,9 @@ export const ko = {
     filters: {
       label: "활동 기록 필터",
       search: "검색",
-      searchPlaceholder: "제목, 키워드, 이름으로 검색",
+      searchPlaceholder: "제목, 세션, 키워드",
+      advanced: "필터",
+      active: (count: number) => `${count}개 적용`,
       type: "글 유형",
       status: "진행 상태",
       sort: "정렬",

@@ -5,6 +5,7 @@ import { getDict, pick, type Locale } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
 import { SpeakerMention } from "./SpeakerMention";
 import { ThumbnailFallback } from "./ThumbnailFallback";
+import { AuthorMention } from "./AuthorMention";
 
 export function ActivityCard({ activity, locale }: { activity: Activity; locale: Locale }) {
   const d = getDict(locale);
@@ -42,7 +43,7 @@ export function ActivityCard({ activity, locale }: { activity: Activity; locale:
         <ChipList items={activity.keywords} />
         {(speakers.length > 0 || activity.author) && (
           <div className="relative z-10 mt-auto flex flex-wrap gap-x-3 gap-y-1 pt-2">
-            {activity.author && <span className="text-sm text-muted">{pick(activity.author, locale)}</span>}
+            {activity.author && <AuthorMention author={activity.author} cohort={activity.cohort} locale={locale} />}
             {speakers.map((member) => <SpeakerMention key={member.id} member={member} locale={locale} />)}
           </div>
         )}

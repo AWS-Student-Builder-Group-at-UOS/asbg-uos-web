@@ -41,12 +41,16 @@ export default async function ActivitiesPage({ params }: Props) {
     type: activity.type,
     status: activity.status,
     date: activity.date,
+    session: activity.session,
+    presentation: activity.presentation,
     searchText: [
       pick(activity.title, locale),
       activity.description && pick(activity.description, locale),
       ...activity.keywords,
       activity.session && d.session(activity.session),
-      activity.author && pick(activity.author, locale),
+      activity.author && (typeof activity.author === "object" && "group" in activity.author
+        ? `${activity.author.group} ${d.members[activity.author.group]}`
+        : pick(activity.author, locale)),
       ...getSpeakers(activity).map((member) => pick(member.name, locale)),
     ].filter(Boolean).join(" "),
     content: <ActivityCard key={activity.slug} activity={activity} locale={locale} />,

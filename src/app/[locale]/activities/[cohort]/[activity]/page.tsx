@@ -3,6 +3,7 @@ import { QueryLink } from "@/components/ui/QueryLink";
 import { notFound } from "next/navigation";
 import { Icon } from "@/components/icons";
 import { ActivityBody } from "@/components/activities/ActivityBody";
+import { AuthorMention } from "@/components/activities/AuthorMention";
 import { SpeakerMention } from "@/components/activities/SpeakerMention";
 import { ChipList } from "@/components/ui/Chip";
 import { Container } from "@/components/ui/Container";
@@ -81,7 +82,7 @@ export default async function ActivityPage({ params }: Props) {
             {(speakers.length > 0 || activity.author) && (
               <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
                 <span className="font-mono text-xs uppercase tracking-wider text-faint">{activity.type === "presentation" ? d.activities.speaker : d.activities.author}</span>
-                {activity.author && <span className="text-sm text-muted">{pick(activity.author, locale)}</span>}
+                {activity.author && <AuthorMention author={activity.author} cohort={cohort} locale={locale} />}
                 {speakers.map((m) => (
                   <SpeakerMention key={m.id} member={m} locale={locale} avatar />
                 ))}

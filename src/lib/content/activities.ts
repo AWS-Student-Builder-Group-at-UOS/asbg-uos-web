@@ -1,6 +1,7 @@
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { contentUrl } from "@/lib/routes";
+import { compareActivities } from "@/lib/activities";
 import { activitiesDir, activityDir, ACTIVITY_PATTERN, listDirs, listFiles, readText } from "./paths";
 import { activitySchema, parseOrThrow, type ActivityMeta } from "./schema";
 
@@ -43,7 +44,7 @@ function readActivity(cohort: string, slug: string): Activity {
 export function getActivities(cohort: string): Activity[] {
   return listDirs(activitiesDir(cohort), ACTIVITY_PATTERN)
     .map((slug) => readActivity(cohort, slug))
-    .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
+    .sort((a, b) => compareActivities(b, a));
 }
 
 export function getActivity(cohort: string, slug: string): Activity | undefined {

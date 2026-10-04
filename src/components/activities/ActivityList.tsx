@@ -1,15 +1,13 @@
 "use client";
 
-import { Fragment, useId, useRef, useSyncExternalStore, type ReactNode } from "react";
+import { Fragment, useId, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
+import { compareActivities, matchesActivitySearch, type ActivityOrder } from "@/lib/activities";
 import { getDict, type Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-export type ActivityListItem = {
-  slug: string;
-  type: "presentation" | "retrospective";
+export type ActivityListItem = ActivityOrder & {
   status: "done" | "upcoming";
-  date: string;
   searchText: string;
   content: ReactNode;
 };
@@ -36,17 +34,21 @@ function FilterGroup({
   options,
   resultsId,
   onChange,
+  variant = "chips",
+  showLabel = false,
 }: {
   label: string;
   value: string;
   options: { value: string; label: string }[];
   resultsId: string;
   onChange: (value: string) => void;
+  variant?: "tabs" | "chips";
+  showLabel?: boolean;
 }) {
   return (
     <fieldset className="min-w-0">
-      <legend className="mb-2 font-mono text-[11px] uppercase tracking-wider text-muted">{label}</legend>
-      <div className="flex flex-wrap gap-1.5">
+      <legend className={showLabel ? "mb-1.5 font-mono text-[11px] uppercase tracking-wider text-muted" : "sr-only"}>{label}</legend>
+      <div className="flex flex-wrap gap-1">
         {options.map((option) => (
           <button
             key={option.value}
@@ -55,10 +57,10 @@ function FilterGroup({
             aria-controls={resultsId}
             onClick={() => onChange(option.value)}
             className={cn(
-              "min-h-10 rounded-sm border px-3 py-2 font-mono text-xs transition-colors duration-200",
-              value === option.value
-                ? "border-accent/30 bg-accent-soft text-accent"
-                : "border-line bg-surface text-muted hover:border-line-strong hover:text-ink",
+              "min-h-10 whitespace-nowrap px-2.5 py-2 font-mono text-xs transition-colors duration-200",
+              variant === "tabs"
+                ? cn("border-b-2", value === option.value ? "border-accent text-accent" : "border-transparent text-muted hover:text-ink")
+                : cn("rounded-sm", value === option.value ? "bg-accent-soft text-accent" : "text-muted hover:bg-surface-2 hover:text-ink"),
             )}
           >
             {option.label}
@@ -75,8 +77,10 @@ export function ActivityList({ items, locale }: { items: ActivityListItem[]; loc
   const search = useSyncExternalStore(subscribe, getSearch, () => searchParams.toString());
   const params = new URLSearchParams(search);
   const searchHistory = useRef<string | null>(null);
+  const [expanded, setExpanded] = useState(false);
   const id = useId();
   const resultsId = `${id}-results`;
+  const filtersId = `${id}-filters`;
   const query = params.get("q") ?? "";
   const typeParam = params.get("type");
   const statusParam = params.get("status");
@@ -85,13 +89,21 @@ export function ActivityList({ items, locale }: { items: ActivityListItem[]; loc
   const sort = params.get("sort") === "oldest" ? "oldest" : "newest";
   const hasFilters = filterKeys.some((key) => params.has(key));
   const showTypes = new Set(items.map((item) => item.type)).size > 1 || type !== "all";
-  const words = query.normalize("NFKC").trim().toLocaleLowerCase(locale).split(/\s+/).filter(Boolean);
-  const visible = items.filter((item) => {
-    const text = item.searchText.normalize("NFKC").toLocaleLowerCase(locale);
-    return (type === "all" || item.type === type)
-      && (status === "all" || item.status === status)
-      && words.every((word) => text.includes(word));
-  }).sort((a, b) => sort === "oldest" ? a.date.localeCompare(b.date) : b.date.localeCompare(a.date));
+  const activeCount = Number(status !== "all") + Number(sort !== "newest");
+  const summary = [status !== "all" && d.filters[status], sort === "oldest" && d.filters.oldest].filter(Boolean).join(" · ");
+  const statusOptions = [
+    { value: "all", label: d.filters.all },
+    { value: "done", label: d.filters.done },
+    { value: "upcoming", label: d.filters.upcoming },
+  ];
+  const sortOptions = [
+    { value: "newest", label: d.filters.newest },
+    { value: "oldest", label: d.filters.oldest },
+  ];
+  const visible = items.filter((item) => (type === "all" || item.type === type)
+    && (status === "all" || item.status === status)
+    && matchesActivitySearch(item, query)
+  ).sort((a, b) => (sort === "oldest" ? 1 : -1) * compareActivities(a, b));
 
   function updateFilter(key?: typeof filterKeys[number], value?: string) {
     const next = new URLSearchParams(window.location.search);
@@ -112,28 +124,45 @@ export function ActivityList({ items, locale }: { items: ActivityListItem[]; loc
   }
 
   return (
-    <div className="mt-8">
-      <section aria-label={d.filters.label} className="pads rounded-md border border-line bg-surface p-4 sm:p-5">
-        <label htmlFor={`${id}-search`} className="mb-2 block font-mono text-[11px] uppercase tracking-wider text-muted">
-          {d.filters.search}
-        </label>
-        <input
-          id={`${id}-search`}
-          type="search"
-          value={query}
-          onChange={(event) => updateFilter("q", event.target.value)}
-          onBlur={() => { searchHistory.current = null; }}
-          placeholder={d.filters.searchPlaceholder}
-          aria-controls={resultsId}
-          autoComplete="off"
-          className="h-11 w-full min-w-0 rounded-sm border border-line bg-surface-2 px-3 text-sm text-ink placeholder:text-faint focus:border-accent"
-        />
-        <div className="mt-5 flex flex-wrap gap-x-8 gap-y-5">
+    <div className="mt-6">
+      <section aria-label={d.filters.label} className="pads border-b border-line pb-3">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <div className="flex w-full items-center gap-2 lg:w-48 lg:shrink-0 xl:w-56">
+            <label htmlFor={`${id}-search`} className="sr-only">{d.filters.search}</label>
+            <input
+              id={`${id}-search`}
+              type="search"
+              value={query}
+              onChange={(event) => updateFilter("q", event.target.value)}
+              onBlur={() => { searchHistory.current = null; }}
+              placeholder={d.filters.searchPlaceholder}
+              aria-controls={resultsId}
+              autoComplete="off"
+              className="h-10 w-full min-w-0 rounded-sm border border-line bg-surface-2 px-3 text-base text-ink placeholder:text-faint sm:text-sm"
+            />
+            <button
+              type="button"
+              aria-label={activeCount > 0 ? `${d.filters.advanced}, ${d.filters.active(activeCount)}` : d.filters.advanced}
+              aria-describedby={summary ? `${id}-summary` : undefined}
+              aria-expanded={expanded}
+              aria-controls={filtersId}
+              onClick={() => setExpanded((value) => !value)}
+              className={cn(
+                "inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-sm px-2.5 font-mono text-xs transition-colors duration-200 lg:hidden",
+                expanded || activeCount > 0 ? "bg-accent-soft text-accent" : "bg-surface-2 text-muted hover:text-ink",
+              )}
+            >
+              <span>{d.filters.advanced}</span>
+              {activeCount > 0 && <span aria-hidden="true" className="font-semibold tabular-nums">{activeCount}</span>}
+              <span aria-hidden="true" className="text-base leading-none">{expanded ? "−" : "+"}</span>
+            </button>
+          </div>
           {showTypes && (
             <FilterGroup
               label={d.filters.type}
               value={type}
               resultsId={resultsId}
+              variant="tabs"
               onChange={(value) => updateFilter("type", value)}
               options={[
                 { value: "all", label: d.filters.all },
@@ -142,44 +171,56 @@ export function ActivityList({ items, locale }: { items: ActivityListItem[]; loc
               ]}
             />
           )}
-          <FilterGroup
-            label={d.filters.status}
-            value={status}
-            resultsId={resultsId}
-            onChange={(value) => updateFilter("status", value)}
-            options={[
-              { value: "all", label: d.filters.all },
-              { value: "done", label: d.filters.done },
-              { value: "upcoming", label: d.filters.upcoming },
-            ]}
-          />
-          <div className="sm:ml-auto">
+          <div className="ml-auto hidden items-center gap-3 lg:flex">
+            <FilterGroup
+              label={d.filters.status}
+              value={status}
+              resultsId={resultsId}
+              onChange={(value) => updateFilter("status", value)}
+              options={statusOptions}
+            />
+            <span aria-hidden="true" className="h-5 border-l border-line" />
             <FilterGroup
               label={d.filters.sort}
               value={sort}
               resultsId={resultsId}
               onChange={(value) => updateFilter("sort", value)}
-              options={[
-                { value: "newest", label: d.filters.newest },
-                { value: "oldest", label: d.filters.oldest },
-              ]}
+              options={sortOptions}
             />
           </div>
         </div>
+        <div id={filtersId} className={cn("mt-3 gap-x-6 gap-y-3 border-t border-line pt-3 sm:grid-cols-2 lg:hidden", expanded ? "grid" : "hidden")}>
+          <FilterGroup
+            label={d.filters.status}
+            value={status}
+            resultsId={resultsId}
+            showLabel
+            onChange={(value) => updateFilter("status", value)}
+            options={statusOptions}
+          />
+          <FilterGroup
+            label={d.filters.sort}
+            value={sort}
+            resultsId={resultsId}
+            showLabel
+            onChange={(value) => updateFilter("sort", value)}
+            options={sortOptions}
+          />
+        </div>
+        <div className="mt-1 flex min-h-6 items-center gap-3">
+          <p role="status" aria-live="polite" aria-atomic="true" className="shrink-0 font-mono text-[11px] text-muted">
+            {d.filters.count(visible.length, items.length)}
+          </p>
+          {summary && <span id={`${id}-summary`} className="truncate font-mono text-[11px] text-muted lg:hidden">{summary}</span>}
+          {hasFilters && (
+            <button type="button" onClick={() => updateFilter()} className="link-quiet ml-auto min-h-6 shrink-0 text-xs text-muted underline decoration-line-strong underline-offset-4">
+              {d.filters.reset}
+            </button>
+          )}
+        </div>
       </section>
 
-      <div className="my-5 flex min-h-9 items-center justify-between gap-4">
-        <p role="status" aria-live="polite" aria-atomic="true" className="font-mono text-xs text-muted">
-          {d.filters.count(visible.length, items.length)}
-        </p>
-        {hasFilters && (
-          <button type="button" onClick={() => updateFilter()} className="link-quiet min-h-9 text-xs text-muted underline decoration-line-strong underline-offset-4">
-            {d.filters.reset}
-          </button>
-        )}
-      </div>
-
-      <div id={resultsId}>
+      <div id={resultsId} className="mt-5">
         {visible.length > 0 ? (
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {visible.map((item) => <Fragment key={item.slug}>{item.content}</Fragment>)}

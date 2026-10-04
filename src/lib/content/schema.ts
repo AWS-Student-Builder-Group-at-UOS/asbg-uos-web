@@ -17,7 +17,7 @@ export const activitySchema = z.object({
   description: localized.optional(),
   keywords,
   speakers: z.array(z.string()).default([]),
-  author: localized.optional(),
+  author: z.union([localized, z.object({ group: z.literal("core") })]).optional(),
   thumbnail: z.string().optional(),
 });
 

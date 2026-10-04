@@ -4,7 +4,7 @@ import { MemberCard } from "@/components/members/MemberCard";
 import { CohortTabs } from "@/components/ui/CohortTabs";
 import { Container } from "@/components/ui/Container";
 import { PageHead } from "@/components/ui/Section";
-import { getCohorts, getMembers, hasCohort, type Member } from "@/lib/content";
+import { getCohorts, getMembers, hasCohort, type Member, type MemberGroup } from "@/lib/content";
 import { getDict, locales, type Locale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
@@ -30,10 +30,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-function Group({ title, members, locale }: { title: string; members: Member[]; locale: Locale }) {
+function Group({ id, title, members, locale }: { id: MemberGroup; title: string; members: Member[]; locale: Locale }) {
   if (members.length === 0) return null;
   return (
-    <section className="mt-12">
+    <section id={id} className="mt-12 scroll-mt-24">
       <h2 className="eyebrow">{title}</h2>
       <ul className="mt-5 grid items-start gap-5 lg:grid-cols-2">
         {members.map((m) => (
@@ -57,8 +57,8 @@ export default async function MembersPage({ params }: Props) {
       <Container className="py-10 sm:py-14">
         <CohortTabs cohorts={getCohorts()} active={cohort} href={(c) => routes.members(locale, c)} label={d.cohort} />
         {all.length === 0 && <p className="py-20 text-center text-muted">{d.members.empty}</p>}
-        <Group title={d.members.core} members={core} locale={locale} />
-        <Group title={d.members.general} members={general} locale={locale} />
+        <Group id="core" title={d.members.core} members={core} locale={locale} />
+        <Group id="general" title={d.members.general} members={general} locale={locale} />
       </Container>
     </>
   );

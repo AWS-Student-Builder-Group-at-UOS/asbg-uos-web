@@ -101,7 +101,7 @@ Talk thumbnails use the same language: a dark dot grid with three keywords on th
 └────────────────────────────────────────────────────────┘
 ```
 
-Retrospective thumbnails share the palette, dot grid and keyword layout. Their fixed frame uses overlapping notes with solid outlines, and the footer says `RETROSPECTIVE`. Every retrospective uses this same layout, including project reviews and cohort reviews without a session number. The guide, prompt, generator and validator are in `template/retrospective-thumbnail/`.
+Recap thumbnails use a white notebook page, a blue spine, a `RECAP` heading and three ruled keyword entries. Their palette and layout distinguish them from the dark, dotted presentation thumbnails while retaining the brand colors and pixel icons. Every recap uses this layout, including project and cohort reviews without a session number. The guide, prompt, generator and validator are in `template/retrospective-thumbnail/`.
 
 Diagrams inside the talk write-ups are quieter than the thumbnails: a white background, grey lines and a single blue. The rules, prompt and generator are in `template/session-diagram/`.
 
@@ -144,7 +144,7 @@ Each activity has one `activities/{slug}/` folder. Use lowercase letters, number
 | `keywords` | Exactly three; use English keywords of 1–28 characters for thumbnails |
 | `session`, `presentation` | Optional positive integers for the related session and presentation |
 | `speakers` | Optional list of speaker member IDs |
-| `author` | Optional writing credit, such as the organizers; a string or `{ ko, en }` |
+| `author` | String or `{ ko, en }`; optional. Use `{ group: core }` for an `@core` link to the cohort's Core section in Members |
 | `thumbnail` | Optional image path; `img/thumbnail.svg` for the templates |
 
 Use the following frontmatter for a retrospective. Add `session` only when a review relates to a session. A retrospective does not need a `presentation` number. See the [Session 02 retrospective](cohort-01/activities/session-02-retrospective/index.en.md) for a complete article.
@@ -157,8 +157,7 @@ title:
   ko: 함께 배우는 방식을 돌아보며
   en: Reflecting on how we learn together
 author:
-  ko: ASBG UOS 운영진
-  en: ASBG UOS Organizers
+  group: core
 keywords: [Community, Feedback, Iteration]
 thumbnail: img/thumbnail.svg
 ---
@@ -170,7 +169,9 @@ A retrospective can describe the activity's intent, actual outcomes, feedback, c
 
 Cohorts use paths such as `/en/activities/cohort-01`, and posts use `/en/activities/cohort-01/{slug}`. Existing presentation URLs such as `/en/sessions/cohort-01/session-01/presentation-01` redirect to the new post URLs.
 
-Search and filters are stored in the URL, so a reload or a shared link shows the same list. Type and status use buttons rather than platform-specific native dropdowns.
+Search and filters are stored in the URL, so a reload or a shared link shows the same list. Desktop uses a short search field alongside filter buttons. Mobile keeps search and type visible, with status and sort inside an expandable filter panel. There are no platform-specific native dropdowns.
+
+`session 02`, `session 2`, `session-02`, and `세션 02` all match presentations and recaps with `session: 2`. Search, type, and status conditions apply together. Oldest orders by date, session number, post type, presentation number, and slug; Newest reverses the entire order. For the same date and session, presentations precede recaps in chronological order.
 
 | Parameter | Values | When omitted |
 | --- | --- | --- |

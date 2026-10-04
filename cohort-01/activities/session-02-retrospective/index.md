@@ -11,8 +11,7 @@ description:
   en: "Looking back at our second session, from network basics to deploying on EC2, and the questions we are carrying into the design and validation of a course registration portal."
 keywords: [ARCHITECTURE, VALIDATION, LEARNING]
 author:
-  ko: ASBG UOS 운영진
-  en: ASBG UOS Team
+  group: core
 thumbnail: img/thumbnail.svg
 ---
 

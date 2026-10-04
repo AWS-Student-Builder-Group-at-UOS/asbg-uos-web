@@ -84,7 +84,7 @@
   <p class="eyebrow">ASBG UOS · Retrospective Thumbnail</p>
   <h1>활동 회고 썸네일 디자인 가이드</h1>
   <dl class="meta">
-    <div><dt>문서</dt><dd>v1.0 · 2026-10-04</dd></div>
+    <div><dt>문서</dt><dd>v2.0 · 2026-10-04</dd></div>
     <div><dt>적용 대상</dt><dd>cohort-NN/activities/{slug}/img/thumbnail.svg</dd></div>
     <div><dt>산출물</dt><dd>SVG · 1200 × 750</dd></div>
   </dl>
@@ -94,8 +94,8 @@
 </nav>
 <section id="s1">
   <h2><span class="n">01</span>개요</h2>
-  <p>과제, 프로젝트, 스터디, 기수 전체의 회고를 같은 틀에 담는다. 발표 썸네일과 캔버스, 색, 점 격자, 문자 위치를 공유하고, 오른쪽의 겹친 기록지 프레임과 하단의 RETROSPECTIVE 표기로 글의 성격을 구분한다.</p>
-  <p>회고끼리는 이 프레임과 표기를 고정한다. 기수 번호, 키워드, 관련 활동 표기, 주제 아이콘만 바꾼다. 세션 번호나 과제의 존재를 전제로 하지 않는다. 아래 그림은 템플릿 사용 예시이며 실제 활동 성과를 나타내지 않는다.</p>
+  <p>과제, 프로젝트, 스터디, 기수 전체의 회고를 흰 기록지에 담는다. 왼쪽의 파란 제본 띠, 큰 RECAP 표기, 가로 괘선 위의 세 키워드가 회고의 고정된 인상이다. 작은 카드에서도 밝은 종이 바탕과 넓은 띠가 먼저 보인다. 사이트의 네 가지 색, 모노스페이스 글꼴, 픽셀 아이콘은 그대로 사용한다.</p>
+  <p>회고끼리는 종이, 제본 띠, 괘선과 RECAP 표기를 고정한다. 기수 번호, 키워드, 관련 활동 표기, 주제 아이콘만 바꾼다. 세션 번호나 과제의 존재를 전제로 하지 않는다. 아래 그림은 템플릿 사용 예시이며 실제 활동 성과를 나타내지 않는다.</p>
   <div class="grid2" id="fig-examples"></div>
 </section>
 <section id="s2">
@@ -104,24 +104,24 @@
     <thead><tr><th>요소</th><th>규칙</th></tr></thead>
     <tbody>
       <tr><td>캔버스</td><td>1200 × 750, 16:10. 루트에 <code>viewBox="0 0 1200 750"</code>와 <code>shape-rendering="crispEdges"</code>. width · height 속성은 없다.</td></tr>
-      <tr><td>배경</td><td><code>#0B0F17</code> 바탕. 48px 여백 안의 24px 점 격자와 강조 점은 발표 템플릿과 같다.</td></tr>
-      <tr><td>색</td><td><code>#0B0F17</code>, <code>#42B4FF</code>, <code>#FFFFFF</code>만 쓴다. 사이트의 black, sky, white 토큰이다.</td></tr>
-      <tr><td>기록지 프레임</td><td>앞장은 (736, 214), 384 × 342. 뒷장은 (760, 238), 384 × 342. 실선, 왼쪽 제본선, 모서리 패드를 그대로 유지한다.</td></tr>
-      <tr><td>아이콘</td><td>16 × 16 격자, 칸당 16px, 원점 (800, 257). <code>#42B4FF</code> 단색. 기본은 notebook.</td></tr>
-      <tr><td>상단</td><td><code>ASBG UOS · COHORT NN</code>. x 84, y 132, 크기 30, 자간 4, 하늘색.</td></tr>
-      <tr><td>하단</td><td><code>RETROSPECTIVE · SESSION NN</code> 또는 <code>RETROSPECTIVE</code>. x 84, y 666, 크기 26, 자간 3, 흰색 불투명도 0.6.</td></tr>
+      <tr><td>배경</td><td>흰 종이 <code>#FFFFFF</code>. 왼쪽 204px는 <code>#1160D8</code> 제본 띠, 경계 4px는 <code>#42B4FF</code>. 다크 모드에서도 흰 종이와 파란 띠를 유지한다.</td></tr>
+      <tr><td>색</td><td><code>#0B0F17</code>, <code>#1160D8</code>, <code>#42B4FF</code>, <code>#FFFFFF</code>만 쓴다. 사이트의 black, blue, sky, white 토큰이다.</td></tr>
+      <tr><td>기록지</td><td>본문 시작 x 268. 가로 괘선은 x 268~1132, y 395·495·595. 항목 앞의 16px 파란 네모와 오른쪽 위의 하늘색 픽셀 모서리를 고정한다.</td></tr>
+      <tr><td>아이콘</td><td>16 × 16 격자, 칸당 8px, 원점 (38, 64). 파란 띠 위의 <code>#FFFFFF</code> 단색. 기본은 notebook.</td></tr>
+      <tr><td>상단</td><td><code>ASBG UOS</code>. x 268, y 106, 크기 28, 자간 4, 파란색. 아래의 <code>RECAP</code>은 x 260, y 252, 크기 128, 굵기 700, 자간 −6, 검정.</td></tr>
+      <tr><td>하단</td><td><code>COHORT NN · SESSION NN</code> 또는 <code>COHORT NN</code>. x 268, y 678, 크기 26, 자간 3, 파란색.</td></tr>
       <tr><td>글꼴</td><td><code>Menlo, ui-monospace, monospace</code>. 글꼴, 이미지, 필터, 그라디언트, 외부 참조를 추가하지 않는다.</td></tr>
     </tbody>
   </table>
-  <p>발표의 점선 프레임을 회고에 쓰거나, 회고의 실선 기록지 프레임을 발표에 쓰지 않는다. 제목과 작성자는 페이지에서 보여주므로 썸네일에 넣지 않는다.</p>
+  <p>발표의 어두운 점 격자, 왼쪽 키워드와 오른쪽 아이콘 프레임 구성을 회고에 쓰지 않는다. 제목과 작성자는 페이지에서 보여주므로 썸네일에 넣지 않는다.</p>
 </section>
 <section id="s3">
   <h2><span class="n">03</span>바뀌는 요소</h2>
-  <p>값은 활동 폴더와 <code>index.md</code>의 frontmatter에서 읽는다. <code>type: retrospective</code>여야 한다. 기수는 <code>cohort-NN</code>, 관련 세션은 선택 필드 <code>session</code>이다. 세션이 없으면 <code>RETROSPECTIVE</code>만 쓴다. 프로젝트나 스터디 회고도 같은 규칙을 쓴다. 제목에서 번호를 추측하거나 가상의 발표 번호를 만들지 않는다.</p>
+  <p>값은 활동 폴더와 <code>index.md</code>의 frontmatter에서 읽는다. <code>type: retrospective</code>여야 한다. 기수는 <code>cohort-NN</code>, 관련 세션은 선택 필드 <code>session</code>이다. 세션이 없으면 하단에 <code>COHORT NN</code>만 쓴다. 큰 <code>RECAP</code> 표기는 항상 유지한다. 프로젝트나 스터디 회고도 같은 규칙을 쓴다. 제목에서 번호를 추측하거나 가상의 발표 번호를 만들지 않는다.</p>
   <p>키워드는 <code>keywords</code>의 세 개를 순서대로 대문자로 쓴다. 영어, 숫자, ASCII 문장부호를 사용한다. 글자 크기와 기준선은 가장 긴 키워드로 정하고, 세 줄의 크기는 같다. SVG 안에서 &amp;, &lt;, &gt;는 엔티티로 바꾼다.</p>
   <table>
     <thead><tr><th>가장 긴 키워드</th><th>크기</th><th>기준선 y</th></tr></thead>
-    <tbody><tr><td>18자 이하</td><td>56</td><td>318 · 392 · 466</td></tr><tr><td>19 ~ 23자</td><td>44</td><td>332 · 392 · 452</td></tr><tr><td>24 ~ 28자</td><td>36</td><td>342 · 392 · 442</td></tr></tbody>
+    <tbody><tr><td>18자 이하</td><td>64</td><td>360 · 460 · 560</td></tr><tr><td>19 ~ 23자</td><td>52</td><td>356 · 456 · 556</td></tr><tr><td>24 ~ 28자</td><td>44</td><td>353 · 453 · 553</td></tr></tbody>
   </table>
   <p>키워드가 29자 이상이면 생성 전에 본문의 키워드를 다듬는다. 썸네일만 줄여 쓰지 않는다.</p>
   <h3>아이콘을 바꾸는 경우</h3>
@@ -129,7 +129,7 @@
   <ul>
     <li>16줄, 각 줄 16글자. <code>#</code>는 채움, <code>.</code>은 비움. 여백 행과 열도 생략하지 않는다.</li>
     <li>8행과 8열 이상을 차지하고, 주요 윤곽은 두 칸 두께 또는 면으로 그린다.</li>
-    <li>한 칸마다 <code>&lt;rect x="800 + 16c" y="257 + 16r" width="16" height="16"/&gt;</code>. <code>g#icon</code> 안에 넣으며 중복 칸을 만들지 않는다.</li>
+    <li>한 칸마다 <code>&lt;rect x="38 + 8c" y="64 + 8r" width="8" height="8"/&gt;</code>. <code>g#icon</code> 안에 넣으며 중복 칸을 만들지 않는다.</li>
     <li>폭 360px의 카드와 1200 × 630 공유 이미지에서 실루엣과 키워드가 선명해야 한다.</li>
   </ul>
   <pre id="glyph-view"></pre>
@@ -146,8 +146,8 @@
   <h2><span class="n">05</span>검증</h2>
   <pre><code>node template/retrospective-thumbnail/validate.mjs cohort-01/activities/session-02-retrospective/img/thumbnail.svg</code></pre>
   <ul class="check">
-    <li>배경, 프레임, 문자 배치가 템플릿과 완전히 같다.</li>
-    <li>문자는 상단, 키워드 세 줄, 하단의 다섯 줄이며 회고 유형 표시가 있다.</li>
+    <li>흰 종이, 파란 제본 띠, 괘선, 문자 배치가 템플릿과 완전히 같다.</li>
+    <li>문자는 ASBG UOS, RECAP, 키워드 세 줄, 하단의 여섯 줄이다. RECAP이 작은 카드에서도 선명하다.</li>
     <li>기수, 선택 세션 번호, 키워드가 폴더와 index.md의 값과 맞는다.</li>
     <li>아이콘은 격자 안의 중복 없는 rect로만 구성하고 8행 × 8열 이상을 차지한다.</li>
     <li>30 KB 이하의 SVG 하나이며 외부 리소스가 없다.</li>
@@ -163,74 +163,33 @@
 </div>
 <script type="text/plain" id="template">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" shape-rendering="crispEdges">
-<defs>
-<pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#42B4FF" opacity="0.09"/></pattern>
-</defs>
-<rect width="1200" height="750" fill="#0B0F17"/>
-<g transform="translate(48 48)">
-<rect width="1104" height="654" fill="url(#g)"/>
-<rect x="0" y="0" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="1080" y="192" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="1056" y="384" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="1032" y="576" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="1008" y="120" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="984" y="312" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="960" y="504" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="936" y="48" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="912" y="240" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="888" y="432" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="864" y="624" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="840" y="168" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="816" y="360" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="792" y="552" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="768" y="96" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="744" y="288" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="720" y="480" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="696" y="24" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="672" y="216" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="648" y="408" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="624" y="600" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="600" y="144" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="576" y="336" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="552" y="528" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="528" y="72" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="504" y="264" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="480" y="456" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="456" y="0" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="432" y="192" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="408" y="384" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="384" y="576" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="360" y="120" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="336" y="312" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="312" y="504" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="288" y="48" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="264" y="240" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="240" y="432" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="216" y="624" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="192" y="168" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="168" y="360" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="144" y="552" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="120" y="96" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="96" y="288" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="72" y="480" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="48" y="24" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-<rect x="24" y="216" width="6" height="6" fill="#42B4FF" opacity="0.5"/>
-</g>
-<path d="M760 238H1144V580H760Z" fill="#0B0F17" stroke="#42B4FF" stroke-width="3" opacity="0.35"/>
-<path d="M736 214H1120V556H736Z" fill="#0B0F17" stroke="#42B4FF" stroke-width="3" opacity="0.8"/>
-<path d="M760 214V556" fill="none" stroke="#42B4FF" stroke-width="3" opacity="0.35"/>
+<rect width="1200" height="750" fill="#FFFFFF"/>
+<rect width="204" height="750" fill="#1160D8"/>
+<rect x="204" width="4" height="750" fill="#42B4FF"/>
+<path d="M102 280V654" fill="none" stroke="#42B4FF" stroke-width="4"/>
 <g fill="#42B4FF">
-<rect x="733" y="211" width="6" height="6"/>
-<rect x="1117" y="553" width="6" height="6"/>
+<rect x="96" y="280" width="12" height="12"/>
+<rect x="96" y="402" width="12" height="12"/>
+<rect x="96" y="524" width="12" height="12"/>
+<rect x="96" y="648" width="12" height="12"/>
+<rect x="1052" y="64" width="64" height="16"/>
+<rect x="1116" y="64" width="16" height="48"/>
 </g>
-<g id="icon" fill="#42B4FF">
+<g id="icon" fill="#FFFFFF">
 {{ICON}}
 </g>
-<text x="84" y="132" font-family="Menlo, ui-monospace, monospace" font-size="30" fill="#42B4FF" letter-spacing="4">ASBG UOS · COHORT {{COHORT}}</text>
-<g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#FFFFFF">
+<text x="268" y="106" font-family="Menlo, ui-monospace, monospace" font-size="28" fill="#1160D8" letter-spacing="4">ASBG UOS</text>
+<text x="260" y="252" font-family="Menlo, ui-monospace, monospace" font-size="128" font-weight="700" fill="#0B0F17" letter-spacing="-6">RECAP</text>
+<path d="M268 395H1132M268 495H1132M268 595H1132" fill="none" stroke="#0B0F17" stroke-width="2" opacity="0.14"/>
+<g fill="#1160D8">
+<rect x="268" y="342" width="16" height="16"/>
+<rect x="268" y="442" width="16" height="16"/>
+<rect x="268" y="542" width="16" height="16"/>
+</g>
+<g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#0B0F17">
 {{KEYWORDS}}
 </g>
-<text x="84" y="666" font-family="Menlo, ui-monospace, monospace" font-size="26" fill="#FFFFFF" opacity="0.6" letter-spacing="3">RETROSPECTIVE{{CONTEXT}}</text>
+<text x="268" y="678" font-family="Menlo, ui-monospace, monospace" font-size="26" fill="#1160D8" letter-spacing="3">COHORT {{COHORT}}{{CONTEXT}}</text>
 </svg>
 </script>
 <script type="application/json" id="glyphs">
@@ -259,13 +218,13 @@
 (() => {
   const template = document.getElementById("template").textContent.trim();
   const glyphs = JSON.parse(document.getElementById("glyphs").textContent);
-  const rects = glyphs.notebook.flatMap((row, r) => [...row].flatMap((cell, c) => cell === "#" ? [`<rect x="${800 + c * 16}" y="${257 + r * 16}" width="16" height="16"/>`] : [])).join("\n");
+  const rects = glyphs.notebook.flatMap((row, r) => [...row].flatMap((cell, c) => cell === "#" ? [`<rect x="${38 + c * 8}" y="${64 + r * 8}" width="8" height="8"/>`] : [])).join("\n");
   const examples = [
     { context: " · SESSION 02", keywords: ["ARCHITECTURE", "FEEDBACK", "ITERATION"], caption: "관련 세션이 있는 회고 · 구성 예시" },
     { context: "", keywords: ["COMMUNITY", "LEARNING", "NEXT STEPS"], caption: "기수 전체의 회고 · 구성 예시" },
   ];
   examples.forEach(({ context, keywords, caption }) => {
-    const svg = template.replace("{{COHORT}}", "01").replace("{{CONTEXT}}", context).replace("{{ICON}}", rects).replace("{{KEYWORDS}}", keywords.map((keyword, i) => `<text x="84" y="${[318, 392, 466][i]}" font-size="56">${keyword}</text>`).join("\n"));
+    const svg = template.replace("{{COHORT}}", "01").replace("{{CONTEXT}}", context).replace("{{ICON}}", rects).replace("{{KEYWORDS}}", keywords.map((keyword, i) => `<text x="320" y="${[360, 460, 560][i]}" font-size="64">${keyword}</text>`).join("\n"));
     const figure = document.createElement("figure");
     figure.innerHTML = `<div class="thumb">${svg}</div><figcaption>${caption}</figcaption>`;
     document.getElementById("fig-examples").appendChild(figure);

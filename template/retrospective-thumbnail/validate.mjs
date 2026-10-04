@@ -4,9 +4,9 @@ import { fileURLToPath } from "node:url";
 import { parse as parseYaml } from "yaml";
 
 const TIERS = [
-  { max: 18, size: 56, ys: [318, 392, 466] },
-  { max: 23, size: 44, ys: [332, 392, 452] },
-  { max: 28, size: 36, ys: [342, 392, 442] },
+  { max: 18, size: 64, ys: [360, 460, 560] },
+  { max: 23, size: 52, ys: [356, 456, 556] },
+  { max: 28, size: 44, ys: [353, 453, 553] },
 ];
 
 export function validateThumbnail(svg, file) {
@@ -41,7 +41,7 @@ export function validateThumbnail(svg, file) {
 
   const lines = [];
   if (found.KEYWORDS !== undefined) {
-    const linePattern = /<text x="84" y="(\d+)" font-size="(\d+)">([^<]+)<\/text>/g;
+    const linePattern = /<text x="320" y="(\d+)" font-size="(\d+)">([^<]+)<\/text>/g;
     const leftover = found.KEYWORDS.replace(linePattern, "").trim();
     if (leftover) errors.push(`키워드 그룹에 text 3줄 외의 내용이 있다: "${leftover.slice(0, 60)}"`);
     for (const [, y, size, text] of found.KEYWORDS.matchAll(linePattern)) {
@@ -89,12 +89,12 @@ export function validateThumbnail(svg, file) {
   const grid = Array.from({ length: 16 }, () => Array(16).fill("."));
   let filled = 0;
   if (found.ICON !== undefined) {
-    const rectPattern = /<rect x="(\d+)" y="(\d+)" width="16" height="16"\s*\/>/g;
+    const rectPattern = /<rect x="(\d+)" y="(\d+)" width="8" height="8"\s*\/>/g;
     const leftover = found.ICON.replace(rectPattern, "").trim();
-    if (leftover) errors.push(`아이콘 그룹에 16 × 16 rect 외의 내용이 있다: "${leftover.slice(0, 60)}"`);
+    if (leftover) errors.push(`아이콘 그룹에 8 × 8 rect 외의 내용이 있다: "${leftover.slice(0, 60)}"`);
     for (const [, x, y] of found.ICON.matchAll(rectPattern)) {
-      const c = (Number(x) - 800) / 16;
-      const r = (Number(y) - 257) / 16;
+      const c = (Number(x) - 38) / 8;
+      const r = (Number(y) - 64) / 8;
       if (!Number.isInteger(c) || !Number.isInteger(r) || c < 0 || c > 15 || r < 0 || r > 15) {
         errors.push(`격자 밖 rect: x=${x} y=${y}`);
         continue;
