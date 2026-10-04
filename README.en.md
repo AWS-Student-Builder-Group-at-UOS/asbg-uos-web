@@ -14,7 +14,7 @@ This site exists to introduce ASBG UOS. Before building it, we settled on three 
 2. It must stay easy to maintain when the organizers change.
 3. Members who do not know web development must still be able to contribute.
 
-The implementation is kept as simple as those conditions allow. There is no database and no admin page. All content lives in this repository as Markdown and YAML files, which are read at build time and turned into static pages. With no server, database or login to operate, both the running cost and the points of failure disappear. Nothing depends on an external CMS, storage or API key, so the repository is self-contained and moving to another host needs no code changes. Publishing content is nothing more than adding files, so a member with no web experience can take part through a Pull Request.
+The implementation is kept as simple as those conditions allow. There is no database and no admin page. All content lives in this repository as Markdown and YAML files, which are read at build time and turned into static pages. With no server, database or login to operate, both the running cost and the points of failure disappear. Publishing content is nothing more than adding files, so a member with no web experience can take part through a Pull Request.
 
 ## Stack
 
@@ -31,6 +31,7 @@ Next.js was chosen mainly for search and sharing. Every page is generated as com
 | Localization | Korean and English |
 | Theme | next-themes, light and dark |
 | Share images | next/og and sharp, rendering activity thumbnails from SVG to PNG |
+| Instagram feed | Behold JSON feed, fetched on the server and cached for an hour |
 | Fonts | Pretendard, Geist Mono |
 | Hosting | Vercel |
 
@@ -91,3 +92,5 @@ Numbers, dates and keywords use a monospace font to evoke a terminal. Repeating 
 Send content updates and design or code improvements as a Pull Request. Follow the existing writing style and design principles, and keep the Korean and English versions in sync.
 
 To run locally, install Node.js, then run `npm install` and `npm run dev`. Check your changes with `npm run lint` and `npm run build` before submitting.
+
+To see the Instagram posts on the Resources page, add `BEHOLD_FEED_URL` to `.env.local` at the repository root. Ask the core team for the URL. Without it, only that list is left out and the rest of the site works as usual.

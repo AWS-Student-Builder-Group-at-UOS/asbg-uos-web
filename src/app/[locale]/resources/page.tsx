@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Icon, type IconName } from "@/components/icons";
+import { InstagramPostCard } from "@/components/resources/InstagramPostCard";
 import { Container } from "@/components/ui/Container";
 import { CopyButton } from "@/components/ui/CopyButton";
 import { PageHead } from "@/components/ui/Section";
 import { getDict, type Locale } from "@/lib/i18n";
+import { getInstagramPosts } from "@/lib/instagram";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
@@ -34,37 +36,58 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ResourcesPage({ params }: Props) {
   const { locale } = await params;
   const d = getDict(locale);
+  const posts = await getInstagramPosts();
 
   return (
     <>
       <PageHead title={d.resources.title} body={d.resources.body} />
-      <Container className="py-10 sm:py-14">
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {items.map((item) => {
-            const t = d.resources.items[item.key];
-            return (
-              <li key={item.key} className="card ring-hover relative flex gap-5 p-6">
-                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-sm bg-accent-soft text-accent">
-                  <Icon name={item.icon} size={20} />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center justify-between gap-3">
-                    <h2 className="font-semibold">{t.title}</h2>
-                    {item.href && <Icon name="external" size={12} className="shrink-0 text-faint" />}
+      <Container className="flex flex-col gap-12 py-10 sm:gap-16 sm:py-14">
+        {posts.length > 0 && (
+          <section id="instagram" className="scroll-mt-24">
+            <div className="flex items-center justify-between gap-4">
+              <h2 className="eyebrow">{d.resources.feed.title}</h2>
+              <a href={site.links.instagram} target="_blank" rel="noreferrer" className="link-quiet inline-flex items-center gap-1.5 font-mono text-xs text-muted">
+                {d.resources.feed.viewAll}
+                <Icon name="external" size={12} />
+              </a>
+            </div>
+            <ul className="mt-5 grid grid-cols-1 items-start gap-4 lg:grid-cols-2">
+              {posts.map((post) => (
+                <InstagramPostCard key={post.id} post={post} locale={locale} />
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <section id="channels" className="scroll-mt-24">
+          <h2 className="eyebrow">{d.resources.channels}</h2>
+          <ul className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {items.map((item) => {
+              const t = d.resources.items[item.key];
+              return (
+                <li key={item.key} className="card ring-hover relative flex gap-5 p-6">
+                  <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-sm bg-accent-soft text-accent">
+                    <Icon name={item.icon} size={20} />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-3">
+                      <h3 className="font-semibold">{t.title}</h3>
+                      {item.href && <Icon name="external" size={12} className="shrink-0 text-faint" />}
+                    </div>
+                    <p className="mt-1 text-sm leading-relaxed text-muted">{t.body}</p>
+                    {item.href ? (
+                      <a href={item.href} target="_blank" rel="noreferrer" className="mt-4 block truncate font-mono text-xs text-faint after:absolute after:inset-0">
+                        {display(item.href)}
+                      </a>
+                    ) : (
+                      <CopyButton value={site.email} label={d.common.copy} copiedLabel={d.common.copied} className="mt-4 text-xs" />
+                    )}
                   </div>
-                  <p className="mt-1 text-sm leading-relaxed text-muted">{t.body}</p>
-                  {item.href ? (
-                    <a href={item.href} target="_blank" rel="noreferrer" className="mt-4 block truncate font-mono text-xs text-faint after:absolute after:inset-0">
-                      {display(item.href)}
-                    </a>
-                  ) : (
-                    <CopyButton value={site.email} label={d.common.copy} copiedLabel={d.common.copied} className="mt-4 text-xs" />
-                  )}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
       </Container>
     </>
   );

@@ -176,6 +176,7 @@ export const ko = {
   resources: {
     title: "Resources",
     body: "채널마다 올리는 게 다르니, 어디서 뭘 보면 되는지 정리해 뒀습니다.",
+    channels: "Channels",
     items: {
       linkedin: { title: "LinkedIn", body: "공식 페이지. 활동 소식과 세션 후기를 올립니다." },
       github: { title: "GitHub", body: "세션 자료와 실습 코드를 모아 둡니다." },
@@ -183,6 +184,17 @@ export const ko = {
       instagram: { title: "Instagram", body: "모집과 행사 소식이 가장 먼저 올라옵니다." },
       meetup: { title: "Meetup", body: "공식 행사 공지와 참가 신청." },
       moreGroups: { title: "More ASBG", body: "전 세계 AWS Student Builder Groups 목록으로, 다른 대학은 어떻게 하는지 볼 수 있습니다." },
+    },
+    feed: {
+      title: "Latest on Instagram",
+      viewAll: "전체 보기",
+      untitled: "Instagram 게시물",
+      open: "Instagram에서 보기",
+      viewPhotos: "사진 크게 보기",
+      play: "Instagram에서 재생",
+      prev: "이전 사진",
+      next: "다음 사진",
+      close: "닫기",
     },
   },
   common: { copy: "복사", copied: "복사됨", open: "열기", more: "더 보기", less: "접기" },
