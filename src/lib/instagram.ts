@@ -1,6 +1,8 @@
+import { unstable_cache } from "next/cache";
 import { z } from "zod";
 
 const SEOUL_OFFSET = 9 * 60 * 60 * 1000;
+const REVALIDATE = 3 * 60 * 60;
 const TITLE_LENGTH = 80;
 const INVISIBLE = /[\u200b\u2800\u3164]/g;
 
@@ -12,17 +14,19 @@ const media = z.object({
 });
 
 const feedSchema = z.object({
-  posts: z.array(
-    media.extend({
-      id: z.string(),
-      permalink: z.url(),
-      timestamp: z.string(),
-      caption: z.string().optional(),
-      prunedCaption: z.string().optional(),
-      altText: z.string().optional(),
-      children: z.array(media).optional(),
-    }),
-  ),
+  posts: z
+    .array(
+      media.extend({
+        id: z.string(),
+        permalink: z.url(),
+        timestamp: z.string(),
+        caption: z.string().optional(),
+        prunedCaption: z.string().optional(),
+        altText: z.string().optional(),
+        children: z.array(media).optional(),
+      }),
+    )
+    .min(1),
 });
 
 type Media = z.infer<typeof media>;
@@ -71,16 +75,16 @@ function toPost(post: FeedPost): InstagramPost {
   };
 }
 
-export async function getInstagramPosts(): Promise<InstagramPost[]> {
-  const url = process.env.BEHOLD_FEED_URL;
-  if (!url) return [];
-
-  try {
-    const res = await fetch(url, { next: { revalidate: 3600 } });
-    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+const loadPosts = unstable_cache(
+  async () => {
+    const res = await fetch(z.url().parse(process.env.BEHOLD_FEED_URL));
+    if (!res.ok) throw new Error(`[instagram] ${res.status} ${res.statusText}`);
     return feedSchema.parse(await res.json()).posts.map(toPost);
-  } catch (error) {
-    console.error("[instagram] feed unavailable", error);
-    return [];
-  }
+  },
+  ["instagram"],
+  { revalidate: REVALIDATE },
+);
+
+export async function getInstagramPosts(): Promise<InstagramPost[]> {
+  return process.env.BEHOLD_FEED_URL ? loadPosts() : [];
 }

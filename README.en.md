@@ -31,7 +31,7 @@ Next.js was chosen mainly for search and sharing. Every page is generated as com
 | Localization | Korean and English |
 | Theme | next-themes, light and dark |
 | Share images | next/og and sharp, rendering activity thumbnails from SVG to PNG |
-| Instagram feed | Behold JSON feed, fetched on the server and cached for an hour |
+| Instagram feed | Behold JSON feed, refreshed on the server every three hours, keeping the last posts when a refresh fails |
 | Fonts | Pretendard, Geist Mono |
 | Hosting | Vercel |
 
