@@ -24,11 +24,11 @@ Next.js was chosen mainly for search and sharing. Every page is generated as com
 
 | Area | Used |
 | --- | --- |
-| Framework | Next.js 16 (App Router), React 19, TypeScript |
-| Styling | Tailwind CSS 4. Design tokens live in one place, `src/app/globals.css` |
+| Framework | Next.js (App Router), React, TypeScript |
+| Styling | Tailwind CSS, shared design tokens |
 | Content | Markdown + YAML frontmatter, react-markdown, remark-gfm |
 | Content validation | zod, schema-checked at build time |
-| Localization | `app/[locale]` routes with Korean and English dictionaries |
+| Localization | Korean and English |
 | Theme | next-themes, light and dark |
 | Share images | next/og and sharp, rendering activity thumbnails from SVG to PNG |
 | Fonts | Pretendard, Geist Mono |
@@ -53,11 +53,11 @@ flowchart LR
   class c4 black
 ```
 
-There are only four colors. The university's blue goes where people are meant to click, such as links and buttons, and the color of a sky with clouds in it goes where the eye should land first, such as icons and accents. White and black complete the set, and every grey and translucent surface is one of the four at a different opacity. Light and dark mode only swap the roles of the same four colors. Keeping the palette this small means the look holds together no matter who adds a page.
+The site UI uses four base colors. The university's blue goes where people are meant to click, such as links and buttons, and the color of a sky with clouds in it goes where the eye should land first, such as icons and accents. White and black complete the set, and every grey and translucent surface is one of the four at a different opacity. Light and dark mode only swap the roles of the same four colors. Keeping the palette this small means the look holds together no matter who adds a page.
 
 ### Pixels
 
-Every icon is pixel art on a 16×16 grid, and the code defines it exactly as it looks, as a grid of characters. On the left is the logo as written in `src/components/icons.tsx`; on the right is what appears on screen.
+Every icon is pixel art on a 16×16 grid, and the code defines it exactly as it looks, as a grid of characters. On the left is the grid that defines the logo; on the right is what appears on screen.
 
 ```
 ...##..##..##...          ████    ████    ████
@@ -82,117 +82,12 @@ A single pixel is just a square, but together they become a lock or a server. It
 
 ### Circuit board
 
-All the graphics speak the language of a circuit board. The dot grid in the background is a perfboard before any part is placed, the diagrams drawn on it with chips and traces are the closed loop and the request path on the home page, and the small squares at card corners are solder pads. Numbers, dates and keywords, the information closest to code, are set in a monospace font (Geist Mono), a nod to sessions that mostly happen in everyone's own console.
+The background dot grid evokes a perfboard before components are placed, while chips and traces depict connected systems. The small squares at card corners come from solder pads. Just as connected components form a working circuit, these shapes express a community that learns and builds together.
 
-Talk thumbnails use the same language: a dark dot grid with three keywords on the left and, on the right, one pixel icon that represents the talk inside a dashed frame. The guide, prompt and validation script are in `template/presentation-thumbnail/`.
+Numbers, dates and keywords use a monospace font to evoke a terminal. Repeating simple dots, lines and squares makes the pages feel like parts of the same board.
 
-```
-┌────────────────────────────────────────────────────────┐
-│  · · · · · · · · · · · · · · · · · · · · · · · · · · · │
-│    ASBG UOS · COHORT 01                                │
-│                                                        │
-│    COMMUNITY                     ╭ ─ ─ ─ ─ ─ ─ ─ ╮     │
-│    HANDS-ON                          ██   ██           │
-│    CURRICULUM                    │   ██   ██     │     │
-│                                     ████ ████          │
-│                                  ╰ ─ ─ ─ ─ ─ ─ ─ ╯     │
-│    SESSION 01 · PRESENTATION 01                        │
-│  · · · · · · · · · · · · · · · · · · · · · · · · · · · │
-└────────────────────────────────────────────────────────┘
-```
+## Contributing
 
-Recap thumbnails use a white notebook page, a blue spine, a `RECAP` heading and three ruled keyword entries. Their palette and layout distinguish them from the dark, dotted presentation thumbnails while retaining the brand colors and pixel icons. Every recap uses this layout, including project and cohort reviews without a session number. The guide, prompt, generator and validator are in `template/retrospective-thumbnail/`.
+Send content updates and design or code improvements as a Pull Request. Follow the existing writing style and design principles, and keep the Korean and English versions in sync.
 
-Diagrams inside the talk write-ups are quieter than the thumbnails: a white background, grey lines and a single blue. The rules, prompt and generator are in `template/session-diagram/`.
-
-## Development and contributing
-
-Requires Node.js 20 or later.
-
-```bash
-npm install
-npm run dev      # http://localhost:3000
-npm run build    # static build, including content validation
-npm run lint
-```
-
-Content lives under `cohort-NN/` at the repository root, one folder per cohort. Members go in `members/*.yaml`, with their photos alongside them. `src/lib/content/schema.ts` is the reference for every field, and copying an existing file is the fastest way to start. Send changes as a Pull Request.
-
-### Activity records
-
-Activities shows presentations and retrospectives in one list per cohort, with a small type label on each post. There are no session folders to navigate through. Assignments are one possible activity; a later cohort can document projects or study groups in the same structure.
-
-```text
-cohort-01/
-  activities/
-    session-01-presentation-01/
-      index.md
-      index.en.md
-      img/
-      files/
-  members/
-```
-
-Each activity has one `activities/{slug}/` folder. Use lowercase letters, numbers and hyphens for the slug, and keep it stable after publication. Existing presentations retain their numbers, such as `session-01-presentation-01`. A post without a session can use a descriptive name such as `cohort-retrospective`. English body text goes in `index.en.md`. Keep images in `img/` and PDFs in `files/` within the same post, and link to them using relative paths.
-
-| Field | Rule |
-| --- | --- |
-| `type` | `presentation` or `retrospective` |
-| `date` | `"YYYY-MM-DD"`. Publication date, or scheduled date for upcoming posts |
-| `status` | `done` or `upcoming`; defaults to `done` |
-| `title`, `description` | Title and optional description; a string or `{ ko, en }` |
-| `keywords` | Exactly three; use English keywords of 1–28 characters for thumbnails |
-| `session`, `presentation` | Optional positive integers for the related session and presentation |
-| `speakers` | Optional list of speaker member IDs |
-| `author` | String or `{ ko, en }`; optional. Use `{ group: core }` for an `@core` link to the cohort's Core section in Members |
-| `thumbnail` | Optional image path; `img/thumbnail.svg` for the templates |
-
-Use the following frontmatter for a retrospective. Add `session` only when a review relates to a session. A retrospective does not need a `presentation` number. See the [Session 02 retrospective](cohort-01/activities/session-02-retrospective/index.en.md) for a complete article.
-
-```yaml
----
-type: retrospective
-date: "2026-10-15"
-title:
-  ko: 함께 배우는 방식을 돌아보며
-  en: Reflecting on how we learn together
-author:
-  group: core
-keywords: [Community, Feedback, Iteration]
-thumbnail: img/thumbnail.svg
----
-```
-
-A retrospective can describe the activity's intent, actual outcomes, feedback, changes and lessons for the next round, with links to original work. An assignment format used by one cohort is not required of every retrospective.
-
-### Lists and URLs
-
-Cohorts use paths such as `/en/activities/cohort-01`, and posts use `/en/activities/cohort-01/{slug}`. Existing presentation URLs such as `/en/sessions/cohort-01/session-01/presentation-01` redirect to the new post URLs.
-
-Search and filters are stored in the URL, so a reload or a shared link shows the same list. Desktop uses a short search field alongside filter buttons. Mobile keeps search and type visible, with status and sort inside an expandable filter panel. There are no platform-specific native dropdowns.
-
-`session 02`, `session 2`, `session-02`, and `세션 02` all match presentations and recaps with `session: 2`. Search, type, and status conditions apply together. Oldest orders by date, session number, post type, presentation number, and slug; Newest reverses the entire order. For the same date and session, presentations precede recaps in chronological order.
-
-| Parameter | Values | When omitted |
-| --- | --- | --- |
-| `q` | Search text | No search |
-| `type` | `presentation`, `retrospective` | All types |
-| `status` | `done`, `upcoming` | All statuses |
-| `sort` | `newest`, `oldest` | Newest date first |
-
-Example: `/en/activities/cohort-01?type=presentation&q=vpc&sort=oldest`.
-
-### Thumbnails and diagrams
-
-- Presentation thumbnails: `template/presentation-thumbnail/prompt.md`. The existing presentation layout and background are preserved.
-- Retrospective thumbnails: `template/retrospective-thumbnail/prompt.md`. The generator below can create the default notebook icon immediately.
-- Article diagrams: `template/session-diagram/README.md`. Generator sources also follow `diagrams/cohort-NN/activities/{slug}.py`.
-
-```bash
-node template/presentation-thumbnail/validate.mjs cohort-01/activities/session-01-presentation-01/img/thumbnail.svg
-node template/retrospective-thumbnail/build.mjs cohort-01/activities/cohort-retrospective
-node template/retrospective-thumbnail/validate.mjs cohort-01/activities/cohort-retrospective/img/thumbnail.svg
-python template/session-diagram/build.py --check
-```
-
-Run the retrospective commands after writing that post's `index.md` and metadata. Remove any temporary posts or assets used for review before publishing the real content.
+To run locally, install Node.js, then run `npm install` and `npm run dev`. Check your changes with `npm run lint` and `npm run build` before submitting.

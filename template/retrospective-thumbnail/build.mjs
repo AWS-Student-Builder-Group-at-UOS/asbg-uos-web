@@ -30,17 +30,17 @@ if (rows.length !== 16 || rows.some((row) => !/^[.#]{16}$/.test(row))) {
 }
 
 const tiers = [
-  { max: 18, size: 64, ys: [360, 460, 560] },
-  { max: 23, size: 52, ys: [356, 456, 556] },
-  { max: 28, size: 44, ys: [353, 453, 553] },
+  { max: 18, size: 56, ys: [318, 392, 466] },
+  { max: 23, size: 44, ys: [332, 392, 452] },
+  { max: 28, size: 36, ys: [342, 392, 442] },
 ];
 const tier = tiers.find(({ max }) => Math.max(...keywords.map((keyword) => keyword.length)) <= max);
 const escape = (value) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const svg = template
   .replace("{{COHORT}}", location[1])
   .replace("{{CONTEXT}}", meta.session === undefined ? "" : ` · SESSION ${String(meta.session).padStart(2, "0")}`)
-  .replace("{{KEYWORDS}}", keywords.map((keyword, i) => `<text x="320" y="${tier.ys[i]}" font-size="${tier.size}">${escape(keyword)}</text>`).join("\n"))
-  .replace("{{ICON}}", rows.flatMap((row, r) => [...row].flatMap((cell, c) => cell === "#" ? [`<rect x="${38 + c * 8}" y="${64 + r * 8}" width="8" height="8"/>`] : [])).join("\n"));
+  .replace("{{KEYWORDS}}", keywords.map((keyword, i) => `<text x="84" y="${tier.ys[i]}" font-size="${tier.size}">${escape(keyword)}</text>`).join("\n"))
+  .replace("{{ICON}}", rows.flatMap((row, r) => [...row].flatMap((cell, c) => cell === "#" ? [`<rect x="${800 + c * 16}" y="${257 + r * 16}" width="16" height="16"/>`] : [])).join("\n"));
 const output = path.join(activity, "img", "thumbnail.svg");
 const result = validateThumbnail(svg, output);
 if (result.errors.length) {

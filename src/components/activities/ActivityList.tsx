@@ -86,19 +86,19 @@ export function ActivityList({ items, locale }: { items: ActivityListItem[]; loc
   const statusParam = params.get("status");
   const type = typeParam === "presentation" || typeParam === "retrospective" ? typeParam : "all";
   const status = statusParam === "done" || statusParam === "upcoming" ? statusParam : "all";
-  const sort = params.get("sort") === "oldest" ? "oldest" : "newest";
+  const sort = params.get("sort") === "newest" ? "newest" : "oldest";
   const hasFilters = filterKeys.some((key) => params.has(key));
   const showTypes = new Set(items.map((item) => item.type)).size > 1 || type !== "all";
-  const activeCount = Number(status !== "all") + Number(sort !== "newest");
-  const summary = [status !== "all" && d.filters[status], sort === "oldest" && d.filters.oldest].filter(Boolean).join(" · ");
+  const activeCount = Number(status !== "all") + Number(sort !== "oldest");
+  const summary = [status !== "all" && d.filters[status], sort === "newest" && d.filters.newest].filter(Boolean).join(" · ");
   const statusOptions = [
     { value: "all", label: d.filters.all },
     { value: "done", label: d.filters.done },
     { value: "upcoming", label: d.filters.upcoming },
   ];
   const sortOptions = [
-    { value: "newest", label: d.filters.newest },
     { value: "oldest", label: d.filters.oldest },
+    { value: "newest", label: d.filters.newest },
   ];
   const visible = items.filter((item) => (type === "all" || item.type === type)
     && (status === "all" || item.status === status)
@@ -108,7 +108,7 @@ export function ActivityList({ items, locale }: { items: ActivityListItem[]; loc
   function updateFilter(key?: typeof filterKeys[number], value?: string) {
     const next = new URLSearchParams(window.location.search);
     if (key) {
-      if (!value || (key !== "q" && value === "all") || (key === "sort" && value === "newest")) next.delete(key);
+      if (!value || (key !== "q" && value === "all") || (key === "sort" && value === "oldest")) next.delete(key);
       else next.set(key, value);
     } else {
       filterKeys.forEach((filter) => next.delete(filter));

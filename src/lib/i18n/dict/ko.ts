@@ -156,7 +156,7 @@ export const ko = {
       status: "진행 상태",
       sort: "정렬",
       all: "전체",
-      done: "진행 완료",
+      done: "완료",
       upcoming: "예정",
       newest: "최신순",
       oldest: "오래된순",

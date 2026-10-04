@@ -24,11 +24,11 @@ Next.js를 고른 가장 큰 이유는 검색과 공유입니다. 모든 페이�
 
 | 영역 | 사용 |
 | --- | --- |
-| 프레임워크 | Next.js 16 (App Router), React 19, TypeScript |
-| 스타일 | Tailwind CSS 4. 디자인 토큰은 `src/app/globals.css` 한 곳 |
+| 프레임워크 | Next.js (App Router), React, TypeScript |
+| 스타일 | Tailwind CSS, 공통 디자인 토큰 |
 | 콘텐츠 | Markdown + YAML frontmatter, react-markdown, remark-gfm |
 | 콘텐츠 검증 | zod. 빌드 시 스키마 검사 |
-| 다국어 | `app/[locale]` 라우트, 한국어 · 영어 사전 파일 |
+| 다국어 | 한국어 · 영어 |
 | 테마 | next-themes. 라이트 · 다크 |
 | 공유 이미지 | next/og, sharp. 활동 썸네일 SVG를 PNG로 변환 |
 | 글꼴 | Pretendard, Geist Mono |
@@ -53,11 +53,11 @@ flowchart LR
   class c4 black
 ```
 
-색은 네 가지뿐입니다. 시립대의 파랑은 링크와 버튼처럼 눌러 보게 하는 곳에, 구름이 떠 있는 하늘의 색은 아이콘과 강조처럼 눈길이 먼저 가는 곳에 씁니다. 여기에 흰색과 검정을 더하고, 회색과 반투명 배경은 네 색의 불투명도를 달리해 만듭니다. 라이트 모드와 다크 모드도 네 색의 역할만 바꿉니다. 색이 적어야 누가 페이지를 더해도 분위기가 흐트러지지 않습니다.
+사이트 UI의 기본색은 네 가지입니다. 시립대의 파랑은 링크와 버튼처럼 눌러 보게 하는 곳에, 구름이 떠 있는 하늘의 색은 아이콘과 강조처럼 눈길이 먼저 가는 곳에 씁니다. 여기에 흰색과 검정을 더하고, 회색과 반투명 배경은 네 색의 불투명도를 달리해 만듭니다. 라이트 모드와 다크 모드도 네 색의 역할만 바꿉니다. 색이 적어야 누가 페이지를 더해도 분위기가 흐트러지지 않습니다.
 
 ### 픽셀
 
-아이콘은 모두 16×16 격자에 찍은 픽셀 아트이고, 코드에서도 그림 그대로 문자열 격자로 정의합니다. 왼쪽이 `src/components/icons.tsx`에 적힌 로고의 정의, 오른쪽이 화면에 그려지는 모양입니다.
+아이콘은 모두 16×16 격자에 찍은 픽셀 아트이고, 코드에서도 그림 그대로 문자열 격자로 정의합니다. 왼쪽이 로고를 구성하는 격자, 오른쪽이 화면에 그려지는 모양입니다.
 
 ```
 ...##..##..##...          ████    ████    ████
@@ -82,117 +82,12 @@ flowchart LR
 
 ### 회로 기판
 
-그림은 모두 회로 기판의 언어로 그렸습니다. 배경의 점 격자는 부품을 꽂기 전의 만능기판이고, 그 위에 칩과 배선으로 그린 도식이 홈의 폐루프와 요청 경로이며, 카드 모서리의 작은 네모는 납땜 패드입니다. 번호와 날짜, 키워드처럼 코드에 가까운 정보는 모노스페이스 글꼴(Geist Mono)로 써서 각자의 콘솔에서 이루어지는 세션의 인상을 남겼습니다.
+배경의 점 격자는 부품을 꽂기 전의 만능기판을, 칩과 배선으로 이어진 도식은 서로 연결된 시스템을 표현합니다. 카드 모서리의 작은 네모는 납땜 패드에서 가져왔습니다. 작은 부품이 연결되어 하나의 기능을 만드는 회로처럼, 함께 배우고 만드는 커뮤니티의 모습을 담았습니다.
 
-발표 썸네일도 같은 언어로 만듭니다. 어두운 바탕의 점 격자 위에 왼쪽은 키워드 세 개, 오른쪽은 점선 프레임 안에 발표를 대표하는 픽셀 아이콘 하나를 놓는 구성입니다. 가이드와 프롬프트, 검증 스크립트는 `template/presentation-thumbnail/`에 있습니다.
+번호와 날짜, 키워드는 모노스페이스 글꼴로 표시해 터미널의 인상을 더합니다. 점과 선, 네모라는 단순한 요소를 반복해 페이지 전체가 같은 기판 위에 놓인 듯한 일관성을 만듭니다.
 
-```
-┌────────────────────────────────────────────────────────┐
-│  · · · · · · · · · · · · · · · · · · · · · · · · · · · │
-│    ASBG UOS · COHORT 01                                │
-│                                                        │
-│    COMMUNITY                     ╭ ─ ─ ─ ─ ─ ─ ─ ╮     │
-│    HANDS-ON                          ██   ██           │
-│    CURRICULUM                    │   ██   ██     │     │
-│                                     ████ ████          │
-│                                  ╰ ─ ─ ─ ─ ─ ─ ─ ╯     │
-│    SESSION 01 · PRESENTATION 01                        │
-│  · · · · · · · · · · · · · · · · · · · · · · · · · · · │
-└────────────────────────────────────────────────────────┘
-```
+## 기여
 
-회고 썸네일은 흰 기록지와 파란 책등, `RECAP` 표제와 세 줄의 키워드로 구성합니다. 어두운 점 격자를 쓰는 발표와 바탕색과 배치를 달리하면서 같은 브랜드 색과 픽셀 아이콘을 공유합니다. 회고끼리는 이 틀을 유지하며, 세션과 연결되지 않은 프로젝트나 기수 전체 회고도 번호 없이 사용할 수 있습니다. 가이드와 프롬프트, 생성기, 검증기는 `template/retrospective-thumbnail/`에 있습니다.
+콘텐츠 수정과 디자인·코드 개선은 Pull Request로 보내 주세요. 기존 콘텐츠의 작성 방식과 디자인 원칙을 따르고, 한글과 영어에 함께 반영해 주세요.
 
-발표 본문의 도식은 썸네일과 달리 흰 바탕에 회색 선과 파랑 하나만 쓰는 차분한 그림입니다. 규칙과 프롬프트, 생성 스크립트는 `template/session-diagram/`에 있습니다.
-
-## 개발과 기여
-
-Node.js 20 이상에서 다음 명령으로 실행합니다.
-
-```bash
-npm install
-npm run dev      # http://localhost:3000
-npm run build    # 정적 빌드. 콘텐츠 형식 검사 포함
-npm run lint
-```
-
-콘텐츠는 저장소 루트의 `cohort-NN/` 폴더에 기수별로 들어 있습니다. 멤버는 `members/*.yaml`에 쓰고 사진은 같은 폴더에 둡니다. 필드 규칙은 `src/lib/content/schema.ts`가 기준이며, 기존 파일을 복사해 고치는 것이 가장 빠릅니다. 변경은 Pull Request로 보내 주세요.
-
-### 활동 기록
-
-Activities는 기수별로 발표와 활동 회고를 하나의 목록에 보여 줍니다. 세션별 폴더나 중간 목록으로 나누지 않고 글마다 작은 유형 표기를 붙입니다. 과제는 활동의 한 가지일 뿐이며, 다음 기수가 프로젝트나 스터디를 운영해도 같은 구조에 기록할 수 있습니다.
-
-```text
-cohort-01/
-  activities/
-    session-01-presentation-01/
-      index.md
-      index.en.md
-      img/
-      files/
-  members/
-```
-
-활동 하나가 `activities/{slug}/` 폴더 하나입니다. slug는 소문자와 숫자, 하이픈으로 짓고 게시 후에는 유지합니다. 발표는 `session-01-presentation-01`처럼 기존 번호를 이름에 남기지만, 세션과 관계없는 글은 `cohort-retrospective`처럼 내용에 맞춰 지으면 됩니다. 영어 본문은 `index.en.md`에 씁니다. 이미지와 PDF는 각각 같은 글의 `img/`, `files/`에 두고 본문에서는 상대 경로로 연결합니다.
-
-| 필드 | 규칙 |
-| --- | --- |
-| `type` | `presentation` 또는 `retrospective`. 발표와 활동 회고를 구분 |
-| `date` | `"YYYY-MM-DD"`. 발행일이며 예정 글은 예정일 |
-| `status` | `done` 또는 `upcoming`. 생략하면 `done` |
-| `title`, `description` | 제목과 선택 설명. 문자열 또는 `{ ko, en }` |
-| `keywords` | 세 개. 썸네일을 만들 때는 각 1~28자의 영어 키워드 |
-| `session`, `presentation` | 관련 세션과 발표 번호. 필요한 글에만 양의 정수로 지정 |
-| `speakers` | 발표자의 멤버 ID 목록. 생략 가능 |
-| `author` | 문자열 또는 `{ ko, en }`. 코어팀은 `{ group: core }`로 지정하면 `@core`가 해당 기수 Members의 Core 섹션으로 연결됨. 생략 가능 |
-| `thumbnail` | 선택 이미지 경로. 템플릿 사용 시 `img/thumbnail.svg` |
-
-회고의 frontmatter는 아래처럼 작성합니다. 세션과 연결된 회고만 `session`을 넣으며 `presentation`은 필요하지 않습니다. 본문 구성은 [Session 02 회고](cohort-01/activities/session-02-retrospective/index.md)를 참고할 수 있습니다.
-
-```yaml
----
-type: retrospective
-date: "2026-10-15"
-title:
-  ko: 함께 배우는 방식을 돌아보며
-  en: Reflecting on how we learn together
-author:
-  group: core
-keywords: [Community, Feedback, Iteration]
-thumbnail: img/thumbnail.svg
----
-```
-
-회고 본문에는 활동의 의도, 실제 결과, 피드백과 변화, 다음 운영에서 바꿀 점을 글로 정리하고 원본 자료를 연결합니다. 특정 기수의 과제나 제출 형식을 모든 회고에 요구하지 않습니다.
-
-### 목록과 URL
-
-기수는 `/ko/activities/cohort-01`처럼 경로로 선택하고, 상세 주소는 `/ko/activities/cohort-01/{slug}`입니다. 기존 발표 주소인 `/ko/sessions/cohort-01/session-01/presentation-01`도 새 상세 주소로 이동합니다.
-
-검색과 필터는 URL에 저장되어 새로고침하거나 링크를 공유해도 같은 목록을 볼 수 있습니다. 데스크톱에서는 짧은 검색창과 선택 버튼을 한 줄에 배치하고, 모바일에서는 검색과 유형을 바로 보여 주되 상태와 정렬은 필터 버튼으로 펼칩니다. 기기별 기본 드롭다운을 쓰지 않습니다.
-
-`session 02`, `session 2`, `session-02`, `세션 02`는 모두 `session: 2`인 발표와 회고를 찾습니다. 검색어와 유형·상태 필터는 함께 적용됩니다. 오래된순은 날짜, 세션 번호, 글 유형, 발표 번호, slug 순서이며, 최신순은 그 순서를 정확히 뒤집습니다. 같은 날짜와 세션에서는 발표 다음에 회고를 놓습니다.
-
-| 파라미터 | 값 | 생략했을 때 |
-| --- | --- | --- |
-| `q` | 검색어 | 검색 없음 |
-| `type` | `presentation`, `retrospective` | 모든 유형 |
-| `status` | `done`, `upcoming` | 모든 상태 |
-| `sort` | `newest`, `oldest` | 최신 날짜순 |
-
-예: `/ko/activities/cohort-01?type=presentation&q=vpc&sort=oldest`.
-
-### 썸네일과 도식
-
-- 발표 썸네일: `template/presentation-thumbnail/prompt.md`. 기존 발표의 배경과 레이아웃을 유지합니다.
-- 회고 썸네일: `template/retrospective-thumbnail/prompt.md`. 기본 notebook 아이콘은 아래 생성기로 바로 만들 수 있습니다.
-- 본문 도식: `template/session-diagram/README.md`. 생성 코드도 `diagrams/cohort-NN/activities/{slug}.py`에 둡니다.
-
-```bash
-node template/presentation-thumbnail/validate.mjs cohort-01/activities/session-01-presentation-01/img/thumbnail.svg
-node template/retrospective-thumbnail/build.mjs cohort-01/activities/cohort-retrospective
-node template/retrospective-thumbnail/validate.mjs cohort-01/activities/cohort-retrospective/img/thumbnail.svg
-python template/session-diagram/build.py --check
-```
-
-회고 명령은 해당 글의 `index.md`와 메타데이터를 작성한 뒤 실행합니다. 검토를 위해 임시 글이나 자산을 만들었다면 실제 게시할 콘텐츠와 함께 남기지 않습니다.
+로컬에서는 Node.js를 설치한 뒤 `npm install`, `npm run dev`로 실행합니다. 제출 전 `npm run lint`와 `npm run build`로 확인해 주세요.

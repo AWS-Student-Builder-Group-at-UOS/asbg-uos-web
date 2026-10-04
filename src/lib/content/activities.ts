@@ -44,7 +44,7 @@ function readActivity(cohort: string, slug: string): Activity {
 export function getActivities(cohort: string): Activity[] {
   return listDirs(activitiesDir(cohort), ACTIVITY_PATTERN)
     .map((slug) => readActivity(cohort, slug))
-    .sort((a, b) => compareActivities(b, a));
+    .sort(compareActivities);
 }
 
 export function getActivity(cohort: string, slug: string): Activity | undefined {
