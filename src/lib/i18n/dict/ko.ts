@@ -175,14 +175,14 @@ export const ko = {
   },
   resources: {
     title: "Resources",
-    body: "채널마다 올리는 게 다르니, 어디서 뭘 보면 되는지 정리해 뒀습니다.",
+    body: "ASBG UOS의 최근 소식과 채널을 한곳에 모았습니다.",
     channels: "Channels",
     items: {
-      linkedin: { title: "LinkedIn", body: "공식 페이지. 활동 소식과 세션 후기를 올립니다." },
-      github: { title: "GitHub", body: "세션 자료와 실습 코드를 모아 둡니다." },
-      email: { title: "Email", body: "질문, 주제 제안, 연사 제안은 여기로." },
-      instagram: { title: "Instagram", body: "모집과 행사 소식이 가장 먼저 올라옵니다." },
-      meetup: { title: "Meetup", body: "공식 행사 공지와 참가 신청." },
+      linkedin: { title: "LinkedIn", body: "활동 내용과 후기를 정리해 올립니다." },
+      github: { title: "GitHub", body: "ASBG UOS 활동에서 나온 결과물을 모두 모아 두는 곳입니다." },
+      email: { title: "Email", body: "질문이나 주제 제안, 연사 제안을 받습니다." },
+      instagram: { title: "Instagram", body: "활동 내용과 후기를 사진과 함께 올립니다." },
+      meetup: { title: "Meetup", body: "행사를 공지하고 참가 신청을 받습니다." },
       moreGroups: { title: "More ASBG", body: "전 세계 AWS Student Builder Groups 목록으로, 다른 대학은 어떻게 하는지 볼 수 있습니다." },
     },
     feed: {
