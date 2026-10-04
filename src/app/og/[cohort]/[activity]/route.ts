@@ -36,7 +36,7 @@ export async function GET(_req: Request, { params }: { params: Promise<Params> }
 
   const image = await sharp(fs.readFileSync(file))
     .rotate()
-    .resize(1200, 630, { fit: "contain", background: s.type === "retrospective" ? "#F6F1E7" : "#0B0F17" })
+    .resize(1200, 630, { fit: "contain", background: s.type === "retrospective" ? "#F2FAFF" : "#0B0F17" })
     .png()
     .toBuffer();
 

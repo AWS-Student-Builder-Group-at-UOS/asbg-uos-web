@@ -9,23 +9,26 @@ const TIERS = [
   { max: 28, size: 36, ys: [342, 392, 442] },
 ];
 
+export const labelFor = (session) =>
+  session ? `<text x="268" y="626">SESSION</text>\n<text x="268" y="666">RECAP</text>` : `<text x="84" y="666">RECAP</text>`;
+
 export function validateThumbnail(svg, file) {
   const guide = fs.readFileSync(new URL("./design-guide.html", import.meta.url), "utf8");
   const template = guide.match(/<script type="text\/plain" id="template">([\s\S]*?)<\/script>/)[1].trim();
+  const digits = JSON.parse(guide.match(/<script type="application\/json" id="digits">([\s\S]*?)<\/script>/)[1]);
   const errors = [];
   const unescape = (s) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 
   const names = [];
   const pattern = template
-    .replace(/\{\{(COHORT|CONTEXT|KEYWORDS|ICON)\}\}/g, (_, key) => {
+    .replace(/\{\{(COHORT|KEYWORDS|ICON|DIGITS|LABEL)\}\}/g, (_, key) => {
       names.push(key);
       return `@@${key}@@`;
     })
     .replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
     .replace(/(>)?\s+/g, (_, gt) => (gt ? ">\\s*" : "\\s+"))
-    .replace(/(\\s[*+])?@@(KEYWORDS|ICON)@@(\\s[*+])?/g, "\\s*([\\s\\S]*?)\\s*")
-    .replace(/@@COHORT@@/g, "(\\d{2})")
-    .replace(/@@CONTEXT@@/g, "( · SESSION \\d{2})?");
+    .replace(/(\\s[*+])?@@(KEYWORDS|ICON|DIGITS|LABEL)@@(\\s[*+])?/g, "\\s*([\\s\\S]*?)\\s*")
+    .replace(/@@COHORT@@/g, "(\\d{2})");
   const match = svg.match(new RegExp(`^${pattern}$`));
   const found = {};
   if (match) {
@@ -34,7 +37,7 @@ export function validateThumbnail(svg, file) {
     });
   } else {
     const norm = (s) => s.replace(/\s+/g, " ");
-    const segments = template.split(/\{\{(?:COHORT|CONTEXT|KEYWORDS|ICON)\}\}/).map(norm).filter(Boolean);
+    const segments = template.split(/\{\{(?:COHORT|KEYWORDS|ICON|DIGITS|LABEL)\}\}/).map(norm).filter(Boolean);
     const missing = segments.find((seg) => !norm(svg).includes(seg));
     errors.push(`템플릿과 다르다${missing ? `: "${missing.slice(0, 70)}…" 부분이 없다` : ""}`);
   }
@@ -62,6 +65,31 @@ export function validateThumbnail(svg, file) {
     }
   }
 
+  let session = found.DIGITS === "" ? "" : undefined;
+  if (found.DIGITS) {
+    const rectPattern = /<rect x="(\d+)" y="(\d+)" width="12" height="12"\s*\/>/g;
+    const leftover = found.DIGITS.replace(rectPattern, "").trim();
+    if (leftover) errors.push(`세션 번호 그룹에 12 × 12 rect 외의 내용이 있다: "${leftover.slice(0, 60)}"`);
+    const blocks = [0, 1].map(() => Array.from({ length: 8 }, () => Array(6).fill(".")));
+    for (const [, x, y] of found.DIGITS.matchAll(rectPattern)) {
+      const k = Math.floor((Number(x) - 84) / 84);
+      const c = (Number(x) - 84 - 84 * k) / 12;
+      const r = (Number(y) - 570) / 12;
+      if (k < 0 || k > 1 || !Number.isInteger(c) || !Number.isInteger(r) || c > 5 || r < 0 || r > 7) {
+        errors.push(`세션 번호 칸 밖 rect: x=${x} y=${y}`);
+        continue;
+      }
+      if (blocks[k][r][c] === "#") errors.push(`세션 번호 중복 rect: x=${x} y=${y}`);
+      blocks[k][r][c] = "#";
+    }
+    const read = blocks.map((block) => Object.keys(digits).find((d) => digits[d].join("") === block.map((row) => row.join("")).join("")));
+    if (read.includes(undefined)) errors.push("세션 번호가 숫자 모양과 다르다");
+    else session = read.join("");
+  }
+  if (found.LABEL !== undefined && found.DIGITS !== undefined && found.LABEL.replace(/\s+/g, " ") !== labelFor(found.DIGITS).replace(/\s+/g, " ")) {
+    errors.push(found.DIGITS ? "세션이 있으면 레이블은 SESSION · RECAP 두 줄이다" : "세션이 없으면 레이블은 x 84의 RECAP 한 줄이다");
+  }
+
   const abs = path.resolve(file);
   const location = abs.match(/(?:^|[\\/])cohort-(\d{2})[\\/]activities[\\/][^\\/]+[\\/]img[\\/][^\\/]+$/);
   if (location) {
@@ -76,8 +104,8 @@ export function validateThumbnail(svg, file) {
       if (meta.session !== undefined && (!Number.isInteger(meta.session) || meta.session < 1 || meta.session > 99)) {
         errors.push("session은 1부터 99 사이의 정수여야 한다");
       }
-      const context = meta.session === undefined ? "" : ` · SESSION ${String(meta.session).padStart(2, "0")}`;
-      if (found.CONTEXT !== undefined && found.CONTEXT !== context) errors.push(`회고 범위가 index.md와 다르다: ${found.CONTEXT} ≠ ${context}`);
+      const expected = meta.session === undefined ? "" : String(meta.session).padStart(2, "0");
+      if (session !== undefined && session !== expected) errors.push(`세션 번호가 index.md와 다르다: ${session || "없음"} ≠ ${expected || "없음"}`);
       const keywords = Array.isArray(meta.keywords) ? meta.keywords.map((keyword) => String(keyword).toUpperCase()) : [];
       if (keywords.length !== 3) errors.push("index.md의 keywords는 세 개여야 한다");
       if (lines.length === 3 && keywords.length === 3 && lines.map((line) => line.text).join("|") !== keywords.join("|")) {
@@ -103,16 +131,18 @@ export function validateThumbnail(svg, file) {
       grid[r][c] = "#";
       filled++;
     }
-    const rows = grid.filter((row) => row.includes("#")).length;
-    const cols = grid[0].map((_, c) => grid.some((row) => row[c] === "#")).filter(Boolean).length;
+    const span = (marks) => (marks.length ? Math.max(...marks) - Math.min(...marks) + 1 : 0);
+    const rows = span(grid.flatMap((row, r) => (row.includes("#") ? [r] : [])));
+    const cols = span(grid[0].flatMap((_, c) => (grid.some((row) => row[c] === "#") ? [c] : [])));
     if (filled === 0) errors.push("아이콘이 비어 있다");
     else if (rows < 8 || cols < 8) errors.push(`아이콘이 너무 작다: ${rows}행 × ${cols}열 (8 × 8 이상)`);
+    else if (Math.max(rows, cols) < 12) errors.push(`아이콘의 긴 쪽이 12칸보다 짧다: ${rows}행 × ${cols}열`);
   }
 
   const bytes = Buffer.byteLength(svg);
   if (bytes > 30_000) errors.push(`파일이 30 KB를 넘는다: ${bytes} bytes`);
 
-  return { errors, grid, lines, filled, bytes, location };
+  return { errors, grid, lines, session, filled, bytes, location };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
@@ -124,6 +154,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const result = validateThumbnail(fs.readFileSync(file, "utf8").trim(), file);
   console.log(result.grid.map((row) => row.join("")).join("\n"));
   if (result.lines.length) console.log(`\n${result.lines.map((line) => line.text).join(" / ")}`);
+  if (result.session !== undefined) console.log(result.session ? `SESSION ${result.session}` : "세션 없음");
   if (!result.location) console.log("(활동 폴더 밖이라 번호 · 키워드는 index.md와 대조하지 않았다)");
   if (result.errors.length) {
     console.error(`\n${result.errors.map((error) => `✗ ${error}`).join("\n")}`);

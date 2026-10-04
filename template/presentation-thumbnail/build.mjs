@@ -1,18 +1,17 @@
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
-import { labelFor, validateThumbnail } from "./validate.mjs";
+import { validateThumbnail } from "./validate.mjs";
 
-const folder = process.argv[2];
-const iconFile = process.argv[3];
-if (!folder) {
-  console.error("사용법: node template/retrospective-thumbnail/build.mjs <활동 폴더> [아이콘 격자.txt]");
+const [folder, iconFile] = process.argv.slice(2);
+if (!folder || !iconFile) {
+  console.error("사용법: node template/presentation-thumbnail/build.mjs <발표 폴더> <아이콘 격자.txt>");
   process.exit(2);
 }
 
 const activity = path.resolve(folder);
-const location = activity.match(/(?:^|[\\/])cohort-(\d{2})[\\/]activities[\\/][^\\/]+$/);
-if (!location) throw new Error("cohort-NN/activities/{slug} 폴더를 지정한다");
+const location = activity.match(/(?:^|[\\/])cohort-(\d{2})[\\/]activities[\\/]session-(\d{2})-presentation-(\d{2})$/);
+if (!location) throw new Error("cohort-NN/activities/session-NN-presentation-NN 폴더를 지정한다");
 const source = fs.readFileSync(path.join(activity, "index.md"), "utf8");
 const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
 const meta = (frontmatter ? parseYaml(frontmatter[1]) : null) ?? {};
@@ -20,15 +19,11 @@ const keywords = Array.isArray(meta.keywords) ? meta.keywords.map((keyword) => S
 if (keywords.length !== 3 || keywords.some((keyword) => !/^[\x20-\x7E]{1,28}$/.test(keyword))) {
   throw new Error("keywords에는 1~28자의 영어 키워드 세 개가 필요하다");
 }
-if (meta.session !== undefined && (!Number.isInteger(meta.session) || meta.session < 1 || meta.session > 99)) {
-  throw new Error("session은 1부터 99 사이의 정수여야 한다");
-}
 
 const guide = fs.readFileSync(new URL("./design-guide.html", import.meta.url), "utf8");
 const template = guide.match(/<script type="text\/plain" id="template">([\s\S]*?)<\/script>/)[1].trim();
 const digits = JSON.parse(guide.match(/<script type="application\/json" id="digits">([\s\S]*?)<\/script>/)[1]);
-const glyphs = JSON.parse(guide.match(/<script type="application\/json" id="glyphs">([\s\S]*?)<\/script>/)[1]);
-const rows = iconFile ? fs.readFileSync(iconFile, "utf8").trim().split(/\r?\n/) : glyphs.notebook;
+const rows = fs.readFileSync(iconFile, "utf8").trim().split(/\r?\n/);
 if (rows.length !== 16 || rows.some((row) => !/^[.#]{16}$/.test(row))) {
   throw new Error("아이콘은 .과 #으로 이루어진 16행 × 16열 격자여야 한다");
 }
@@ -42,13 +37,12 @@ const tier = tiers.find(({ max }) => Math.max(...keywords.map((keyword) => keywo
 const escape = (value) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const cells = (grid, x, y, size) =>
   grid.flatMap((row, r) => [...row].flatMap((cell, c) => (cell === "#" ? [`<rect x="${x + c * size}" y="${y + r * size}" width="${size}" height="${size}"/>`] : [])));
-const session = meta.session === undefined ? "" : String(meta.session).padStart(2, "0");
 const svg = template
   .replace("{{COHORT}}", location[1])
+  .replace("{{PRESENTATION}}", location[3])
   .replace("{{KEYWORDS}}", () => keywords.map((keyword, i) => `<text x="84" y="${tier.ys[i]}" font-size="${tier.size}">${escape(keyword)}</text>`).join("\n"))
   .replace("{{ICON}}", () => cells(rows, 800, 257, 16).join("\n"))
-  .replace("{{DIGITS}}\n", () => [...session].flatMap((digit, i) => cells(digits[digit], 84 + i * 84, 570, 12).map((rect) => `${rect}\n`)).join(""))
-  .replace("{{LABEL}}", () => labelFor(session));
+  .replace("{{DIGITS}}", () => [...location[2]].flatMap((digit, i) => cells(digits[digit], 84 + i * 84, 570, 12)).join("\n"));
 const output = path.join(activity, "img", "thumbnail.svg");
 const result = validateThumbnail(svg, output);
 if (result.errors.length) {

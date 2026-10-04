@@ -84,7 +84,7 @@
   <p class="eyebrow">ASBG UOS · Retrospective Thumbnail</p>
   <h1>활동 회고 썸네일 디자인 가이드</h1>
   <dl class="meta">
-    <div><dt>문서</dt><dd>v3.0 · 2026-10-04</dd></div>
+    <div><dt>문서</dt><dd>v4.0 · 2026-10-04</dd></div>
     <div><dt>적용 대상</dt><dd>cohort-NN/activities/{slug}/img/thumbnail.svg</dd></div>
     <div><dt>산출물</dt><dd>SVG · 1200 × 750</dd></div>
   </dl>
@@ -94,8 +94,8 @@
 </nav>
 <section id="s1">
   <h2><span class="n">01</span>개요</h2>
-  <p>과제, 프로젝트, 스터디, 기수 전체의 회고를 발표와 같은 구도로 만든다. 왼쪽의 키워드 세 줄, 오른쪽의 점선 프레임과 픽셀 아이콘, 점 격자의 위치와 치수는 발표 템플릿과 같다. 회고는 따뜻한 아이보리 바탕, 검정 글자, 파란 강조색으로 구분한다.</p>
-  <p>회고끼리는 아이보리 색과 공통 구도, 하단의 RECAP 표기를 고정한다. 기수 번호, 키워드, 관련 활동 표기, 주제 아이콘만 바꾼다. 세션 번호나 과제의 존재를 전제로 하지 않는다. 아래 그림은 템플릿 사용 예시이며 실제 활동 성과를 나타내지 않는다.</p>
+  <p>과제, 프로젝트, 스터디, 기수 전체의 회고를 발표와 같은 구도로 만든다. 왼쪽의 키워드 세 줄과 세션 번호, 오른쪽의 점선 프레임과 픽셀 아이콘, 점 격자의 위치와 치수는 발표 템플릿과 같다. 회고는 연한 파랑 바탕, 검정 글자, 파란 강조색으로 구분한다.</p>
+  <p>회고끼리는 연한 파랑과 공통 구도, 하단의 RECAP 표기를 고정한다. 기수 번호, 키워드, 세션 번호, 주제 아이콘만 바꾼다. 세션 번호나 과제의 존재를 전제로 하지 않는다. 아래 그림은 템플릿 사용 예시이며 실제 활동 성과를 나타내지 않는다.</p>
   <div class="grid2" id="fig-examples"></div>
 </section>
 <section id="s2">
@@ -104,12 +104,13 @@
     <thead><tr><th>요소</th><th>규칙</th></tr></thead>
     <tbody>
       <tr><td>캔버스</td><td>1200 × 750, 16:10. 루트에 <code>viewBox="0 0 1200 750"</code>와 <code>shape-rendering="crispEdges"</code>. width · height 속성은 없다.</td></tr>
-      <tr><td>배경</td><td>아이보리 <code>#F6F1E7</code>. 48px 여백 안의 24px 점 격자와 강조 점 46개는 발표 템플릿의 위치를 그대로 쓴다. 다크 모드에서도 아이보리를 유지한다.</td></tr>
-      <tr><td>색</td><td>바탕 <code>#F6F1E7</code>, 글자 <code>#0B0F17</code>, 강조 <code>#1160D8</code>만 쓴다. 아이보리는 회고 썸네일에만 쓰는 예외이며 사이트 공통 팔레트는 바꾸지 않는다.</td></tr>
+      <tr><td>배경</td><td>연한 파랑 <code>#F2FAFF</code>. 하늘색 <code>#42B4FF</code>를 흰색에 7% 섞은 값으로, 사이트의 <code>--surface-2</code>와 같다. 48px 여백 안의 24px 점 격자(하늘색, 불투명도 0.3)와 강조 점 46개(파란색, 0.5)는 발표 템플릿의 위치를 그대로 쓴다. 다크 모드에서도 연한 파랑을 유지한다.</td></tr>
+      <tr><td>색</td><td>바탕 <code>#F2FAFF</code>, 점 격자 <code>#42B4FF</code>, 글자 <code>#0B0F17</code>, 강조 <code>#1160D8</code>만 쓴다.</td></tr>
       <tr><td>프레임</td><td>발표와 같은 점선 팔각 프레임. x 736~1120, y 214~556. stroke 3, dash 10 14, 파란색 불투명도 0.7.</td></tr>
       <tr><td>아이콘</td><td>16 × 16 격자, 칸당 16px, 원점 (800, 257). <code>#1160D8</code> 단색. 기본은 notebook.</td></tr>
       <tr><td>상단</td><td><code>ASBG UOS · COHORT NN</code>. x 84, y 132, 크기 30, 자간 4, 파란색.</td></tr>
-      <tr><td>하단</td><td><code>RECAP · SESSION NN</code> 또는 <code>RECAP</code>. x 84, y 666, 크기 26, 자간 3, 검정 불투명도 0.6.</td></tr>
+      <tr><td>세션 번호</td><td>발표와 같은 픽셀 숫자. 숫자 하나 6 × 8칸, 한 칸 12px, 두 숫자 간격 84. x 84, y 570 ~ 666. 파란색.</td></tr>
+      <tr><td>레이블</td><td>세션이 있으면 x 268에 <code>SESSION</code>(y 626)과 <code>RECAP</code>(y 666), 없으면 x 84, y 666에 <code>RECAP</code>만. 크기 26, 자간 3, 검정 불투명도 0.6.</td></tr>
       <tr><td>글꼴</td><td><code>Menlo, ui-monospace, monospace</code>. 글꼴, 이미지, 필터, 그라디언트, 외부 참조를 추가하지 않는다.</td></tr>
     </tbody>
   </table>
@@ -117,7 +118,8 @@
 </section>
 <section id="s3">
   <h2><span class="n">03</span>바뀌는 요소</h2>
-  <p>값은 활동 폴더와 <code>index.md</code>의 frontmatter에서 읽는다. <code>type: retrospective</code>여야 한다. 기수는 <code>cohort-NN</code>, 관련 세션은 선택 필드 <code>session</code>이다. 세션이 없으면 하단에 <code>RECAP</code>만 쓴다. 기수 번호는 상단에 항상 표시한다. 프로젝트나 스터디 회고도 같은 규칙을 쓴다. 제목에서 번호를 추측하거나 가상의 발표 번호를 만들지 않는다.</p>
+  <p>값은 활동 폴더와 <code>index.md</code>의 frontmatter에서 읽는다. <code>type: retrospective</code>여야 한다. 기수는 <code>cohort-NN</code>, 관련 세션은 선택 필드 <code>session</code>이다. 세션이 있으면 왼쪽 아래에 세션 번호를 픽셀 숫자로 그리고, 없으면 숫자 없이 <code>RECAP</code>만 쓴다. 기수 번호는 상단에 항상 표시한다. 프로젝트나 스터디 회고도 같은 규칙을 쓴다. 제목에서 번호를 추측하거나 가상의 세션 번호를 만들지 않는다.</p>
+  <p>세션 번호의 k번째 숫자(0 또는 1)의 칸 (열 c, 행 r)은 <code>&lt;rect x="84 + 84k + 12c" y="570 + 12r" width="12" height="12"/&gt;</code>다. 숫자 모양은 이 문서의 <code>&lt;script id="digits"&gt;</code>에 있는 0 ~ 9를 그대로 쓰고, 한 자리 세션도 <code>02</code>처럼 두 자리로 그린다.</p>
   <p>키워드는 <code>keywords</code>의 세 개를 순서대로 대문자로 쓴다. 영어, 숫자, ASCII 문장부호를 사용한다. 글자 크기와 기준선은 가장 긴 키워드로 정하고, 세 줄의 크기는 같다. SVG 안에서 &amp;, &lt;, &gt;는 엔티티로 바꾼다.</p>
   <table>
     <thead><tr><th>가장 긴 키워드</th><th>크기</th><th>기준선 y</th></tr></thead>
@@ -125,10 +127,11 @@
   </table>
   <p>키워드가 29자 이상이면 생성 전에 본문의 키워드를 다듬는다. 썸네일만 줄여 쓰지 않는다.</p>
   <h3>아이콘을 바꾸는 경우</h3>
-  <p>기본 notebook은 모든 회고에 쓸 수 있다. 글의 중심이 뚜렷할 때만 나침반, 공구, 책처럼 한눈에 알아보는 사물 하나로 바꾼다. 이미 있는 발표 아이콘을 그대로 가져오거나 결과 수치, 로고, 복잡한 흐름도를 그리지 않는다.</p>
+  <p>기본 notebook은 모든 회고에 쓸 수 있다. 글의 중심이 뚜렷할 때만 나침반, 공구, 책처럼 한눈에 알아보는 사물 하나로 바꾼다. 이미 있는 발표 아이콘을 그대로 가져오거나 결과 수치, 로고, 복잡한 흐름도를 그리지 않는다. 그리는 규칙은 발표 썸네일 가이드 6.3과 같다.</p>
   <ul>
     <li>16줄, 각 줄 16글자. <code>#</code>는 채움, <code>.</code>은 비움. 여백 행과 열도 생략하지 않는다.</li>
-    <li>8행과 8열 이상을 차지하고, 주요 윤곽은 두 칸 두께 또는 면으로 그린다.</li>
+    <li>면으로 채운 실루엣이 기본이고, 윤곽선은 두 칸 두께로 그린다. 사물을 알려 주는 특징은 1 ~ 3개만 빈칸으로 뚫는다.</li>
+    <li>긴 쪽이 12 ~ 14칸을 차지하게 가운데에 놓고, 대칭인 사물은 칸 하나까지 대칭으로 그린다. 본체에서 떨어진 점을 흩뿌리지 않는다.</li>
     <li>한 칸마다 <code>&lt;rect x="800 + 16c" y="257 + 16r" width="16" height="16"/&gt;</code>. <code>g#icon</code> 안에 넣으며 중복 칸을 만들지 않는다.</li>
     <li>폭 360px의 카드와 1200 × 630 공유 이미지에서 실루엣과 키워드가 선명해야 한다.</li>
   </ul>
@@ -146,10 +149,11 @@
   <h2><span class="n">05</span>검증</h2>
   <pre><code>node template/retrospective-thumbnail/validate.mjs cohort-01/activities/session-02-retrospective/img/thumbnail.svg</code></pre>
   <ul class="check">
-    <li>아이보리 바탕, 점 격자, 점선 프레임, 문자 배치가 템플릿과 완전히 같다.</li>
-    <li>문자는 상단, 키워드 세 줄, 하단의 다섯 줄이다. RECAP은 하단에만 표시한다.</li>
-    <li>기수, 선택 세션 번호, 키워드가 폴더와 index.md의 값과 맞는다.</li>
-    <li>아이콘은 격자 안의 중복 없는 rect로만 구성하고 8행 × 8열 이상을 차지한다.</li>
+    <li>연한 파랑 바탕, 점 격자, 점선 프레임, 문자 배치가 템플릿과 완전히 같다.</li>
+    <li>문자는 상단, 키워드 세 줄, 레이블이다. 레이블은 세션이 있으면 <code>SESSION</code>과 <code>RECAP</code> 두 줄, 없으면 <code>RECAP</code> 한 줄이다.</li>
+    <li>기수, 키워드, 픽셀 숫자로 그린 세션 번호가 폴더와 index.md의 값과 맞는다. 세션이 없는 회고에는 숫자가 없다.</li>
+    <li>세션 번호는 <code>g#session</code> 안의 12 × 12 rect뿐이고 숫자 모양과 칸 하나까지 같다.</li>
+    <li>아이콘은 격자 안의 중복 없는 rect로만 구성하고 8행 × 8열 이상, 긴 쪽 12칸 이상을 차지한다.</li>
     <li>30 KB 이하의 SVG 하나이며 외부 리소스가 없다.</li>
     <li>실제 활동 목록의 카드 크기에서 확인하고, 관련 세션이 없는 회고도 확인한다.</li>
   </ul>
@@ -157,16 +161,16 @@
 </section>
 <section id="s6">
   <h2><span class="n">06</span>템플릿</h2>
-  <p>원문은 이 문서의 <code>&lt;script id="template"&gt;</code>에 있다. <code>{{COHORT}}</code>, <code>{{CONTEXT}}</code>, <code>{{KEYWORDS}}</code>, <code>{{ICON}}</code> 네 자리만 바꾼다. CONTEXT는 세션이 있으면 <code> · SESSION NN</code>, 없으면 빈 문자열이다.</p>
+  <p>원문은 이 문서의 <code>&lt;script id="template"&gt;</code>에 있다. <code>{{COHORT}}</code>, <code>{{KEYWORDS}}</code>, <code>{{ICON}}</code>, <code>{{DIGITS}}</code>, <code>{{LABEL}}</code> 다섯 자리만 바꾼다. 세션이 있으면 DIGITS는 세션 번호 rect, LABEL은 <code>&lt;text x="268" y="626"&gt;SESSION&lt;/text&gt;</code>와 <code>&lt;text x="268" y="666"&gt;RECAP&lt;/text&gt;</code> 두 줄이다. 세션이 없으면 DIGITS는 비우고 LABEL은 <code>&lt;text x="84" y="666"&gt;RECAP&lt;/text&gt;</code> 한 줄이다.</p>
   <pre id="template-view"></pre>
 </section>
 </div>
 <script type="text/plain" id="template">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" shape-rendering="crispEdges">
 <defs>
-<pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#1160D8" opacity="0.09"/></pattern>
+<pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#42B4FF" opacity="0.3"/></pattern>
 </defs>
-<rect width="1200" height="750" fill="#F6F1E7"/>
+<rect width="1200" height="750" fill="#F2FAFF"/>
 <g transform="translate(48 48)">
 <rect width="1104" height="654" fill="url(#g)"/>
 <rect x="0" y="0" width="6" height="6" fill="#1160D8" opacity="0.5"/>
@@ -224,27 +228,46 @@
 <g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#0B0F17">
 {{KEYWORDS}}
 </g>
-<text x="84" y="666" font-family="Menlo, ui-monospace, monospace" font-size="26" fill="#0B0F17" opacity="0.6" letter-spacing="3">RECAP{{CONTEXT}}</text>
+<g id="session" fill="#1160D8">
+{{DIGITS}}
+</g>
+<g id="label" font-family="Menlo, ui-monospace, monospace" font-size="26" fill="#0B0F17" opacity="0.6" letter-spacing="3">
+{{LABEL}}
+</g>
 </svg>
+</script>
+<script type="application/json" id="digits">
+{
+  "0": [".####.", "##..##", "##..##", "##..##", "##..##", "##..##", "##..##", ".####."],
+  "1": ["..##..", ".###..", "..##..", "..##..", "..##..", "..##..", "..##..", ".####."],
+  "2": [".####.", "##..##", "....##", "...##.", "..##..", ".##...", "##....", "######"],
+  "3": [".####.", "##..##", "....##", "..###.", "....##", "....##", "##..##", ".####."],
+  "4": ["...##.", "..###.", ".####.", "##.##.", "######", "...##.", "...##.", "...##."],
+  "5": ["######", "##....", "#####.", "....##", "....##", "....##", "##..##", ".####."],
+  "6": ["..###.", ".##...", "##....", "#####.", "##..##", "##..##", "##..##", ".####."],
+  "7": ["######", "....##", "...##.", "...##.", "..##..", "..##..", ".##...", ".##..."],
+  "8": [".####.", "##..##", "##..##", ".####.", "##..##", "##..##", "##..##", ".####."],
+  "9": [".####.", "##..##", "##..##", "##..##", ".#####", "....##", "...##.", ".###.."]
+}
 </script>
 <script type="application/json" id="glyphs">
 {
   "notebook": [
     "................",
+    "................",
+    "...#..#..#..#...",
     "..############..",
     "..############..",
     "..##........##..",
-    ".####.......##..",
-    "..##..####..##..",
+    "..##.######.##..",
     "..##........##..",
-    ".####.......##..",
-    "..##..####..##..",
+    "..##.######.##..",
     "..##........##..",
-    ".####.......##..",
-    "..##..####..##..",
+    "..##.####...##..",
     "..##........##..",
     "..############..",
-    "..############..",
+    "...##########...",
+    "................",
     "................"
   ]
 }
@@ -252,14 +275,22 @@
 <script>
 (() => {
   const template = document.getElementById("template").textContent.trim();
+  const digits = JSON.parse(document.getElementById("digits").textContent);
   const glyphs = JSON.parse(document.getElementById("glyphs").textContent);
-  const rects = glyphs.notebook.flatMap((row, r) => [...row].flatMap((cell, c) => cell === "#" ? [`<rect x="${800 + c * 16}" y="${257 + r * 16}" width="16" height="16"/>`] : [])).join("\n");
+  const cells = (rows, x, y, size) =>
+    rows.flatMap((row, r) => [...row].flatMap((cell, c) => (cell === "#" ? [`<rect x="${x + c * size}" y="${y + r * size}" width="${size}" height="${size}"/>`] : [])));
   const examples = [
-    { context: " · SESSION 02", keywords: ["ARCHITECTURE", "FEEDBACK", "ITERATION"], caption: "관련 세션이 있는 회고 · 구성 예시" },
-    { context: "", keywords: ["COMMUNITY", "LEARNING", "NEXT STEPS"], caption: "기수 전체의 회고 · 구성 예시" },
+    { session: "02", keywords: ["ARCHITECTURE", "FEEDBACK", "ITERATION"], caption: "관련 세션이 있는 회고 · 구성 예시" },
+    { session: "", keywords: ["COMMUNITY", "LEARNING", "NEXT STEPS"], caption: "기수 전체의 회고 · 구성 예시" },
   ];
-  examples.forEach(({ context, keywords, caption }) => {
-    const svg = template.replace("{{COHORT}}", "01").replace("{{CONTEXT}}", context).replace("{{ICON}}", rects).replace("{{KEYWORDS}}", keywords.map((keyword, i) => `<text x="84" y="${[318, 392, 466][i]}" font-size="56">${keyword}</text>`).join("\n"));
+  examples.forEach(({ session, keywords, caption }) => {
+    const label = session ? `<text x="268" y="626">SESSION</text>\n<text x="268" y="666">RECAP</text>` : `<text x="84" y="666">RECAP</text>`;
+    const svg = template
+      .replace("{{COHORT}}", "01")
+      .replace("{{ICON}}", () => cells(glyphs.notebook, 800, 257, 16).join("\n"))
+      .replace("{{KEYWORDS}}", () => keywords.map((keyword, i) => `<text x="84" y="${[318, 392, 466][i]}" font-size="56">${keyword}</text>`).join("\n"))
+      .replace("{{DIGITS}}", () => [...session].flatMap((digit, k) => cells(digits[digit], 84 + k * 84, 570, 12)).join("\n"))
+      .replace("{{LABEL}}", label);
     const figure = document.createElement("figure");
     figure.innerHTML = `<div class="thumb">${svg}</div><figcaption>${caption}</figcaption>`;
     document.getElementById("fig-examples").appendChild(figure);

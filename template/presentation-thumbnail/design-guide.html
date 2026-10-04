@@ -85,7 +85,7 @@
   <p class="eyebrow">ASBG UOS · Presentation Thumbnail</p>
   <h1>발표 썸네일 디자인 가이드</h1>
   <dl class="meta">
-    <div><dt>문서</dt><dd>v1.2 · 2026-10-04</dd></div>
+    <div><dt>문서</dt><dd>v2.0 · 2026-10-04</dd></div>
     <div><dt>적용 대상</dt><dd>cohort-NN/activities/session-NN-presentation-NN/img/thumbnail.svg</dd></div>
     <div><dt>산출물</dt><dd>SVG · 1200 × 750</dd></div>
   </dl>
@@ -96,15 +96,17 @@
   <a href="#s2">02 캔버스</a>
   <a href="#s3">03 색</a>
   <a href="#s4">04 문자</a>
-  <a href="#s5">05 아이콘</a>
-  <a href="#s6">06 예시</a>
-  <a href="#s7">07 검증</a>
-  <a href="#s8">08 템플릿</a>
+  <a href="#s5">05 세션 번호</a>
+  <a href="#s6">06 아이콘</a>
+  <a href="#s7">07 예시</a>
+  <a href="#s8">08 검증</a>
+  <a href="#s9">09 템플릿</a>
 </nav>
 
 <section id="s1">
   <h2><span class="n">01</span>개요</h2>
   <p>발표 썸네일은 한 가지 틀로 만든다. 배경 · 프레임 · 문자 배치는 고정하고, 발표마다 번호, 키워드 세 줄, 아이콘만 바꾼다. 아이콘은 정해진 목록에서 고르지 않고 발표 내용에 맞춰 그때그때 새로 그린다.</p>
+  <p>세션 번호는 왼쪽 아래에 픽셀 숫자로 크게 그린다. 활동 목록에서 같은 세션의 글을 한눈에 묶어 보게 하려는 것이다. 회고 썸네일과 아직 열리지 않은 활동의 기본 그림도 같은 자리에 같은 숫자를 쓴다.</p>
   <p>활동 목록 카드(16:10, 폭 약 360px), 발표 상세 페이지 상단, 링크 공유 이미지(1200 × 630 PNG로 변환, 좌우 여백은 배경색)에 쓰인다. 제목 · 발표자 · 키워드 칩은 페이지가 따로 보여준다.</p>
   <figure>
     <div class="thumb" id="fig-reference"></div>
@@ -120,7 +122,8 @@
       <tr><td>크기</td><td>1200 × 750 (16:10). <code>viewBox="0 0 1200 750"</code>. width · height 속성은 쓰지 않는다.</td></tr>
       <tr><td>렌더링</td><td>루트에 <code>shape-rendering="crispEdges"</code>. 프레임 path만 <code>geometricPrecision</code>.</td></tr>
       <tr><td>바깥 여백</td><td>48. 격자 영역은 (48, 48)에서 1104 × 654.</td></tr>
-      <tr><td>문자 영역</td><td>왼쪽. x 84부터. 기준선 y 132(상단 표기) · 318 / 392 / 466(키워드) · 666(레이블).</td></tr>
+      <tr><td>문자 영역</td><td>왼쪽. x 84부터. 기준선 y 132(상단 표기) · 318 / 392 / 466(키워드). 레이블은 x 268, 기준선 y 626 · 666.</td></tr>
+      <tr><td>세션 번호</td><td>왼쪽 아래. x 84 ~ 240, y 570 ~ 666 (156 × 96). 아래 끝이 레이블 기준선 666과 맞는다.</td></tr>
       <tr><td>아이콘 프레임</td><td>오른쪽. x 736 ~ 1120, y 214 ~ 556 (384 × 342).</td></tr>
       <tr><td>아이콘 격자</td><td>x 800 ~ 1056, y 257 ~ 513 (256 × 256). 프레임 안쪽 여백 좌우 64, 상하 43.</td></tr>
     </tbody>
@@ -143,7 +146,8 @@
       <tr><td>아이콘</td><td class="mono">#42B4FF</td><td>1</td></tr>
       <tr><td>상단 표기</td><td class="mono">#42B4FF</td><td>1</td></tr>
       <tr><td>키워드</td><td class="mono">#FFFFFF</td><td>1</td></tr>
-      <tr><td>SESSION 레이블</td><td class="mono">#FFFFFF</td><td>0.6</td></tr>
+      <tr><td>세션 번호</td><td class="mono">#42B4FF</td><td>1</td></tr>
+      <tr><td>레이블</td><td class="mono">#FFFFFF</td><td>0.6</td></tr>
     </tbody>
   </table>
   <ul>
@@ -159,11 +163,11 @@
     <tbody>
       <tr><td>상단 표기</td><td class="mono">ASBG UOS · COHORT {기수}</td><td class="mono">84, 132</td><td>30</td><td>400</td><td class="mono">#42B4FF / 1</td><td>4</td></tr>
       <tr><td>키워드</td><td class="mono">{키워드 1} / {키워드 2} / {키워드 3}</td><td class="mono">84, 318 · 392 · 466</td><td>56</td><td>700</td><td class="mono">#FFFFFF / 1</td><td>0</td></tr>
-      <tr><td>레이블</td><td class="mono">SESSION {세션} · PRESENTATION {발표}</td><td class="mono">84, 666</td><td>26</td><td>400</td><td class="mono">#FFFFFF / 0.6</td><td>3</td></tr>
+      <tr><td>레이블</td><td class="mono">SESSION / PRESENTATION {발표}</td><td class="mono">268, 626 · 666</td><td>26</td><td>400</td><td class="mono">#FFFFFF / 0.6</td><td>3</td></tr>
     </tbody>
   </table>
   <ul>
-    <li>번호는 폴더 이름에서 가져온다. <code>cohort-01/activities/session-02-presentation-03</code>이면 기수 01, 세션 02, 발표 03. 항상 두 자리다.</li>
+    <li>번호는 폴더 이름에서 가져온다. <code>cohort-01/activities/session-02-presentation-03</code>이면 기수 01, 세션 02, 발표 03. 항상 두 자리다. 세션 번호는 문자가 아니라 05절의 픽셀 숫자로 그린다.</li>
     <li>키워드는 발표 <code>index.md</code>의 <code>keywords</code> 세 개를 순서대로, 대문자로 쓴다. 한 줄에 하나씩이며 바꾸거나 줄이지 않는다. <code>&amp;</code> <code>&lt;</code> <code>&gt;</code>는 SVG 엔티티로 쓴다.</li>
     <li>키워드 크기는 가장 긴 키워드의 글자 수로 정한다. 세 줄은 같은 크기이고 가운데 줄의 기준선은 항상 392다. 29자 이상이면 썸네일이 아니라 <code>index.md</code>의 키워드를 줄인다.</li>
   </ul>
@@ -182,13 +186,27 @@
 </section>
 
 <section id="s5">
-  <h2><span class="n">05</span>아이콘</h2>
+  <h2><span class="n">05</span>세션 번호</h2>
+  <p>세션 번호 두 자리를 픽셀 숫자로 그린다. 숫자 하나는 6열 × 8행, 한 칸은 12px(72 × 96)이고 두 숫자는 84px 간격으로 놓는다. 글꼴이 없는 변환 서버에서도 카드와 똑같이 보인다. 숫자 모양은 아래 0 ~ 9로 고정하며, 원문은 이 문서의 <code>&lt;script id="digits"&gt;</code>에 있다.</p>
+  <figure>
+    <div id="fig-digits"></div>
+    <figcaption>숫자 0 ~ 9. 한 숫자는 6 × 8칸이다.</figcaption>
+  </figure>
+  <ul>
+    <li>k번째 숫자(0 또는 1)의 칸 (열 c, 행 r)은 <code>&lt;rect x="84 + 84k + 12c" y="570 + 12r" width="12" height="12"/&gt;</code>다. 예: 세션 02에서 둘째 숫자 2의 0행 1열 → <code>&lt;rect x="180" y="570" width="12" height="12"/&gt;</code></li>
+    <li>rect는 <code>&lt;g id="session" fill="#42B4FF"&gt;</code> 안에 둔다. 개별 rect에 fill · opacity를 쓰지 않는다.</li>
+    <li>세션이 한 자리여도 <code>01</code>처럼 두 자리로 그린다.</li>
+  </ul>
+</section>
 
-  <h3>5.1 프레임</h3>
+<section id="s6">
+  <h2><span class="n">06</span>아이콘</h2>
+
+  <h3>6.1 프레임</h3>
   <p>오른쪽 위와 왼쪽 아래 모서리를 40px 사선으로 자른 점선 사각형이다. 고정이며 아이콘에 맞춰 바꾸지 않는다.</p>
   <pre><code>&lt;path d="M736 214H1080L1120 254V516L1080 556H776L736 516Z" fill="none" stroke="#42B4FF" stroke-width="3" stroke-dasharray="10 14" opacity="0.7" shape-rendering="geometricPrecision"/&gt;</code></pre>
 
-  <h3>5.2 격자</h3>
+  <h3>6.2 격자</h3>
   <ul>
     <li>16행 × 16열, 한 칸 16px, 원점 (800, 257). 전체 256 × 256.</li>
     <li>칸 (열 c, 행 r)은 <code>&lt;rect x="800 + 16c" y="257 + 16r" width="16" height="16"/&gt;</code>. 채워진 칸마다 rect 하나를 쓴다. 예: 0행 5열 → <code>&lt;rect x="880" y="257" width="16" height="16"/&gt;</code></li>
@@ -196,44 +214,44 @@
   </ul>
   <figure>
     <div id="fig-grid"></div>
-    <figcaption>격자 좌표. 예시 아이콘 lock이며, 행 · 열 번호는 설명용이다.</figcaption>
+    <figcaption>격자 좌표. 예시 아이콘 server이며, 행 · 열 번호는 설명용이다.</figcaption>
   </figure>
 
-  <h3>5.3 그리기</h3>
-  <p>발표마다 아이콘을 새로 그린다. 순서는 다음과 같다.</p>
+  <h3>6.3 그리기</h3>
+  <p>발표마다 아이콘을 새로 그린다. 무엇을 그릴지는 prompt.md의 "아이콘 고르기"로 정하고, 모양은 아래 규칙을 따른다. 카드에서 아이콘은 폭 약 80px로 보인다.</p>
   <ol>
-    <li>발표 자료를 읽고 발표를 대표하는 사물 하나를 정한다. 다루는 서비스나 사물이 있으면 그것을(서버 · 데이터베이스 · 버킷 · 컨테이너 …), 개념이면 관용적인 상징으로 바꾼다(검증 → 체크 표시, 커리어 → 나침반, AI → 칩, 커뮤니티 → 사람들).</li>
-    <li>같은 세션의 다른 발표와 겹치지 않는 사물을 고른다.</li>
     <li>16 × 16 격자 문자열로 그린다. 16행, 각 행 16글자, <code>#</code> 채움, <code>.</code> 비움.</li>
-    <li>바깥 한 줄(0행 · 15행 · 0열 · 15열)은 비운다. 정사각형이거나 축 대칭이 필요한 형태만 예외로 한다.</li>
-    <li>형태는 8행 × 8열 이상을 차지한다. 선은 1칸 이상, 주요 윤곽은 2칸 또는 면 채움으로 한다. 1칸 폭의 빈틈을 길게 두지 않는다.</li>
-    <li>수평 · 수직 · 45° 대각선만 쓴다.</li>
+    <li>면으로 채운 실루엣이 기본이다. 사물을 알려 주는 특징(창 · 눈 · 표시등 · 슬롯)은 1 ~ 3개만 두고 빈칸으로 뚫는다. 윤곽선으로 그리는 부분은 2칸 두께로 한다.</li>
+    <li>긴 쪽이 12 ~ 14칸을 차지하게 그리고, 좌우 여백의 차이는 1칸 이하로 둔다. 바깥 한 줄(0행 · 15행 · 0열 · 15열)은 비운다. 정사각형이거나 축 대칭이 필요한 형태만 예외로 한다.</li>
+    <li>좌우가 대칭인 사물은 칸 하나까지 대칭으로 그린다.</li>
+    <li>수평 · 수직 · 45° 대각선만 쓴다. 대각선은 한 칸씩 계단으로 내려간다. 둥근 사물은 큰 면의 모서리를 한 칸씩 깎고, 상자형 기기는 각지게 둔다.</li>
+    <li>본체에서 떨어진 점이나 한 칸짜리 돌기를 흩뿌리지 않는다. 한 칸 두께는 안테나 · 불꽃 · 슬롯처럼 짧은 디테일에만 쓴다.</li>
     <li>사물 하나만 그린다. 글자 · 숫자 · 화살표 장식 · 타사 로고(AWS 로고 포함)를 넣지 않는다.</li>
-    <li>실루엣만으로 알아볼 수 있어야 한다. 카드에서는 약 80px 폭으로 보인다.</li>
-    <li>격자를 5.2 규칙대로 rect로 바꾼다. 보고할 때 사물 이름과 격자 문자열을 함께 남긴다.</li>
+    <li>격자를 6.2 규칙대로 rect로 바꾼다. 보고할 때 사물 이름과 격자 문자열을 함께 남긴다.</li>
   </ol>
 </section>
 
-<section id="s6">
-  <h2><span class="n">06</span>예시</h2>
-  <p>스타일 참고용 아이콘이다. 아이콘은 발표마다 새로 그린다. 누르면 격자 문자열이 아래에 표시되며, 전체 데이터는 이 문서의 <code>&lt;script id="glyphs"&gt;</code>에 있다.</p>
+<section id="s7">
+  <h2><span class="n">07</span>예시</h2>
+  <p>1기 세션 01 · 02 발표에 쓴 아이콘이다. 고른 사물과 그린 방식을 참고하되, 새 발표에는 새로 그린다. 누르면 격자 문자열이 아래에 표시되며, 전체 데이터는 이 문서의 <code>&lt;script id="glyphs"&gt;</code>에 있다.</p>
   <div class="icons" id="icon-list"></div>
   <pre id="glyph-view"></pre>
-  <p>1기 세션 01의 발표 네 건에 적용한 예다. 키워드는 각 발표 <code>index.md</code>의 값 그대로다.</p>
+  <p>위 아이콘을 쓴 실제 썸네일이다. 키워드는 각 발표 <code>index.md</code>의 값 그대로다. 같은 세션은 왼쪽 아래 숫자가 같다.</p>
   <div class="grid2" id="fig-examples"></div>
 </section>
 
-<section id="s7">
-  <h2><span class="n">07</span>검증</h2>
+<section id="s8">
+  <h2><span class="n">08</span>검증</h2>
   <ul class="check">
     <li>루트 <code>&lt;svg&gt;</code>에 <code>viewBox="0 0 1200 750"</code>, <code>shape-rendering="crispEdges"</code>가 있고 width · height 속성이 없다.</li>
     <li>색은 #0B0F17 · #42B4FF · #FFFFFF 뿐이다. 그라디언트 · 필터 · 이미지 · 외부 참조가 없다.</li>
     <li>배경 · 프레임 · 글꼴 스택이 템플릿과 같다.</li>
-    <li><code>&lt;text&gt;</code>는 5개다. <code>ASBG UOS · COHORT NN</code>, 키워드 3줄, <code>SESSION NN · PRESENTATION NN</code>.</li>
-    <li>번호 세 개가 폴더 이름과 같다.</li>
+    <li><code>&lt;text&gt;</code>는 6개다. <code>ASBG UOS · COHORT NN</code>, 키워드 3줄, <code>SESSION</code>, <code>PRESENTATION NN</code>.</li>
+    <li>기수 · 발표 번호와 픽셀 숫자로 그린 세션 번호가 폴더 이름과 같다.</li>
+    <li>세션 번호는 <code>&lt;g id="session"&gt;</code> 안의 12 × 12 rect뿐이고, 05절의 숫자 모양과 칸 하나까지 같다.</li>
     <li>키워드 3줄이 <code>index.md</code>의 <code>keywords</code>와 순서대로 같고(대문자), 크기와 기준선이 04절 표와 맞는다.</li>
     <li>아이콘은 <code>&lt;g id="icon"&gt;</code> 안의 16 × 16 rect뿐이다. x − 800, y − 257이 16의 배수이고 0 ~ 240 범위이며 중복이 없다.</li>
-    <li>아이콘이 8행 · 8열 이상을 차지한다.</li>
+    <li>아이콘이 8행 · 8열 이상을 차지하고, 긴 쪽은 12칸 이상이다.</li>
     <li>파일에는 SVG 코드만 있고 30 KB 이하다.</li>
     <li>해당 발표의 <code>index.md</code> frontmatter에 <code>thumbnail: img/thumbnail.svg</code>가 있다.</li>
   </ul>
@@ -241,17 +259,19 @@
   <pre><code>node template/presentation-thumbnail/validate.mjs cohort-01/activities/session-01-presentation-01/img/thumbnail.svg</code></pre>
 </section>
 
-<section id="s8">
-  <h2><span class="n">08</span>템플릿</h2>
-  <p>아래 코드를 그대로 복사해 다섯 자리만 채운다. 원문은 이 문서의 <code>&lt;script id="template"&gt;</code>에 있다.</p>
+<section id="s9">
+  <h2><span class="n">09</span>템플릿</h2>
+  <p>저장소에서 작업하면 생성 스크립트가 템플릿을 채우고 08절 검증까지 한 뒤 <code>img/thumbnail.svg</code>로 저장한다. 아이콘 격자 문자열 16줄만 담은 텍스트 파일을 넘긴다. 이 파일은 제작용이며 발표 폴더에 두지 않는다.</p>
+  <pre><code>node template/presentation-thumbnail/build.mjs cohort-01/activities/session-01-presentation-01 /tmp/icon.txt</code></pre>
+  <p>저장소를 실행할 수 없으면 아래 코드를 그대로 복사해 다섯 자리만 채운다. 원문은 이 문서의 <code>&lt;script id="template"&gt;</code>에 있다.</p>
   <table>
     <thead><tr><th style="width:26%">자리</th><th>값</th></tr></thead>
     <tbody>
       <tr><td class="mono">{{COHORT}}</td><td>기수 번호 두 자리</td></tr>
-      <tr><td class="mono">{{SESSION}}</td><td>세션 번호 두 자리</td></tr>
       <tr><td class="mono">{{PRESENTATION}}</td><td>발표 번호 두 자리</td></tr>
       <tr><td class="mono">{{KEYWORDS}}</td><td>키워드 text 3줄. 04절 규칙으로 만든다.</td></tr>
-      <tr><td class="mono">{{ICON}}</td><td>아이콘 rect 목록. 5.2 규칙으로 만든다.</td></tr>
+      <tr><td class="mono">{{ICON}}</td><td>아이콘 rect 목록. 6.2 규칙으로 만든다.</td></tr>
+      <tr><td class="mono">{{DIGITS}}</td><td>세션 번호 rect 목록. 05절 규칙으로 만든다.</td></tr>
     </tbody>
   </table>
   <pre id="template-view"></pre>
@@ -259,6 +279,8 @@
   <pre id="keywords-view"></pre>
   <p>아이콘 rect 예. people의 앞부분이다.</p>
   <pre id="rects-view"></pre>
+  <p>세션 번호 rect 예. 세션 01의 앞부분이다.</p>
+  <pre id="digits-view"></pre>
 </section>
 
 </div>
@@ -326,154 +348,139 @@
 <g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#FFFFFF">
 {{KEYWORDS}}
 </g>
-<text x="84" y="666" font-family="Menlo, ui-monospace, monospace" font-size="26" fill="#FFFFFF" opacity="0.6" letter-spacing="3">SESSION {{SESSION}} · PRESENTATION {{PRESENTATION}}</text>
+<g id="session" fill="#42B4FF">
+{{DIGITS}}
+</g>
+<g id="label" font-family="Menlo, ui-monospace, monospace" font-size="26" fill="#FFFFFF" opacity="0.6" letter-spacing="3">
+<text x="268" y="626">SESSION</text>
+<text x="268" y="666">PRESENTATION {{PRESENTATION}}</text>
+</g>
 </svg>
+</script>
+
+<script type="application/json" id="digits">
+{
+  "0": [".####.", "##..##", "##..##", "##..##", "##..##", "##..##", "##..##", ".####."],
+  "1": ["..##..", ".###..", "..##..", "..##..", "..##..", "..##..", "..##..", ".####."],
+  "2": [".####.", "##..##", "....##", "...##.", "..##..", ".##...", "##....", "######"],
+  "3": [".####.", "##..##", "....##", "..###.", "....##", "....##", "##..##", ".####."],
+  "4": ["...##.", "..###.", ".####.", "##.##.", "######", "...##.", "...##.", "...##."],
+  "5": ["######", "##....", "#####.", "....##", "....##", "....##", "##..##", ".####."],
+  "6": ["..###.", ".##...", "##....", "#####.", "##..##", "##..##", "##..##", ".####."],
+  "7": ["######", "....##", "...##.", "...##.", "..##..", "..##..", ".##...", ".##..."],
+  "8": [".####.", "##..##", "##..##", ".####.", "##..##", "##..##", "##..##", ".####."],
+  "9": [".####.", "##..##", "##..##", "##..##", ".#####", "....##", "...##.", ".###.."]
+}
 </script>
 
 <script type="application/json" id="glyphs">
 {
   "people": [
     "................",
-    "..####...####...",
-    "..####...####...",
-    "..####...####...",
-    "..####...####...",
-    "................",
-    "..####...####...",
-    ".######.######..",
-    ".######.######..",
-    ".######.######..",
-    ".######.######..",
-    ".######.######..",
-    ".######.######..",
-    ".######.######..",
-    "................",
-    "................"
-  ],
-  "cloud": [
     "................",
     "................",
-    "................",
-    "......#####.....",
-    ".....#.....#....",
-    "....#.......##..",
-    "..##..........#.",
-    ".#............#.",
-    ".#.............#",
-    ".#.............#",
-    ".#.............#",
-    "..#...........#.",
-    "...###########..",
-    "................",
-    "................",
-    "................"
-  ],
-  "compass": [
-    "................",
+    ".......##.......",
+    "......####......",
+    "..##..####..##..",
+    ".####..##..####.",
+    ".####......####.",
+    "..##..####..##..",
     ".....######.....",
-    "...##......##...",
-    "..#....##....#..",
-    "..#....##....#..",
-    ".#....####....#.",
-    ".#...######...#.",
-    ".#.##########.#.",
-    ".#.##########.#.",
-    ".#...######...#.",
-    ".#....####....#.",
-    "..#....##....#..",
-    "..#....##....#..",
-    "...##......##...",
-    ".....######.....",
+    ".###.######.###.",
+    ".###.######.###.",
+    ".###.######.###.",
+    ".###.######.###.",
+    "................",
     "................"
   ],
-  "chip": [
+  "rocket": [
     "................",
+    ".......##.......",
+    "......####......",
+    ".....######.....",
+    ".....######.....",
     ".....##..##.....",
     ".....##..##.....",
+    ".....######.....",
+    ".....######.....",
+    "....########....",
     "...##########...",
-    "...#........#...",
-    ".###........###.",
-    ".###..####..###.",
-    "...#..####..#...",
-    "...#..####..#...",
-    ".###..####..###.",
-    ".###........###.",
-    "...#........#...",
-    "...##########...",
-    ".....##..##.....",
-    ".....##..##.....",
+    "..###.####.###..",
+    "..##..####..##..",
+    "......#..#......",
+    "................",
     "................"
   ],
-  "lock": [
+  "signpost": [
     "................",
-    ".....######.....",
-    "....##....##....",
-    "....##....##....",
-    "....##....##....",
-    "....##....##....",
+    ".......##.......",
+    ".....########...",
+    ".....#########..",
+    ".....#########..",
+    ".....########...",
+    ".......##.......",
+    ".......##.......",
+    "...########.....",
+    "..#########.....",
+    "..#########.....",
+    "...########.....",
+    ".......##.......",
+    ".......##.......",
+    "....########....",
+    "................"
+  ],
+  "robot": [
+    "................",
+    ".......##.......",
+    ".......##.......",
+    ".......##.......",
+    "...##########...",
     "..############..",
     "..############..",
-    "..#####..#####..",
-    "..#####..#####..",
-    "..#####..#####..",
+    ".####..##..####.",
+    ".####..##..####.",
+    ".##############.",
     "..############..",
-    "..############..",
-    "..############..",
+    "..###......###..",
+    "..###......###..",
+    "...##########...",
+    "....########....",
+    "................"
+  ],
+  "router": [
+    "................",
+    "................",
+    "...##......##...",
+    "...##......##...",
+    "...##......##...",
+    "...##......##...",
+    "...##......##...",
+    "...##......##...",
+    ".##############.",
+    ".##############.",
+    ".##..##..##..##.",
+    ".##############.",
+    ".##############.",
+    "..###......###..",
     "................",
     "................"
   ],
   "server": [
     "................",
     ".##############.",
-    ".#............#.",
-    ".#.##......#..#.",
-    ".#............#.",
-    ".##############.",
-    ".#............#.",
-    ".#.##......#..#.",
-    ".#............#.",
-    ".##############.",
-    ".#............#.",
-    ".#.##......#..#.",
-    ".#............#.",
+    ".##..##......##.",
+    ".##..##########.",
     ".##############.",
     "................",
-    "................"
-  ],
-  "bolt": [
+    ".##############.",
+    ".##..##......##.",
+    ".##..##########.",
+    ".##############.",
     "................",
-    ".........###....",
-    "........####....",
-    ".......####.....",
-    "......####......",
-    ".....####.......",
-    "....#########...",
-    "....#########...",
-    "........####....",
-    ".......####.....",
-    "......####......",
-    ".....####.......",
-    "....####........",
-    "...###..........",
-    "..##............",
-    "................"
-  ],
-  "container": [
-    "................",
-    ".......##.......",
-    ".....##..##.....",
-    "...##......##...",
-    ".##..........##.",
-    ".#.##......##.#.",
-    ".#...##..##...#.",
-    ".#.....##.....#.",
-    ".#.....##.....#.",
-    ".#.....##.....#.",
-    ".#.....##.....#.",
-    ".##....##....##.",
-    "...##..##..##...",
-    ".....######.....",
-    ".......##.......",
+    ".##############.",
+    ".##..##......##.",
+    ".##..##########.",
+    ".##############.",
     "................"
   ]
 }
@@ -482,36 +489,29 @@
 <script>
 (() => {
   const glyphs = JSON.parse(document.getElementById("glyphs").textContent);
+  const digits = JSON.parse(document.getElementById("digits").textContent);
   const template = document.getElementById("template").textContent.trim() + "\n";
-  const ORIGIN = { x: 800, y: 257 };
-  const CELL = 16;
   const TIERS = [
     { max: 18, size: 56, ys: [318, 392, 466] },
     { max: 23, size: 44, ys: [332, 392, 452] },
     { max: 28, size: 36, ys: [342, 392, 442] },
   ];
 
-  const iconRects = (rows) => {
-    const out = [];
-    rows.forEach((row, r) => {
-      [...row].forEach((ch, c) => {
-        if (ch === "#") out.push(`<rect x="${ORIGIN.x + c * CELL}" y="${ORIGIN.y + r * CELL}" width="16" height="16"/>`);
-      });
-    });
-    return out.join("\n");
-  };
+  const cells = (rows, x, y, size) =>
+    rows.flatMap((row, r) => [...row].flatMap((ch, c) => (ch === "#" ? [`<rect x="${x + c * size}" y="${y + r * size}" width="${size}" height="${size}"/>`] : [])));
   const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   const keywordLines = (keywords) => {
     const upper = keywords.map((k) => k.toUpperCase());
     const tier = TIERS.find((t) => Math.max(...upper.map((k) => k.length)) <= t.max);
     return upper.map((k, i) => `<text x="84" y="${tier.ys[i]}" font-size="${tier.size}">${esc(k)}</text>`).join("\n");
   };
+  const digitRects = (session) => [...session].flatMap((d, k) => cells(digits[d], 84 + k * 84, 570, 12));
   const build = ({ cohort, session, presentation, keywords, icon }) =>
     template
-      .replace("{{ICON}}", iconRects(glyphs[icon]))
-      .replace("{{KEYWORDS}}", keywordLines(keywords))
+      .replace("{{ICON}}", () => cells(glyphs[icon], 800, 257, 16).join("\n"))
+      .replace("{{KEYWORDS}}", () => keywordLines(keywords))
+      .replace("{{DIGITS}}", () => digitRects(session).join("\n"))
       .replace("{{COHORT}}", cohort)
-      .replace("{{SESSION}}", session)
       .replace("{{PRESENTATION}}", presentation);
   const thumb = (svg, caption) => {
     const fig = document.createElement("figure");
@@ -519,8 +519,15 @@
     return fig;
   };
 
-  const P01 = { cohort: "01", session: "01", presentation: "01", keywords: ["Community", "Hands-on", "Curriculum"], icon: "people" };
-  const reference = build(P01);
+  const EXAMPLES = [
+    { cohort: "01", session: "01", presentation: "01", keywords: ["Community", "Hands-on", "Curriculum"], icon: "people", title: "ASBG UOS 1기, 왜 함께 AWS를 배우는가" },
+    { cohort: "01", session: "01", presentation: "02", keywords: ["Operations", "Startup", "Iteration"], icon: "rocket", title: "코드를 넘어 서비스로" },
+    { cohort: "01", session: "01", presentation: "03", keywords: ["Career", "High Availability", "Learning Path"], icon: "signpost", title: "클라우드를 배우면 어떤 일을 할까?" },
+    { cohort: "01", session: "01", presentation: "04", keywords: ["AI Delegation", "Verification", "Domain Knowledge"], icon: "robot", title: "1년차 개발자가 AI 시대에서 정한 전략" },
+    { cohort: "01", session: "02", presentation: "01", keywords: ["Network Basics", "VPC", "Subnet"], icon: "router", title: "네트워크 기초부터 AWS 서비스 이해까지" },
+    { cohort: "01", session: "02", presentation: "02", keywords: ["3-Tier", "EC2", "Nginx"], icon: "server", title: "3-Tier 아키텍처란?" },
+  ];
+  const reference = build(EXAMPLES[0]);
   document.getElementById("fig-reference").innerHTML = reference;
 
   const dim = document.getElementById("fig-dimensions");
@@ -536,12 +543,15 @@
     ${label(1120, 202, "프레임 736, 214 · 384 × 342", "end")}
     <rect x="800" y="257" width="256" height="256" stroke-dasharray="4 4"/>
     ${label(1120, 586, "아이콘 800, 257 · 256 × 256 · 16 × 16칸", "end")}
-    <path d="M84 132H600M84 318H600M84 392H600M84 466H600M84 666H600" stroke-dasharray="2 4"/>
+    <path d="M84 132H600M84 318H600M84 392H600M84 466H600M268 626H600M268 666H600" stroke-dasharray="2 4"/>
     ${label(612, 139, "y 132 · 30px")}
     ${label(84, 500, "y 318 · 392 · 466 · 56px")}
-    ${label(640, 673, "y 666 · 26px")}
-    <path d="M84 96V700" stroke-dasharray="2 4"/>
+    ${label(612, 673, "y 626 · 666 · 26px")}
+    <rect x="84" y="570" width="156" height="96"/>
+    ${label(84, 556, "세션 번호 84, 570 · 156 × 96")}
+    <path d="M84 96V700M268 600V700" stroke-dasharray="2 4"/>
     ${label(92, 726, "x 84")}
+    ${label(276, 726, "x 268")}
   </svg>`);
 
   const g = 22, off = 34;
@@ -554,10 +564,19 @@
       grid += `<text x="${off - 8}" y="${off + i * g + g / 2 + 4}" font-family="Menlo, ui-monospace, monospace" font-size="10" fill="#5B6470" text-anchor="end">${i}</text>`;
     }
   }
-  grid += `<g fill="#42B4FF">`;
-  glyphs.lock.forEach((row, r) => [...row].forEach((ch, c) => { if (ch === "#") grid += `<rect x="${off + c * g}" y="${off + r * g}" width="${g}" height="${g}"/>`; }));
-  grid += `</g></svg>`;
+  grid += `<g fill="#42B4FF">${cells(glyphs.server, off, off, g).join("")}</g></svg>`;
   document.getElementById("fig-grid").innerHTML = grid;
+
+  const dg = 10, gap = 24, pad = 24, order = Object.keys(digits);
+  const stripWidth = pad * 2 + order.length * 6 * dg + (order.length - 1) * gap;
+  let strip = `<svg viewBox="0 0 ${stripWidth} ${pad * 2 + 8 * dg + 24}" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:${stripWidth}px;display:block;border-radius:6px" shape-rendering="crispEdges">`;
+  strip += `<rect width="100%" height="100%" fill="#0B0F17"/>`;
+  order.forEach((d, i) => {
+    const x = pad + i * (6 * dg + gap);
+    strip += `<g fill="#42B4FF">${cells(digits[d], x, pad, dg).join("")}</g>`;
+    strip += `<text x="${x + 3 * dg}" y="${pad + 8 * dg + 22}" font-family="Menlo, ui-monospace, monospace" font-size="12" fill="#8A94A0" text-anchor="middle">${d}</text>`;
+  });
+  document.getElementById("fig-digits").innerHTML = `${strip}</svg>`;
 
   const list = document.getElementById("icon-list");
   const view = document.getElementById("glyph-view");
@@ -581,17 +600,12 @@
   select("people");
 
   const examples = document.getElementById("fig-examples");
-  [
-    [P01, "ASBG UOS 1기, 왜 함께 AWS를 배우는가"],
-    [{ cohort: "01", session: "01", presentation: "02", keywords: ["Operations", "Startup", "Iteration"], icon: "cloud" }, "코드를 넘어 서비스로"],
-    [{ cohort: "01", session: "01", presentation: "03", keywords: ["Career", "High Availability", "Learning Path"], icon: "compass" }, "클라우드를 배우면 어떤 일을 할까?"],
-    [{ cohort: "01", session: "01", presentation: "04", keywords: ["AI Delegation", "Verification", "Domain Knowledge"], icon: "chip" }, "1년차 개발자가 AI 시대에서 정한 전략"],
-  ].forEach(([p, title]) => examples.appendChild(thumb(build(p), `세션 ${p.session} · 발표 ${p.presentation} · ${p.icon} — ${title}`)));
+  EXAMPLES.forEach((p) => examples.appendChild(thumb(build(p), `세션 ${p.session} · 발표 ${p.presentation} · ${p.icon} — ${p.title}`)));
 
   document.getElementById("template-view").textContent = template;
-  document.getElementById("keywords-view").textContent = `<g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#FFFFFF">\n${keywordLines(P01.keywords)}\n</g>`;
-  const rects = iconRects(glyphs.people).split("\n");
-  document.getElementById("rects-view").textContent = `<g id="icon" fill="#42B4FF">\n${rects.slice(0, 4).join("\n")}\n…\n</g>`;
+  document.getElementById("keywords-view").textContent = `<g id="keywords" font-family="Menlo, ui-monospace, monospace" font-weight="700" fill="#FFFFFF">\n${keywordLines(EXAMPLES[0].keywords)}\n</g>`;
+  document.getElementById("rects-view").textContent = `<g id="icon" fill="#42B4FF">\n${cells(glyphs.people, 800, 257, 16).slice(0, 4).join("\n")}\n…\n</g>`;
+  document.getElementById("digits-view").textContent = `<g id="session" fill="#42B4FF">\n${digitRects("01").slice(0, 4).join("\n")}\n…\n</g>`;
 })();
 </script>
 </body>
