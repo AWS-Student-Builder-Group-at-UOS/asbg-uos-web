@@ -16,7 +16,7 @@ const channels: { key: keyof typeof site.links; icon: IconName; label: string }[
 export function Footer({ locale, latestCohort }: { locale: Locale; latestCohort: string }) {
   const d = getDict(locale);
   const community = [
-    { label: d.nav.sessions, href: routes.sessions(locale, latestCohort) },
+    { label: d.nav.activities, href: routes.activities(locale, latestCohort) },
     { label: d.nav.members, href: routes.members(locale, latestCohort) },
     { label: d.nav.resources, href: routes.resources(locale) },
   ];

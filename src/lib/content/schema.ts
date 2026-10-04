@@ -7,13 +7,17 @@ const localized = z.union([
 
 const keywords = z.array(z.string().min(1)).length(3);
 
-export const sessionSchema = z.object({
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "YYYY-MM-DD"),
+export const activitySchema = z.object({
+  type: z.enum(["presentation", "retrospective"]),
+  date: z.iso.date(),
   status: z.enum(["done", "upcoming"]).default("done"),
+  session: z.number().int().positive().optional(),
+  presentation: z.number().int().positive().optional(),
   title: localized,
   description: localized.optional(),
   keywords,
   speakers: z.array(z.string()).default([]),
+  author: localized.optional(),
   thumbnail: z.string().optional(),
 });
 
@@ -36,7 +40,7 @@ export const memberSchema = z.object({
 
 export const memberListSchema = z.array(memberSchema);
 
-export type SessionMeta = z.infer<typeof sessionSchema>;
+export type ActivityMeta = z.infer<typeof activitySchema>;
 export type MemberData = z.infer<typeof memberSchema>;
 
 export function parseOrThrow<T>(schema: z.ZodType<T>, data: unknown, file: string): T {

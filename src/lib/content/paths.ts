@@ -3,11 +3,11 @@ import path from "node:path";
 
 export const CONTENT_ROOT = process.cwd();
 export const COHORT_PATTERN = /^cohort-(\d{2})$/;
-export const SESSION_PATTERN = /^session-(\d{2})$/;
-export const PRESENTATION_PATTERN = /^presentation-(\d{2})$/;
+export const ACTIVITY_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 export const cohortDir = (cohort: string) => path.join(/* turbopackIgnore: true */ CONTENT_ROOT, cohort);
-export const sessionDir = (cohort: string, session: string) => path.join(cohortDir(cohort), session);
+export const activitiesDir = (cohort: string) => path.join(cohortDir(cohort), "activities");
+export const activityDir = (cohort: string, activity: string) => path.join(activitiesDir(cohort), activity);
 export const membersDir = (cohort: string) => path.join(cohortDir(cohort), "members");
 
 export function listDirs(dir: string, pattern: RegExp) {

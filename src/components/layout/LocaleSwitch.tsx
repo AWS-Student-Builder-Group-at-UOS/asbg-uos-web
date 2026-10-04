@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { QueryLink } from "@/components/ui/QueryLink";
 import { usePathname } from "next/navigation";
 import { localePattern, locales, type Locale } from "@/lib/i18n/locales";
 import { cn } from "@/lib/utils";
@@ -13,7 +13,7 @@ export function LocaleSwitch({ locale, label }: { locale: Locale; label: string 
   return (
     <div className="flex items-center rounded-sm border border-line font-mono text-xs" role="group" aria-label={label}>
       {locales.map((l) => (
-        <Link
+        <QueryLink
           key={l}
           href={swap(l)}
           hrefLang={l}
@@ -25,7 +25,7 @@ export function LocaleSwitch({ locale, label }: { locale: Locale; label: string 
           )}
         >
           {l}
-        </Link>
+        </QueryLink>
       ))}
     </div>
   );

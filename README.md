@@ -2,7 +2,7 @@
 
 [English](README.en.md)
 
-AWS Student Builder Groups at University of Seoul, 줄여서 ASBG UOS의 공식 웹사이트입니다. ASBG는 AWS가 대학 단위로 운영하는 공식 학생 커뮤니티이고, ASBG UOS는 그 서울시립대 그룹입니다. 이 사이트는 동아리가 무엇을 하는지 소개하고, 기수별 발표 기록과 멤버, 공식 채널을 한곳에 모아 보여 줍니다.
+AWS Student Builder Groups at University of Seoul, 줄여서 ASBG UOS의 공식 웹사이트입니다. ASBG는 AWS가 대학 단위로 운영하는 공식 학생 커뮤니티이고, ASBG UOS는 그 서울시립대 그룹입니다. 이 사이트는 동아리가 무엇을 하는지 소개하고, 기수별 활동 기록과 멤버, 공식 채널을 한곳에 모아 보여 줍니다.
 
 사이트: https://asbg.uos.ac.kr
 
@@ -30,7 +30,7 @@ Next.js를 고른 가장 큰 이유는 검색과 공유입니다. 모든 페이�
 | 콘텐츠 검증 | zod. 빌드 시 스키마 검사 |
 | 다국어 | `app/[locale]` 라우트, 한국어 · 영어 사전 파일 |
 | 테마 | next-themes. 라이트 · 다크 |
-| 공유 이미지 | next/og, sharp. 발표 썸네일 SVG를 PNG로 변환 |
+| 공유 이미지 | next/og, sharp. 활동 썸네일 SVG를 PNG로 변환 |
 | 글꼴 | Pretendard, Geist Mono |
 | 배포 | Vercel |
 
@@ -78,13 +78,13 @@ flowchart LR
 ...##..##..##...          ████    ████    ████
 ```
 
-픽셀 하나는 네모일 뿐이지만 모이면 자물쇠도 되고 서버도 됩니다. 인스턴스와 함수, 큐 같은 작은 서비스를 엮어 하나의 서비스를 만드는 클라우드와 같은 원리입니다. 로고부터 채널 아이콘, 세션 썸네일까지 모두 이 격자 하나로 그립니다.
+픽셀 하나는 네모일 뿐이지만 모이면 자물쇠도 되고 서버도 됩니다. 인스턴스와 함수, 큐 같은 작은 서비스를 엮어 하나의 서비스를 만드는 클라우드와 같은 원리입니다. 로고부터 채널 아이콘, 활동 썸네일까지 모두 이 격자 하나로 그립니다.
 
 ### 회로 기판
 
 그림은 모두 회로 기판의 언어로 그렸습니다. 배경의 점 격자는 부품을 꽂기 전의 만능기판이고, 그 위에 칩과 배선으로 그린 도식이 홈의 폐루프와 요청 경로이며, 카드 모서리의 작은 네모는 납땜 패드입니다. 번호와 날짜, 키워드처럼 코드에 가까운 정보는 모노스페이스 글꼴(Geist Mono)로 써서 각자의 콘솔에서 이루어지는 세션의 인상을 남겼습니다.
 
-발표 썸네일도 같은 언어로 만듭니다. 어두운 바탕의 점 격자 위에 왼쪽은 키워드 세 개, 오른쪽은 점선 프레임 안에 발표를 대표하는 픽셀 아이콘 하나를 놓는 구성입니다. 가이드와 프롬프트, 검증 스크립트는 `template/session-thumbnail/`에 있습니다.
+발표 썸네일도 같은 언어로 만듭니다. 어두운 바탕의 점 격자 위에 왼쪽은 키워드 세 개, 오른쪽은 점선 프레임 안에 발표를 대표하는 픽셀 아이콘 하나를 놓는 구성입니다. 가이드와 프롬프트, 검증 스크립트는 `template/presentation-thumbnail/`에 있습니다.
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -101,6 +101,8 @@ flowchart LR
 └────────────────────────────────────────────────────────┘
 ```
 
+활동 회고 썸네일은 같은 색과 점 격자, 키워드 배치를 쓰되, 오른쪽 프레임을 실선으로 겹친 기록지 모양으로 고정하고 하단에 `RETROSPECTIVE`를 표시합니다. 회고끼리는 이 틀을 공유하며, 세션과 연결되지 않은 프로젝트나 기수 전체 회고도 번호 없이 사용할 수 있습니다. 가이드와 프롬프트, 생성기, 검증기는 `template/retrospective-thumbnail/`에 있습니다.
+
 발표 본문의 도식은 썸네일과 달리 흰 바탕에 회색 선과 파랑 하나만 쓰는 차분한 그림입니다. 규칙과 프롬프트, 생성 스크립트는 `template/session-diagram/`에 있습니다.
 
 ## 개발과 기여
@@ -114,4 +116,82 @@ npm run build    # 정적 빌드. 콘텐츠 형식 검사 포함
 npm run lint
 ```
 
-콘텐츠는 저장소 루트의 `cohort-NN/` 폴더에 기수별로 들어 있습니다. 발표는 `session-NN/presentation-NN/index.md`에, 멤버는 `members/*.yaml`에 쓰고, 사진과 PDF는 같은 폴더에 둡니다. 필드 규칙은 `src/lib/content/schema.ts`가 기준이며, 기존 파일을 복사해 고치는 것이 가장 빠릅니다. 변경은 Pull Request로 보내 주세요.
+콘텐츠는 저장소 루트의 `cohort-NN/` 폴더에 기수별로 들어 있습니다. 멤버는 `members/*.yaml`에 쓰고 사진은 같은 폴더에 둡니다. 필드 규칙은 `src/lib/content/schema.ts`가 기준이며, 기존 파일을 복사해 고치는 것이 가장 빠릅니다. 변경은 Pull Request로 보내 주세요.
+
+### 활동 기록
+
+Activities는 기수별로 발표와 활동 회고를 하나의 목록에 보여 줍니다. 세션별 폴더나 중간 목록으로 나누지 않고 글마다 작은 유형 표기를 붙입니다. 과제는 활동의 한 가지일 뿐이며, 다음 기수가 프로젝트나 스터디를 운영해도 같은 구조에 기록할 수 있습니다.
+
+```text
+cohort-01/
+  activities/
+    session-01-presentation-01/
+      index.md
+      index.en.md
+      img/
+      files/
+  members/
+```
+
+활동 하나가 `activities/{slug}/` 폴더 하나입니다. slug는 소문자와 숫자, 하이픈으로 짓고 게시 후에는 유지합니다. 발표는 `session-01-presentation-01`처럼 기존 번호를 이름에 남기지만, 세션과 관계없는 글은 `cohort-retrospective`처럼 내용에 맞춰 지으면 됩니다. 영어 본문은 `index.en.md`에 씁니다. 이미지와 PDF는 각각 같은 글의 `img/`, `files/`에 두고 본문에서는 상대 경로로 연결합니다.
+
+| 필드 | 규칙 |
+| --- | --- |
+| `type` | `presentation` 또는 `retrospective`. 발표와 활동 회고를 구분 |
+| `date` | `"YYYY-MM-DD"`. 발행일이며 예정 글은 예정일 |
+| `status` | `done` 또는 `upcoming`. 생략하면 `done` |
+| `title`, `description` | 제목과 선택 설명. 문자열 또는 `{ ko, en }` |
+| `keywords` | 세 개. 썸네일을 만들 때는 각 1~28자의 영어 키워드 |
+| `session`, `presentation` | 관련 세션과 발표 번호. 필요한 글에만 양의 정수로 지정 |
+| `speakers` | 발표자의 멤버 ID 목록. 생략 가능 |
+| `author` | 운영진처럼 글을 쓴 주체. 문자열 또는 `{ ko, en }`, 생략 가능 |
+| `thumbnail` | 선택 이미지 경로. 템플릿 사용 시 `img/thumbnail.svg` |
+
+회고의 frontmatter는 아래처럼 작성합니다. 세션과 연결된 회고만 `session`을 넣으며 `presentation`은 필요하지 않습니다. 본문 구성은 [Session 02 회고](cohort-01/activities/session-02-retrospective/index.md)를 참고할 수 있습니다.
+
+```yaml
+---
+type: retrospective
+date: "2026-10-15"
+title:
+  ko: 함께 배우는 방식을 돌아보며
+  en: Reflecting on how we learn together
+author:
+  ko: ASBG UOS 운영진
+  en: ASBG UOS Organizers
+keywords: [Community, Feedback, Iteration]
+thumbnail: img/thumbnail.svg
+---
+```
+
+회고 본문에는 활동의 의도, 실제 결과, 피드백과 변화, 다음 운영에서 바꿀 점을 글로 정리하고 원본 자료를 연결합니다. 특정 기수의 과제나 제출 형식을 모든 회고에 요구하지 않습니다.
+
+### 목록과 URL
+
+기수는 `/ko/activities/cohort-01`처럼 경로로 선택하고, 상세 주소는 `/ko/activities/cohort-01/{slug}`입니다. 기존 발표 주소인 `/ko/sessions/cohort-01/session-01/presentation-01`도 새 상세 주소로 이동합니다.
+
+검색과 필터는 URL에 저장되어 새로고침하거나 링크를 공유해도 같은 목록을 볼 수 있습니다. 유형과 상태는 버튼으로 고르며 기기별 기본 드롭다운을 쓰지 않습니다.
+
+| 파라미터 | 값 | 생략했을 때 |
+| --- | --- | --- |
+| `q` | 검색어 | 검색 없음 |
+| `type` | `presentation`, `retrospective` | 모든 유형 |
+| `status` | `done`, `upcoming` | 모든 상태 |
+| `sort` | `newest`, `oldest` | 최신 날짜순 |
+
+예: `/ko/activities/cohort-01?type=presentation&q=vpc&sort=oldest`.
+
+### 썸네일과 도식
+
+- 발표 썸네일: `template/presentation-thumbnail/prompt.md`. 기존 발표의 배경과 레이아웃을 유지합니다.
+- 회고 썸네일: `template/retrospective-thumbnail/prompt.md`. 기본 notebook 아이콘은 아래 생성기로 바로 만들 수 있습니다.
+- 본문 도식: `template/session-diagram/README.md`. 생성 코드도 `diagrams/cohort-NN/activities/{slug}.py`에 둡니다.
+
+```bash
+node template/presentation-thumbnail/validate.mjs cohort-01/activities/session-01-presentation-01/img/thumbnail.svg
+node template/retrospective-thumbnail/build.mjs cohort-01/activities/cohort-retrospective
+node template/retrospective-thumbnail/validate.mjs cohort-01/activities/cohort-retrospective/img/thumbnail.svg
+python template/session-diagram/build.py --check
+```
+
+회고 명령은 해당 글의 `index.md`와 메타데이터를 작성한 뒤 실행합니다. 검토를 위해 임시 글이나 자산을 만들었다면 실제 게시할 콘텐츠와 함께 남기지 않습니다.

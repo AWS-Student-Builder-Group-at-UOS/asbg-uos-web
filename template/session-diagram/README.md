@@ -1,6 +1,6 @@
 # 세션 도식
 
-발표 본문(`index.md`)에 들어가는 도식 `img/diagram-*.svg`를 그리는 규칙과 생성 스크립트입니다. 표지 썸네일은 `../session-thumbnail/`을 따릅니다.
+발표 본문(`index.md`)에 들어가는 도식 `img/diagram-*.svg`를 그리는 규칙과 생성 스크립트입니다. 표지 썸네일은 `../presentation-thumbnail/`을 따릅니다.
 
 도식은 코드로 그립니다. `diagrams/` 아래 파이썬 파일 하나가 발표 하나의 도식을 담고, `build.py`가 그 코드로 SVG를 만들어 발표 폴더의 `img/`에 씁니다. 글자 폭을 실제 글꼴로 재서 상자를 넘치면 멈추고, 쓴 글자만 담은 글꼴을 SVG 안에 넣어 어느 기기에서나 사이트와 같은 글꼴로 보입니다.
 
@@ -53,21 +53,21 @@ python template/session-diagram/build.py
 
 ## 새 도식 추가
 
-1. 발표 폴더와 같은 경로로 파일을 만든다. `cohort-01/session-03/presentation-01`이면 `diagrams/cohort-01/session-03/presentation-01.py`.
+1. 발표 폴더와 같은 경로로 파일을 만든다. `cohort-01/activities/session-03-presentation-01`이면 `diagrams/cohort-01/activities/session-03-presentation-01.py`.
 2. 도식 하나가 함수 하나다. 함수는 `lang`을 받아 `Diagram`을 돌려준다. 문구는 함수 첫머리의 `t = {"ko": ..., "en": ...}`에 모은다.
 3. 파일 끝 `DIAGRAMS`에 파일 이름과 함수를 적는다. `"diagram-vpc": vpc`는 `img/diagram-vpc.svg`가 되고 영어는 `img/diagram-vpc.en.svg`가 된다. 영어 본문이 없는 발표는 `LANGS = ("ko",)`.
 4. `build.py <발표 경로> --preview`로 확인한 뒤 본문에 `![대체 텍스트](img/diagram-vpc.svg)`로 넣는다. 대체 텍스트에는 그림이 말하는 내용을 문장으로 쓴다.
 
 비슷한 기존 도식을 복사해 고치는 것이 가장 빠릅니다.
 
-| 모양 | 예시 (`diagrams/cohort-01/`) |
+| 모양 | 예시 (`diagrams/cohort-01/activities/`) |
 |---|---|
-| 단계가 이어지는 흐름 | `session-01/presentation-01.py` `diagram`, `session-01/presentation-03.py` `roadmap` |
-| 같은 틀을 여러 장 나란히 | `session-01/presentation-03.py` `ha`, `session-02/presentation-01.py` `flow` |
-| 영역 안에 영역이 든 구조 | `session-02/presentation-01.py` `nesting`, `vpc_map`, `session-02/presentation-02.py` `build_order` |
-| 두 가지 비교 | `session-02/presentation-01.py` `lb`, `security`, `session-02/presentation-02.py` `tiers` |
-| 누가 어디서 무엇을 하는 순서 | `session-01/presentation-04.py` `attitude`, `session-02/presentation-02.py` `deploy` |
-| 표와 목록 | `session-02/presentation-02.py` `requests`, `sg_rules` |
+| 단계가 이어지는 흐름 | `session-01-presentation-01.py` `diagram`, `session-01-presentation-03.py` `roadmap` |
+| 같은 틀을 여러 장 나란히 | `session-01-presentation-03.py` `ha`, `session-02-presentation-01.py` `flow` |
+| 영역 안에 영역이 든 구조 | `session-02-presentation-01.py` `nesting`, `vpc_map`, `session-02-presentation-02.py` `build_order` |
+| 두 가지 비교 | `session-02-presentation-01.py` `lb`, `security`, `session-02-presentation-02.py` `tiers` |
+| 누가 어디서 무엇을 하는 순서 | `session-01-presentation-04.py` `attitude`, `session-02-presentation-02.py` `deploy` |
+| 표와 목록 | `session-02-presentation-02.py` `requests`, `sg_rules` |
 
 ## 도구
 

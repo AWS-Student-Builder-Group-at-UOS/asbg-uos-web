@@ -2,7 +2,7 @@
 
 [한국어](README.md)
 
-The official website of AWS Student Builder Groups at University of Seoul, ASBG UOS for short. ASBG is the official student community that AWS runs at universities, and ASBG UOS is its group at the University of Seoul. The site introduces what the club does and gathers each cohort's talks, members and official channels in one place.
+The official website of AWS Student Builder Groups at University of Seoul, ASBG UOS for short. ASBG is the official student community that AWS runs at universities, and ASBG UOS is its group at the University of Seoul. The site introduces what the club does and gathers each cohort's activity records, members and official channels in one place.
 
 Site: https://asbg.uos.ac.kr
 
@@ -30,7 +30,7 @@ Next.js was chosen mainly for search and sharing. Every page is generated as com
 | Content validation | zod, schema-checked at build time |
 | Localization | `app/[locale]` routes with Korean and English dictionaries |
 | Theme | next-themes, light and dark |
-| Share images | next/og and sharp, rendering talk thumbnails from SVG to PNG |
+| Share images | next/og and sharp, rendering activity thumbnails from SVG to PNG |
 | Fonts | Pretendard, Geist Mono |
 | Hosting | Vercel |
 
@@ -78,13 +78,13 @@ Every icon is pixel art on a 16×16 grid, and the code defines it exactly as it 
 ...##..##..##...          ████    ████    ████
 ```
 
-A single pixel is just a square, but together they become a lock or a server. It is the same principle as the cloud, where small services such as instances, functions and queues are wired into one product. The logo, the channel icons and the session thumbnails are all drawn on this one grid.
+A single pixel is just a square, but together they become a lock or a server. It is the same principle as the cloud, where small services such as instances, functions and queues are wired into one product. The logo, the channel icons and the activity thumbnails are all drawn on this one grid.
 
 ### Circuit board
 
 All the graphics speak the language of a circuit board. The dot grid in the background is a perfboard before any part is placed, the diagrams drawn on it with chips and traces are the closed loop and the request path on the home page, and the small squares at card corners are solder pads. Numbers, dates and keywords, the information closest to code, are set in a monospace font (Geist Mono), a nod to sessions that mostly happen in everyone's own console.
 
-Talk thumbnails use the same language: a dark dot grid with three keywords on the left and, on the right, one pixel icon that represents the talk inside a dashed frame. The guide, prompt and validation script are in `template/session-thumbnail/`.
+Talk thumbnails use the same language: a dark dot grid with three keywords on the left and, on the right, one pixel icon that represents the talk inside a dashed frame. The guide, prompt and validation script are in `template/presentation-thumbnail/`.
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -101,6 +101,8 @@ Talk thumbnails use the same language: a dark dot grid with three keywords on th
 └────────────────────────────────────────────────────────┘
 ```
 
+Retrospective thumbnails share the palette, dot grid and keyword layout. Their fixed frame uses overlapping notes with solid outlines, and the footer says `RETROSPECTIVE`. Every retrospective uses this same layout, including project reviews and cohort reviews without a session number. The guide, prompt, generator and validator are in `template/retrospective-thumbnail/`.
+
 Diagrams inside the talk write-ups are quieter than the thumbnails: a white background, grey lines and a single blue. The rules, prompt and generator are in `template/session-diagram/`.
 
 ## Development and contributing
@@ -114,4 +116,82 @@ npm run build    # static build, including content validation
 npm run lint
 ```
 
-Content lives under `cohort-NN/` at the repository root, one folder per cohort. Talks go in `session-NN/presentation-NN/index.md` and members in `members/*.yaml`, with photos and PDFs kept in the same folders. `src/lib/content/schema.ts` is the reference for every field, and copying an existing file is the fastest way to start. Send changes as a Pull Request.
+Content lives under `cohort-NN/` at the repository root, one folder per cohort. Members go in `members/*.yaml`, with their photos alongside them. `src/lib/content/schema.ts` is the reference for every field, and copying an existing file is the fastest way to start. Send changes as a Pull Request.
+
+### Activity records
+
+Activities shows presentations and retrospectives in one list per cohort, with a small type label on each post. There are no session folders to navigate through. Assignments are one possible activity; a later cohort can document projects or study groups in the same structure.
+
+```text
+cohort-01/
+  activities/
+    session-01-presentation-01/
+      index.md
+      index.en.md
+      img/
+      files/
+  members/
+```
+
+Each activity has one `activities/{slug}/` folder. Use lowercase letters, numbers and hyphens for the slug, and keep it stable after publication. Existing presentations retain their numbers, such as `session-01-presentation-01`. A post without a session can use a descriptive name such as `cohort-retrospective`. English body text goes in `index.en.md`. Keep images in `img/` and PDFs in `files/` within the same post, and link to them using relative paths.
+
+| Field | Rule |
+| --- | --- |
+| `type` | `presentation` or `retrospective` |
+| `date` | `"YYYY-MM-DD"`. Publication date, or scheduled date for upcoming posts |
+| `status` | `done` or `upcoming`; defaults to `done` |
+| `title`, `description` | Title and optional description; a string or `{ ko, en }` |
+| `keywords` | Exactly three; use English keywords of 1–28 characters for thumbnails |
+| `session`, `presentation` | Optional positive integers for the related session and presentation |
+| `speakers` | Optional list of speaker member IDs |
+| `author` | Optional writing credit, such as the organizers; a string or `{ ko, en }` |
+| `thumbnail` | Optional image path; `img/thumbnail.svg` for the templates |
+
+Use the following frontmatter for a retrospective. Add `session` only when a review relates to a session. A retrospective does not need a `presentation` number. See the [Session 02 retrospective](cohort-01/activities/session-02-retrospective/index.en.md) for a complete article.
+
+```yaml
+---
+type: retrospective
+date: "2026-10-15"
+title:
+  ko: 함께 배우는 방식을 돌아보며
+  en: Reflecting on how we learn together
+author:
+  ko: ASBG UOS 운영진
+  en: ASBG UOS Organizers
+keywords: [Community, Feedback, Iteration]
+thumbnail: img/thumbnail.svg
+---
+```
+
+A retrospective can describe the activity's intent, actual outcomes, feedback, changes and lessons for the next round, with links to original work. An assignment format used by one cohort is not required of every retrospective.
+
+### Lists and URLs
+
+Cohorts use paths such as `/en/activities/cohort-01`, and posts use `/en/activities/cohort-01/{slug}`. Existing presentation URLs such as `/en/sessions/cohort-01/session-01/presentation-01` redirect to the new post URLs.
+
+Search and filters are stored in the URL, so a reload or a shared link shows the same list. Type and status use buttons rather than platform-specific native dropdowns.
+
+| Parameter | Values | When omitted |
+| --- | --- | --- |
+| `q` | Search text | No search |
+| `type` | `presentation`, `retrospective` | All types |
+| `status` | `done`, `upcoming` | All statuses |
+| `sort` | `newest`, `oldest` | Newest date first |
+
+Example: `/en/activities/cohort-01?type=presentation&q=vpc&sort=oldest`.
+
+### Thumbnails and diagrams
+
+- Presentation thumbnails: `template/presentation-thumbnail/prompt.md`. The existing presentation layout and background are preserved.
+- Retrospective thumbnails: `template/retrospective-thumbnail/prompt.md`. The generator below can create the default notebook icon immediately.
+- Article diagrams: `template/session-diagram/README.md`. Generator sources also follow `diagrams/cohort-NN/activities/{slug}.py`.
+
+```bash
+node template/presentation-thumbnail/validate.mjs cohort-01/activities/session-01-presentation-01/img/thumbnail.svg
+node template/retrospective-thumbnail/build.mjs cohort-01/activities/cohort-retrospective
+node template/retrospective-thumbnail/validate.mjs cohort-01/activities/cohort-retrospective/img/thumbnail.svg
+python template/session-diagram/build.py --check
+```
+
+Run the retrospective commands after writing that post's `index.md` and metadata. Remove any temporary posts or assets used for review before publishing the real content.

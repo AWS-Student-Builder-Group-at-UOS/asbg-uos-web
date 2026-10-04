@@ -36,7 +36,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const latest = getLatestCohort().slug;
   const nav = [
     { label: d.nav.home, href: routes.home(locale), match: routes.home(locale) },
-    { label: d.nav.sessions, href: routes.sessions(locale, latest), match: `/${locale}/sessions` },
+    { label: d.nav.activities, href: routes.activities(locale, latest), match: `/${locale}/activities` },
     { label: d.nav.members, href: routes.members(locale, latest), match: `/${locale}/members` },
     { label: d.nav.resources, href: routes.resources(locale), match: routes.resources(locale) },
   ];

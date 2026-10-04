@@ -7,8 +7,8 @@
 ## 입력
 
 - 가이드: `template/session-diagram/README.md`
-- 발표 폴더: `cohort-01/session-03/presentation-01`
-- 발표 자료: `cohort-01/session-03/presentation-01/index.md`, `cohort-01/session-03/presentation-01/files/slides.pdf`
+- 발표 폴더: `cohort-01/activities/session-03-presentation-01`
+- 발표 자료: `cohort-01/activities/session-03-presentation-01/index.md`, `cohort-01/activities/session-03-presentation-01/files/slides.pdf`
 
 ## 작업
 

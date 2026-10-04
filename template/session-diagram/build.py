@@ -5,8 +5,8 @@
     python template/session-diagram/build.py --check         쓰지 않고, 코드와 다른 SVG가 있으면 실패
     python template/session-diagram/build.py --preview       .cache/preview.html 미리보기를 만든다
 
-diagrams/cohort-01/session-02/presentation-01.py의 도식은
-cohort-01/session-02/presentation-01/img/에 쓰인다. 영어는 같은 이름에 .en.svg.
+diagrams/cohort-01/activities/session-02-presentation-01.py의 도식은
+cohort-01/activities/session-02-presentation-01/img/에 쓰인다. 영어는 같은 이름에 .en.svg.
 """
 import argparse
 import html
@@ -66,7 +66,7 @@ def preview(keys):
 
 def main():
     parser = argparse.ArgumentParser(description="세션 도식을 그린다.")
-    parser.add_argument("filters", nargs="*", help="경로에 이 글자가 들어간 도식만 (예: session-02/presentation-01)")
+    parser.add_argument("filters", nargs="*", help="경로에 이 글자가 들어간 도식만 (예: session-02-presentation-01)")
     parser.add_argument("--check", action="store_true", help="파일을 쓰지 않고, 코드와 다른 SVG가 있으면 실패한다")
     parser.add_argument("--force", action="store_true", help="그림이 같아도 다시 쓴다")
     parser.add_argument("--preview", action="store_true", help="본문 폭으로 모아 보는 .cache/preview.html을 만든다")
