@@ -176,14 +176,14 @@ export const en: Dict = {
   },
   resources: {
     title: "Resources",
-    body: "Each channel is for something different, so here's what goes where.",
+    body: "The latest from ASBG UOS and all of our channels, on one page.",
     channels: "Channels",
     items: {
-      linkedin: { title: "LinkedIn", body: "Official page. Updates and session recaps." },
-      github: { title: "GitHub", body: "Session materials and lab code." },
+      linkedin: { title: "LinkedIn", body: "Activity write-ups and recaps." },
+      github: { title: "GitHub", body: "Everything we've made at ASBG UOS, kept in one place." },
       email: { title: "Email", body: "Questions, topic ideas and speaker offers." },
-      instagram: { title: "Instagram", body: "Recruiting and event news, posted here first." },
-      meetup: { title: "Meetup", body: "Official event announcements and RSVPs." },
+      instagram: { title: "Instagram", body: "Activity photos and recaps." },
+      meetup: { title: "Meetup", body: "Event announcements and RSVPs." },
       moreGroups: { title: "More ASBG", body: "The full list of AWS Student Builder Groups worldwide. Worth a look to see what other schools are doing." },
     },
     feed: {
