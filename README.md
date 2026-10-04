@@ -31,7 +31,7 @@ Next.js를 고른 가장 큰 이유는 검색과 공유입니다. 모든 페이�
 | 다국어 | 한국어 · 영어 |
 | 테마 | next-themes. 라이트 · 다크 |
 | 공유 이미지 | next/og, sharp. 활동 썸네일 SVG를 PNG로 변환 |
-| Instagram 피드 | Behold JSON 피드. 서버에서 받아 1시간 캐시 |
+| Instagram 피드 | Behold JSON 피드. 서버에서 3시간마다 갱신하고, 실패하면 마지막으로 받은 게시물 유지 |
 | 글꼴 | Pretendard, Geist Mono |
 | 배포 | Vercel |
 
