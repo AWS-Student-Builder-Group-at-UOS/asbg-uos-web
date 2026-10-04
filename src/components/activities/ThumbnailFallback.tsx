@@ -22,8 +22,8 @@ const TONES = {
   recap: {
     dots: "fill-sky opacity-30",
     accents: "fill-blue opacity-50",
-    frame: "fill-blue",
-    icon: "fill-white",
+    frame: "fill-none stroke-blue opacity-70",
+    icon: "fill-blue",
     eyebrow: "fill-blue",
     text: "fill-black",
     digits: "fill-blue",
