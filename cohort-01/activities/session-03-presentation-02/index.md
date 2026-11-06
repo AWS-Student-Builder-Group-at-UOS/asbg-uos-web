@@ -5,8 +5,10 @@ presentation: 2
 date: 2026-11-03
 title:
   ko: 이벤트 기반 처리와 실패 대응
+  en: Event-Driven Processing and Handling Failure
 description:
   ko: "접수했다는 응답과 일이 끝났다는 결과는 다릅니다. 신청 함수가 접수만 하고 202로 답하면, 이벤트가 EventBridge 규칙과 SQS 큐를 거쳐 발급 함수까지 전달되고 발급은 뒤에서 이어집니다. 같은 일이 두 번 와도 결과는 한 번만 반영하는 멱등성, 실패하면 다시 시도하고 계속 실패하면 DLQ에 격리하는 방법과 그 설정값의 이유를 정리하고, 실패한 신청을 원래 번호 그대로 복구하는 실습까지 이어 갔습니다."
+  en: "A response saying the work was received isn't the same as the work being done. When the sign-up function only accepts the request and replies 202, an event travels through an EventBridge rule and an SQS queue to the issuing function, and issuing happens afterward. Then idempotency, so work that arrives twice is applied only once, and retrying on failure and isolating what keeps failing in a DLQ, with the reasoning behind each setting, followed by a hands-on that recovers a failed sign-up under its original ID."
 keywords: [EventBridge, SQS, Idempotency]
 speakers: [son-subin]
 thumbnail: img/thumbnail.svg

@@ -5,8 +5,10 @@ presentation: 1
 date: 2026-11-03
 title:
   ko: 맥도날드 주문 시스템으로 이해하는 서버리스
+  en: Understanding Serverless Through a McDonald's Ordering System
 description:
   ko: "서버리스에도 서버는 있습니다. 줄어드는 것은 서버를 직접 운영하는 부담입니다. 맥도날드 주문 시스템에 빗대어 API Gateway, Lambda, DynamoDB로 주문 하나가 처리되는 길을 따라가고, 실행 환경은 이전 상태를 기억하지 않는다는 점, 실행 역할과 최소 권한, 타임아웃, 결과를 기다리는 동기 처리까지 짚었습니다. 이어서 행사 신청 서비스를 배포해 응답, 로그, DB를 같은 신청 번호로 확인하고, 발급이 느려지면 응답 시간도 함께 늘어나는 것을 확인하는 실습을 정리했습니다."
+  en: "Serverless still runs on servers; what goes away is the burden of running them yourself. With a McDonald's ordering system as the analogy, we follow one order through API Gateway, Lambda, and DynamoDB, then look at why a runtime environment doesn't remember earlier state, execution roles and least privilege, timeouts, and synchronous processing that waits for the result. Then the hands-on: deploying an event sign-up service, connecting the response, logs, and database record through one registration ID, and watching the response time grow when issuing slows down."
 keywords: [Lambda, API Gateway, DynamoDB]
 speakers: [jang-jiwon]
 thumbnail: img/thumbnail.svg
